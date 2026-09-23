@@ -2,6 +2,14 @@
 
 Repositório centralizado e categorizado contendo **128 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
 
+> [!TIP]
+> ### 🧠 Quer saber como usar, quando usar e quais prompts fazer?
+> Consulte o [**Cérebro das Skills (`CEREBRO.md`)**](CEREBRO.md) — o manual mestre completo com:
+> - **Como a IA pensa e ativa as skills** (Anatomia, gatilhos e fórmula do prompt perfeito).
+> - **Power Combos**: Workflows multi-skill encadeados (Landing pages, Fullstack, Cloud, MCP, etc.).
+> - **Cheat Sheet**: Tabela rápida de decisão ("O que você quer fazer hoje?").
+> - **Prompts Prontos**: Exemplos práticos para copiar e colar para cada uma das 128 skills!
+
 ---
 
 ## 📊 Visão Geral das Categorias
