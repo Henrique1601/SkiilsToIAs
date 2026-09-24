@@ -1,7 +1,7 @@
 # 🧠 O Cérebro das Skills (`CEREBRO.md`)
 ### Manual Mestre de Ativação, Casos de Uso, Engenharia de Prompt e Workflows Multi-Skill
 
-> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **128 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
+> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **158 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
 
 ---
 
@@ -18,14 +18,16 @@
    - [Combo 4: Criação de Novo Agente & Servidor MCP](#combo-4-criação-de-novo-agente--servidor-mcp)
    - [Combo 5: Redesign & Polimento Obsessivo de UI](#combo-5-redesign--polimento-obsessivo-de-ui)
    - [Combo 6: Apresentação Executiva para Diretoria](#combo-6-apresentação-executiva-para-diretoria)
+   - [Combo 7: Conquista de Emprego & Recolocação Profissional](#combo-7-conquista-de-emprego--recolocação-profissional)
 3. [🎯 Cheat Sheet: O que você quer fazer hoje?](#-3-cheat-sheet-o-que-você-quer-fazer-hoje)
-4. [📚 Guia Completo das 128 Skills por Categoria](#-4-guia-completo-das-128-skills-por-categoria)
+4. [📚 Guia Completo das 158 Skills por Categoria](#-4-guia-completo-das-158-skills-por-categoria)
    - [🎨 Design & UI/UX (34 skills)](#-design--uiux)
    - [🔍 SEO & Mecanismos de Busca (3 skills)](#-seo--mecanismos-de-busca)
-   - [📣 Marketing & Vendas (6 skills)](#-marketing--vendas)
+   - [📣 Marketing & Vendas (7 skills)](#-marketing--vendas)
+   - [🎯 Carreira & Empregabilidade (22 skills)](#-carreira--empregabilidade)
    - [💻 Desenvolvimento & Testes (17 skills)](#-desenvolvimento--testes)
    - [☁️ Cloud & DevOps (9 skills)](#-cloud--devops)
-   - [🗄️ Backend & Bancos de Dados (4 skills)](#-backend--bancos-de-dados)
+   - [🗄️ Backend & Bancos de Dados (11 skills)](#-backend--bancos-de-dados)
    - [🤖 Agentes de IA & Metaprogramação (22 skills)](#-agentes-de-ia--metaprogramação)
    - [📄 Documentos & Produtividade (14 skills)](#-documentos--produtividade)
    - [📊 Gestão & Negócios (14 skills)](#-gestão--negócios)
@@ -74,10 +76,10 @@ Você descreve o problema usando termos-chave contidos na descrição da skill:
 Para extrair 100% da inteligência das skills, use a estrutura de 4 blocos:
 
 ```text
-[CONTEXTO]   -> "Estou construindo um SaaS B2B de gestão de fretes em Next.js 15."
-[OBJETIVO]   -> "Preciso criar a tabela de histórico de cotações com filtros de data."
-[SKILL/TOM]  -> "Aplique os padrões da skill `design-taste-frontend` e `emil-design-eng`."
-[RESTRIÇÕES] -> "Não use cards genéricos com sombras pesadas. Use micro-motion abaixo de 200ms."
+[CONTEXTO]   -> "Estou me candidatando para uma vaga de Tech Lead em uma fintech em escala."
+[OBJETIVO]   -> "Preciso adaptar meu currículo e escrever uma carta de apresentação personalizada."
+[SKILL/TOM]  -> "Aplique as skills `resume-tailor`, `resume-ats-optimizer` e `cover-letter-generator`."
+[RESTRIÇÕES] -> "Não ultrapasse duas páginas, quantifique todas as realizações e mantenha compatibilidade ATS."
 ```
 
 ---
@@ -106,15 +108,15 @@ flowchart LR
 ```mermaid
 flowchart LR
     A["1. architecture
-(ADR & Decisão Técnica)"] --> B["2. neon-postgres / supabase
-(Modelagem & Migrations)"]
+(ADR & Decisão Técnica)"] --> B["2. mongodb-schema-design
+(Modelagem NoSQL)"]
     B --> C["3. tdd
 (Testes Vermelho-Verde)"]
     C --> D["4. code-review
 (Auditoria de Segurança)"]
 ```
 - **Prompt do Combo**:
-  > *"Vamos implementar o checkout de assinaturas: inicie com um ADR via `architecture` decidindo a modelagem de recorrência. Crie o schema no `supabase` com políticas RLS. Desenvolva as regras de negócio usando `tdd` estrito e, ao final, rode um `code-review` rigoroso procurando vulnerabilidades OWASP."*
+  > *"Vamos implementar o módulo de eventos em tempo real: inicie com um ADR via `architecture` decidindo a modelagem de dados. Modele o schema usando `mongodb-schema-design`. Desenvolva as regras de negócio usando `tdd` estrito e, ao final, rode um `code-review` rigoroso procurando vulnerabilidades OWASP e queries N+1."*
 
 ---
 
@@ -148,7 +150,7 @@ flowchart LR
 (Redação de Regras)"]
 ```
 - **Prompt do Combo**:
-  > *"Vou criar um assistente interno para nosso time de infraestrutura: estruture o subagente com `agent-development`, programe o servidor MCP em Python com `build-mcp-server` para consultar servidores, implemente hooks de segurança com `hook-development` para bloquear comandos perigosos e refine as instruções com `writing-great-skills`."*
+  > *"Vou criar um assistente interno para nosso time de dados: estruture o subagente com `agent-development`, programe o servidor MCP em Python com `build-mcp-server` para consultar bancos MongoDB e Postgres, implemente hooks de segurança com `hook-development` para bloquear comandos perigosos e refine as instruções com `writing-great-skills`."*
 
 ---
 
@@ -184,28 +186,50 @@ flowchart LR
 
 ---
 
+### Combo 7: Conquista de Emprego & Recolocação Profissional
+```mermaid
+flowchart LR
+    A["1. job-description-analyzer
+(Análise da Vaga)"] --> B["2. resume-tailor
+(Adaptação Cirúrgica)"]
+    B --> C["3. resume-ats-optimizer
+(Otimização de ATS)"]
+    C --> D["4. cover-letter-generator
+(Carta Persuasiva)"]
+    D --> E["5. interview-prep-generator
+(Simulação STAR)"]
+    E --> F["6. salary-negotiation-prep
+(Contraproposta Salarial)"]
+```
+- **Prompt do Combo**:
+  > *"Quero me candidatar para esta vaga específica: primeiro, use `job-description-analyzer` para mapear requisitos e keywords. Adapte meu currículo mestre com `resume-tailor` e garanta nota máxima nos filtros com `resume-ats-optimizer`. Em seguida, redija uma cover letter persuasiva via `cover-letter-generator`. Gere minhas respostas no método STAR com `interview-prep-generator` e prepare um roteiro de negociação salarial com `salary-negotiation-prep`."*
+
+---
+
 ## 🎯 3. Cheat Sheet: O que você quer fazer hoje?
 
 | Se o seu objetivo for... | Use esta Skill Principal | Exemplo de Prompt Rápido |
 |---|---|---|
+| **Passar no filtro ATS de vagas** | [`resume-ats-optimizer`](career/resume-ats-optimizer/SKILL.md) | *"Otimize meu currículo para passar pelo robô de triagem (ATS) desta vaga."* |
+| **Adaptar CV para uma vaga** | [`resume-tailor`](career/resume-tailor/SKILL.md) | *"Adapte meu currículo para enfatizar liderança técnica exigida nesta oportunidade."* |
+| **Treinar para entrevista difícil** | [`interview-prep-generator`](career/interview-prep-generator/SKILL.md) | *"Simule uma entrevista com perguntas difíceis e monte minhas respostas em método STAR."* |
+| **Pedir aumento ou negociar oferta** | [`salary-negotiation-prep`](career/salary-negotiation-prep/SKILL.md) | *"Monte um roteiro elegante e firme para negociar uma contraproposta salarial."* |
+| **Criar posts virais no LinkedIn** | [`linkedin-marketing`](marketing/linkedin-marketing/SKILL.md) | *"Escreva um post para o LinkedIn contando uma lição técnica com gancho forte."* |
+| **Consultas MongoDB em português** | [`mongodb-natural-language-querying`](backend-database/mongodb-natural-language-querying/SKILL.md) | *"Escreva uma aggregation pipeline no MongoDB para somar vendas do último mês."* |
+| **Otimizar queries MongoDB lentas** | [`mongodb-query-optimizer`](backend-database/mongodb-query-optimizer/SKILL.md) | *"Analise este explain plan do MongoDB e crie o índice composto ideal para acelerar."* |
 | **Criar tela sem cara de IA** | [`design-taste-frontend`](design/design-taste-frontend/SKILL.md) | *"Crie a home page do meu produto com design-taste-frontend sem templates clichês."* |
 | **Auditar SEO do site** | [`seo-audit`](seo/seo-audit/SKILL.md) | *"Faça uma auditoria de SEO completa no index.html checando meta-tags e Core Web Vitals."* |
-| **Criar réguas de email** | [`email-sequence`](marketing/email-sequence/SKILL.md) | *"Escreva uma sequência de onboarding de 4 emails para usuários recém-cadastrados."* |
 | **Testar com navegador real** | [`agent-browser`](development/agent-browser/SKILL.md) | *"Abra localhost:3000 com agent-browser, faça login e tire um screenshot do dashboard."* |
 | **Desenvolver guiado por testes** | [`tdd`](development/tdd/SKILL.md) | *"Vamos implementar o cálculo de frete usando TDD: escreva os testes antes do código."* |
 | **Revisar código e segurança** | [`code-review`](development/code-review/SKILL.md) | *"Faça um code review deste diff procurando vulnerabilidades OWASP e queries N+1."* |
 | **Deploy seguro no Azure** | [`azure-deploy`](devops-cloud/azure-deploy/SKILL.md) | *"Execute a publicação dos recursos na minha assinatura do Azure via azd up."* |
-| **Bancos serverless rápidos** | [`neon-postgres`](backend-database/neon-postgres/SKILL.md) | *"Configure o connection pooling do Neon Postgres no meu projeto Next.js."* |
 | **Criar servidor MCP** | [`build-mcp-server`](ai-agents/build-mcp-server/SKILL.md) | *"Crie um servidor MCP em Python com FastMCP para conectar nossa API interna."* |
 | **Criar relatório Word (.docx)** | [`docx`](documents-productivity/docx/SKILL.md) | *"Gere um documento Word (.docx) formatado profissionalmente para esta proposta."* |
-| **Criar slides executivos** | [`pptx`](documents-productivity/pptx/SKILL.md) | *"Crie uma apresentação PowerPoint com 6 slides resumindo os resultados anuais."* |
-| **Desafiar minha ideia de negócio** | [`grill-me`](documents-productivity/grill-me/SKILL.md) | *"Vou lançar um novo SaaS. Use grill-me para me entrevistar e achar todos os furos."* |
 | **Economizar tokens no chat** | [`caveman`](utilities/caveman/SKILL.md) | *"/caveman explique a diferença entre mutex e semáforo em sistemas concorrentes."* |
-| **Mensagem de commit perfeita** | [`caveman-commit`](utilities/caveman-commit/SKILL.md) | *"/caveman-commit gere a mensagem de commit para estas alterações que acabei de fazer."* |
 
 ---
 
-## 📚 4. Guia Completo das 128 Skills por Categoria
+## 📚 4. Guia Completo das 158 Skills por Categoria
 
 
 ### 🎨 Design & UI/UX (34 skills)
@@ -485,7 +509,7 @@ flowchart LR
 ---
 
 
-### 📣 Marketing & Vendas (6 skills)
+### 📣 Marketing & Vendas (7 skills)
 
 > **Foco:** Automação de campanhas, redação no tom de voz da marca, réguas de e-mail e prospecção comercial.
 
@@ -526,12 +550,182 @@ flowchart LR
   - `"Escreva uma sequência de onboarding de 4 emails para usuários recém-cadastrados no nosso software de gestão financeira."`
   - `"Crie uma régua de recuperação de clientes inativos (win-back) com ofertas progressivas e gatilhos de urgência honestos."`
 
+#### 🔹 [`linkedin-marketing`](marketing/linkedin-marketing/SKILL.md)
+- **🎯 O que faz:** Planejamento, redação, auditoria e estratégia de postagens virais e engajamento no LinkedIn para construir autoridade.
+- **💡 No que usar:** Publicar conteúdo relevante no LinkedIn que atrai clientes, investidores ou visibilidade profissional.
+- **💬 Prompts Prontos:**
+  - `"Escreva um post para o LinkedIn contando uma lição aprendida em um projeto técnico com gancho inicial forte e sem clichês."`
+  - `"Audite este rascunho de post no LinkedIn e melhore o ritmo de leitura com frases curtas e quebra de parágrafos envolvente."`
+
 #### 🔹 [`performance-report`](marketing/performance-report/SKILL.md)
 - **🎯 O que faz:** Compila relatórios executivos de marketing com métricas-chave (CAC, LTV, ROAS), análise de canais e recomendações de otimização.
 - **💡 No que usar:** Fechamento de mês ou trimestre para apresentar resultados para diretores, clientes de agência ou investidores.
 - **💬 Prompts Prontos:**
   - `"Compile este resumo de métricas do Google Ads e Meta Ads em um relatório executivo destacando os canais mais rentáveis."`
   - `"Analise a queda de conversão do último trimestre e apresente 3 ações imediatas para recuperar o ROI."`
+
+---
+
+
+### 🎯 Carreira & Empregabilidade (22 skills)
+
+> **Foco:** Elaboração de currículos de alto impacto (compatíveis com ATS), cartas de apresentação, preparação para entrevistas, perfil no LinkedIn e negociação salarial.
+
+**Diretório:** [`career/`](career/)
+
+#### 🔹 [`academic-cv-builder`](career/academic-cv-builder/SKILL.md)
+- **🎯 O que faz:** Formatação de currículos para cargos acadêmicos, bolsas, pós-graduação e publicações científicas.
+- **💡 No que usar:** Candidaturas para docência universitária, pós-doutorado, bolsas de pesquisa e detalhamento de histórico acadêmico.
+- **💬 Prompts Prontos:**
+  - `"Formate meu currículo acadêmico com seções detalhadas de publicações em periódicos, bolsas obtidas e experiência docente."`
+  - `"Adapte meu histórico de pesquisas para um CV acadêmico no padrão internacional."`
+
+#### 🔹 [`application-form-filler`](career/application-form-filler/SKILL.md)
+- **🎯 O que faz:** Preenchimento contextualizado de campos abertos de formulários de candidatura com respostas alinhadas ao seu perfil e à vaga.
+- **💡 No que usar:** Candidatar-se em portais como Workday, Greenhouse ou Gupy, respondendo perguntas como 'Por que você quer trabalhar aqui?'.
+- **💬 Prompts Prontos:**
+  - `"Responda à pergunta do formulário da vaga 'Qual foi seu maior desafio profissional?' usando meu histórico deste currículo."`
+  - `"Gere respostas personalizadas e concisas para os campos abertos deste formulário de candidatura."`
+
+#### 🔹 [`career-changer-translator`](career/career-changer-translator/SKILL.md)
+- **🎯 O que faz:** Traduz habilidades e experiências de uma indústria para outra, identificando competências transferíveis.
+- **💡 No que usar:** Mudança de carreira (ex: de engenharia civil para software, de vendas para produto) sem parecer iniciante.
+- **💬 Prompts Prontos:**
+  - `"Ajude-me a traduzir 5 anos de experiência como professor para habilidades transferíveis para uma vaga de Instructional Designer."`
+  - `"Identifique como minha bagagem em atendimento ao cliente pode ser descrita como experiência valiosa para Product Management."`
+
+#### 🔹 [`cold-email-writer`](career/cold-email-writer/SKILL.md)
+- **🎯 O que faz:** Redação de cold emails personalizados para recrutadores, tech leads e fundadores (específicos, humanos e sem clichês).
+- **💡 No que usar:** Fazer networking direto com tomadores de decisão para vagas não publicadas ou após enviar uma candidatura.
+- **💬 Prompts Prontos:**
+  - `"Escreva um cold email curto de 3 parágrafos para o Head de Engenharia da startup X demonstrando interesse genuíno na stack deles."`
+  - `"Redija uma mensagem de aproximação para um recrutador sênior no LinkedIn sem parecer desesperado ou vendedor."`
+
+#### 🔹 [`cover-letter-generator`](career/cover-letter-generator/SKILL.md)
+- **🎯 O que faz:** Criação de cartas de apresentação personalizadas, persuasivas e conectadas à dor da vaga.
+- **💡 No que usar:** Processos seletivos que exigem cover letter ou para demonstrar forte fit cultural e motivação.
+- **💬 Prompts Prontos:**
+  - `"Escreva uma carta de apresentação convincente conectando minhas realizações deste currículo aos requisitos desta vaga de Tech Lead."`
+  - `"Crie uma cover letter concisa e calorosa para uma vaga em uma startup de tecnologia climática."`
+
+#### 🔹 [`creative-portfolio-resume`](career/creative-portfolio-resume/SKILL.md)
+- **🎯 O que faz:** Equilíbrio entre apelo visual diferenciado e compatibilidade estrita com robôs de triagem (ATS) para cargos criativos.
+- **💡 No que usar:** Designers de produto, diretores de arte, redatores e profissionais de UX que precisam de um currículo bonito que passe pelo ATS.
+- **💬 Prompts Prontos:**
+  - `"Crie o conteúdo de um currículo para Product Designer que destaque meus cases de design sem quebrar a leitura dos parsers ATS."`
+  - `"Como estruturar um CV criativo com links para protótipos mantendo compatibilidade com filtros automatizados?"`
+
+#### 🔹 [`executive-resume-writer`](career/executive-resume-writer/SKILL.md)
+- **🎯 O que faz:** Currículos executivos para C-Level (CTO, CEO, CFO), VPs e Diretores, enfatizando liderança estratégica e P&L.
+- **💡 No que usar:** Candidaturas a cargos de alta liderança, conselhos consultivos ou transições executivas de grande porte.
+- **💬 Prompts Prontos:**
+  - `"Reescreva meu currículo com tom executivo para uma vaga de Vice-Presidente de Engenharia com foco em governança e gestão de P&L."`
+  - `"Destaque minhas realizações estratégicas e liderança de fusões e aquisições (M&A) neste sumário executivo."`
+
+#### 🔹 [`interview-prep-generator`](career/interview-prep-generator/SKILL.md)
+- **🎯 O que faz:** Geração de histórias no método STAR (Situação, Tarefa, Ação, Resultado), perguntas difíceis e simulação de entrevistas.
+- **💡 No que usar:** Preparar-se para entrevistas comportamentais (behavioral interviews) e técnicas antes da conversa com recrutadores.
+- **💬 Prompts Prontos:**
+  - `"Transforme estas 3 experiências do meu currículo em respostas estruturadas no método STAR para a pergunta 'Fale sobre uma vez que você falhou'."`
+  - `"Simule uma entrevista comportamental para a vaga de Sênior Software Engineer e me faça 5 perguntas difíceis baseadas no meu perfil."`
+
+#### 🔹 [`job-description-analyzer`](career/job-description-analyzer/SKILL.md)
+- **🎯 O que faz:** Análise profunda de descrições de vagas: calcula nota de aderência (match score), aponta lacunas e traça estratégia de aplicação.
+- **💡 No que usar:** Antes de enviar o currículo, para saber exatamente quais palavras-chave faltam e se vale a pena se candidatar.
+- **💬 Prompts Prontos:**
+  - `"Analise esta descrição de vaga e compare com meu currículo: calcule minha taxa de aderência de 0 a 100% e aponte os maiores gaps."`
+  - `"Quais são as 5 competências mais críticas exigidas nesta vaga que eu preciso enfatizar no meu perfil?"`
+
+#### 🔹 [`linkedin-profile-optimizer`](career/linkedin-profile-optimizer/SKILL.md)
+- **🎯 O que faz:** Otimização completa do perfil no LinkedIn para ranquear no topo das buscas do LinkedIn Recruiter (título, sobre, skills e SEO).
+- **💡 No que usar:** Aumentar visualizações de recrutadores, conexões estratégicas e convites orgânicos para entrevistas.
+- **💬 Prompts Prontos:**
+  - `"Otimize o título (headline) e a seção 'Sobre' do meu LinkedIn para atrair recrutadores que buscam 'Staff Frontend Engineer'."`
+  - `"Indique quais as 50 competências mais buscadas para o meu cargo que devo adicionar ao meu perfil do LinkedIn."`
+
+#### 🔹 [`offer-comparison-analyzer`](career/offer-comparison-analyzer/SKILL.md)
+- **🎯 O que faz:** Comparação analítica lado a lado de propostas de emprego: remuneração total, equity, benefícios, cultura e custo de vida.
+- **💡 No que usar:** Você recebeu duas ou mais ofertas de trabalho e precisa decidir racionalmente qual proposta é melhor a longo prazo.
+- **💬 Prompts Prontos:**
+  - `"Compare esta oferta de R$ 20k CLT com esta proposta remota internacional de $5k USD PJ considerando impostos e benefícios."`
+  - `"Analise o pacote de remuneração total desta proposta incluindo o valor estimado das Stock Options com vesting de 4 anos."`
+
+#### 🔹 [`portfolio-case-study-writer`](career/portfolio-case-study-writer/SKILL.md)
+- **🎯 O que faz:** Transforma realizações resumidas do currículo em estudos de caso detalhados de portfólio (problema, solução, métricas e lições).
+- **💡 No que usar:** Montar portfólio para sites pessoais, GitHub READMEs ou apresentações para etapas finais de contratação.
+- **💬 Prompts Prontos:**
+  - `"Transforme esta linha do meu currículo sobre 'migração para microsserviços' em um case study completo para meu portfólio."`
+  - `"Escreva a narrativa de um estudo de caso sobre como reduzi a latência da API em 40% para incluir no meu site pessoal."`
+
+#### 🔹 [`reference-list-builder`](career/reference-list-builder/SKILL.md)
+- **🎯 O que faz:** Estruturação profissional da lista de referências de trabalho, alinhamento prévio e preparação de contatos.
+- **💡 No que usar:** A empresa pediu cartas de recomendação ou contatos de ex-gestores na fase final de checagem de referências.
+- **💬 Prompts Prontos:**
+  - `"Monte uma lista profissional de 3 referências de trabalho com cargos, contexto de colaboração e dados de contato organizados."`
+  - `"Escreva uma mensagem educada para eu enviar ao meu ex-gestor pedindo autorização para incluí-lo como minha referência."`
+
+#### 🔹 [`resume-ats-optimizer`](career/resume-ats-optimizer/SKILL.md)
+- **🎯 O que faz:** Otimização de currículos para filtros ATS (Applicant Tracking Systems): densidade de keywords, cabeçalhos padrão e eliminação de caracteres problemáticos.
+- **💡 No que usar:** Garantir que seu currículo passe pelo filtro automático dos robôs do Taleo, Workday, Greenhouse e Lever.
+- **💬 Prompts Prontos:**
+  - `"Audite meu currículo para compatibilidade com robôs ATS e aponte se tabelas ou colunas estão prejudicando a leitura."`
+  - `"Insira as palavras-chave desta descrição de vaga no meu currículo de forma natural para aumentar a pontuação no ATS."`
+
+#### 🔹 [`resume-bullet-writer`](career/resume-bullet-writer/SKILL.md)
+- **🎯 O que faz:** Reescreve bullets fracos e descrições de tarefas passivas em declarações de alto impacto baseadas em conquistas ativas.
+- **💡 No que usar:** Seu currículo parece uma lista de tarefas em vez de um registro de impacto e realizações de valor.
+- **💬 Prompts Prontos:**
+  - `"Reescreva este bullet 'Responsável pela manutenção do site' transformando-o em uma conquista de impacto com métricas."`
+  - `"Melhore as descrições da minha última experiência profissional usando verbos de ação fortes e estrutura de resultado."`
+
+#### 🔹 [`resume-formatter`](career/resume-formatter/SKILL.md)
+- **🎯 O que faz:** Formatação tipográfica e espacial para currículos: margens perfeitas, hierarquia clara, fontes ideais e escaneabilidade em 6 segundos.
+- **💡 No que usar:** Organizar um currículo bagunçado para que caiba perfeitamente em 1 ou 2 páginas sem apertar o texto.
+- **💬 Prompts Prontos:**
+  - `"Formate o layout deste currículo para caber exatamente em duas páginas com espaçamentos harmoniosos e boa escaneabilidade visual."`
+  - `"Ajuste a estrutura tipográfica deste currículo para que um recrutador entenda minha trajetória em 6 segundos de leitura."`
+
+#### 🔹 [`resume-quantifier`](career/resume-quantifier/SKILL.md)
+- **🎯 O que faz:** Identifica oportunidades de quantificação e ajuda a estimar números plausíveis e métricas onde faltam dados exatos.
+- **💡 No que usar:** O currículo não tem porcentagens, valores em dinheiro ou métricas de tempo e precisa demonstrar escala.
+- **💬 Prompts Prontos:**
+  - `"Me ajude a estimar e adicionar métricas a este projeto onde reduzi o tempo de resposta mas não tenho os números exatos guardados."`
+  - `"Revise estas realizações e faça perguntas para extrair números sobre volume de usuários, receita gerada e horas economizadas."`
+
+#### 🔹 [`resume-section-builder`](career/resume-section-builder/SKILL.md)
+- **🎯 O que faz:** Criação de seções cirúrgicas de currículo adaptadas ao nível de senioridade (Júnior, Pleno, Sênior, Especialista, Transição).
+- **💡 No que usar:** Adicionar uma seção de projetos pessoais (para juniores) ou liderança técnica e patentes (para especialistas).
+- **💬 Prompts Prontos:**
+  - `"Crie uma seção 'Projetos de Destaque' no meu currículo enfatizando tecnologias modernas para compensar pouca experiência formal."`
+  - `"Estruture uma seção de 'Liderança & Mentoria' para um desenvolvedor sênior almejando cargo de Staff Engineer."`
+
+#### 🔹 [`resume-tailor`](career/resume-tailor/SKILL.md)
+- **🎯 O que faz:** Customização cirúrgica do currículo mestre para uma vaga específica, alinhando ordem de experiências e ênfase sem faltar com a verdade.
+- **💡 No que usar:** Candidatar-se a uma vaga dos sonhos que exige um foco diferente do seu currículo genérico padrão.
+- **💬 Prompts Prontos:**
+  - `"Adapte meu currículo mestre para esta vaga específica de Engenheiro de Dados focando mais em pipelines e menos em frontend."`
+  - `"Reordene as realizações da minha experiência mais recente para destacar conhecimentos em microsserviços solicitados pela vaga."`
+
+#### 🔹 [`resume-version-manager`](career/resume-version-manager/SKILL.md)
+- **🎯 O que faz:** Gerenciamento e controle de versões de currículos: mantém o currículo mestre atualizado e rastreia versões enviadas para cada empresa.
+- **💡 No que usar:** Você está se candidatando para múltiplos tipos de cargos (ex: Backend e Fullstack) e precisa manter tudo organizado.
+- **💬 Prompts Prontos:**
+  - `"Organize meu currículo mestre e me ajude a ramificar duas versões: uma focada em Tech Lead e outra em Especialista Técnico."`
+  - `"Crie um registro das versões enviadas para as empresas X, Y e Z para eu saber o que foi prometido em cada processo seletivo."`
+
+#### 🔹 [`salary-negotiation-prep`](career/salary-negotiation-prep/SKILL.md)
+- **🎯 O que faz:** Preparação completa para negociação de salário: pesquisa de faixas de mercado, scripts de contraproposta e quebra de objeções.
+- **💡 No que usar:** Você recebeu uma proposta salarial abaixo da expectativa ou quer maximizar o pacote total sem parecer arrogante.
+- **💬 Prompts Prontos:**
+  - `"Recebi uma proposta de R$ 14.000, mas minha pretensão era R$ 17.000: escreva um roteiro empático e firme de contraproposta."`
+  - `"Como responder à pergunta 'Qual é a sua pretensão salarial?' na primeira entrevista com o recrutador sem queimar a largada?"`
+
+#### 🔹 [`tech-resume-optimizer`](career/tech-resume-optimizer/SKILL.md)
+- **🎯 O que faz:** Otimização especializada de currículos técnicos para Engenheiros de Software, DevOps, Cientistas de Dados e Product Managers.
+- **💡 No que usar:** Organizar stacks de tecnologias, linguagens, arquitetura de sistemas e contribuições open-source para o público técnico.
+- **💬 Prompts Prontos:**
+  - `"Otimize a seção de competências técnicas do meu CV separando por Linguagens, Frameworks, Cloud e Bancos de Dados de forma limpa."`
+  - `"Ajuste o tom das minhas realizações técnicas para que façam sentido tanto para o recrutador de RH quanto para o CTO."`
 
 ---
 
@@ -736,7 +930,7 @@ flowchart LR
 ---
 
 
-### 🗄️ Backend & Bancos de Dados (4 skills)
+### 🗄️ Backend & Bancos de Dados (11 skills)
 
 > **Foco:** Bancos de dados serverless modernos, Supabase, Neon Postgres e decisões de arquitetura de software.
 
@@ -755,6 +949,55 @@ flowchart LR
 - **💬 Prompts Prontos:**
   - `"Analise a arquitetura deste projeto e aponte onde há forte acoplamento entre a camada de apresentação e a de dados."`
   - `"Proponha um plano de refatoração para aplicar Clean Architecture neste backend Node.js que está virando um monólito desorganizado."`
+
+#### 🔹 [`mongodb-atlas-stream-processing`](backend-database/mongodb-atlas-stream-processing/SKILL.md)
+- **🎯 O que faz:** Gerenciamento de fluxos de Atlas Stream Processing (ASP) no MongoDB: pipelines contínuas, fontes, sinks e processamento em tempo real.
+- **💡 No que usar:** Processar eventos de streams de alta velocidade (como sensores IoT ou telemetria de cliques) diretamente no MongoDB Atlas.
+- **💬 Prompts Prontos:**
+  - `"Configure uma pipeline no Atlas Stream Processing para filtrar e agregar eventos de telemetria em janelas de 5 minutos."`
+  - `"Como conectar um cluster Apache Kafka como fonte de dados no MongoDB Atlas Stream Processing?"`
+
+#### 🔹 [`mongodb-connection`](backend-database/mongodb-connection/SKILL.md)
+- **🎯 O que faz:** Otimização de pools de conexão, timeouts e configurações do driver de conexão com o MongoDB em qualquer linguagem.
+- **💡 No que usar:** A aplicação está sofrendo com connection spikes, lentidão de conexão em funções serverless ou timeouts intermitentes.
+- **💬 Prompts Prontos:**
+  - `"Configure o pool de conexões do driver de MongoDB em Node.js para rodar em ambiente serverless com AWS Lambda/Vercel."`
+  - `"Ajuste os parâmetros de timeout e keepAlive na connection string do MongoDB para evitar desconexões em redes instáveis."`
+
+#### 🔹 [`mongodb-mcp-setup`](backend-database/mongodb-mcp-setup/SKILL.md)
+- **🎯 O que faz:** Guia de configuração e ativação das opções de servidor MCP do MongoDB para agentes de IA.
+- **💡 No que usar:** Conectar o Antigravity, Claude Code ou Cursor ao seu cluster MongoDB com permissões seguras de leitura e schema.
+- **💬 Prompts Prontos:**
+  - `"Configure o servidor MCP do MongoDB no meu arquivo de configuração de agentes para consultar coleções de forma segura."`
+  - `"Quais parâmetros de ambiente devo definir para rodar o MongoDB MCP server em modo somente-leitura?"`
+
+#### 🔹 [`mongodb-natural-language-querying`](backend-database/mongodb-natural-language-querying/SKILL.md)
+- **🎯 O que faz:** Geração de consultas (find) e pipelines de agregação complexas do MongoDB a partir de perguntas em linguagem natural.
+- **💡 No que usar:** Escrever queries de agregação difíceis ($lookup, $facet, $unwind, $group) sem errar a sintaxe dos estágios.
+- **💬 Prompts Prontos:**
+  - `"Gere uma aggregation pipeline no MongoDB para calcular o faturamento médio por cliente nos últimos 90 dias usando a coleção 'orders'."`
+  - `"Escreva a query find() no MongoDB para buscar todos os usuários ativos que compraram o produto X mas não compraram o Y."`
+
+#### 🔹 [`mongodb-query-optimizer`](backend-database/mongodb-query-optimizer/SKILL.md)
+- **🎯 O que faz:** Otimização de performance de consultas MongoDB: análise de explain plans, identificação de colscans e criação de índices compostos ideais.
+- **💡 No que usar:** Consultas lentas que estão consumindo 100% de CPU no banco de dados ou varrendo milhões de documentos (COLLSCAN).
+- **💬 Prompts Prontos:**
+  - `"Analise a saída deste explain('executionStats') e me diga qual índice composto devo criar para eliminar o COLLSCAN."`
+  - `"Otimize esta query com ordenação por data que está demorando mais de 3 segundos para responder."`
+
+#### 🔹 [`mongodb-schema-design`](backend-database/mongodb-schema-design/SKILL.md)
+- **🎯 O que faz:** Padrões (Bucket, Subset, Outlier, Extended Reference) e antipadrões de modelagem de dados e schemas em documentos MongoDB.
+- **💡 No que usar:** Modelar novas entidades, decidir entre embutir (embed) ou referenciar documentos, ou migrar schemas relacionais (SQL) para NoSQL.
+- **💬 Prompts Prontos:**
+  - `"Qual padrão de modelagem devo usar para armazenar o histórico de mensagens de chat de milhões de usuários no MongoDB?"`
+  - `"Analise este modelo relacional e mostre como convertê-lo em um schema de documentos com bom desempenho de leitura."`
+
+#### 🔹 [`mongodb-search-and-ai`](backend-database/mongodb-search-and-ai/SKILL.md)
+- **🎯 O que faz:** Implementação e otimização de Atlas Search (busca textual Lucene), Vector Search semântico e Hybrid Search para IA e RAG.
+- **💡 No que usar:** Criar sistemas de busca inteligente por similaridade vetorial (embeddings), busca de produtos com autocomplete ou pipelines de RAG.
+- **💬 Prompts Prontos:**
+  - `"Configure um índice de Vector Search no MongoDB Atlas para armazenar embeddings da OpenAI e fazer busca por similaridade semântica."`
+  - `"Crie uma pipeline de Hybrid Search combinando busca textual por palavras-chave com busca vetorial de documentos."`
 
 #### 🔹 [`neon-postgres`](backend-database/neon-postgres/SKILL.md)
 - **🎯 O que faz:** Especialista em Neon Serverless Postgres: branching de banco instantâneo, autoscaling, scale-to-zero e connection pooling.
@@ -1199,10 +1442,10 @@ flowchart LR
 Para que o Antigravity reconheça automaticamente as skills globalmente:
 ```bash
 # Copiar uma categoria inteira
-cp -r design/* ~/.gemini/config/skills/
+cp -r career/* ~/.gemini/config/skills/
 
 # Ou copiar uma skill específica
-cp -r design/design-taste-frontend ~/.gemini/config/skills/
+cp -r career/resume-tailor ~/.gemini/config/skills/
 ```
 
 ### No Claude Code:
@@ -1219,9 +1462,9 @@ cp -r <categoria>/<skill-desejada> .claude/skills/
 ### No Cursor / Windsurf / Copilot:
 Adicione uma referência no arquivo `.cursorrules` ou prompt de sistema:
 ```markdown
-Sempre que o usuário solicitar tarefas de design, consulte e siga rigorosamente as diretrizes contidas em:
-- ./design/design-taste-frontend/SKILL.md
-- ./design/emil-design-eng/SKILL.md
+Sempre que o usuário solicitar tarefas de currículo ou carreira, consulte e siga rigorosamente:
+- ./career/resume-tailor/SKILL.md
+- ./career/resume-ats-optimizer/SKILL.md
 ```
 
 ---

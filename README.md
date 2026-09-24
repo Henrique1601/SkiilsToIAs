@@ -1,14 +1,14 @@
 # 🧠 Skills to IAs (`SkiilsToIAs`)
 
-Repositório centralizado e categorizado contendo **128 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
+Repositório centralizado e categorizado contendo **158 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
 
 > [!TIP]
 > ### 🧠 Quer saber como usar, quando usar e quais prompts fazer?
 > Consulte o [**Cérebro das Skills (`CEREBRO.md`)**](CEREBRO.md) — o manual mestre completo com:
 > - **Como a IA pensa e ativa as skills** (Anatomia, gatilhos e fórmula do prompt perfeito).
-> - **Power Combos**: Workflows multi-skill encadeados (Landing pages, Fullstack, Cloud, MCP, etc.).
+> - **Power Combos**: Workflows multi-skill encadeados (Landing pages, Fullstack, Carreira, Cloud, MCP, etc.).
 > - **Cheat Sheet**: Tabela rápida de decisão ("O que você quer fazer hoje?").
-> - **Prompts Prontos**: Exemplos práticos para copiar e colar para cada uma das 128 skills!
+> - **Prompts Prontos**: Exemplos práticos para copiar e colar para cada uma das 158 skills!
 
 ---
 
@@ -18,16 +18,17 @@ Repositório centralizado e categorizado contendo **128 skills especializadas** 
 |---|---|:---:|---|
 | [🎨 Design & UI/UX](#design) | [`design/`](design/) | **34** | Skills especializadas em interface de usuário, design systems, estética anti-slop, micro-interações, tipografia, animações e tokens visuais. |
 | [🔍 SEO & Mecanismos de Busca](#seo) | [`seo/`](seo/) | **3** | Skills dedicadas a auditoria técnica de SEO, otimização de Core Web Vitals, indexação e inteligência competitiva. |
-| [📣 Marketing & Vendas](#marketing) | [`marketing/`](marketing/) | **6** | Skills para comunicação de marca, criação de campanhas visuais, réguas de e-mail marketing, relatórios de performance e pesquisa de contas. |
+| [📣 Marketing & Vendas](#marketing) | [`marketing/`](marketing/) | **7** | Skills para comunicação de marca, criação de campanhas visuais, réguas de e-mail marketing, LinkedIn marketing e relatórios de performance. |
+| [🎯 Carreira & Empregabilidade](#career) | [`career/`](career/) | **22** | Skills para elaboração de currículos de alto impacto (compatíveis com ATS), cartas de apresentação, preparação para entrevistas, otimização de LinkedIn e negociação salarial. |
 | [💻 Desenvolvimento & Testes](#development) | [`development/`](development/) | **17** | Engenharia de software, automação com Playwright, frameworks modernos (React, Next.js, Swift), depuração estruturada e TDD. |
 | [☁️ Cloud & DevOps](#devops-cloud) | [`devops-cloud/`](devops-cloud/) | **9** | Infraestrutura como código, nuvem Microsoft Azure, migração de cargas de trabalho, checklists pré-deploy e autenticação Entra ID. |
-| [🗄️ Backend & Banco de Dados](#backend-database) | [`backend-database/`](backend-database/) | **4** | Bancos de dados serverless (Neon Postgres, Supabase) e padrões de arquitetura de software (ADRs e análise de acoplamento). |
+| [🗄️ Backend & Bancos de Dados](#backend-database) | [`backend-database/`](backend-database/) | **11** | Bancos serverless e NoSQL (MongoDB, Neon Postgres, Supabase), arquitetura de software, streaming e otimização de queries. |
 | [🤖 Agentes de IA & Metaprogramação](#ai-agents) | [`ai-agents/`](ai-agents/) | **22** | Criação e engenharia de subagentes autônomos, servidores MCP (Model Context Protocol), plugins para Claude Code, hooks de ciclo de vida e novas skills. |
 | [📄 Documentos & Produtividade](#documents-productivity) | [`documents-productivity/`](documents-productivity/) | **14** | Manipulação automatizada de documentos de escritório (Word, Excel, PowerPoint, PDF), vault do Obsidian e especificações técnicas. |
 | [📊 Gestão & Negócios](#business-management) | [`business-management/`](business-management/) | **14** | Análise de métricas e KPIs, governança, conformidade SOX, planejamento de capacidade de equipe, calibração de RH e briefings diários. |
 | [🛠️ Utilitários & Otimização](#utilities) | [`utilities/`](utilities/) | **5** | Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, playbooks interativos e helpers. |
 
-> **Total de Skills catalogadas:** 128 skills
+> **Total de Skills catalogadas:** 158 skills em 11 categorias
 
 ---
 
@@ -118,11 +119,11 @@ Skills dedicadas a auditoria técnica de SEO, otimização de Core Web Vitals, i
 ---
 
 <a id="marketing"></a>
-### 📣 Marketing & Vendas (6 skills)
+### 📣 Marketing & Vendas (7 skills)
 
 **Caminho no repositório:** [`marketing/`](marketing/)
 
-Skills para comunicação de marca, criação de campanhas visuais, réguas de e-mail marketing, relatórios de performance e pesquisa de contas.
+Skills para comunicação de marca, criação de campanhas visuais, réguas de e-mail marketing, LinkedIn marketing e relatórios de performance.
 
 | Skill | Descrição | Link |
 |---|---|:---:|
@@ -131,7 +132,42 @@ Skills para comunicação de marca, criação de campanhas visuais, réguas de e
 | **`brand-voice-enforcement`** | >   This skill applies brand guidelines to content creation. | [`SKILL.md`](marketing/brand-voice-enforcement/SKILL.md) |
 | **`canva-creator`** | >   Takes an approved content brief and executes a campaign end-to-end: builds   the posting calendar, generates Canva designs for social posts, drafts   cap... | [`SKILL.md`](marketing/canva-creator/SKILL.md) |
 | **`email-sequence`** | Design and draft multi-email sequences with full copy, timing, branching logic, exit conditions, and performance benchmarks. | [`SKILL.md`](marketing/email-sequence/SKILL.md) |
+| **`linkedin-marketing`** | Plan, draft, audit, and publish LinkedIn posts and comments. | [`SKILL.md`](marketing/linkedin-marketing/SKILL.md) |
 | **`performance-report`** | Build a marketing performance report with key metrics, trend analysis, wins and misses, and prioritized optimization recommendations. | [`SKILL.md`](marketing/performance-report/SKILL.md) |
+
+---
+
+<a id="career"></a>
+### 🎯 Carreira & Empregabilidade (22 skills)
+
+**Caminho no repositório:** [`career/`](career/)
+
+Skills para elaboração de currículos de alto impacto (compatíveis com ATS), cartas de apresentação, preparação para entrevistas, otimização de LinkedIn e negociação salarial.
+
+| Skill | Descrição | Link |
+|---|---|:---:|
+| **`academic-cv-builder`** | Format CVs for academic positions with publications, grants, and teaching | [`SKILL.md`](career/academic-cv-builder/SKILL.md) |
+| **`application-form-filler`** | Fill out job application form fields with context-aware, tailored answers drawn from the candidate's CV and the job description | [`SKILL.md`](career/application-form-filler/SKILL.md) |
+| **`career-changer-translator`** | Translate skills from one industry to another, identify transferable skills | [`SKILL.md`](career/career-changer-translator/SKILL.md) |
+| **`cold-email-writer`** | Write personalized cold outreach emails to hiring managers and founders — specific, human, not a pitch deck | [`SKILL.md`](career/cold-email-writer/SKILL.md) |
+| **`cover-letter-generator`** | Create personalized, compelling cover letters from resume and job description | [`SKILL.md`](career/cover-letter-generator/SKILL.md) |
+| **`creative-portfolio-resume`** | Balance visual design with ATS compatibility for creative roles | [`SKILL.md`](career/creative-portfolio-resume/SKILL.md) |
+| **`executive-resume-writer`** | Create C-suite and VP level resumes emphasizing strategic leadership | [`SKILL.md`](career/executive-resume-writer/SKILL.md) |
+| **`interview-prep-generator`** | Generate STAR stories, practice questions, and talking points from resume | [`SKILL.md`](career/interview-prep-generator/SKILL.md) |
+| **`job-description-analyzer`** | Analyze job postings, calculate match scores, identify gaps, and create application strategy | [`SKILL.md`](career/job-description-analyzer/SKILL.md) |
+| **`linkedin-profile-optimizer`** | Optimize LinkedIn profile for searchability, recruiter visibility, and engagement | [`SKILL.md`](career/linkedin-profile-optimizer/SKILL.md) |
+| **`offer-comparison-analyzer`** | Compare multiple job offers side-by-side with total compensation analysis | [`SKILL.md`](career/offer-comparison-analyzer/SKILL.md) |
+| **`portfolio-case-study-writer`** | Transform resume bullets into detailed portfolio case studies | [`SKILL.md`](career/portfolio-case-study-writer/SKILL.md) |
+| **`reference-list-builder`** | Format professional references properly and prepare reference materials | [`SKILL.md`](career/reference-list-builder/SKILL.md) |
+| **`resume-ats-optimizer`** | Optimize resumes for Applicant Tracking Systems, check ATS compatibility, and analyze keyword match | [`SKILL.md`](career/resume-ats-optimizer/SKILL.md) |
+| **`resume-bullet-writer`** | Transform weak resume bullets into achievement-focused statements with metrics and impact | [`SKILL.md`](career/resume-bullet-writer/SKILL.md) |
+| **`resume-formatter`** | Ensure ATS-friendly formatting and create clean scannable layouts | [`SKILL.md`](career/resume-formatter/SKILL.md) |
+| **`resume-quantifier`** | Find opportunities to add metrics and estimate numbers when exact data unavailable | [`SKILL.md`](career/resume-quantifier/SKILL.md) |
+| **`resume-section-builder`** | Create targeted resume sections optimized for different experience levels and roles | [`SKILL.md`](career/resume-section-builder/SKILL.md) |
+| **`resume-tailor`** | Customize resume for specific job postings while maintaining truthfulness | [`SKILL.md`](career/resume-tailor/SKILL.md) |
+| **`resume-version-manager`** | Track different resume versions, maintain master resume, manage tailored versions | [`SKILL.md`](career/resume-version-manager/SKILL.md) |
+| **`salary-negotiation-prep`** | Research market rates, build negotiation strategy, and create counter-offer scripts | [`SKILL.md`](career/salary-negotiation-prep/SKILL.md) |
+| **`tech-resume-optimizer`** | Optimize resumes for software engineering, PM, and technical roles | [`SKILL.md`](career/tech-resume-optimizer/SKILL.md) |
 
 ---
 
@@ -186,16 +222,23 @@ Infraestrutura como código, nuvem Microsoft Azure, migração de cargas de trab
 ---
 
 <a id="backend-database"></a>
-### 🗄️ Backend & Banco de Dados (4 skills)
+### 🗄️ Backend & Bancos de Dados (11 skills)
 
 **Caminho no repositório:** [`backend-database/`](backend-database/)
 
-Bancos de dados serverless (Neon Postgres, Supabase) e padrões de arquitetura de software (ADRs e análise de acoplamento).
+Bancos serverless e NoSQL (MongoDB, Neon Postgres, Supabase), arquitetura de software, streaming e otimização de queries.
 
 | Skill | Descrição | Link |
 |---|---|:---:|
 | **`architecture`** | Create or evaluate an architecture decision record (ADR). Use when choosing between technologies (e.g., Kafka vs SQS), documenting a design decision with tra... | [`SKILL.md`](backend-database/architecture/SKILL.md) |
 | **`improve-codebase-architecture`** | Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick. | [`SKILL.md`](backend-database/improve-codebase-architecture/SKILL.md) |
+| **`mongodb-atlas-stream-processing`** | Manages MongoDB Atlas Stream Processing (ASP) workflows. Handles workspace provisioning, data source/sink connections, processor lifecycle operations, debugg... | [`SKILL.md`](backend-database/mongodb-atlas-stream-processing/SKILL.md) |
+| **`mongodb-connection`** | Optimize MongoDB client connection configuration (pools, timeouts, patterns) for any supported driver language. | [`SKILL.md`](backend-database/mongodb-connection/SKILL.md) |
+| **`mongodb-mcp-setup`** | Guide users through configuring key MongoDB MCP server options. | [`SKILL.md`](backend-database/mongodb-mcp-setup/SKILL.md) |
+| **`mongodb-natural-language-querying`** | Generate read-only MongoDB queries (find) or aggregation pipelines using natural language, with collection schema context and sample documents. | [`SKILL.md`](backend-database/mongodb-natural-language-querying/SKILL.md) |
+| **`mongodb-query-optimizer`** | >-   Help with MongoDB query optimization and indexing. Use only when the user asks for optimization or performance: "How do I optimize this query?", "How do... | [`SKILL.md`](backend-database/mongodb-query-optimizer/SKILL.md) |
+| **`mongodb-schema-design`** | MongoDB schema design patterns and anti-patterns. Use when designing data models, reviewing schemas, migrating from SQL, or troubleshooting performance issue... | [`SKILL.md`](backend-database/mongodb-schema-design/SKILL.md) |
+| **`mongodb-search-and-ai`** | \|   Guides MongoDB users through implementing and optimizing Atlas Search (full-text), Vector Search (semantic), and Hybrid Search solutions. | [`SKILL.md`](backend-database/mongodb-search-and-ai/SKILL.md) |
 | **`neon-postgres`** | >-   Guides and best practices for working with Neon Serverless Postgres. | [`SKILL.md`](backend-database/neon-postgres/SKILL.md) |
 | **`supabase`** | Use when doing ANY task involving Supabase. Triggers: Supabase products (Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues); client li... | [`SKILL.md`](backend-database/supabase/SKILL.md) |
 
