@@ -1,7 +1,7 @@
 # 🧠 O Cérebro das Skills (`CEREBRO.md`)
 ### Manual Mestre de Ativação, Casos de Uso, Engenharia de Prompt e Workflows Multi-Skill
 
-> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **158 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
+> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **484 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
 
 ---
 
@@ -20,18 +20,18 @@
    - [Combo 6: Apresentação Executiva para Diretoria](#combo-6-apresentação-executiva-para-diretoria)
    - [Combo 7: Conquista de Emprego & Recolocação Profissional](#combo-7-conquista-de-emprego--recolocação-profissional)
 3. [🎯 Cheat Sheet: O que você quer fazer hoje?](#-3-cheat-sheet-o-que-você-quer-fazer-hoje)
-4. [📚 Guia Completo das 158 Skills por Categoria](#-4-guia-completo-das-158-skills-por-categoria)
-   - [🎨 Design & UI/UX (34 skills)](#-design--uiux)
-   - [🔍 SEO & Mecanismos de Busca (3 skills)](#-seo--mecanismos-de-busca)
-   - [📣 Marketing & Vendas (7 skills)](#-marketing--vendas)
+4. [📚 Guia Completo das 484 Skills por Categoria](#-4-guia-completo-das-158-skills-por-categoria)
+   - [🎨 Design & UI/UX (58 skills)](#-design--uiux)
+   - [🔍 SEO & Mecanismos de Busca (8 skills)](#-seo--mecanismos-de-busca)
+   - [📣 Marketing & Vendas (16 skills)](#-marketing--vendas)
    - [🎯 Carreira & Empregabilidade (22 skills)](#-carreira--empregabilidade)
-   - [💻 Desenvolvimento & Testes (17 skills)](#-desenvolvimento--testes)
-   - [☁️ Cloud & DevOps (9 skills)](#-cloud--devops)
-   - [🗄️ Backend & Bancos de Dados (11 skills)](#-backend--bancos-de-dados)
-   - [🤖 Agentes de IA & Metaprogramação (22 skills)](#-agentes-de-ia--metaprogramação)
-   - [📄 Documentos & Produtividade (14 skills)](#-documentos--produtividade)
-   - [📊 Gestão & Negócios (14 skills)](#-gestão--negócios)
-   - [🛠️ Utilitários & Otimização (5 skills)](#-utilitários--otimização)
+   - [💻 Desenvolvimento & Testes (88 skills)](#-desenvolvimento--testes)
+   - [☁️ Cloud & DevOps (39 skills)](#-cloud--devops)
+   - [🗄️ Backend & Bancos de Dados (61 skills)](#-backend--bancos-de-dados)
+   - [🤖 Agentes de IA & Metaprogramação (94 skills)](#-agentes-de-ia--metaprogramação)
+   - [📄 Documentos & Produtividade (26 skills)](#-documentos--produtividade)
+   - [📊 Gestão & Negócios (43 skills)](#-gestão--negócios)
+   - [🛠️ Utilitários & Otimização (29 skills)](#-utilitários--otimização)
 5. [⚙️ Como Instalar e Sincronizar as Skills](#-5-como-instalar-e-sincronizar-as-skills)
 
 ---
@@ -229,10 +229,10 @@ flowchart LR
 
 ---
 
-## 📚 4. Guia Completo das 158 Skills por Categoria
+## 📚 4. Guia Completo das 484 Skills por Categoria
 
 
-### 🎨 Design & UI/UX (34 skills)
+### 🎨 Design & UI/UX (58 skills)
 
 > **Foco:** Criação de interfaces premium, animações fluidas, design systems e estética anti-genérica.
 
@@ -479,7 +479,7 @@ flowchart LR
 ---
 
 
-### 🔍 SEO & Mecanismos de Busca (3 skills)
+### 🔍 SEO & Mecanismos de Busca (8 skills)
 
 > **Foco:** Auditorias técnicas de indexação, Core Web Vitals, inteligência competitiva e ranqueamento no Google.
 
@@ -509,7 +509,7 @@ flowchart LR
 ---
 
 
-### 📣 Marketing & Vendas (7 skills)
+### 📣 Marketing & Vendas (16 skills)
 
 > **Foco:** Automação de campanhas, redação no tom de voz da marca, réguas de e-mail e prospecção comercial.
 
@@ -730,7 +730,7 @@ flowchart LR
 ---
 
 
-### 💻 Desenvolvimento & Testes (17 skills)
+### 💻 Desenvolvimento & Testes (88 skills)
 
 > **Foco:** Engenharia de software moderna, automação de navegadores com Playwright, TDD, frameworks modernos e Swift.
 
@@ -858,7 +858,7 @@ flowchart LR
 ---
 
 
-### ☁️ Cloud & DevOps (9 skills)
+### ☁️ Cloud & DevOps (39 skills)
 
 > **Foco:** Infraestrutura como código (IaC), deploy automatizado no Microsoft Azure, segurança Entra ID e checklists.
 
@@ -930,7 +930,7 @@ flowchart LR
 ---
 
 
-### 🗄️ Backend & Bancos de Dados (11 skills)
+### 🗄️ Backend & Bancos de Dados (61 skills)
 
 > **Foco:** Bancos de dados serverless modernos, Supabase, Neon Postgres e decisões de arquitetura de software.
 
@@ -1016,7 +1016,7 @@ flowchart LR
 ---
 
 
-### 🤖 Agentes de IA & Metaprogramação (22 skills)
+### 🤖 Agentes de IA & Metaprogramação (94 skills)
 
 > **Foco:** Criação de novos subagentes, servidores Model Context Protocol (MCP), plugins, hooks e engenharia de skills.
 
@@ -1179,7 +1179,7 @@ flowchart LR
 ---
 
 
-### 📄 Documentos & Produtividade (14 skills)
+### 📄 Documentos & Produtividade (26 skills)
 
 > **Foco:** Geração e edição automatizada de documentos Word, planilhas Excel, slides PowerPoint, PDFs e Obsidian.
 
@@ -1286,7 +1286,7 @@ flowchart LR
 ---
 
 
-### 📊 Gestão & Negócios (14 skills)
+### 📊 Gestão & Negócios (43 skills)
 
 > **Foco:** Análise de métricas e dados, conformidade SOX 404, auditoria, calibração de RH, briefings e triagem de demandas.
 
@@ -1393,7 +1393,7 @@ flowchart LR
 ---
 
 
-### 🛠️ Utilitários & Otimização (5 skills)
+### 🛠️ Utilitários & Otimização (29 skills)
 
 > **Foco:** Modos ultra-concisos para economia de até 65% de tokens de contexto e playgrounds visuais.
 

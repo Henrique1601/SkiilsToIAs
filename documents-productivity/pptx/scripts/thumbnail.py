@@ -16,7 +16,6 @@ Examples:
 """
 
 import argparse
-import posixpath
 import subprocess
 import sys
 import tempfile
@@ -24,11 +23,8 @@ import zipfile
 from pathlib import Path
 
 import defusedxml.minidom
-from defusedxml import ElementTree
-from office.helpers import SLIDE_REL_TYPE, opc_target
-from office.soffice import run_soffice
+from office.soffice import get_soffice_env
 from PIL import Image, ImageDraw, ImageFont
-
 
 THUMBNAIL_WIDTH = 300
 CONVERSION_DPI = 100
@@ -96,45 +92,28 @@ def main():
         sys.exit(1)
 
 
-def _is_hidden(zf: zipfile.ZipFile, part: str) -> bool:
-    try:
-        with zf.open(part) as f:
-            for _, root in ElementTree.iterparse(f, events=("start",)):
-                return root.get("show") in ("0", "false")  
-    except (KeyError, ElementTree.ParseError):
-        return False
-    return False
-
-
 def get_slide_info(pptx_path: Path) -> list[dict]:
     with zipfile.ZipFile(pptx_path, "r") as zf:
         rels_content = zf.read("ppt/_rels/presentation.xml.rels").decode("utf-8")
         rels_dom = defusedxml.minidom.parseString(rels_content)
 
-        rid_to_part = {}
+        rid_to_slide = {}
         for rel in rels_dom.getElementsByTagName("Relationship"):
-            if rel.getAttribute("Type") != SLIDE_REL_TYPE:
-                continue
-            part = opc_target(
-                rel.getAttribute("Target"),
-                "ppt/presentation.xml",
-                rel.getAttribute("TargetMode"),
-            )
-            if part is not None:
-                rid_to_part[rel.getAttribute("Id")] = part
+            rid = rel.getAttribute("Id")
+            target = rel.getAttribute("Target")
+            rel_type = rel.getAttribute("Type")
+            if "slide" in rel_type and target.startswith("slides/"):
+                rid_to_slide[rid] = target.replace("slides/", "")
 
         pres_content = zf.read("ppt/presentation.xml").decode("utf-8")
         pres_dom = defusedxml.minidom.parseString(pres_content)
 
-        present = set(zf.namelist())
-
         slides = []
         for sld_id in pres_dom.getElementsByTagName("p:sldId"):
-            part = rid_to_part.get(sld_id.getAttribute("r:id"))
-            if part is not None and part in present:
-                slides.append(
-                    {"name": posixpath.basename(part), "hidden": _is_hidden(zf, part)}
-                )
+            rid = sld_id.getAttribute("r:id")
+            if rid in rid_to_slide:
+                hidden = sld_id.getAttribute("show") == "0"
+                slides.append({"name": rid_to_slide[rid], "hidden": hidden})
 
         return slides
 
@@ -144,15 +123,6 @@ def build_slide_list(
     visible_images: list[Path],
     temp_dir: Path,
 ) -> list[tuple[Path, str]]:
-    visible_count = sum(1 for info in slide_info if not info["hidden"])
-    rendered_hidden = len(visible_images) == len(slide_info) != visible_count
-
-    if not rendered_hidden and visible_count != len(visible_images):
-        raise ValueError(
-            f"LibreOffice rendered {len(visible_images)} page(s) for {visible_count} "
-            f"visible slide(s) of {len(slide_info)}; thumbnails would be mislabeled"
-        )
-
     if visible_images:
         with Image.open(visible_images[0]) as img:
             placeholder_size = img.size
@@ -163,15 +133,15 @@ def build_slide_list(
     visible_idx = 0
 
     for info in slide_info:
-        if info["hidden"] and not rendered_hidden:
+        if info["hidden"]:
             placeholder_path = temp_dir / f"hidden-{info['name']}.jpg"
             placeholder_img = create_hidden_placeholder(placeholder_size)
             placeholder_img.save(placeholder_path, "JPEG")
             slides.append((placeholder_path, f"{info['name']} (hidden)"))
         else:
-            label = f"{info['name']} (hidden)" if info["hidden"] else info["name"]
-            slides.append((visible_images[visible_idx], label))
-            visible_idx += 1
+            if visible_idx < len(visible_images):
+                slides.append((visible_images[visible_idx], info["name"]))
+                visible_idx += 1
 
     return slides
 
@@ -188,14 +158,22 @@ def create_hidden_placeholder(size: tuple[int, int]) -> Image.Image:
 def convert_to_images(pptx_path: Path, temp_dir: Path) -> list[Path]:
     pdf_path = temp_dir / f"{pptx_path.stem}.pdf"
 
-    result = run_soffice(
-        ["--headless", "--convert-to", "pdf", "--outdir", str(temp_dir), str(pptx_path)],
+    result = subprocess.run(
+        [
+            "soffice",
+            "--headless",
+            "--convert-to",
+            "pdf",
+            "--outdir",
+            str(temp_dir),
+            str(pptx_path),
+        ],
         capture_output=True,
         text=True,
+        env=get_soffice_env(),
     )
     if result.returncode != 0 or not pdf_path.exists():
-        detail = (result.stderr or result.stdout or "").strip()
-        raise RuntimeError(f"PDF conversion failed: {detail}" if detail else "PDF conversion failed")
+        raise RuntimeError("PDF conversion failed")
 
     result = subprocess.run(
         [

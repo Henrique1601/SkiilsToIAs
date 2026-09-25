@@ -6,12 +6,9 @@ import random
 import re
 import tempfile
 import zipfile
-from pathlib import Path
 
 import defusedxml.minidom
 import lxml.etree
-
-from helpers import safe_extract
 
 from .base import BaseSchemaValidator
 
@@ -189,7 +186,7 @@ class DOCXSchemaValidator(BaseSchemaValidator):
         try:
             with tempfile.TemporaryDirectory() as temp_dir:
                 with zipfile.ZipFile(original, "r") as zip_ref:
-                    safe_extract(zip_ref, Path(temp_dir))
+                    zip_ref.extractall(temp_dir)
 
                 doc_xml_path = temp_dir + "/word/document.xml"
                 root = lxml.etree.parse(doc_xml_path).getroot()
@@ -244,12 +241,9 @@ class DOCXSchemaValidator(BaseSchemaValidator):
             return True
 
     def compare_paragraph_counts(self):
-        new_count = self.count_paragraphs_in_unpacked()
-        if self.original_file is None:
-            print(f"\nParagraphs: {new_count}")
-            return
-
         original_count = self.count_paragraphs_in_original()
+        new_count = self.count_paragraphs_in_unpacked()
+
         diff = new_count - original_count
         diff_str = f"+{diff}" if diff > 0 else str(diff)
         print(f"\nParagraphs: {original_count} → {new_count} ({diff_str})")
@@ -266,15 +260,9 @@ class DOCXSchemaValidator(BaseSchemaValidator):
             try:
                 for elem in lxml.etree.parse(str(xml_file)).iter():
                     if val := elem.get(para_id_attr):
-                        try:
-                            if self._parse_id_value(val, base=16) >= 0x80000000:
-                                errors.append(
-                                    f"  {xml_file.name}:{elem.sourceline}: paraId={val} >= 0x80000000"
-                                )
-                        except ValueError:
+                        if self._parse_id_value(val, base=16) >= 0x80000000:
                             errors.append(
-                                f"  {xml_file.name}:{elem.sourceline}: "
-                                f"paraId={val} is not valid hex"
+                                f"  {xml_file.name}:{elem.sourceline}: paraId={val} >= 0x80000000"
                             )
 
                     if val := elem.get(durable_id_attr):
@@ -291,19 +279,13 @@ class DOCXSchemaValidator(BaseSchemaValidator):
                                     f"durableId={val} must be decimal in numbering.xml"
                                 )
                         else:
-                            try:
-                                if self._parse_id_value(val, base=16) >= 0x7FFFFFFF:
-                                    errors.append(
-                                        f"  {xml_file.name}:{elem.sourceline}: "
-                                        f"durableId={val} >= 0x7FFFFFFF"
-                                    )
-                            except ValueError:
+                            if self._parse_id_value(val, base=16) >= 0x7FFFFFFF:
                                 errors.append(
                                     f"  {xml_file.name}:{elem.sourceline}: "
-                                    f"durableId={val} is not valid hex"
+                                    f"durableId={val} >= 0x7FFFFFFF"
                                 )
-            except lxml.etree.XMLSyntaxError:
-                continue  
+            except Exception:
+                pass
 
         if errors:
             print(f"FAILED - {len(errors)} ID constraint violations:")
@@ -407,54 +389,52 @@ class DOCXSchemaValidator(BaseSchemaValidator):
         return repairs
 
     def repair_durableId(self) -> int:
-        DURABLE_ID_ATTRS = ("w16cid:durableId", "w16cex:durableId")
         repairs = 0
-        renames: dict = {}  
 
         for xml_file in self.xml_files:
             try:
                 content = xml_file.read_text(encoding="utf-8")
                 dom = defusedxml.minidom.parseString(content)
-                is_numbering = xml_file.name == "numbering.xml"
-                base = 10 if is_numbering else 16
-                pending = []  
-                seen_in_file = set()
                 modified = False
 
                 for elem in dom.getElementsByTagName("*"):
-                    for attr_name in DURABLE_ID_ATTRS:
-                        if not elem.hasAttribute(attr_name):
-                            continue
+                    if not elem.hasAttribute("w16cid:durableId"):
+                        continue
 
-                        durable_id = elem.getAttribute(attr_name)
+                    durable_id = elem.getAttribute("w16cid:durableId")
+                    needs_repair = False
+
+                    if xml_file.name == "numbering.xml":
                         try:
-                            key = self._parse_id_value(durable_id, base=base)
-                            needs_repair = key >= 0x7FFFFFFF
+                            needs_repair = (
+                                self._parse_id_value(durable_id, base=10) >= 0x7FFFFFFF
+                            )
                         except ValueError:
-                            key = durable_id
+                            needs_repair = True
+                    else:
+                        try:
+                            needs_repair = (
+                                self._parse_id_value(durable_id, base=16) >= 0x7FFFFFFF
+                            )
+                        except ValueError:
                             needs_repair = True
 
-                        if needs_repair:
-                            if key in seen_in_file:
-                                value = random.randint(1, 0x7FFFFFFE)
-                            else:
-                                seen_in_file.add(key)
-                                if key not in renames:
-                                    renames[key] = random.randint(1, 0x7FFFFFFE)
-                                value = renames[key]
-                            new_id = str(value) if is_numbering else f"{value:08X}"
+                    if needs_repair:
+                        value = random.randint(1, 0x7FFFFFFE)
+                        if xml_file.name == "numbering.xml":
+                            new_id = str(value)  
+                        else:
+                            new_id = f"{value:08X}"  
 
-                            elem.setAttribute(attr_name, new_id)
-                            pending.append(
-                                f"  Repaired: {xml_file.name}: durableId {durable_id} → {new_id}"
-                            )
-                            modified = True
+                        elem.setAttribute("w16cid:durableId", new_id)
+                        print(
+                            f"  Repaired: {xml_file.name}: durableId {durable_id} → {new_id}"
+                        )
+                        repairs += 1
+                        modified = True
 
                 if modified:
                     xml_file.write_bytes(dom.toxml(encoding="UTF-8"))
-                    for message in pending:
-                        print(message)
-                    repairs += len(pending)
 
             except Exception:
                 pass
