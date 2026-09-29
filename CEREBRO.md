@@ -1,7 +1,7 @@
 # 🧠 O Cérebro das Skills (`CEREBRO.md`)
-### Manual Mestre de Ativação, Casos de Uso, Engenharia de Prompt e Catálogo de 509 Skills
+### Manual Mestre de Ativação, Casos de Uso, Engenharia de Prompt e Catálogo de 510 Skills
 
-> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **509 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
+> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **510 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
 
 ---
 
@@ -26,7 +26,7 @@
    - [Combo 5: Redesign & Polimento Obsessivo de UI](#combo-5-redesign--polimento-obsessivo-de-ui)
    - [Combo 6: Apresentação Executiva para Diretoria](#combo-6-apresentação-executiva-para-diretoria)
 3. [🎯 Cheat Sheet: O que você quer fazer hoje?](#-3-cheat-sheet-o-que-você-quer-fazer-hoje)
-4. [📚 Catálogo Completo das 509 Skills por Categoria](#-4-catálogo-completo-das-skills-por-categoria)
+4. [📚 Catálogo Completo das 510 Skills por Categoria](#-4-catálogo-completo-das-skills-por-categoria)
 
    - [🎨 Design & UI/UX (65 skills)](#design)
    - [🔍 SEO & Mecanismos de Busca (8 skills)](#seo)
@@ -38,7 +38,7 @@
    - [🤖 Agentes de IA & Metaprogramação (94 skills)](#ai-agents)
    - [📄 Documentos & Produtividade (26 skills)](#documents-productivity)
    - [📊 Gestão & Negócios (43 skills)](#business-management)
-   - [🛠️ Utilitários & Otimização (30 skills)](#utilities)
+   - [🛠️ Utilitários & Otimização (31 skills)](#utilities)
 5. [⚙️ Como Instalar e Sincronizar as Skills](#-5-como-instalar-e-sincronizar-as-skills)
 
 ---
@@ -744,7 +744,7 @@ flowchart LR
 | **`unified-notifications-ops`** | Operate notifications as one ECC-native workflow across GitHub, Linear, desktop alerts, hooks, and connected communication surfaces. | Necessidade específica envolvendo unified-notifications-ops. | *"Aplique as diretrizes da skill `unified-notifications-ops` nesta implementação."* | [`SKILL.md`](business-management/unified-notifications-ops/SKILL.md) |
 
 <a id="utilities"></a>
-### 🛠️ Utilitários & Otimização (30 skills)
+### 🛠️ Utilitários & Otimização (31 skills)
 > *Modos ultra-concisos para economia de até 65% de tokens de contexto e playgrounds visuais.*
 
 | Skill | O que faz | Quando usar | Exemplo de Prompt | Link |
@@ -760,6 +760,7 @@ flowchart LR
 | **`exa-search`** | Neural search via Exa MCP for web, code, and company research. | Necessidade específica envolvendo exa-search. | *"Aplique as diretrizes da skill `exa-search` nesta implementação."* | [`SKILL.md`](utilities/exa-search/SKILL.md) |
 | **`fal-ai-media`** | Unified media generation via fal.ai MCP — image, video, and audio. | Necessidade específica envolvendo fal-ai-media. | *"Aplique as diretrizes da skill `fal-ai-media` nesta implementação."* | [`SKILL.md`](utilities/fal-ai-media/SKILL.md) |
 | **`firecrawl`** | \| | Necessidade específica envolvendo firecrawl. | *"Aplique as diretrizes da skill `firecrawl` nesta implementação."* | [`SKILL.md`](utilities/firecrawl/SKILL.md) |
+| **`google-maps-scraper`** | > | Necessidade específica envolvendo google-maps-scraper. | *"Aplique as diretrizes da skill `google-maps-scraper` nesta implementação."* | [`SKILL.md`](utilities/google-maps-scraper/SKILL.md) |
 | **`google-workspace-ops`** | Operate across Google Drive, Docs, Sheets, and Slides as one workflow surface for plans, trackers, decks, and shared documents. | Necessidade específica envolvendo google-workspace-ops. | *"Aplique as diretrizes da skill `google-workspace-ops` nesta implementação."* | [`SKILL.md`](utilities/google-workspace-ops/SKILL.md) |
 | **`image-edit`** | > | Necessidade específica envolvendo image-edit. | *"Aplique as diretrizes da skill `image-edit` nesta implementação."* | [`SKILL.md`](utilities/image-edit/SKILL.md) |
 | **`image-to-video`** | > | Necessidade específica envolvendo image-to-video. | *"Aplique as diretrizes da skill `image-to-video` nesta implementação."* | [`SKILL.md`](utilities/image-to-video/SKILL.md) |

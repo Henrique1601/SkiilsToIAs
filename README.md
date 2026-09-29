@@ -1,6 +1,6 @@
 # 🧠 Skills to IAs (`SkiilsToIAs`)
 
-Repositório centralizado e categorizado contendo **509 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
+Repositório centralizado e categorizado contendo **510 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
 
 > [!IMPORTANT]
 > ### 🤖 Conheça o Agente Mestre (Skills Orchestrator)
@@ -13,7 +13,7 @@ Repositório centralizado e categorizado contendo **509 skills especializadas** 
 > - **Como a IA pensa e ativa as skills** (Anatomia, gatilhos e fórmula do prompt perfeito).
 > - **Power Combos**: Workflows multi-skill encadeados (Landing pages, Fullstack, Carreira, Cloud, MCP, etc.).
 > - **Cheat Sheet**: Tabela rápida de decisão ("O que você quer fazer hoje?").
-> - **Prompts Prontos**: Exemplos práticos para copiar e colar para as 509 skills catalogadas!
+> - **Prompts Prontos**: Exemplos práticos para copiar e colar para as 510 skills catalogadas!
 
 ---
 
@@ -31,17 +31,17 @@ Repositório centralizado e categorizado contendo **509 skills especializadas** 
 | [🤖 Agentes de IA & Metaprogramação](#ai-agents) | [`ai-agents/`](ai-agents/) | **94** | Criação e engenharia de subagentes autônomos, servidores MCP (Model Context Protocol), harnesses, loops contínuos e segurança de IA. |
 | [📄 Documentos & Produtividade](#documents-productivity) | [`documents-productivity/`](documents-productivity/) | **26** | Manipulação automatizada de documentos de escritório (Word, Excel, PowerPoint, PDF), pesquisa científica, patentes e Obsidian. |
 | [📊 Gestão & Negócios](#business-management) | [`business-management/`](business-management/) | **43** | Análise de métricas e KPIs, governança, conformidade regulatória (HIPAA), PRDs, roadmaps, faturamento e briefings executivos. |
-| [🛠️ Utilitários & Otimização](#utilities) | [`utilities/`](utilities/) | **30** | Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multimídia (Mediabunny), git e ferramentas de suporte. |
+| [🛠️ Utilitários & Otimização](#utilities) | [`utilities/`](utilities/) | **31** | Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multimídia (Mediabunny), git e ferramentas de suporte. |
 
-> **Total de Skills catalogadas:** 509 skills em 11 categorias
+> **Total de Skills catalogadas:** 510 skills em 11 categorias
 
 ## 🤖 Agentes Customizados (`custom-agents/`)
 
-Além das 509 skills, o repositório conta com uma pasta dedicada para agentes orquestradores e personas especializadas:
+Além das 510 skills, o repositório conta com uma pasta dedicada para agentes orquestradores e personas especializadas:
 
 | Agente | Arquivo | Descrição |
 |---|---|---|
-| **`skills-orchestrator`** (Agente Mestre) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador de 509 skills com metodologia em 9 fases (da ideação ao go-to-market). |
+| **`skills-orchestrator`** (Agente Mestre) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador de 510 skills com metodologia em 9 fases (da ideação ao go-to-market). |
 
 👉 Consulte o [**Guia de Agentes (`custom-agents/README.md`)**](custom-agents/README.md) para detalhes de instalação e criação de novos agentes.
 
@@ -659,7 +659,7 @@ Análise de métricas e KPIs, governança, conformidade regulatória (HIPAA), PR
 | **`unified-notifications-ops`** | Operate notifications as one ECC-native workflow across GitHub, Linear, desktop alerts, hooks, and connected communication surfaces. | [`SKILL.md`](business-management/unified-notifications-ops/SKILL.md) |
 
 <a id="utilities"></a>
-### 🛠️ Utilitários & Otimização (30 skills)
+### 🛠️ Utilitários & Otimização (31 skills)
 
 **Caminho no repositório:** [`utilities/`](utilities/)
 
@@ -678,6 +678,7 @@ Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multim
 | **`exa-search`** | Neural search via Exa MCP for web, code, and company research. | [`SKILL.md`](utilities/exa-search/SKILL.md) |
 | **`fal-ai-media`** | Unified media generation via fal.ai MCP — image, video, and audio. | [`SKILL.md`](utilities/fal-ai-media/SKILL.md) |
 | **`firecrawl`** | \| | [`SKILL.md`](utilities/firecrawl/SKILL.md) |
+| **`google-maps-scraper`** | > | [`SKILL.md`](utilities/google-maps-scraper/SKILL.md) |
 | **`google-workspace-ops`** | Operate across Google Drive, Docs, Sheets, and Slides as one workflow surface for plans, trackers, decks, and shared documents. | [`SKILL.md`](utilities/google-workspace-ops/SKILL.md) |
 | **`image-edit`** | > | [`SKILL.md`](utilities/image-edit/SKILL.md) |
 | **`image-to-video`** | > | [`SKILL.md`](utilities/image-to-video/SKILL.md) |
