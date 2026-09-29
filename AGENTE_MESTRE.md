@@ -20,8 +20,9 @@ Em vez de se perder procurando manualmente qual skill utilizar entre centenas de
 ## 🧭 2. COMO ACIONAR O AGENTE MESTRE
 
 ### Opção A: Como Subagente no Antigravity / Gemini CLI
-O agente está configurado nativamente no diretório de agentes:
-- Arquivo de definição: `~/.gemini/config/agents/skills-orchestrator.md`
+O agente está versionado neste repositório em [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) e configurado na pasta de agentes do Gemini:
+- Arquivo no repositório: [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md)
+- Arquivo global local: `~/.gemini/config/agents/skills-orchestrator.md`
 - Nome do agente: `skills-orchestrator`
 
 Para invocá-lo em uma sessão, basta pedir:

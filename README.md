@@ -35,12 +35,22 @@ Repositório centralizado e categorizado contendo **509 skills especializadas** 
 
 > **Total de Skills catalogadas:** 509 skills em 11 categorias
 
+## 🤖 Agentes Customizados (`custom-agents/`)
+
+Além das 509 skills, o repositório conta com uma pasta dedicada para agentes orquestradores e personas especializadas:
+
+| Agente | Arquivo | Descrição |
+|---|---|---|
+| **`skills-orchestrator`** (Agente Mestre) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador de 509 skills com metodologia em 9 fases (da ideação ao go-to-market). |
+
+👉 Consulte o [**Guia de Agentes (`custom-agents/README.md`)**](custom-agents/README.md) para detalhes de instalação e criação de novos agentes.
+
 ---
 
 ## 🚀 Como Utilizar
 
 ### 1. Como Subagente no Antigravity / Gemini CLI
-O repositório já inclui o agente mestre pronto em `~/.gemini/config/agents/skills-orchestrator.md`.
+O agente mestre está disponível na pasta [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) e pode ser instalado em `~/.gemini/config/agents/`.
 Para ativá-lo, basta solicitar em qualquer chat:
 ```markdown
 Ative o skills-orchestrator para planejar e guiar a execução do meu projeto [NOME DO PROJETO].

@@ -782,20 +782,23 @@ flowchart LR
 
 ---
 
-## ⚙️ 5. Como Instalar e Sincronizar as Skills
+## ⚙️ 5. Como Instalar e Sincronizar as Skills e Agentes
 
 ### No Antigravity / Gemini CLI:
 Todas as skills já estão perfeitamente sincronizadas e organizadas por subpastas em:
 `~/.gemini/config/skills/`
 
-O Agente Mestre está configurado nativamente em:
+O Agente Mestre está disponível em [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) e configurado na pasta de agentes do Gemini:
 `~/.gemini/config/agents/skills-orchestrator.md`
 
 ### No Claude Code:
-Você pode copiar toda a estrutura para o Claude Code:
+Você pode copiar toda a estrutura de skills e agentes para o Claude Code:
 ```bash
-# Copiar para as skills globais do Claude:
-cp -r */* ~/.claude/skills/
+# Copiar skills para o diretório global do Claude:
+cp -r <categoria>/* ~/.claude/skills/
+
+# Copiar agentes customizados:
+cp -r custom-agents/* ~/.claude/agents/
 ```
 
 ---
