@@ -1,0 +1,15 @@
+{
+  "entries": [
+    { "path": "ai-agents" },
+    { "path": "backend-database" },
+    { "path": "business-management" },
+    { "path": "career" },
+    { "path": "design" },
+    { "path": "development" },
+    { "path": "devops-cloud" },
+    { "path": "documents-productivity" },
+    { "path": "marketing" },
+    { "path": "seo" },
+    { "path": "utilities" }
+  ]
+}
