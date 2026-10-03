@@ -1,12 +1,12 @@
 # 🧠 MANUAL OPERACIONAL: AGENTE MESTRE (SKILLS ORCHESTRATOR)
 
-> **O Guia Definitivo de Orquestração, Metodologia em 9 Fases e Playbooks de Execução para as 509 Skills**
+> **O Guia Definitivo de Orquestração, Metodologia em 9 Fases e Playbooks de Execução para as 511 Skills (541 Globais)**
 
 ---
 
 ## 🎯 1. VISÃO GERAL & MISSÃO
 
-O **Agente Mestre (Skills Orchestrator)** é o comandante operacional do ecossistema de **509 Skills** distribuídas nas **11 Categorias Especializadas** do repositório.
+O **Agente Mestre (Skills Orchestrator)** é o comandante operacional do ecossistema de **511 Skills** no repositório (e **541 globais** no Antigravity) distribuídas nas **11 Categorias Especializadas**.
 
 Em vez de se perder procurando manualmente qual skill utilizar entre centenas de opções, o Agente Mestre atua como um Diretor de Engenharia e Produto:
 1. **Analisa o seu objetivo** ou a demanda técnica atual.
@@ -19,22 +19,22 @@ Em vez de se perder procurando manualmente qual skill utilizar entre centenas de
 
 ## 🧭 2. COMO ACIONAR O AGENTE MESTRE
 
-### Opção A: Como Subagente no Antigravity / Gemini CLI
-O agente está versionado neste repositório em [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) e configurado na pasta de agentes do Gemini:
+### Opção A: Como Skill Nativa / Subagente no Antigravity / Gemini CLI
+O agente está configurado como Skill nativa do Antigravity e também versionado como agente customizado:
+- Skill Global no Antigravity: `~/.gemini/config/skills/skills-orchestrator/SKILL.md`
 - Arquivo no repositório: [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md)
-- Arquivo global local: `~/.gemini/config/agents/skills-orchestrator.md`
-- Nome do agente: `skills-orchestrator`
+- Nome para invocação: `skills-orchestrator`
 
 Para invocá-lo em uma sessão, basta pedir:
 ```markdown
-"Ative o skills-orchestrator para planejar e executar o meu novo projeto [Descreva o projeto]"
+"Ative a skill skills-orchestrator para planejar e executar o meu novo projeto [Descreva o projeto]"
 ```
 
 ### Opção B: Prompt Universal de Inicialização (Zero-Shot)
 Você pode colar este comando em qualquer sessão para que a IA assuma a postura do Agente Mestre:
 
 ```markdown
-Você é o Agente Mestre (Skills Orchestrator) deste repositório de 509 skills.
+Você é o Agente Mestre (Skills Orchestrator) deste repositório de 511 skills (541 globais).
 Quero construir o seguinte projeto: [DESCREVA SEU PROJETO OU DÚVIDA AQUI].
 
 Por favor:
@@ -169,8 +169,10 @@ flowchart TD
     - [`golang-patterns`](backend-database/golang-patterns/SKILL.md) — Concorrência idiomática com goroutines e canais.
   - **Engenharia de IA & Agentes**:
     - [`agentic-engineering`](ai-agents/agentic-engineering/SKILL.md) — Decomposição de tarefas complexas e loops de raciocínio.
+    - [`typesafe-ai`](ai-agents/typesafe-ai/SKILL.md) — Validação de tipos estritos, schemas de entrada/saída e segurança de tipagem para agentes de IA.
     - [`cost-aware-llm-pipeline`](ai-agents/cost-aware-llm-pipeline/SKILL.md) — Roteamento inteligente de modelos (Flash vs Pro) e cache de prompt.
     - [`continuous-agent-loop`](ai-agents/continuous-agent-loop/SKILL.md) — Loops autônomos resilientes com contenção de falhas.
+    - [`eval-harness`](ai-agents/eval-harness/SKILL.md) — Avaliação formal e métricas para pipelines e agentes.
   - **Criação de Vídeo Programático**:
     - [`remotion-best-practices`](design/remotion-best-practices/SKILL.md) / [`remotion-video-creation`](design/remotion-video-creation/SKILL.md) / [`remotion-saas`](design/remotion-saas/SKILL.md) — Vídeos gerados via React.
 - **Prompt Recomendado**:
@@ -271,7 +273,7 @@ Para sistemas baseados em LLMs, RAG ou execução autônoma com orçamentos e gu
 3. **F2**: `cost-aware-llm-pipeline` (Roteamento entre modelos rápidos e profundos, cache de contexto).
 4. **F3**: `iterative-retrieval` + `mcp-server-patterns` (Fontes de dados e conectores MCP).
 5. **F4**: `minimalist-ui` (Interface conversacional sem distrações).
-6. **F5**: `agentic-engineering` + `continuous-agent-loop` (Loops autônomos com recuperação).
+6. **F5**: `agentic-engineering` + `typesafe-ai` + `continuous-agent-loop` (Loops autônomos com execução tipada e recuperação).
 7. **F6**: `eval-harness` + `santa-method` + `llm-trading-agent-security` (Testes adversariais e guardrails).
 8. **F7**: `enterprise-agent-ops` + `docker-patterns` (Isolamento e observabilidade).
 9. **F8**: `token-budget-advisor` + `growth-log` (Controle de custo por token e métricas de acerto).
@@ -305,25 +307,25 @@ Quando você se deparar com um obstáculo específico, consulte esta tabela dire
 
 ---
 
-## 📊 6. ESTRUTURA DO ECOSSISTEMA: 509 SKILLS EM 11 CATEGORIAS
+## 📊 6. ESTRUTURA DO ECOSSISTEMA: 511 SKILLS EM 11 CATEGORIAS
 
-Todas as 509 skills estão rigorosamente catalogadas e espelhadas tanto no repositório global quanto nas configurações locais do Gemini Antigravity:
+Todas as 511 skills estão rigorosamente catalogadas e espelhadas tanto no repositório global quanto nas configurações locais do Gemini Antigravity (com 541 skills globais indexadas):
 
 | Categoria | Total Skills | Foco Principal | Link para o Diretório |
 | :--- | :---: | :--- | :--- |
-| 🤖 **AI Agents** | **94** | Autonomia, RAG, Eval Loops, Segurança de Agentes | [`ai-agents/`](ai-agents/) |
+| 🤖 **AI Agents** | **95** | Autonomia, RAG, Eval Loops, Segurança de Agentes | [`ai-agents/`](ai-agents/) |
 | 💻 **Development** | **88** | Frameworks Web, Mobile, Linguagens, Boas Práticas | [`development/`](development/) |
 | 🎨 **Design** | **65** | UI/UX, Design Systems, Animação, Vídeo (Remotion) | [`design/`](design/) |
 | 🗄️ **Backend & Database** | **61** | Bancos SQL/NoSQL, ORMs, Cache, Microsserviços | [`backend-database/`](backend-database/) |
 | ☁️ **DevOps & Cloud** | **44** | Docker, K8s, Nuvem, Azure, Vercel, Homelab | [`devops-cloud/`](devops-cloud/) |
 | 💼 **Business Management** | **43** | PRDs, Métricas, Análise de Produto, Estratégia | [`business-management/`](business-management/) |
-| 🛠️ **Utilities** | **30** | Automações, Formatação, Ferramentas de Suporte | [`utilities/`](utilities/) |
+| 🛠️ **Utilities** | **31** | Automações, Formatação, Ferramentas de Suporte | [`utilities/`](utilities/) |
 | 📢 **Marketing** | **27** | LinkedIn, Copywriting, E-mail Marketing, Campanhas | [`marketing/`](marketing/) |
 | 📄 **Documents & Productivity** | **26** | PDFs, DOCX, Apresentações, Obsidian, Pesquisa | [`documents-productivity/`](documents-productivity/) |
 | 🎯 **Career** | **23** | Resumos, Preparação para Entrevistas, Portfólios | [`career/`](career/) |
 | 🔍 **SEO** | **8** | Auditorias SEO, Indexação, Core Web Vitals | [`seo/`](seo/) |
-| **TOTAL** | **509** | **Ecossistema Completo de Desenvolvimento e Negócios** | — |
+| **TOTAL** | **511** | **Ecossistema Completo de Desenvolvimento e Negócios** | — |
 
 ---
 
-> 💡 **Para consultar o índice completo e descritivo de cada uma das 509 skills com exemplos de uso e comandos, consulte o [CEREBRO.md](CEREBRO.md).**
+> 💡 **Para consultar o índice completo e descritivo de cada uma das 511 skills com exemplos de uso e comandos, consulte o [CEREBRO.md](CEREBRO.md).**

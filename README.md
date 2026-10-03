@@ -1,6 +1,6 @@
 # 🧠 Skills to IAs (`SkiilsToIAs`)
 
-Repositório centralizado e categorizado contendo **510 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
+Repositório centralizado e categorizado contendo **511 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
 
 > [!IMPORTANT]
 > ### 🤖 Conheça o Agente Mestre (Skills Orchestrator)
@@ -13,7 +13,7 @@ Repositório centralizado e categorizado contendo **510 skills especializadas** 
 > - **Como a IA pensa e ativa as skills** (Anatomia, gatilhos e fórmula do prompt perfeito).
 > - **Power Combos**: Workflows multi-skill encadeados (Landing pages, Fullstack, Carreira, Cloud, MCP, etc.).
 > - **Cheat Sheet**: Tabela rápida de decisão ("O que você quer fazer hoje?").
-> - **Prompts Prontos**: Exemplos práticos para copiar e colar para as 510 skills catalogadas!
+> - **Prompts Prontos**: Exemplos práticos para copiar e colar para as 511 skills catalogadas!
 
 ---
 
@@ -28,20 +28,20 @@ Repositório centralizado e categorizado contendo **510 skills especializadas** 
 | [💻 Desenvolvimento & Testes](#development) | [`development/`](development/) | **88** | Engenharia de software, frameworks modernos (React, Next.js, Vue, Swift, Kotlin), arquitetura limpa, automação Playwright e TDD. |
 | [☁️ Cloud & DevOps](#devops-cloud) | [`devops-cloud/`](devops-cloud/) | **44** | Infraestrutura como código, nuvem (Azure AI Foundry, Cloudflare, Netlify, Vercel), Docker, Kubernetes e redes/homelab. |
 | [🗄️ Backend & Bancos de Dados](#backend-database) | [`backend-database/`](backend-database/) | **61** | Bancos relacionais e NoSQL (Postgres, Supabase, Neon, MongoDB, Redis, ClickHouse), frameworks backend e otimização de queries. |
-| [🤖 Agentes de IA & Metaprogramação](#ai-agents) | [`ai-agents/`](ai-agents/) | **94** | Criação e engenharia de subagentes autônomos, servidores MCP (Model Context Protocol), harnesses, loops contínuos e segurança de IA. |
+| [🤖 Agentes de IA & Metaprogramação](#ai-agents) | [`ai-agents/`](ai-agents/) | **95** | Criação e engenharia de subagentes autônomos, servidores MCP (Model Context Protocol), harnesses, loops contínuos e segurança de IA. |
 | [📄 Documentos & Produtividade](#documents-productivity) | [`documents-productivity/`](documents-productivity/) | **26** | Manipulação automatizada de documentos de escritório (Word, Excel, PowerPoint, PDF), pesquisa científica, patentes e Obsidian. |
 | [📊 Gestão & Negócios](#business-management) | [`business-management/`](business-management/) | **43** | Análise de métricas e KPIs, governança, conformidade regulatória (HIPAA), PRDs, roadmaps, faturamento e briefings executivos. |
 | [🛠️ Utilitários & Otimização](#utilities) | [`utilities/`](utilities/) | **31** | Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multimídia (Mediabunny), git e ferramentas de suporte. |
 
-> **Total de Skills catalogadas:** 510 skills em 11 categorias
+> **Total de Skills catalogadas:** 511 skills em 11 categorias
 
 ## 🤖 Agentes Customizados (`custom-agents/`)
 
-Além das 510 skills, o repositório conta com uma pasta dedicada para agentes orquestradores e personas especializadas:
+Além das 511 skills, o repositório conta com uma pasta dedicada para agentes orquestradores e personas especializadas:
 
 | Agente | Arquivo | Descrição |
 |---|---|---|
-| **`skills-orchestrator`** (Agente Mestre) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador de 510 skills com metodologia em 9 fases (da ideação ao go-to-market). |
+| **`skills-orchestrator`** (Agente Mestre) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador de 511 skills com metodologia em 9 fases (da ideação ao go-to-market). |
 
 👉 Consulte o [**Guia de Agentes (`custom-agents/README.md`)**](custom-agents/README.md) para detalhes de instalação e criação de novos agentes.
 
@@ -466,7 +466,7 @@ Bancos relacionais e NoSQL (Postgres, Supabase, Neon, MongoDB, Redis, ClickHouse
 | **`tinystruct-patterns`** | Expert guidance for developing with the tinystruct Java framework. | [`SKILL.md`](backend-database/tinystruct-patterns/SKILL.md) |
 
 <a id="ai-agents"></a>
-### 🤖 Agentes de IA & Metaprogramação (94 skills)
+### 🤖 Agentes de IA & Metaprogramação (95 skills)
 
 **Caminho no repositório:** [`ai-agents/`](ai-agents/)
 
@@ -474,6 +474,7 @@ Criação e engenharia de subagentes autônomos, servidores MCP (Model Context P
 
 | Skill | Descrição | Link |
 |---|---|:---:|
+| **`typesafe-ai`** | Build AI-powered software with TypeSafe: small units of AI intelligence you can use like programming primitives (System One models like Jev). | [`SKILL.md`](ai-agents/typesafe-ai/SKILL.md) |
 | **`agent-architecture-audit`** | Full-stack diagnostic for agent and LLM applications. Audits the 12-layer agent stack for wrapper regression, memory pollution, tool discipline failures, hid... | [`SKILL.md`](ai-agents/agent-architecture-audit/SKILL.md) |
 | **`agent-development`** | This skill should be used when the user asks to "create an agent", "add an agent", "write a subagent", "agent frontmatter", "when to use description", "agent... | [`SKILL.md`](ai-agents/agent-development/SKILL.md) |
 | **`agent-eval`** | Head-to-head comparison of coding agents (Claude Code, Aider, Codex, etc.) on custom tasks with pass rate, cost, time, and consistency metrics | [`SKILL.md`](ai-agents/agent-eval/SKILL.md) |

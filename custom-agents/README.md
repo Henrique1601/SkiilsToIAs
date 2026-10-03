@@ -10,7 +10,7 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 | Agente | Arquivo | Descrição |
 | :--- | :--- | :--- |
-| **`skills-orchestrator`** (Agente Mestre) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 509 skills. Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market), diagnosticando a fase atual e indicando a skill certa com o prompt exato. |
+| **`skills-orchestrator`** (Agente Mestre) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 511 skills (541 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market), diagnosticando a fase atual e indicando a skill certa com o prompt exato. |
 
 ---
 
@@ -18,19 +18,25 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 ### 1. No Google Antigravity / Gemini CLI (Nativo)
 
-Copie o arquivo `.md` do agente para a pasta global de agentes do Gemini:
+O Antigravity suporta o Agente Mestre tanto como **Skill Nativa** (recomendado para auto-descoberta) quanto como **Agente Customizado**:
 
 ```bash
-# Windows (PowerShell):
-Copy-Item custom-agents\skills-orchestrator.md "$HOME\.gemini\config\agents\"
+# Windows (PowerShell) - Como Skill Nativa do Antigravity (Recomendado):
+New-Item -ItemType Directory -Force -Path "$HOME\.gemini\config\skills\skills-orchestrator"
+Copy-Item custom-agents\skills-orchestrator.md "$HOME\.gemini\config\skills\skills-orchestrator\SKILL.md" -Force
+
+# Como Agente Customizado:
+Copy-Item custom-agents\skills-orchestrator.md "$HOME\.gemini\config\agents\" -Force
 
 # Linux / macOS:
+mkdir -p ~/.gemini/config/skills/skills-orchestrator
+cp custom-agents/skills-orchestrator.md ~/.gemini/config/skills/skills-orchestrator/SKILL.md
 cp custom-agents/skills-orchestrator.md ~/.gemini/config/agents/
 ```
 
-O Antigravity detecta o agente automaticamente. Para ativá-lo em qualquer sessão, basta solicitar:
+O Antigravity detecta a skill/agente automaticamente. Para ativá-lo em qualquer sessão, basta solicitar:
 ```markdown
-"Ative o skills-orchestrator para planejar e guiar meu projeto [NOME DO PROJETO]"
+"Ative a skill skills-orchestrator para planejar e guiar meu projeto [NOME DO PROJETO]"
 ```
 
 ---

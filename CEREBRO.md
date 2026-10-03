@@ -1,7 +1,7 @@
 # 🧠 O Cérebro das Skills (`CEREBRO.md`)
-### Manual Mestre de Ativação, Casos de Uso, Engenharia de Prompt e Catálogo de 510 Skills
+### Manual Mestre de Ativação, Casos de Uso, Engenharia de Prompt e Catálogo de 511 Skills
 
-> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **510 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
+> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **511 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
 
 ---
 
@@ -26,7 +26,7 @@
    - [Combo 5: Redesign & Polimento Obsessivo de UI](#combo-5-redesign--polimento-obsessivo-de-ui)
    - [Combo 6: Apresentação Executiva para Diretoria](#combo-6-apresentação-executiva-para-diretoria)
 3. [🎯 Cheat Sheet: O que você quer fazer hoje?](#-3-cheat-sheet-o-que-você-quer-fazer-hoje)
-4. [📚 Catálogo Completo das 510 Skills por Categoria](#-4-catálogo-completo-das-skills-por-categoria)
+4. [📚 Catálogo Completo das 511 Skills por Categoria](#-4-catálogo-completo-das-skills-por-categoria)
 
    - [🎨 Design & UI/UX (65 skills)](#design)
    - [🔍 SEO & Mecanismos de Busca (8 skills)](#seo)
@@ -35,7 +35,7 @@
    - [💻 Desenvolvimento & Testes (88 skills)](#development)
    - [☁️ Cloud & DevOps (44 skills)](#devops-cloud)
    - [🗄️ Backend & Bancos de Dados (61 skills)](#backend-database)
-   - [🤖 Agentes de IA & Metaprogramação (94 skills)](#ai-agents)
+   - [🤖 Agentes de IA & Metaprogramação (95 skills)](#ai-agents)
    - [📄 Documentos & Produtividade (26 skills)](#documents-productivity)
    - [📊 Gestão & Negócios (43 skills)](#business-management)
    - [🛠️ Utilitários & Otimização (31 skills)](#utilities)
@@ -560,7 +560,7 @@ flowchart LR
 | **`tinystruct-patterns`** | Expert guidance for developing with the tinystruct Java framework. | Necessidade específica envolvendo tinystruct-patterns. | *"Aplique as diretrizes da skill `tinystruct-patterns` nesta implementação."* | [`SKILL.md`](backend-database/tinystruct-patterns/SKILL.md) |
 
 <a id="ai-agents"></a>
-### 🤖 Agentes de IA & Metaprogramação (94 skills)
+### 🤖 Agentes de IA & Metaprogramação (95 skills)
 > *Criação de novos subagentes, servidores Model Context Protocol (MCP), plugins, hooks e engenharia de skills.*
 
 | Skill | O que faz | Quando usar | Exemplo de Prompt | Link |
