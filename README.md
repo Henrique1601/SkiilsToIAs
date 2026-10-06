@@ -40,8 +40,10 @@ Repositório centralizado e categorizado contendo **511 skills especializadas** 
 Além das 511 skills, o repositório conta com uma pasta dedicada para agentes orquestradores e personas especializadas:
 
 | Agente | Arquivo | Descrição |
-| **`skills-orchestrator`** (Agente Mestre de Projetos) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador de 511 skills com metodologia em 9 fases (da ideação ao go-to-market). |
-| **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`custom-agents/git-master-agent.md`](custom-agents/git-master-agent.md) | Backups preventivos (`backup/checkpoint-...`), Conventional Commits, bootstrap de novos projetos (README, MIT License, .gitignore), documentação contínua e sincronização multi-máquina (PC Trabalho vs. PC Pessoal). |
+|---|---|---|
+| 👑 **`global-master-agent`** (Agente Global Supremo) | [`custom-agents/global-master-agent.md`](custom-agents/global-master-agent.md) | **Ponto único de comando.** Orquestra automaticamente todos os outros agentes (`skills-orchestrator` + `git-master-agent` + novos agentes). Você só precisa chamar este agente! |
+| 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador de 511 skills com metodologia em 9 fases (da ideação ao go-to-market). |
+| 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`custom-agents/git-master-agent.md`](custom-agents/git-master-agent.md) | Backups preventivos (`backup/checkpoint-...`), Conventional Commits, bootstrap de novos projetos (README, MIT License, .gitignore), documentação contínua e sincronização multi-máquina (PC Trabalho vs. PC Pessoal). |
 
 👉 Consulte o [**Guia de Agentes (`custom-agents/README.md`)**](custom-agents/README.md) para detalhes de instalação e criação de novos agentes.
 
@@ -53,10 +55,12 @@ Além das 511 skills, o repositório conta com uma pasta dedicada para agentes o
 Os agentes customizados estão disponíveis na pasta [`custom-agents/`](custom-agents/) e já vêm pré-configurados em `~/.gemini/config/agents/`.
 Para ativá-los, basta solicitar em qualquer chat:
 ```markdown
-# Para orquestração e planejamento completo de projetos:
-Ative o skills-orchestrator para planejar e guiar a execução do meu projeto [NOME DO PROJETO].
+# 👑 RECOMENDADO: Chame apenas o Agente Supremo (ele orquestra tudo nos bastidores):
+Ative o global-master-agent para conduzir meu projeto [NOME DO PROJETO].
+Ative o global-master-agent para implementar a funcionalidade [X].
 
-# Para operações de Git, backups preventivos, commits seguros ou sincronização entre PCs:
+# Ou chame os especialistas individuais se preferir:
+Ative o skills-orchestrator para planejar e guiar a execução do meu projeto [NOME DO PROJETO].
 Ative o git-master-agent para analisar meu repositório e sincronizar minhas alterações.
 ```
 

@@ -19,6 +19,10 @@ Em vez de se perder procurando manualmente qual skill utilizar entre centenas de
 > ### 🛡️ Parceria com o Agente de Git & GitHub (`git-master-agent`)
 > Para todas as operações de segurança de versionamento, checkpoints preventivos de backup (`backup/checkpoint-...`), Conventional Commits padronizados, bootstrap de novos projetos (README, MIT License Henrique, .gitignore) e sincronização multi-máquina (PC Trabalho vs. PC Pessoal), o Agente Mestre conecta-se diretamente ao [**`git-master-agent` (`custom-agents/git-master-agent.md`)**](custom-agents/git-master-agent.md).
 
+> [!IMPORTANT]
+> ### 👑 Ponto Único de Comando: Agente Global Supremo (`global-master-agent`)
+> Prefere não ter que escolher qual agente chamar? Ative simplesmente o [**`global-master-agent` (`custom-agents/global-master-agent.md`)**](custom-agents/global-master-agent.md). Ele comanda o `skills-orchestrator`, o `git-master-agent` e quaisquer novos agentes customizados automaticamente!
+
 ---
 
 ## 🧭 2. COMO ACIONAR O AGENTE MESTRE

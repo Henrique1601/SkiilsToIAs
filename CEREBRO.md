@@ -790,7 +790,8 @@ Todas as skills já estão perfeitamente sincronizadas e organizadas por subpast
 `~/.gemini/config/skills/`
 
 Os Agentes Customizados estão disponíveis na pasta [`custom-agents/`](custom-agents/) e configurados na pasta global de agentes do Gemini (`~/.gemini/config/agents/`):
-- [`skills-orchestrator.md`](custom-agents/skills-orchestrator.md): Orquestrador mestre de 510 skills e 9 fases de projeto.
+- [`global-master-agent.md`](custom-agents/global-master-agent.md): **Agente Global Supremo.** Ponto único de entrada: orquestra automaticamente o `skills-orchestrator` (9 fases), o `git-master-agent` (backups e commits) e todos os novos agentes customizados.
+- [`skills-orchestrator.md`](custom-agents/skills-orchestrator.md): Orquestrador mestre de 511 skills e 9 fases de projeto.
 - [`git-master-agent.md`](custom-agents/git-master-agent.md): Agente Mestre de Git & GitHub (backups preventivos, commits convencionais, bootstrap de projetos com MIT License e sincronização PC trabalho vs pessoal).
 
 ### No Claude Code:

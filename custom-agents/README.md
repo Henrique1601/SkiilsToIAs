@@ -10,31 +10,34 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 | Agente | Arquivo | Descrição |
 | :--- | :--- | :--- |
-| **`skills-orchestrator`** (Agente Mestre de Projetos) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 511 skills (541 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market), diagnosticando a fase atual e indicando a skill certa com o prompt exato. |
-| **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`git-master-agent.md`](git-master-agent.md) | Especialista em backups preventivos (`backup/checkpoint-...`), Conventional Commits seguros, bootstrap de novos projetos (README, MIT License, .gitignore), manutenção contínua de documentação e sincronização inteligente entre máquinas (PC Trabalho vs. PC Pessoal). |
+| 👑 **`global-master-agent`** (Agente Global Supremo) | [`global-master-agent.md`](global-master-agent.md) | **Ponto único de comando e entrada.** Você só precisa chamar ele: ele orquestra nos bastidores o `skills-orchestrator` (9 fases), o `git-master-agent` (backups, commits, sync) e quaisquer futuros agentes adicionados. |
+| 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 511 skills (541 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market), diagnosticando a fase atual e indicando a skill certa com o prompt exato. |
+| 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`git-master-agent.md`](git-master-agent.md) | Especialista em backups preventivos (`backup/checkpoint-...`), Conventional Commits seguros, bootstrap de novos projetos (README, MIT License, .gitignore), manutenção contínua de documentação e sincronização inteligente entre máquinas (PC Trabalho vs. PC Pessoal). |
 
 ---
 
-## 🤝 Sinergia Operacional: Como os Agentes Cooperam Entre Si
+## 🤝 Sinergia Operacional: Hierarquia de Comando
 
-Os dois agentes atuam de forma coordenada e complementar:
+O ecossistema é organizado de forma hierárquica para eliminar esforço cognitivo do desenvolvedor:
 
 ```mermaid
-flowchart LR
-    Orch["🎯 skills-orchestrator<br/>(Líder de Produto & Arquitetura em 9 Fases)"]
-    GitMaster["🛡️ git-master-agent<br/>(Guardião de Versionamento & Git/GitHub)"]
-    Skills["🧰 511 Skills Especializadas<br/>(Execução atômica em 11 categorias)"]
+flowchart TD
+    User["👤 Usuário (Comando Único)"] --> GMA["👑 global-master-agent<br/>(Comandante Supremo & Ponto de Entrada Único)"]
 
-    Orch -- "1. Bootstrap de Repo / 2. Backup Preventivo / 3. Commit de Release" --> GitMaster
-    GitMaster -- "Aciona para garantir qualidade" --> Skills
-    GitMaster -- "Após sincronizar PC trabalho/pessoal: qual o próximo passo?" --> Orch
-    Orch -- "Recomenda as skills certas para a fase" --> Skills
+    GMA -->|"1. Versionamento, Backups & Sincronização"| GitMaster["🛡️ git-master-agent<br/>- Checkpoint preventivo antes de mexer<br/>- Conventional Commits e Push<br/>- Sync PC Trabalho vs PC Pessoal"]
+    
+    GMA -->|"2. Metodologia, Arquitetura & Fases"| Orch["🎯 skills-orchestrator<br/>- 9 Fases do Ciclo de Vida<br/>- Diagnóstico da fase atual<br/>- Prescrição do pipeline de skills"]
+
+    GMA -.->|"3. Especialistas Verticais Adicionais"| Future["🤖 Novos Agentes Customizados<br/>(ex: security-agent, devops-agent)"]
+
+    GitMaster --> Skills["🧰 511 Skills Especializadas em 11 Categorias"]
+    Orch --> Skills
 ```
 
-1. **Início de Projeto:** O `skills-orchestrator` valida a ideia e delega ao `git-master-agent` a inicialização padronizada do repositório (Protocolo 3: README, MIT License Henrique, .gitignore e `git init`).
-2. **Refatoração & Fixes Seguros:** Antes de aplicar qualquer mudança de código recomendada pelo `skills-orchestrator`, o `git-master-agent` cria uma branch de backup silenciosa (`backup/checkpoint-...`) para garantia total de restauração.
-3. **Qualidade & Auditoria Pré-Commit:** O `git-master-agent` aciona skills como [`security-review`](../utilities/security-review/SKILL.md) e [`verification-loop`](../ai-agents/verification-loop/SKILL.md) antes de autorizar o commit convencional e o push.
-4. **Sincronização Multi-Máquina:** Após o `git-master-agent` verificar e sincronizar com segurança novidades vindas de outro PC (PC Trabalho vs. PC Pessoal), ele notifica o `skills-orchestrator` para diagnosticar o avanço do projeto.
+1. **Chamada Única:** Em vez de lembrar qual agente acionar, você simplesmente conversa com o **`global-master-agent`**.
+2. **Proteção Automática:** Ele aciona o `git-master-agent` para garantir checkpoints de backup e sincronização multi-máquinas antes de qualquer alteração.
+3. **Execução Metódica:** Ele aciona o `skills-orchestrator` para conduzir as 9 fases e selecionar as skills ideais entre as 511 disponíveis.
+4. **Entrega Blindada:** Ele aciona o `git-master-agent` para auditar secrets, rodar o `verification-loop`, fazer o commit convencional e enviar ao GitHub.
 
 ---
 
@@ -46,6 +49,9 @@ O Antigravity suporta os Agentes tanto como **Skills Nativas** (recomendado para
 
 ```bash
 # Windows (PowerShell) - Como Skills Nativas do Antigravity (Recomendado):
+New-Item -ItemType Directory -Force -Path "$HOME\.gemini\config\skills\global-master-agent"
+Copy-Item custom-agents\global-master-agent.md "$HOME\.gemini\config\skills\global-master-agent\SKILL.md" -Force
+
 New-Item -ItemType Directory -Force -Path "$HOME\.gemini\config\skills\skills-orchestrator"
 Copy-Item custom-agents\skills-orchestrator.md "$HOME\.gemini\config\skills\skills-orchestrator\SKILL.md" -Force
 
@@ -56,20 +62,22 @@ Copy-Item custom-agents\git-master-agent.md "$HOME\.gemini\config\skills\git-mas
 Copy-Item custom-agents\*.md "$HOME\.gemini\config\agents\" -Force
 
 # Linux / macOS:
-mkdir -p ~/.gemini/config/skills/skills-orchestrator ~/.gemini/config/skills/git-master-agent
+mkdir -p ~/.gemini/config/skills/global-master-agent ~/.gemini/config/skills/skills-orchestrator ~/.gemini/config/skills/git-master-agent
+cp custom-agents/global-master-agent.md ~/.gemini/config/skills/global-master-agent/SKILL.md
 cp custom-agents/skills-orchestrator.md ~/.gemini/config/skills/skills-orchestrator/SKILL.md
 cp custom-agents/git-master-agent.md ~/.gemini/config/skills/git-master-agent/SKILL.md
 cp custom-agents/*.md ~/.gemini/config/agents/
 ```
 
-O Antigravity detecta as skills/agentes automaticamente. Para ativá-los em qualquer sessão, basta solicitar:
+O Antigravity detecta as skills/agentes automaticamente. Para ativá-los em qualquer sessão:
 ```markdown
-# Para projetos e orquestração:
-"Ative o skills-orchestrator para planejar e guiar meu projeto [NOME DO PROJETO]"
+# 👑 RECOMENDADO: Ative apenas o Agente Supremo (ele cuida de tudo):
+"Ative o global-master-agent para conduzir meu projeto [NOME DO PROJETO]"
+"Ative o global-master-agent e implemente a funcionalidade [X]"
 
-# Para Git, commits, backups e sincronização:
+# Ou ative os agentes específicos se preferir controle manual:
+"Ative o skills-orchestrator para planejar e guiar meu projeto"
 "Ative o git-master-agent para salvar minhas alterações com backup e commit seguro"
-"Ative o git-master-agent para verificar se meu outro PC comitou algo novo no GitHub"
 ```
 
 ---
