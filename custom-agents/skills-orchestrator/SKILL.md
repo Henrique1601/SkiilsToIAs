@@ -146,13 +146,13 @@ Quando o usuário disser o tipo de projeto que deseja construir, aplique o playb
 ### 🚀 Playbook A: SaaS Web Full-Stack Moderno
 ```
 F0: brainstorming + grill-me (Validar proposta e personas)
-F1: write-spec (PRD com modelo de monetização)
+F1: write-spec + git-master-agent (PRD com modelo de monetização e bootstrap do repositório)
 F2: architecture + backend-patterns (Next.js App Router + REST/Server Actions)
 F3: supabase OU neon-postgres + database-migrations (Schema PostgreSQL)
 F4: brandkit + design-taste-frontend + emil-design-eng (UI refinada com Tailwind)
 F5: next-best-practices + react-patterns (Construção dos módulos)
 F6: tdd-workflow + security-review + webapp-testing (Testes e segurança)
-F7: deploy-checklist + deploy-to-vercel (Deploy de produção)
+F7: deploy-checklist + deploy-to-vercel + git-master-agent (Deploy de produção e push seguro)
 F8: seo-audit + lighthouse + linkedin-content-planner (Lançamento e distribuição)
 ```
 
@@ -184,17 +184,28 @@ F8: benchmark + token-budget-advisor (Otimização de custo por execução)
 
 ### ⚡ Playbook D: Refatoração & Correção de Código Crítico
 ```
+Passo 0: git-master-agent (Criar branch backup/checkpoint-... e safety stash antes de tocar no código)
 Passo 1: orch-fix-defect OU orch-refine-code (Identificar escopo sem quebrar contrato)
 Passo 2: tdd (Escrever teste que reproduz o problema em vermelho)
 Passo 3: Modificação cirúrgica de código
 Passo 4: verification-loop (Rodar bateria de testes até ficar verde)
 Passo 5: code-review + security-review (Validar efeitos colaterais e segurança)
-Passo 6: git-workflow (Commit convencional e rastreável)
+Passo 6: git-master-agent (Conventional Commit, auditoria pré-push e push seguro)
 ```
 
 ---
 
-## 4. GUIA DE RESPOSTA AO USUÁRIO
+## 🤝 4. INTEGRAÇÃO COM O `git-master-agent` (Agente Mestre de Versionamento)
+
+O **`skills-orchestrator`** atua em parceria direta com o [`git-master-agent`](../git-master-agent.md):
+- **Bootstrap de Novos Projetos**: Delega a inicialização de repositórios, `.gitignore` da stack e licença MIT ao `git-master-agent`.
+- **Segurança Pré-Modificação**: Em refatorações e fixes, sempre aciona o `git-master-agent` para criar checkpoints de backup antes de alterar qualquer código.
+- **Fechamento de Fases**: Ao concluir marcos de entrega (PRD, Migrations, Testes verdes, Deploy), aciona o `git-master-agent` para commits convencionais e push seguro.
+- **Pós-Sincronização Multi-Máquina**: Quando o usuário sincroniza o repositório entre máquinas (PC Trabalho vs PC Pessoal) com o `git-master-agent`, o `skills-orchestrator` retoma o direcionamento do projeto diagnosticando a fase atual e recomendando os próximos passos.
+
+---
+
+## 📋 5. GUIA DE RESPOSTA AO USUÁRIO
 
 Ao responder a qualquer solicitação de projeto do usuário:
 1. **Identifique a Fase Atual**: Diga exatamente em que ponto o projeto se encontra.

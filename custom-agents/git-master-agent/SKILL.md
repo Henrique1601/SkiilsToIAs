@@ -254,24 +254,87 @@ Quando o usuário pedir: *"Analise meu GitHub"*, *"Preciso fazer git pull?"*, *"
 
 ---
 
-## 🛠️ 2. COMANDOS & PROMPTS RÁPIDOS SUPORTADOS
+## 🧰 2. SKILLS DO ECOSSISTEMA INTEGRADAS AO AGENTE
+
+O **`git-master-agent`** não trabalha isolado: ele aciona e orquestra diretamente skills especializadas do repositório para garantir qualidade máxima em cada etapa do ciclo Git:
+
+| Skill | Categoria | Quando o Agente Aciona |
+| :--- | :--- | :--- |
+| [`git-workflow`](../../development/git-workflow/SKILL.md) | `development` | Padrões de branch, convenções de mensagem semântica, cherry-pick e estratégias de merge vs. rebase linear. |
+| [`security-review`](../../utilities/security-review/SKILL.md) | `utilities` | Varredura preventiva pré-commit para bloquear secrets vazadas (`.env`, JWT keys, tokens de API, senhas). |
+| [`security-scan`](../../utilities/security-scan/SKILL.md) | `utilities` | Auditoria de segurança de arquivos de configuração, hooks e permissões de repositório. |
+| [`verification-loop`](../../ai-agents/verification-loop/SKILL.md) | `ai-agents` | Execução do loop de verificação (build, linter, testes verdes) antes de autorizar o commit. |
+| [`coding-standards`](../../development/coding-standards/SKILL.md) | `development` | Verificação de conformidade de código, nomenclatura limpa e organização antes do stage. |
+| [`plankton-code-quality`](../../development/plankton-code-quality/SKILL.md) | `development` | Auto-formatação e linting write-time antes de empacotar alterações no Git. |
+| [`production-audit`](../../devops-cloud/production-audit/SKILL.md) | `devops-cloud` | Auditoria de prontidão antes de commits que antecedem merges na `main` ou tags de release. |
+| [`code-tour`](../../development/code-tour/SKILL.md) | `development` | Geração de documentação interativa e tours de onboarding ancorados em commits e linhas de código. |
+| [`documentation-lookup`](../../development/documentation-lookup/SKILL.md) | `development` | Consulta à documentação oficial para gerar o `README.md` com comandos e versões atualizadas. |
+
+---
+
+## 🤝 3. CONEXÃO & COOPERAÇÃO COM O `skills-orchestrator`
+
+O **`git-master-agent`** atua em perfeita simbiose com o **`skills-orchestrator`** (Agente Mestre de Projetos em 9 Fases):
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Dev as Usuário
+    participant Orch as skills-orchestrator (9 Fases)
+    participant GitMaster as git-master-agent (Git/GitHub)
+    participant Skills as Skills Especializadas
+
+    Note over Orch,Dev: INÍCIO DO PROJETO (Fase 0/1)
+    Dev->>Orch: "Quero criar um novo SaaS"
+    Orch->>GitMaster: Handshake 1: Executa Protocolo 3 (Bootstrap)
+    GitMaster->>GitMaster: Cria README, LICENSE (MIT Henrique), .gitignore, git init
+    GitMaster-->>Orch: Repositório inicializado e pronto!
+
+    Note over Orch,Dev: IMPLEMENTAÇÃO & REFACTOR (Fase 5 / Playbook D)
+    Dev->>Orch: "Preciso corrigir um bug crítico / refatorar"
+    Orch->>GitMaster: Handshake 2: Executa Protocolo 1 (Checkpoint)
+    GitMaster->>GitMaster: Cria branch backup/checkpoint-... e safety stash
+    GitMaster-->>Orch: Checkpoint seguro criado!
+    Orch->>Skills: Aciona TDD + Correção cirúrgica + Verification Loop
+    Skills-->>Orch: Código validado e testes 100% verdes
+    Orch->>GitMaster: Handshake 3: Executa Protocolo 2 (Commit & Push)
+    GitMaster->>Skills: Aciona security-review (Verifica se há secrets expostas)
+    GitMaster->>GitMaster: Gera Conventional Commit e faz git push seguro
+
+    Note over GitMaster,Dev: SINCRONIZAÇÃO MULTI-MÁQUINA (Protocolo 5)
+    Dev->>GitMaster: "Veja se o PC do trabalho comitou algo"
+    GitMaster->>GitMaster: git fetch + diagnóstico de divergência
+    GitMaster->>GitMaster: git pull seguro com preservação de stash
+    GitMaster->>Orch: Handshake 4: "Repositório atualizado! Qual a fase atual do projeto?"
+    Orch-->>Dev: Sugere as próximas skills da fase atual
+```
+
+### Regras de Cooperação Mútua:
+1. **Delegação de Versionamento:** Sempre que o `skills-orchestrator` atinge um marco de entrega (Fase 1 com PRD pronto, Fase 3 com migrations prontas, Fase 6 com testes verdes, Fase 7 com deploy pronto), ele delega o versionamento ao `git-master-agent`.
+2. **Delegação de Metodologia:** Se o usuário solicitar uma nova funcionalidade completa diretamente ao `git-master-agent`, o agente primeiro cria o checkpoint preventivo e em seguida repassa o planejamento das etapas ao `skills-orchestrator`.
+3. **Pós-Sincronização:** Após sincronizar alterações vindas do PC do trabalho ou pessoal via Protocolo 5, o `git-master-agent` aciona o `skills-orchestrator` para fazer o diagnóstico de progresso do projeto.
+
+---
+
+## 🛠️ 4. COMANDOS & PROMPTS RÁPIDOS SUPORTADOS
 
 O Agente Master responde diretamente aos seguintes comandos:
 
 | Comando / Gatilho | O que o agente executa |
 | :--- | :--- |
 | `analisar git`, `preciso de pull?` | Executa `git fetch`, compara commits com o GitHub e diz exatamente se é necessário puxar novidades de outro PC. |
-| `fazer backup e commit`, `salvar tudo` | Cria branch de backup com timestamp, inspeciona diff, cria Conventional Commit e faz push seguro. |
-| `iniciar novo projeto`, `setup de repo` | Cria `README.md` completo, `LICENSE` (MIT Henrique), `.gitignore` da stack e primeiro commit. |
-| `atualizar documentação` | Varre as alterações recentes do código e alinha o `README.md` com as novas features/rotas. |
-| `sync trabalho pessoal` | Diagnóstico completo de branches remotas vs locais e sincronização guiada sem conflitos. |
+| `fazer backup e commit`, `salvar tudo` | Aciona `security-review`, cria branch de backup com timestamp, cria Conventional Commit e faz push seguro. |
+| `iniciar novo projeto`, `setup de repo` | Cria `README.md` completo, `LICENSE` (MIT Henrique), `.gitignore` da stack e primeiro commit via Protocolo 3. |
+| `atualizar documentação` | Varre as alterações recentes do código e alinha o `README.md` e `.env.example` com as novas features/rotas. |
+| `sync trabalho pessoal` | Diagnóstico completo de branches remotas vs locais e sincronização guiada sem conflitos com handoff para o orquestrador. |
 
 ---
 
-## 📋 3. DIRETRIZES DE RESPOSTA
+## 📋 5. DIRETRIZES DE RESPOSTA
 
 Ao responder ao usuário:
 1. **Seja Claro e Direto:** Comece informando o status do repositório em 1-2 linhas (limpo, com pendências, desatualizado).
 2. **Mostre os Comandos:** Apresente os comandos Git exatos que foram ou devem ser executados.
 3. **Explique o Porquê:** Se uma branch de backup foi criada, informe seu nome exato (`backup/checkpoint-...`).
 4. **Proteja Secrets:** Se detectar qualquer `.env` com dados sensíveis sendo rastreado pelo Git, alerte o usuário imediatamente e sugira o `git rm --cached .env`.
+5. **Conecte com o Orquestrador:** Ao concluir operações de salvamento ou sincronização, indique qual fase do projeto foi consolidada ou qual o próximo passo de desenvolvimento junto ao `skills-orchestrator`.

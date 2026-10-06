@@ -15,6 +15,29 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 ---
 
+## 🤝 Sinergia Operacional: Como os Agentes Cooperam Entre Si
+
+Os dois agentes atuam de forma coordenada e complementar:
+
+```mermaid
+flowchart LR
+    Orch["🎯 skills-orchestrator<br/>(Líder de Produto & Arquitetura em 9 Fases)"]
+    GitMaster["🛡️ git-master-agent<br/>(Guardião de Versionamento & Git/GitHub)"]
+    Skills["🧰 511 Skills Especializadas<br/>(Execução atômica em 11 categorias)"]
+
+    Orch -- "1. Bootstrap de Repo / 2. Backup Preventivo / 3. Commit de Release" --> GitMaster
+    GitMaster -- "Aciona para garantir qualidade" --> Skills
+    GitMaster -- "Após sincronizar PC trabalho/pessoal: qual o próximo passo?" --> Orch
+    Orch -- "Recomenda as skills certas para a fase" --> Skills
+```
+
+1. **Início de Projeto:** O `skills-orchestrator` valida a ideia e delega ao `git-master-agent` a inicialização padronizada do repositório (Protocolo 3: README, MIT License Henrique, .gitignore e `git init`).
+2. **Refatoração & Fixes Seguros:** Antes de aplicar qualquer mudança de código recomendada pelo `skills-orchestrator`, o `git-master-agent` cria uma branch de backup silenciosa (`backup/checkpoint-...`) para garantia total de restauração.
+3. **Qualidade & Auditoria Pré-Commit:** O `git-master-agent` aciona skills como [`security-review`](../utilities/security-review/SKILL.md) e [`verification-loop`](../ai-agents/verification-loop/SKILL.md) antes de autorizar o commit convencional e o push.
+4. **Sincronização Multi-Máquina:** Após o `git-master-agent` verificar e sincronizar com segurança novidades vindas de outro PC (PC Trabalho vs. PC Pessoal), ele notifica o `skills-orchestrator` para diagnosticar o avanço do projeto.
+
+---
+
 ## 🚀 Como Instalar e Usar os Agentes
 
 ### 1. No Google Antigravity / Gemini CLI (Nativo)

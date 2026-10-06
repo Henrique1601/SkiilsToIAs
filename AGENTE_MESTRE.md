@@ -15,6 +15,10 @@ Em vez de se perder procurando manualmente qual skill utilizar entre centenas de
 4. **Fornece os prompts exatos e testados** para disparar cada skill.
 5. **Aplica Quality Gates rigorosos** para garantir que uma etapa só seja considerada concluída quando os critérios de excelência forem atingidos.
 
+> [!TIP]
+> ### 🛡️ Parceria com o Agente de Git & GitHub (`git-master-agent`)
+> Para todas as operações de segurança de versionamento, checkpoints preventivos de backup (`backup/checkpoint-...`), Conventional Commits padronizados, bootstrap de novos projetos (README, MIT License Henrique, .gitignore) e sincronização multi-máquina (PC Trabalho vs. PC Pessoal), o Agente Mestre conecta-se diretamente ao [**`git-master-agent` (`custom-agents/git-master-agent.md`)**](custom-agents/git-master-agent.md).
+
 ---
 
 ## 🧭 2. COMO ACIONAR O AGENTE MESTRE
@@ -241,13 +245,13 @@ flowchart TD
 ### 📦 Playbook 1: SaaS Web Full-Stack (Next.js + Supabase + Tailwind + Vercel)
 Este é o fluxo padrão para startups e produtos digitais modernos:
 1. **F0**: `brainstorming` + `grill-me` (Validar a dor e o modelo de negócio).
-2. **F1**: `write-spec` (PRD com modelo de permissões RBAC e fluxo de checkout).
+2. **F1**: `write-spec` (PRD com modelo de permissões RBAC e fluxo de checkout) + bootstrap de repositório via [`git-master-agent`](custom-agents/git-master-agent.md).
 3. **F2**: `architecture` + `architecture-decision-records` (Decisão: Next.js App Router + Server Actions).
 4. **F3**: `supabase` + `postgres-patterns` + `database-migrations` (Tabelas de usuários, tenants, planos com RLS).
 5. **F4**: `brandkit` + `design-taste-frontend` + `emil-design-eng` (UI moderna e fluida).
 6. **F5**: `next-best-practices` + `react-patterns` (Implementação dos componentes e rotas).
 7. **F6**: `tdd-workflow` + `security-review` + `webapp-testing` (Testes automatizados e OWASP).
-8. **F7**: `deploy-checklist` + `deploy-to-vercel` (Lançamento do preview e produção).
+8. **F7**: `deploy-checklist` + `deploy-to-vercel` + commit seguro e push via [`git-master-agent`](custom-agents/git-master-agent.md).
 9. **F8**: `seo-audit` + `lighthouse` + `linkedin-content-planner` (Otimização e distribuição).
 
 ---
