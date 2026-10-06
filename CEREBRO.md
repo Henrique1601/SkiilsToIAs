@@ -790,9 +790,17 @@ Todas as skills já estão perfeitamente sincronizadas e organizadas por subpast
 `~/.gemini/config/skills/`
 
 Os Agentes Customizados estão disponíveis na pasta [`custom-agents/`](custom-agents/) e configurados na pasta global de agentes do Gemini (`~/.gemini/config/agents/`):
-- [`global-master-agent.md`](custom-agents/global-master-agent.md): **Agente Global Supremo.** Ponto único de entrada: orquestra automaticamente o `skills-orchestrator` (9 fases), o `git-master-agent` (backups e commits) e todos os novos agentes customizados.
+- [`global-master-agent.md`](custom-agents/global-master-agent.md): **Agente Global Supremo.** Ponto único de entrada: orquestra automaticamente todos os 10 agentes especialistas e 511 skills.
 - [`skills-orchestrator.md`](custom-agents/skills-orchestrator.md): Orquestrador mestre de 511 skills e 9 fases de projeto.
 - [`git-master-agent.md`](custom-agents/git-master-agent.md): Agente Mestre de Git & GitHub (backups preventivos, commits convencionais, bootstrap de projetos com MIT License e sincronização PC trabalho vs pessoal).
+- [`design-engineer-agent.md`](custom-agents/design-engineer-agent.md): Engenheiro de UI/UX & Design Premium (microinterações, Framer Motion, WCAG 2.2).
+- [`security-auditor-agent.md`](custom-agents/security-auditor-agent.md): Auditor de Segurança & Guardião OWASP Top 10 (autenticação segura e proteção de secrets).
+- [`database-architect-agent.md`](custom-agents/database-architect-agent.md): Arquiteto de Banco de Dados & Performance (Postgres, Supabase, migrations, Redis).
+- [`qa-testing-agent.md`](custom-agents/qa-testing-agent.md): Engenheiro de Testes Automatizados & TDD (Playwright E2E e cobertura 80%+).
+- [`devops-cloud-agent.md`](custom-agents/devops-cloud-agent.md): Arquiteto de Infraestrutura, Docker & Deploy (CI/CD, Vercel, Cloudflare, Azure).
+- [`ai-engineer-agent.md`](custom-agents/ai-engineer-agent.md): Engenheiro de IA, RAG & Agentes (MCP, TypeSafe AI, economia de tokens).
+- [`growth-marketing-agent.md`](custom-agents/growth-marketing-agent.md): Estrategista de Lançamento, SEO & Growth (Lighthouse 90+, LinkedIn e e-mails).
+- [`video-producer-agent.md`](custom-agents/video-producer-agent.md): Produtor de Vídeos em Código via Remotion (React, legendas automáticas e animações).
 
 ### No Claude Code:
 Você pode copiar toda a estrutura de skills e agentes para o Claude Code:

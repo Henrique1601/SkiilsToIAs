@@ -10,9 +10,17 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 | Agente | Arquivo | Descrição |
 | :--- | :--- | :--- |
-| 👑 **`global-master-agent`** (Agente Global Supremo) | [`global-master-agent.md`](global-master-agent.md) | **Ponto único de comando e entrada.** Você só precisa chamar ele: ele orquestra nos bastidores o `skills-orchestrator` (9 fases), o `git-master-agent` (backups, commits, sync) e quaisquer futuros agentes adicionados. |
-| 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 511 skills (541 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market), diagnosticando a fase atual e indicando a skill certa com o prompt exato. |
-| 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`git-master-agent.md`](git-master-agent.md) | Especialista em backups preventivos (`backup/checkpoint-...`), Conventional Commits seguros, bootstrap de novos projetos (README, MIT License, .gitignore), manutenção contínua de documentação e sincronização inteligente entre máquinas (PC Trabalho vs. PC Pessoal). |
+| 👑 **`global-master-agent`** (Agente Global Supremo) | [`global-master-agent.md`](global-master-agent.md) | **Ponto único de comando e entrada.** Você só precisa chamar ele: ele orquestra nos bastidores todos os outros 10 agentes e as 511 skills do repositório. |
+| 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 511 skills (541 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
+| 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`git-master-agent.md`](git-master-agent.md) | Especialista em backups preventivos (`backup/checkpoint-...`), Conventional Commits seguros, bootstrap de novos projetos (README, MIT License, .gitignore) e sincronização multi-máquina (PC Trabalho vs. PC Pessoal). |
+| 🎨 **`design-engineer-agent`** (Engenheiro de UI/UX) | [`design-engineer-agent.md`](design-engineer-agent.md) | Interfaces refinadas, microinterações, Framer Motion, layouts bento-grid, acessibilidade WCAG 2.2 e design anti-template. |
+| 🛡️ **`security-auditor-agent`** (Auditor de Segurança) | [`security-auditor-agent.md`](security-auditor-agent.md) | Auditoria defensiva/ofensiva OWASP Top 10, autenticação segura (JWT/OAuth), proteção contra injection e bloqueio de vazamento de secrets. |
+| 🗄️ **`database-architect-agent`** (Arquiteto de Banco) | [`database-architect-agent.md`](database-architect-agent.md) | Modelagem relacional e NoSQL (Postgres, Supabase, Neon, Mongo), migrations seguras, otimização de queries lentas e cache Redis. |
+| 🧪 **`qa-testing-agent`** (Engenheiro de Testes & TDD) | [`qa-testing-agent.md`](qa-testing-agent.md) | Cultura TDD (Red-Green-Refactor), testes unitários e de integração sem flakiness, e automação end-to-end com Playwright. |
+| ☁️ **`devops-cloud-agent`** (Arquiteto Cloud & Deploy) | [`devops-cloud-agent.md`](devops-cloud-agent.md) | Dockerfiles multi-stage ultraleves, compose, pipelines CI/CD no GitHub Actions, deploys na Vercel/Cloudflare/Azure e auditoria de produção. |
+| 🤖 **`ai-engineer-agent`** (Engenheiro de IA & Agentes) | [`ai-engineer-agent.md`](ai-engineer-agent.md) | Desenvolvimento de agentes autônomos, servidores MCP, saídas estruturadas tipadas (TypeSafe AI), controle de custos de tokens e RAG sem alucinação. |
+| 📈 **`growth-marketing-agent`** (Estrategista de Growth) | [`growth-marketing-agent.md`](growth-marketing-agent.md) | SEO técnico (Core Web Vitals nota 90+), posts magnéticos para LinkedIn, sequências de e-mail de onboarding e propostas comerciais. |
+| 🎬 **`video-producer-agent`** (Produtor de Vídeos Remotion) | [`video-producer-agent.md`](video-producer-agent.md) | Produção programática de vídeos com React/Remotion, kinetic typography, legendas automáticas, áudio sincronizado e teasers de SaaS. |
 
 ---
 
@@ -48,25 +56,23 @@ flowchart TD
 O Antigravity suporta os Agentes tanto como **Skills Nativas** (recomendado para auto-descoberta) quanto como **Agentes Customizados**:
 
 ```bash
-# Windows (PowerShell) - Como Skills Nativas do Antigravity (Recomendado):
-New-Item -ItemType Directory -Force -Path "$HOME\.gemini\config\skills\global-master-agent"
-Copy-Item custom-agents\global-master-agent.md "$HOME\.gemini\config\skills\global-master-agent\SKILL.md" -Force
-
-New-Item -ItemType Directory -Force -Path "$HOME\.gemini\config\skills\skills-orchestrator"
-Copy-Item custom-agents\skills-orchestrator.md "$HOME\.gemini\config\skills\skills-orchestrator\SKILL.md" -Force
-
-New-Item -ItemType Directory -Force -Path "$HOME\.gemini\config\skills\git-master-agent"
-Copy-Item custom-agents\git-master-agent.md "$HOME\.gemini\config\skills\git-master-agent\SKILL.md" -Force
-
-# Como Agentes Customizados no Gemini:
+# Windows (PowerShell):
+# 1. Copiar todos os 11 Agentes Customizados para o Gemini:
 Copy-Item custom-agents\*.md "$HOME\.gemini\config\agents\" -Force
 
+# 2. Espelhar as pastas de skills dos agentes (Auto-descoberta nativa):
+Get-ChildItem -Directory custom-agents | ForEach-Object {
+    New-Item -ItemType Directory -Force -Path "$HOME\.gemini\config\skills\$($_.Name)"
+    Copy-Item "$($_.FullName)\SKILL.md" "$HOME\.gemini\config\skills\$($_.Name)\SKILL.md" -Force
+}
+
 # Linux / macOS:
-mkdir -p ~/.gemini/config/skills/global-master-agent ~/.gemini/config/skills/skills-orchestrator ~/.gemini/config/skills/git-master-agent
-cp custom-agents/global-master-agent.md ~/.gemini/config/skills/global-master-agent/SKILL.md
-cp custom-agents/skills-orchestrator.md ~/.gemini/config/skills/skills-orchestrator/SKILL.md
-cp custom-agents/git-master-agent.md ~/.gemini/config/skills/git-master-agent/SKILL.md
 cp custom-agents/*.md ~/.gemini/config/agents/
+for d in custom-agents/*/; do
+    name=$(basename "$d")
+    mkdir -p ~/.gemini/config/skills/"$name"
+    cp "$d/SKILL.md" ~/.gemini/config/skills/"$name"/SKILL.md 2>/dev/null || true
+done
 ```
 
 O Antigravity detecta as skills/agentes automaticamente. Para ativá-los em qualquer sessão:

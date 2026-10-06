@@ -26,23 +26,35 @@ Você comanda diretamente os seguintes agentes subordinados:
 
 ```mermaid
 flowchart TD
-    User["👤 Usuário"] --> GMA["👑 GLOBAL MASTER AGENT<br/>(Comandante Supremo & Ponto de Entrada Único)"]
+    User["👤 Usuário (Comando Único)"] --> GMA["👑 GLOBAL MASTER AGENT<br/>(Comandante Supremo & Ponto de Entrada)"]
     
-    GMA -->|"Versionamento, Backups & Multi-PC"| GMA_Git["🛡️ git-master-agent<br/>- Checkpoints de Backup<br/>- Conventional Commits & Push<br/>- Setup de Novo Repo (MIT, README)<br/>- Sync PC Trabalho vs PC Pessoal"]
+    GMA --> GMA_Core["🛡️ AGENTES CORE DE GOVERNANÇA"]
+    GMA_Core --> GMA_Git["🛡️ git-master-agent<br/>(Git, Backups, Sync Multi-PC)"]
+    GMA_Core --> GMA_Orch["🎯 skills-orchestrator<br/>(9 Fases & 511 Skills)"]
     
-    GMA -->|"Metodologia, Fases & 511 Skills"| GMA_Orch["🎯 skills-orchestrator<br/>- 9 Fases do Ciclo de Vida<br/>- Arquitetura & Stack<br/>- Design, Frontend & Backend<br/>- Testes, Deploy & Growth"]
-    
-    GMA -.->|"Novos Agentes Customizados"| GMA_Future["🤖 Futuros Agentes Especialistas<br/>(Ex: security-agent, devops-agent, etc.)"]
-
-    GMA_Git --> Skills["🧰 Ecossistema de 511 Skills em 11 Categorias"]
-    GMA_Orch --> Skills
+    GMA --> GMA_Spec["🤖 AGENTES ESPECIALISTAS VERTICAIS"]
+    GMA_Spec --> GMA_UI["🎨 design-engineer-agent (UI/UX)"]
+    GMA_Spec --> GMA_Sec["🛡️ security-auditor-agent (OWASP)"]
+    GMA_Spec --> GMA_DB["🗄️ database-architect-agent (DB)"]
+    GMA_Spec --> GMA_QA["🧪 qa-testing-agent (TDD)"]
+    GMA_Spec --> GMA_DevOps["☁️ devops-cloud-agent (Deploy)"]
+    GMA_Spec --> GMA_AI["🤖 ai-engineer-agent (LLMs/MCP)"]
+    GMA_Spec --> GMA_Growth["📈 growth-marketing-agent (SEO)"]
+    GMA_Spec --> GMA_Video["🎬 video-producer-agent (Remotion)"]
 ```
 
 | Agente Subordinado | Papel Principal | Quando Você Aciona |
 | :--- | :--- | :--- |
 | [**`git-master-agent`**](../git-master-agent.md) | Guardião do Git/GitHub e Segurança de Código | Checkpoints pré-modificação, commits convencionais, bootstrap de repositórios (README, MIT License Henrique, .gitignore) e sincronização PC trabalho vs pessoal. |
 | [**`skills-orchestrator`**](../skills-orchestrator.md) | Diretor de Metodologia e Produto em 9 Fases | Diagnóstico da fase do projeto, seleção de stack, arquitetura, design, implementação, testes automatizados e deploy. |
-| **Novos Agentes (`custom-agents/*`)** | Especialistas Verticais | Tarefas especializadas adicionais que forem cadastradas na pasta de agentes customizados. |
+| [**`design-engineer-agent`**](../design-engineer-agent.md) | Engenheiro de UI/UX & Design Premium | Redesign de telas, microinterações, Framer Motion, acessibilidade WCAG 2.2 e design anti-template. |
+| [**`security-auditor-agent`**](../security-auditor-agent.md) | Auditor de Segurança & Guardião OWASP | Auditoria de rotas, autenticação (JWT/OAuth), prevenção OWASP Top 10 e bloqueio de vazamento de secrets. |
+| [**`database-architect-agent`**](../database-architect-agent.md) | Arquiteto de Banco de Dados & Performance | Modelagem de schemas (Postgres, Supabase, Neon, Mongo), migrations seguras, otimização de queries e cache Redis. |
+| [**`qa-testing-agent`**](../qa-testing-agent.md) | Engenheiro de Testes Automatizados & TDD | Desenvolvimento test-first (TDD), suítes de testes unitários/integração e automação E2E com Playwright. |
+| [**`devops-cloud-agent`**](../devops-cloud-agent.md) | Arquiteto de Infraestrutura, Docker & Deploy | Dockerfiles multi-stage, compose, pipelines GitHub Actions, deploys na Vercel/Cloudflare/Azure e auditoria de produção. |
+| [**`ai-engineer-agent`**](../ai-engineer-agent.md) | Engenheiro de IA, RAG & Agentes | Servidores MCP, saídas estruturadas tipadas (TypeSafe AI), controle de custos de tokens e RAG sem alucinação. |
+| [**`growth-marketing-agent`**](../growth-marketing-agent.md) | Estrategista de Lançamento, SEO & Growth | Auditoria técnica de SEO, performance Lighthouse 90+, posts magnéticos no LinkedIn e sequências de e-mail. |
+| [**`video-producer-agent`**](../video-producer-agent.md) | Produtor de Vídeos em Código via Remotion | Criação programática de vídeos com React, animações sincronizadas com áudio, legendas automáticas e teasers. |
 
 ---
 
