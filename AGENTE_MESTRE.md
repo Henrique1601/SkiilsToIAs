@@ -282,12 +282,13 @@ Para sistemas baseados em LLMs, RAG ou execução autônoma com orçamentos e gu
 
 ### 🛠️ Playbook 4: Refatoração, Modernização ou Correção de Defeitos Críticos
 Quando o sistema já existe e precisa de evolução segura sem quebrar funcionalidades:
-1. **Identificação**: Use [`orch-fix-defect`](ai-agents/orch-fix-defect/SKILL.md) para bugs ou [`orch-refine-code`](ai-agents/orch-refine-code/SKILL.md) para refatoração.
-2. **Reprodução**: Use [`tdd`](development/tdd/SKILL.md) para escrever um teste unitário que reproduz a falha (teste vermelho).
-3. **Alteração Segura**: Aplique a modificação cirúrgica no código.
-4. **Verificação**: Execute [`verification-loop`](ai-agents/verification-loop/SKILL.md) para garantir que toda a suíte de testes fique verde.
-5. **Revisão**: Use [`code-review`](development/code-review/SKILL.md) e [`security-review`](utilities/security-review/SKILL.md) para auditar efeitos colaterais.
-6. **Commit**: Use [`git-workflow`](development/git-workflow/SKILL.md) para gerar commit semântico.
+1. **Ponto de Restauração**: Use o [`git-master-agent`](custom-agents/git-master-agent.md) para gerar um checkpoint preventivo (`backup/checkpoint-...`) ou safety stash antes de tocar no código.
+2. **Identificação**: Use [`orch-fix-defect`](ai-agents/orch-fix-defect/SKILL.md) para bugs ou [`orch-refine-code`](ai-agents/orch-refine-code/SKILL.md) para refatoração.
+3. **Reprodução**: Use [`tdd`](development/tdd/SKILL.md) para escrever um teste unitário que reproduz a falha (teste vermelho).
+4. **Alteração Segura**: Aplique a modificação cirúrgica no código.
+5. **Verificação**: Execute [`verification-loop`](ai-agents/verification-loop/SKILL.md) para garantir que toda a suíte de testes fique verde.
+6. **Revisão**: Use [`code-review`](development/code-review/SKILL.md) e [`security-review`](utilities/security-review/SKILL.md) para auditar efeitos colaterais.
+7. **Commit & Push**: Use o [`git-master-agent`](custom-agents/git-master-agent.md) ou [`git-workflow`](development/git-workflow/SKILL.md) para gerar commit semântico padronizado e push seguro.
 
 ---
 
@@ -301,6 +302,7 @@ Quando você se deparar com um obstáculo específico, consulte esta tabela dire
 | **"O site está lento e demorando para carregar no celular"** | Meça métricas vitais, comprima assets e otimize consultas de banco. | [`performance`](development/performance/SKILL.md), [`lighthouse`](seo/lighthouse/SKILL.md), [`react-performance`](development/react-performance/SKILL.md) |
 | **"Consultas no banco de dados estão travando o servidor"** | Analise planos de execução (`EXPLAIN ANALYZE`), crie índices e configure connection pool. | [`postgres-patterns`](backend-database/postgres-patterns/SKILL.md), [`redis-patterns`](backend-database/redis-patterns/SKILL.md), [`clickhouse-io`](backend-database/clickhouse-io/SKILL.md) |
 | **"Estou com medo de quebrar coisas ao fazer mudanças"** | Crie uma rede de segurança com testes unitários e de integração antes de mexer. | [`tdd-workflow`](development/tdd-workflow/SKILL.md), [`verification-loop`](ai-agents/verification-loop/SKILL.md) |
+| **"Preciso de backup preventivo, commit seguro ou sincronizar PC trabalho vs pessoal"** | Acione o Agente Mestre de Git para criar checkpoints automáticos, Conventional Commits e diagnosticar branches remotas. | [`git-master-agent`](custom-agents/git-master-agent.md), [`git-workflow`](development/git-workflow/SKILL.md) |
 | **"Preciso lançar o produto, mas não sei como divulgar"** | Audite o SEO da página e crie uma campanha estruturada no LinkedIn e e-mail. | [`seo-audit`](seo/seo-audit/SKILL.md), [`linkedin-content-planner`](marketing/linkedin-content-planner/SKILL.md), [`email-sequence`](marketing/email-sequence/SKILL.md) |
 | **"Minha API consome tokens demais e a conta de IA está cara"** | Implemente roteamento dinâmico de modelos e cache de contexto de prompt. | [`cost-aware-llm-pipeline`](ai-agents/cost-aware-llm-pipeline/SKILL.md), [`token-budget-advisor`](ai-agents/token-budget-advisor/SKILL.md) |
 | **"Quero criar vídeos explicativos em código para o meu SaaS"** | Use o ecossistema Remotion em React para gerar vídeos programáticos. | [`remotion-best-practices`](design/remotion-best-practices/SKILL.md), [`remotion-video-creation`](design/remotion-video-creation/SKILL.md) |
@@ -319,7 +321,7 @@ Todas as 511 skills estão rigorosamente catalogadas e espelhadas tanto no repos
 | 🗄️ **Backend & Database** | **61** | Bancos SQL/NoSQL, ORMs, Cache, Microsserviços | [`backend-database/`](backend-database/) |
 | ☁️ **DevOps & Cloud** | **44** | Docker, K8s, Nuvem, Azure, Vercel, Homelab | [`devops-cloud/`](devops-cloud/) |
 | 💼 **Business Management** | **43** | PRDs, Métricas, Análise de Produto, Estratégia | [`business-management/`](business-management/) |
-| 🛠️ **Utilities** | **31** | Automações, Formatação, Ferramentas de Suporte | [`utilities/`](utilities/) |
+| 🛠️ **Utilities** | **31** | Automações, Scraping, Formatação, Suporte | [`utilities/`](utilities/) |
 | 📢 **Marketing** | **27** | LinkedIn, Copywriting, E-mail Marketing, Campanhas | [`marketing/`](marketing/) |
 | 📄 **Documents & Productivity** | **26** | PDFs, DOCX, Apresentações, Obsidian, Pesquisa | [`documents-productivity/`](documents-productivity/) |
 | 🎯 **Career** | **23** | Resumos, Preparação para Entrevistas, Portfólios | [`career/`](career/) |

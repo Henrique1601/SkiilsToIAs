@@ -10,7 +10,8 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 | Agente | Arquivo | Descrição |
 | :--- | :--- | :--- |
-| **`skills-orchestrator`** (Agente Mestre) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 511 skills (541 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market), diagnosticando a fase atual e indicando a skill certa com o prompt exato. |
+| **`skills-orchestrator`** (Agente Mestre de Projetos) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 511 skills (541 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market), diagnosticando a fase atual e indicando a skill certa com o prompt exato. |
+| **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`git-master-agent.md`](git-master-agent.md) | Especialista em backups preventivos (`backup/checkpoint-...`), Conventional Commits seguros, bootstrap de novos projetos (README, MIT License, .gitignore), manutenção contínua de documentação e sincronização inteligente entre máquinas (PC Trabalho vs. PC Pessoal). |
 
 ---
 
@@ -18,25 +19,34 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 ### 1. No Google Antigravity / Gemini CLI (Nativo)
 
-O Antigravity suporta o Agente Mestre tanto como **Skill Nativa** (recomendado para auto-descoberta) quanto como **Agente Customizado**:
+O Antigravity suporta os Agentes tanto como **Skills Nativas** (recomendado para auto-descoberta) quanto como **Agentes Customizados**:
 
 ```bash
-# Windows (PowerShell) - Como Skill Nativa do Antigravity (Recomendado):
+# Windows (PowerShell) - Como Skills Nativas do Antigravity (Recomendado):
 New-Item -ItemType Directory -Force -Path "$HOME\.gemini\config\skills\skills-orchestrator"
 Copy-Item custom-agents\skills-orchestrator.md "$HOME\.gemini\config\skills\skills-orchestrator\SKILL.md" -Force
 
-# Como Agente Customizado:
-Copy-Item custom-agents\skills-orchestrator.md "$HOME\.gemini\config\agents\" -Force
+New-Item -ItemType Directory -Force -Path "$HOME\.gemini\config\skills\git-master-agent"
+Copy-Item custom-agents\git-master-agent.md "$HOME\.gemini\config\skills\git-master-agent\SKILL.md" -Force
+
+# Como Agentes Customizados no Gemini:
+Copy-Item custom-agents\*.md "$HOME\.gemini\config\agents\" -Force
 
 # Linux / macOS:
-mkdir -p ~/.gemini/config/skills/skills-orchestrator
+mkdir -p ~/.gemini/config/skills/skills-orchestrator ~/.gemini/config/skills/git-master-agent
 cp custom-agents/skills-orchestrator.md ~/.gemini/config/skills/skills-orchestrator/SKILL.md
-cp custom-agents/skills-orchestrator.md ~/.gemini/config/agents/
+cp custom-agents/git-master-agent.md ~/.gemini/config/skills/git-master-agent/SKILL.md
+cp custom-agents/*.md ~/.gemini/config/agents/
 ```
 
-O Antigravity detecta a skill/agente automaticamente. Para ativá-lo em qualquer sessão, basta solicitar:
+O Antigravity detecta as skills/agentes automaticamente. Para ativá-los em qualquer sessão, basta solicitar:
 ```markdown
-"Ative a skill skills-orchestrator para planejar e guiar meu projeto [NOME DO PROJETO]"
+# Para projetos e orquestração:
+"Ative o skills-orchestrator para planejar e guiar meu projeto [NOME DO PROJETO]"
+
+# Para Git, commits, backups e sincronização:
+"Ative o git-master-agent para salvar minhas alterações com backup e commit seguro"
+"Ative o git-master-agent para verificar se meu outro PC comitou algo novo no GitHub"
 ```
 
 ---

@@ -789,8 +789,9 @@ flowchart LR
 Todas as skills já estão perfeitamente sincronizadas e organizadas por subpastas em:
 `~/.gemini/config/skills/`
 
-O Agente Mestre está disponível em [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) e configurado na pasta de agentes do Gemini:
-`~/.gemini/config/agents/skills-orchestrator.md`
+Os Agentes Customizados estão disponíveis na pasta [`custom-agents/`](custom-agents/) e configurados na pasta global de agentes do Gemini (`~/.gemini/config/agents/`):
+- [`skills-orchestrator.md`](custom-agents/skills-orchestrator.md): Orquestrador mestre de 510 skills e 9 fases de projeto.
+- [`git-master-agent.md`](custom-agents/git-master-agent.md): Agente Mestre de Git & GitHub (backups preventivos, commits convencionais, bootstrap de projetos com MIT License e sincronização PC trabalho vs pessoal).
 
 ### No Claude Code:
 Você pode copiar toda a estrutura de skills e agentes para o Claude Code:
