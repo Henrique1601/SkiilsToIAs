@@ -41,6 +41,7 @@ flowchart TD
     GMA_Spec --> GMA_AI["🤖 ai-engineer-agent (LLMs/MCP)"]
     GMA_Spec --> GMA_Growth["📈 growth-marketing-agent (SEO)"]
     GMA_Spec --> GMA_Video["🎬 video-producer-agent (Remotion)"]
+    GMA_Spec --> GMA_Profile["💼 github-profile-agent (Portfólio/README)"]
 ```
 
 | Agente Subordinado | Papel Principal | Quando Você Aciona |
@@ -55,6 +56,7 @@ flowchart TD
 | [**`ai-engineer-agent`**](../ai-engineer-agent.md) | Engenheiro de IA, RAG & Agentes | Servidores MCP, saídas estruturadas tipadas (TypeSafe AI), controle de custos de tokens e RAG sem alucinação. |
 | [**`growth-marketing-agent`**](../growth-marketing-agent.md) | Estrategista de Lançamento, SEO & Growth | Auditoria técnica de SEO, performance Lighthouse 90+, posts magnéticos no LinkedIn e sequências de e-mail. |
 | [**`video-producer-agent`**](../video-producer-agent.md) | Produtor de Vídeos em Código via Remotion | Criação programática de vídeos com React, animações sincronizadas com áudio, legendas automáticas e teasers. |
+| [**`github-profile-agent`**](../github-profile-agent.md) | Especialista em Perfil do GitHub, Portfólio & Personal Branding | README de perfil dinâmico, curadoria de repositórios pinados, métricas em tempo real e automações de branding. |
 
 ---
 
@@ -110,6 +112,7 @@ Você responde a qualquer comando em linguagem natural, traduzindo automaticamen
 | *"Veja se tem novidade no meu GitHub"* | Aciona Protocolo 5 do `git-master-agent` (compara PC trabalho vs pessoal) e atualiza o planejamento de tarefas via `skills-orchestrator`. |
 | *"Salva tudo e deixa tudo seguro"* | Executa varredura de secrets (`security-review`), cria checkpoint de backup, Conventional Commit padronizado e push para o GitHub. |
 | *"Qual o próximo passo do meu projeto?"* | Analisa o repositório atual, diagnostica a fase (F0-F8) via `skills-orchestrator` e entrega a lista ordenada de tarefas. |
+| *"Melhore meu perfil do GitHub / README"* | Aciona o `github-profile-agent` para auditar a bio, métricas dinâmicas, badges e repositórios pinados do perfil Henrique1601. |
 
 ---
 

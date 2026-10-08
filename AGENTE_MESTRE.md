@@ -315,6 +315,7 @@ Quando você se deparar com um obstáculo específico, consulte esta tabela dire
 | **"Preciso lançar o produto, atrair tráfego e divulgar"** | Audite o SEO da página e crie uma campanha estruturada no LinkedIn e e-mail. | [`growth-marketing-agent`](custom-agents/growth-marketing-agent.md), [`seo-audit`](seo/seo-audit/SKILL.md), [`linkedin-content-planner`](marketing/linkedin-content-planner/SKILL.md) |
 | **"Minha API consome tokens demais e a conta de IA está cara"** | Implemente roteamento dinâmico de modelos e cache de contexto de prompt. | [`ai-engineer-agent`](custom-agents/ai-engineer-agent.md), [`cost-aware-llm-pipeline`](ai-agents/cost-aware-llm-pipeline/SKILL.md), [`typesafe-ai`](ai-agents/typesafe-ai/SKILL.md) |
 | **"Quero criar vídeos explicativos em código para o meu SaaS"** | Use o ecossistema Remotion em React para gerar vídeos programáticos. | [`video-producer-agent`](custom-agents/video-producer-agent.md), [`remotion-best-practices`](design/remotion-best-practices/SKILL.md), [`remotion-video-creation`](design/remotion-video-creation/SKILL.md) |
+| **"Quero turbinar meu perfil do GitHub, README pessoal e portfólio"** | Estruture a bio, badges de stack, métricas dinâmicas em tempo real e vitrine de projetos. | [`github-profile-agent`](custom-agents/github-profile-agent.md), [`creative-portfolio-resume`](career/creative-portfolio-resume/SKILL.md), [`tech-resume-optimizer`](career/tech-resume-optimizer/SKILL.md) |
 
 ---
 

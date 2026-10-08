@@ -41,7 +41,7 @@ Além das 511 skills, o repositório conta com uma pasta dedicada para agentes o
 
 | Agente | Arquivo | Descrição |
 |---|---|---|
-| 👑 **`global-master-agent`** (Agente Global Supremo) | [`custom-agents/global-master-agent.md`](custom-agents/global-master-agent.md) | **Ponto único de comando.** Orquestra automaticamente todos os outros 10 agentes e as 511 skills do repositório. Você só precisa chamar este agente! |
+| 👑 **`global-master-agent`** (Agente Global Supremo) | [`custom-agents/global-master-agent.md`](custom-agents/global-master-agent.md) | **Ponto único de comando.** Orquestra automaticamente todos os outros 11 agentes e as 511 skills do repositório. Você só precisa chamar este agente! |
 | 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador mestre das 511 skills (541 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
 | 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`custom-agents/git-master-agent.md`](custom-agents/git-master-agent.md) | Backups preventivos (`backup/checkpoint-...`), Conventional Commits, bootstrap de novos projetos (README, MIT License, .gitignore) e sincronização multi-máquina (PC Trabalho vs. PC Pessoal). |
 | 🎨 **`design-engineer-agent`** (Engenheiro de UI/UX) | [`custom-agents/design-engineer-agent.md`](custom-agents/design-engineer-agent.md) | Interfaces modernas estilo Linear/Apple, microinterações, Framer Motion, acessibilidade WCAG 2.2 e design anti-template. |
@@ -52,6 +52,7 @@ Além das 511 skills, o repositório conta com uma pasta dedicada para agentes o
 | 🤖 **`ai-engineer-agent`** (Engenheiro de IA & Agentes) | [`custom-agents/ai-engineer-agent.md`](custom-agents/ai-engineer-agent.md) | Desenvolvimento de agentes autônomos, servidores MCP, saídas estruturadas tipadas (TypeSafe AI) e RAG sem alucinação. |
 | 📈 **`growth-marketing-agent`** (Estrategista de Growth) | [`custom-agents/growth-marketing-agent.md`](custom-agents/growth-marketing-agent.md) | SEO técnico (Core Web Vitals nota 90+), posts magnéticos para LinkedIn, sequências de e-mail de onboarding e propostas comerciais. |
 | 🎬 **`video-producer-agent`** (Produtor de Vídeos Remotion) | [`custom-agents/video-producer-agent.md`](custom-agents/video-producer-agent.md) | Produção programática de vídeos com React/Remotion, kinetic typography, legendas automáticas, áudio sincronizado e teasers de SaaS. |
+| 🐙 **`github-profile-agent`** (Especialista em Perfil do GitHub) | [`custom-agents/github-profile-agent.md`](custom-agents/github-profile-agent.md) | Otimização do perfil público (`username/username`), README dinâmico, badges visuais, métricas em tempo real e curadoria de pinned repos. |
 
 👉 Consulte o [**Guia de Agentes (`custom-agents/README.md`)**](custom-agents/README.md) para detalhes de instalação e criação de novos agentes.
 

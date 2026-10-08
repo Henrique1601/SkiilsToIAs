@@ -790,7 +790,7 @@ Todas as skills já estão perfeitamente sincronizadas e organizadas por subpast
 `~/.gemini/config/skills/`
 
 Os Agentes Customizados estão disponíveis na pasta [`custom-agents/`](custom-agents/) e configurados na pasta global de agentes do Gemini (`~/.gemini/config/agents/`):
-- [`global-master-agent.md`](custom-agents/global-master-agent.md): **Agente Global Supremo.** Ponto único de entrada: orquestra automaticamente todos os 10 agentes especialistas e 511 skills.
+- [`global-master-agent.md`](custom-agents/global-master-agent.md): **Agente Global Supremo.** Ponto único de entrada: orquestra automaticamente todos os 11 agentes especialistas e 511 skills.
 - [`skills-orchestrator.md`](custom-agents/skills-orchestrator.md): Orquestrador mestre de 511 skills e 9 fases de projeto.
 - [`git-master-agent.md`](custom-agents/git-master-agent.md): Agente Mestre de Git & GitHub (backups preventivos, commits convencionais, bootstrap de projetos com MIT License e sincronização PC trabalho vs pessoal).
 - [`design-engineer-agent.md`](custom-agents/design-engineer-agent.md): Engenheiro de UI/UX & Design Premium (microinterações, Framer Motion, WCAG 2.2).
@@ -801,6 +801,7 @@ Os Agentes Customizados estão disponíveis na pasta [`custom-agents/`](custom-a
 - [`ai-engineer-agent.md`](custom-agents/ai-engineer-agent.md): Engenheiro de IA, RAG & Agentes (MCP, TypeSafe AI, economia de tokens).
 - [`growth-marketing-agent.md`](custom-agents/growth-marketing-agent.md): Estrategista de Lançamento, SEO & Growth (Lighthouse 90+, LinkedIn e e-mails).
 - [`video-producer-agent.md`](custom-agents/video-producer-agent.md): Produtor de Vídeos em Código via Remotion (React, legendas automáticas e animações).
+- [`github-profile-agent.md`](custom-agents/github-profile-agent.md): Especialista em Perfil do GitHub & Portfólio (README dinâmico, badges visuais, métricas em tempo real e curadoria de repositórios).
 
 ### No Claude Code:
 Você pode copiar toda a estrutura de skills e agentes para o Claude Code:
