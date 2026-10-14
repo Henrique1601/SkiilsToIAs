@@ -1,12 +1,12 @@
 # 🧠 MANUAL OPERACIONAL: AGENTE MESTRE (SKILLS ORCHESTRATOR)
 
-> **O Guia Definitivo de Orquestração, Metodologia em 9 Fases e Playbooks de Execução para as 511 Skills (541 Globais)**
+> **O Guia Definitivo de Orquestração, Metodologia em 9 Fases e Playbooks de Execução para as 512 Skills (542 Globais)**
 
 ---
 
 ## 🎯 1. VISÃO GERAL & MISSÃO
 
-O **Agente Mestre (Skills Orchestrator)** é o comandante operacional do ecossistema de **511 Skills** no repositório (e **541 globais** no Antigravity) distribuídas nas **11 Categorias Especializadas**.
+O **Agente Mestre (Skills Orchestrator)** é o comandante operacional do ecossistema de **512 Skills** no repositório (e **542 globais** no Antigravity) distribuídas nas **11 Categorias Especializadas**.
 
 Em vez de se perder procurando manualmente qual skill utilizar entre centenas de opções, o Agente Mestre atua como um Diretor de Engenharia e Produto:
 1. **Analisa o seu objetivo** ou a demanda técnica atual.
@@ -42,7 +42,7 @@ Para invocá-lo em uma sessão, basta pedir:
 Você pode colar este comando em qualquer sessão para que a IA assuma a postura do Agente Mestre:
 
 ```markdown
-Você é o Agente Mestre (Skills Orchestrator) deste repositório de 511 skills (541 globais).
+Você é o Agente Mestre (Skills Orchestrator) deste repositório de 512 skills (542 globais).
 Quero construir o seguinte projeto: [DESCREVA SEU PROJETO OU DÚVIDA AQUI].
 
 Por favor:
@@ -319,14 +319,14 @@ Quando você se deparar com um obstáculo específico, consulte esta tabela dire
 
 ---
 
-## 📊 6. ESTRUTURA DO ECOSSISTEMA: 511 SKILLS EM 11 CATEGORIAS
+## 📊 6. ESTRUTURA DO ECOSSISTEMA: 512 SKILLS EM 11 CATEGORIAS
 
-Todas as 511 skills estão rigorosamente catalogadas e espelhadas tanto no repositório global quanto nas configurações locais do Gemini Antigravity (com 541 skills globais indexadas):
+Todas as 512 skills estão rigorosamente catalogadas e espelhadas tanto no repositório global quanto nas configurações locais do Gemini Antigravity (com 542 skills globais indexadas):
 
 | Categoria | Total Skills | Foco Principal | Link para o Diretório |
 | :--- | :---: | :--- | :--- |
 | 🤖 **AI Agents** | **95** | Autonomia, RAG, Eval Loops, Segurança de Agentes | [`ai-agents/`](ai-agents/) |
-| 💻 **Development** | **88** | Frameworks Web, Mobile, Linguagens, Boas Práticas | [`development/`](development/) |
+| 💻 **Development** | **89** | Frameworks Web, Mobile, Linguagens, Boas Práticas | [`development/`](development/) |
 | 🎨 **Design** | **65** | UI/UX, Design Systems, Animação, Vídeo (Remotion) | [`design/`](design/) |
 | 🗄️ **Backend & Database** | **61** | Bancos SQL/NoSQL, ORMs, Cache, Microsserviços | [`backend-database/`](backend-database/) |
 | ☁️ **DevOps & Cloud** | **44** | Docker, K8s, Nuvem, Azure, Vercel, Homelab | [`devops-cloud/`](devops-cloud/) |
@@ -336,8 +336,8 @@ Todas as 511 skills estão rigorosamente catalogadas e espelhadas tanto no repos
 | 📄 **Documents & Productivity** | **26** | PDFs, DOCX, Apresentações, Obsidian, Pesquisa | [`documents-productivity/`](documents-productivity/) |
 | 🎯 **Career** | **23** | Resumos, Preparação para Entrevistas, Portfólios | [`career/`](career/) |
 | 🔍 **SEO** | **8** | Auditorias SEO, Indexação, Core Web Vitals | [`seo/`](seo/) |
-| **TOTAL** | **511** | **Ecossistema Completo de Desenvolvimento e Negócios** | — |
+| **TOTAL** | **512** | **Ecossistema Completo de Desenvolvimento e Negócios** | — |
 
 ---
 
-> 💡 **Para consultar o índice completo e descritivo de cada uma das 511 skills com exemplos de uso e comandos, consulte o [CEREBRO.md](CEREBRO.md).**
+> 💡 **Para consultar o índice completo e descritivo de cada uma das 512 skills com exemplos de uso e comandos, consulte o [CEREBRO.md](CEREBRO.md).**

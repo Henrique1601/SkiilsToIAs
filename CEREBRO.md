@@ -1,7 +1,7 @@
 # 🧠 O Cérebro das Skills (`CEREBRO.md`)
-### Manual Mestre de Ativação, Casos de Uso, Engenharia de Prompt e Catálogo de 511 Skills
+### Manual Mestre de Ativação, Casos de Uso, Engenharia de Prompt e Catálogo de 512 Skills
 
-> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **511 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
+> Este documento é o **mapa cognitivo central** do repositório [`SkiilsToIAs`](https://github.com/Henrique1601/SkiilsToIAs). Aqui você encontrará não apenas o que cada uma das **512 skills** faz, mas exatamente **quando usar**, **como invocar** e **quais prompts copiar e colar** para extrair a máxima inteligência dos seus agentes de IA.
 
 ---
 
@@ -26,13 +26,13 @@
    - [Combo 5: Redesign & Polimento Obsessivo de UI](#combo-5-redesign--polimento-obsessivo-de-ui)
    - [Combo 6: Apresentação Executiva para Diretoria](#combo-6-apresentação-executiva-para-diretoria)
 3. [🎯 Cheat Sheet: O que você quer fazer hoje?](#-3-cheat-sheet-o-que-você-quer-fazer-hoje)
-4. [📚 Catálogo Completo das 511 Skills por Categoria](#-4-catálogo-completo-das-skills-por-categoria)
+4. [📚 Catálogo Completo das 512 Skills por Categoria](#-4-catálogo-completo-das-skills-por-categoria)
 
    - [🎨 Design & UI/UX (65 skills)](#design)
    - [🔍 SEO & Mecanismos de Busca (8 skills)](#seo)
    - [📣 Marketing & Vendas (27 skills)](#marketing)
    - [🎯 Carreira & Empregabilidade (23 skills)](#career)
-   - [💻 Desenvolvimento & Testes (88 skills)](#development)
+   - [💻 Desenvolvimento & Testes (89 skills)](#development)
    - [☁️ Cloud & DevOps (44 skills)](#devops-cloud)
    - [🗄️ Backend & Bancos de Dados (61 skills)](#backend-database)
    - [🤖 Agentes de IA & Metaprogramação (95 skills)](#ai-agents)
@@ -346,7 +346,7 @@ flowchart LR
 | **`tech-resume-optimizer`** | Otimização de currículos especificamente para Engenharia de Software, Gestão de Produtos (PM) e liderança técnica. | Destacar arquitetura de sistemas, impacto de escala, linguagens, frameworks e métricas de engenharia (latência, downtime, throughput). | *"Otimize meu currículo de Software Engineer para destacar realizações em sistemas de baixa latência e concorrência massiva."* | [`SKILL.md`](career/tech-resume-optimizer/SKILL.md) |
 
 <a id="development"></a>
-### 💻 Desenvolvimento & Testes (88 skills)
+### 💻 Desenvolvimento & Testes (89 skills)
 > *Engenharia de software moderna, automação de navegadores com Playwright, TDD, frameworks modernos e Swift.*
 
 | Skill | O que faz | Quando usar | Exemplo de Prompt | Link |
@@ -423,6 +423,7 @@ flowchart LR
 | **`recsys-pipeline-architect`** | Design composable recommendation, ranking, and feed pipelines using the six-stage Source→Hydrator→Filter→Scorer→Selector→SideEffect framework popularized by ... | Necessidade específica envolvendo recsys-pipeline-architect. | *"Aplique as diretrizes da skill `recsys-pipeline-architect` nesta implementação."* | [`SKILL.md`](development/recsys-pipeline-architect/SKILL.md) |
 | **`refactor`** | Surgical code refactoring to improve maintainability without changing behavior. | Necessidade específica envolvendo refactor. | *"Aplique as diretrizes da skill `refactor` nesta implementação."* | [`SKILL.md`](development/refactor/SKILL.md) |
 | **`repo-scan`** | Cross-stack source code asset audit — classifies every file, detects embedded third-party libraries, and delivers actionable four-level verdicts per module w... | Necessidade específica envolvendo repo-scan. | *"Aplique as diretrizes da skill `repo-scan` nesta implementação."* | [`SKILL.md`](development/repo-scan/SKILL.md) |
+| **`reverse-engineer-anything`** | Engenharia reversa avançada de binários compilados, Electron/JavaScript, APKs Android, firmware e browsers via motor REA. | Inspecionar comportamento interno de binários sem código-fonte, descompilar código ofuscado, auditar rotinas e guiar reconstruções. | *"Utilize a skill reverse-engineer-anything para inspecionar e descompilar este executável/pacote e mapear suas chamadas de API."* | [`SKILL.md`](development/reverse-engineer-anything/SKILL.md) |
 | **`rust-testing`** | Rust testing patterns including unit tests, integration tests, async testing, property-based testing, mocking, and coverage. | Necessidade específica envolvendo rust-testing. | *"Aplique as diretrizes da skill `rust-testing` nesta implementação."* | [`SKILL.md`](development/rust-testing/SKILL.md) |
 | **`swift-actor-persistence`** | Thread-safe data persistence in Swift using actors — in-memory cache with file-backed storage, eliminating data races by design. | Necessidade específica envolvendo swift-actor-persistence. | *"Aplique as diretrizes da skill `swift-actor-persistence` nesta implementação."* | [`SKILL.md`](development/swift-actor-persistence/SKILL.md) |
 | **`swift-concurrency-6-2`** | Swift 6.2 Approachable Concurrency — single-threaded by default, @concurrent for explicit background offloading, isolated conformances for main actor types. | Necessidade específica envolvendo swift-concurrency-6-2. | *"Aplique as diretrizes da skill `swift-concurrency-6-2` nesta implementação."* | [`SKILL.md`](development/swift-concurrency-6-2/SKILL.md) |
@@ -790,8 +791,8 @@ Todas as skills já estão perfeitamente sincronizadas e organizadas por subpast
 `~/.gemini/config/skills/`
 
 Os Agentes Customizados estão disponíveis na pasta [`custom-agents/`](custom-agents/) e configurados na pasta global de agentes do Gemini (`~/.gemini/config/agents/`):
-- [`global-master-agent.md`](custom-agents/global-master-agent.md): **Agente Global Supremo.** Ponto único de entrada: orquestra automaticamente todos os 11 agentes especialistas e 511 skills.
-- [`skills-orchestrator.md`](custom-agents/skills-orchestrator.md): Orquestrador mestre de 511 skills e 9 fases de projeto.
+- [`global-master-agent.md`](custom-agents/global-master-agent.md): **Agente Global Supremo.** Ponto único de entrada: orquestra automaticamente todos os 11 agentes especialistas e 512 skills.
+- [`skills-orchestrator.md`](custom-agents/skills-orchestrator.md): Orquestrador mestre de 512 skills e 9 fases de projeto.
 - [`git-master-agent.md`](custom-agents/git-master-agent.md): Agente Mestre de Git & GitHub (backups preventivos, commits convencionais, bootstrap de projetos com MIT License e sincronização PC trabalho vs pessoal).
 - [`design-engineer-agent.md`](custom-agents/design-engineer-agent.md): Engenheiro de UI/UX & Design Premium (microinterações, Framer Motion, WCAG 2.2).
 - [`security-auditor-agent.md`](custom-agents/security-auditor-agent.md): Auditor de Segurança & Guardião OWASP Top 10 (autenticação segura e proteção de secrets).

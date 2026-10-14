@@ -1,6 +1,6 @@
 # 🧠 Skills to IAs (`SkiilsToIAs`)
 
-Repositório centralizado e categorizado contendo **511 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
+Repositório centralizado e categorizado contendo **512 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
 
 > [!IMPORTANT]
 > ### 🤖 Conheça o Agente Mestre (Skills Orchestrator)
@@ -13,7 +13,7 @@ Repositório centralizado e categorizado contendo **511 skills especializadas** 
 > - **Como a IA pensa e ativa as skills** (Anatomia, gatilhos e fórmula do prompt perfeito).
 > - **Power Combos**: Workflows multi-skill encadeados (Landing pages, Fullstack, Carreira, Cloud, MCP, etc.).
 > - **Cheat Sheet**: Tabela rápida de decisão ("O que você quer fazer hoje?").
-> - **Prompts Prontos**: Exemplos práticos para copiar e colar para as 511 skills catalogadas!
+> - **Prompts Prontos**: Exemplos práticos para copiar e colar para as 512 skills catalogadas!
 
 ---
 
@@ -25,7 +25,7 @@ Repositório centralizado e categorizado contendo **511 skills especializadas** 
 | [🔍 SEO & Mecanismos de Busca](#seo) | [`seo/`](seo/) | **8** | Skills dedicadas a auditoria técnica de SEO, otimização de Core Web Vitals, indexação e inteligência competitiva. |
 | [📣 Marketing & Vendas](#marketing) | [`marketing/`](marketing/) | **27** | Skills para comunicação de marca, criação de campanhas visuais, réguas de e-mail marketing, LinkedIn marketing, copywriting e conversão. |
 | [🎯 Carreira & Empregabilidade](#career) | [`career/`](career/) | **23** | Skills para elaboração de currículos de alto impacto (compatíveis com ATS), cartas de apresentação, preparação para entrevistas e negociação salarial. |
-| [💻 Desenvolvimento & Testes](#development) | [`development/`](development/) | **88** | Engenharia de software, frameworks modernos (React, Next.js, Vue, Swift, Kotlin), arquitetura limpa, automação Playwright e TDD. |
+| [💻 Desenvolvimento & Testes](#development) | [`development/`](development/) | **89** | Engenharia de software, frameworks modernos (React, Next.js, Vue, Swift, Kotlin), arquitetura limpa, automação Playwright e TDD. |
 | [☁️ Cloud & DevOps](#devops-cloud) | [`devops-cloud/`](devops-cloud/) | **44** | Infraestrutura como código, nuvem (Azure AI Foundry, Cloudflare, Netlify, Vercel), Docker, Kubernetes e redes/homelab. |
 | [🗄️ Backend & Bancos de Dados](#backend-database) | [`backend-database/`](backend-database/) | **61** | Bancos relacionais e NoSQL (Postgres, Supabase, Neon, MongoDB, Redis, ClickHouse), frameworks backend e otimização de queries. |
 | [🤖 Agentes de IA & Metaprogramação](#ai-agents) | [`ai-agents/`](ai-agents/) | **95** | Criação e engenharia de subagentes autônomos, servidores MCP (Model Context Protocol), harnesses, loops contínuos e segurança de IA. |
@@ -33,16 +33,16 @@ Repositório centralizado e categorizado contendo **511 skills especializadas** 
 | [📊 Gestão & Negócios](#business-management) | [`business-management/`](business-management/) | **43** | Análise de métricas e KPIs, governança, conformidade regulatória (HIPAA), PRDs, roadmaps, faturamento e briefings executivos. |
 | [🛠️ Utilitários & Otimização](#utilities) | [`utilities/`](utilities/) | **31** | Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multimídia (Mediabunny), git e ferramentas de suporte. |
 
-> **Total de Skills catalogadas:** 511 skills em 11 categorias
+> **Total de Skills catalogadas:** 512 skills em 11 categorias
 
 ## 🤖 Agentes Customizados (`custom-agents/`)
 
-Além das 511 skills, o repositório conta com uma pasta dedicada para agentes orquestradores e personas especializadas:
+Além das 512 skills, o repositório conta com uma pasta dedicada para agentes orquestradores e personas especializadas:
 
 | Agente | Arquivo | Descrição |
 |---|---|---|
-| 👑 **`global-master-agent`** (Agente Global Supremo) | [`custom-agents/global-master-agent.md`](custom-agents/global-master-agent.md) | **Ponto único de comando.** Orquestra automaticamente todos os outros 11 agentes e as 511 skills do repositório. Você só precisa chamar este agente! |
-| 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador mestre das 511 skills (541 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
+| 👑 **`global-master-agent`** (Agente Global Supremo) | [`custom-agents/global-master-agent.md`](custom-agents/global-master-agent.md) | **Ponto único de comando.** Orquestra automaticamente todos os outros 11 agentes e as 512 skills do repositório. Você só precisa chamar este agente! |
+| 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador mestre das 512 skills (542 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
 | 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`custom-agents/git-master-agent.md`](custom-agents/git-master-agent.md) | Backups preventivos (`backup/checkpoint-...`), Conventional Commits, bootstrap de novos projetos (README, MIT License, .gitignore) e sincronização multi-máquina (PC Trabalho vs. PC Pessoal). |
 | 🎨 **`design-engineer-agent`** (Engenheiro de UI/UX) | [`custom-agents/design-engineer-agent.md`](custom-agents/design-engineer-agent.md) | Interfaces modernas estilo Linear/Apple, microinterações, Framer Motion, acessibilidade WCAG 2.2 e design anti-template. |
 | 🛡️ **`security-auditor-agent`** (Auditor de Segurança) | [`custom-agents/security-auditor-agent.md`](custom-agents/security-auditor-agent.md) | Auditoria OWASP Top 10, autenticação segura (JWT/OAuth), proteção contra injections e bloqueio de vazamento de secrets. |
@@ -260,7 +260,7 @@ Skills para elaboração de currículos de alto impacto (compatíveis com ATS), 
 | **`tech-resume-optimizer`** | Optimize resumes for software engineering, PM, and technical roles | [`SKILL.md`](career/tech-resume-optimizer/SKILL.md) |
 
 <a id="development"></a>
-### 💻 Desenvolvimento & Testes (88 skills)
+### 💻 Desenvolvimento & Testes (89 skills)
 
 **Caminho no repositório:** [`development/`](development/)
 
@@ -340,6 +340,7 @@ Engenharia de software, frameworks modernos (React, Next.js, Vue, Swift, Kotlin)
 | **`recsys-pipeline-architect`** | Design composable recommendation, ranking, and feed pipelines using the six-stage Source→Hydrator→Filter→Scorer→Selector→SideEffect framework popularized by ... | [`SKILL.md`](development/recsys-pipeline-architect/SKILL.md) |
 | **`refactor`** | Surgical code refactoring to improve maintainability without changing behavior. | [`SKILL.md`](development/refactor/SKILL.md) |
 | **`repo-scan`** | Cross-stack source code asset audit — classifies every file, detects embedded third-party libraries, and delivers actionable four-level verdicts per module w... | [`SKILL.md`](development/repo-scan/SKILL.md) |
+| **`reverse-engineer-anything`** | Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA. | [`SKILL.md`](development/reverse-engineer-anything/SKILL.md) |
 | **`rust-testing`** | Rust testing patterns including unit tests, integration tests, async testing, property-based testing, mocking, and coverage. | [`SKILL.md`](development/rust-testing/SKILL.md) |
 | **`swift-actor-persistence`** | Thread-safe data persistence in Swift using actors — in-memory cache with file-backed storage, eliminating data races by design. | [`SKILL.md`](development/swift-actor-persistence/SKILL.md) |
 | **`swift-concurrency-6-2`** | Swift 6.2 Approachable Concurrency — single-threaded by default, @concurrent for explicit background offloading, isolated conformances for main actor types. | [`SKILL.md`](development/swift-concurrency-6-2/SKILL.md) |
