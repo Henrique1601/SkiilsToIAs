@@ -1,0 +1,43 @@
+{
+  "mcpServers": {
+    "prospector-crm": {
+      "url": "https://api-prospector-delta.vercel.app/api/mcp",
+      "headers": {
+        "Authorization": "Bearer SUA_CHAVE_PROSPECTOR_CRM_AQUI"
+      }
+    },
+    "chrome-devtools-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
+    },
+    "mcp-server-neon": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.neon.tech/sse"
+      ]
+    },
+    "notion-mcp-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@notionhq/notion-mcp-server"
+      ],
+      "env": {
+        "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer SUA_NOTION_INTEGRATION_KEY\", \"Notion-Version\": \"2022-06-28\"}"
+      }
+    },
+    "rea": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "rea-agents@6.0.0",
+        "mcp"
+      ]
+    }
+  }
+}

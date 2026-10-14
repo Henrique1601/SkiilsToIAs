@@ -58,6 +58,22 @@ Além das 512 skills, o repositório conta com uma pasta dedicada para agentes o
 
 ---
 
+## 🔌 Servidores MCP (Model Context Protocol) ([`mcps/`](mcps/))
+
+O repositório conta agora com uma pasta dedicada para **servidores MCP**, centralizando configurações, esquemas de ferramentas (*tools*) e conexões com bancos e APIs externas para os agentes:
+
+| Servidor MCP | Tipo / Transporte | Descrição Principal | Documentação |
+|---|:---:|---|:---:|
+| 💼 **`prospector-crm`** | Streamable HTTP | Servidor do Prospector CRM conectado ao Neon Postgres (150+ leads). Expõe `list_leads` e `create_leads`. | [`mcps/prospector-crm/`](mcps/prospector-crm/README.md) |
+| 🐘 **`mcp-server-neon`** | Remote SSE | Gestão serverless do Postgres Neon, branching instantâneo de bancos de dados e migrations. | [`mcps/neon-postgres/`](mcps/neon-postgres/README.md) |
+| 📝 **`notion-mcp-server`** | Stdio (`npx`) | Integração oficial com workspaces do Notion, leitura e escrita de páginas e databases. | [`mcps/notion/`](mcps/notion/README.md) |
+| 🌐 **`chrome-devtools-mcp`** | Stdio (`npx`) | Automação e inspeção de browser, prints, auditoria Lighthouse e console de erros. | [`mcps/chrome-devtools/`](mcps/chrome-devtools/README.md) |
+| 🔬 **`rea`** | Stdio (`npx`) | Engenharia reversa, análise de binários nativos, decompilação e auditoria de segurança. | [`mcps/rea/`](mcps/rea/README.md) |
+
+👉 Consulte o [**Catálogo Geral de MCPs (`mcps/README.md`)**](mcps/README.md) e os [**Modelos de Configuração (`mcps/templates/`)**](mcps/templates/) para Antigravity, Claude Desktop e Cursor.
+
+---
+
 ## 🚀 Como Utilizar
 
 ### 1. Como Subagente no Antigravity / Gemini CLI
