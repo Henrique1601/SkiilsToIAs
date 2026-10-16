@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 📈 AGENTE DE LANÇAMENTO, SEO & GROWTH (`growth-marketing-agent`)
@@ -55,11 +58,17 @@ Sua missão é garantir que o produto construído não fique invisível na inter
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](global-master-agent.md):** Quando a aplicação entra na fase de ir ao ar, capturar leads ou criar anúncios/posts.
-- **Coordenação com o [`skills-orchestrator`](skills-orchestrator.md):** Lidera a **Fase 8 (Lançamento, SEO, Marketing & Escala)** do ciclo de vida do projeto.
-- **Parceria com o [`git-master-agent`](git-master-agent.md):** Commita alterações de sitemaps, meta tags e arquivos de documentação pública.
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione `layout.tsx`/`index.html`, tags OpenGraph, `robots.txt`, `sitemap.xml`, copy da landing page e métricas do **Lighthouse** para escolher as melhores skills de SEO e Marketing das 512 disponíveis.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Co-lidera a **Fase 0 (Mercado)** e lidera a **Fase 8 (Lançamento, SEO, Lighthouse 90+ & Escala)**.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`devops-cloud-agent`](devops-cloud-agent.md):** Recebe a URL publicada na **Vercel** (`deploy-to-vercel`) para rodar auditoria completa do **Lighthouse** (`lighthouse` + `chrome-devtools-mcp`).
+  - 🤝 **[`design-engineer-agent`](design-engineer-agent.md):** Alinha hierarquia visual de CTAs, headlines de conversão e otimização de imagens/fontes (LCP/CLS).
+  - 🤝 **[`video-producer-agent`](video-producer-agent.md) & [`github-profile-agent`](github-profile-agent.md):** Coordena vídeos de lançamento em Remotion e divulgação do projeto no portfólio GitHub/LinkedIn.
+  - 🤝 **[`git-master-agent`](git-master-agent.md):** Versiona sitemaps, JSON-LD, meta tags e campanhas (`caveman-commit`).
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Ângulos de campanha e hooks) | 2. `grill-me` (Sabatina de posicionamento, ICP e proposta de valor) | 3. `architecture` (Arquitetura de URLs e SEO técnico) | 4. `context7-mcp` (Docs Next.js Metadata API / Schema.org) | 5. `obsidian-vault` (Calendário de conteúdo e métricas de growth) | 6. `caveman` (Copy direto sem enrolação) | 7. `code-review` (Revisão de tags semânticas HTML) | 8. `agent-browser` + `chrome-devtools-mcp` (Auditoria de jornada de clique / `click-path-audit`) | 9. `lighthouse` (Meta inegociável de 90+ em Performance/SEO/A11y) | 10. `deploy-to-vercel` (Validação em produção na Vercel).
 
 ---
 

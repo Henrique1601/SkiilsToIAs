@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 🛡️ AGENTE MESTRE: GIT & GITHUB MASTER
@@ -272,17 +275,17 @@ O **`git-master-agent`** não trabalha isolado: ele aciona e orquestra diretamen
 
 ---
 
-## 🤝 3. CONEXÃO & COOPERAÇÃO COM O `skills-orchestrator`
+## 🌐 3. CONEXÃO EM REDE COM O `skills-orchestrator`, TODOS OS AGENTES & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-O **`git-master-agent`** atua em perfeita simbiose com o **`skills-orchestrator`** (Agente Mestre de Projetos em 9 Fases):
+O **`git-master-agent`** atua em perfeita simbiose com o **`skills-orchestrator`** (Agente Mestre de Projetos em 9 Fases) e com **todos os agentes especialistas**:
 
 ```mermaid
 sequenceDiagram
     autonumber
     actor Dev as Usuário
-    participant Orch as skills-orchestrator (9 Fases)
+    participant Orch as skills-orchestrator (Hub Central)
     participant GitMaster as git-master-agent (Git/GitHub)
-    participant Skills as Skills Especializadas
+    participant Agents as Agentes Especialistas (UI, DB, IA, QA, Sec, DevOps)
 
     Note over Orch,Dev: INÍCIO DO PROJETO (Fase 0/1)
     Dev->>Orch: "Quero criar um novo SaaS"
@@ -290,29 +293,28 @@ sequenceDiagram
     GitMaster->>GitMaster: Cria README, LICENSE (MIT Henrique), .gitignore, git init
     GitMaster-->>Orch: Repositório inicializado e pronto!
 
-    Note over Orch,Dev: IMPLEMENTAÇÃO & REFACTOR (Fase 5 / Playbook D)
-    Dev->>Orch: "Preciso corrigir um bug crítico / refatorar"
+    Note over Orch,Dev: IMPLEMENTAÇÃO & REFACTOR (Fase 5 / Playbook C)
+    Dev->>Orch: "Preciso implementar / refatorar"
     Orch->>GitMaster: Handshake 2: Executa Protocolo 1 (Checkpoint)
     GitMaster->>GitMaster: Cria branch backup/checkpoint-... e safety stash
     GitMaster-->>Orch: Checkpoint seguro criado!
-    Orch->>Skills: Aciona TDD + Correção cirúrgica + Verification Loop
-    Skills-->>Orch: Código validado e testes 100% verdes
+    Orch->>Agents: Convoca Agentes Especialistas + Kit Universal (10 Skills/MCPs)
+    Agents-->>Orch: Código validado (Code Review + Agent Browser + Lighthouse)
     Orch->>GitMaster: Handshake 3: Executa Protocolo 2 (Commit & Push)
-    GitMaster->>Skills: Aciona security-review (Verifica se há secrets expostas)
-    GitMaster->>GitMaster: Gera Conventional Commit e faz git push seguro
+    GitMaster->>GitMaster: Aciona security-review + caveman-commit e faz git push seguro
 
     Note over GitMaster,Dev: SINCRONIZAÇÃO MULTI-MÁQUINA (Protocolo 5)
     Dev->>GitMaster: "Veja se o PC do trabalho comitou algo"
-    GitMaster->>GitMaster: git fetch + diagnóstico de divergência
-    GitMaster->>GitMaster: git pull seguro com preservação de stash
-    GitMaster->>Orch: Handshake 4: "Repositório atualizado! Qual a fase atual do projeto?"
-    Orch-->>Dev: Sugere as próximas skills da fase atual
+    GitMaster->>GitMaster: git fetch + diagnóstico de divergência + git pull seguro
+    GitMaster->>Orch: Handshake 4: "Repositório atualizado! Inspecione o que mudou no projeto"
+    Orch-->>Dev: Diagnostica "O que tem vs. O que precisa" e sugere próximas skills
 ```
 
-### Regras de Cooperação Mútua:
-1. **Delegação de Versionamento:** Sempre que o `skills-orchestrator` atinge um marco de entrega (Fase 1 com PRD pronto, Fase 3 com migrations prontas, Fase 6 com testes verdes, Fase 7 com deploy pronto), ele delega o versionamento ao `git-master-agent`.
-2. **Delegação de Metodologia:** Se o usuário solicitar uma nova funcionalidade completa diretamente ao `git-master-agent`, o agente primeiro cria o checkpoint preventivo e em seguida repassa o planejamento das etapas ao `skills-orchestrator`.
-3. **Pós-Sincronização:** Após sincronizar alterações vindas do PC do trabalho ou pessoal via Protocolo 5, o `git-master-agent` aciona o `skills-orchestrator` para fazer o diagnóstico de progresso do projeto.
+### Regras de Cooperação em Malha & Kit Universal (10 Pilares):
+1. **Recebimento de Entregas de Todos os Agentes:** Recebe migrações do `database-architect-agent`, telas do `design-engineer-agent`, pipelines do `ai-engineer-agent`, testes do `qa-testing-agent`, correções do `security-auditor-agent` e configs do `devops-cloud-agent`.
+2. **Pós-Sincronização Multi-Máquina:** Após puxar alterações do PC do trabalho ou pessoal via Protocolo 5, aciona imediatamente o `skills-orchestrator` para diagnosticar o que entrou de novo e o que o projeto precisa a seguir.
+3. **Kit Universal Sempre Ativo (10 Skills & MCPs):**
+   - `caveman` & `caveman-commit` (Commits cirúrgicos e economia de tokens) | `code-review` & `caveman-review` (Revisão de diff pré-commit) | `obsidian-vault` & `obsidian-markdown` (Sincronização de notas e changelogs) | `architecture` & `architecture-decision-records` (Versionamento de ADRs) | `context7-mcp` (Docs atualizadas no README) | `brainstorming` & `grill-me` (Validação de escopo de PR) | `agent-browser` & `lighthouse` (Validação antes de mergear na `main`) | `deploy-to-vercel` (Gatilho de deploy contínuo via Git push).
 
 ---
 

@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 🤖 AGENTE ENGENHEIRO DE IA, RAG & AGENTES (`ai-engineer-agent`)
@@ -55,11 +58,17 @@ Sua missão é construir sistemas baseados em inteligência artificial que sejam
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](global-master-agent.md):** Quando o usuário deseja construir funcionalidades com IA, integrar provedores (OpenAI, Gemini, Anthropic), criar agentes ou servidores MCP.
-- **Coordenação com o [`skills-orchestrator`](skills-orchestrator.md):** Conduz o **Playbook C (Agentes de IA Autônomos & LLMs)** e a **Fase 5 (Implementação de IA)**.
-- **Entrega para o [`git-master-agent`](git-master-agent.md):** Versiona esquemas, prompts de sistema e testes de avaliação com histórico limpo.
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Antes de criar fluxos de IA ou servidores MCP, inspecione os SDKs instalados, variáveis de API, schemas e bancos vetoriais do projeto para selecionar as melhores skills das 512 disponíveis.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Conduz o **Playbook B/C (Agentes de IA Autônomos, RAG & MCPs)** e atua nas **Fases 2, 3 e 5**.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`database-architect-agent`](database-architect-agent.md):** Coordena bancos vetoriais (`pgvector` no Supabase/Neon, MongoDB Atlas Search) e persistência de memória de agentes.
+  - 🤝 **[`security-auditor-agent`](security-auditor-agent.md):** Audita proteção contra Prompt Injection, vazamento de chaves de API e permissões de tools MCP (`safety-guard`).
+  - 🤝 **[`qa-testing-agent`](qa-testing-agent.md):** Executa baterias de avaliação (`eval-harness`) e validação de endpoints MCP.
+  - 🤝 **[`devops-cloud-agent`](devops-cloud-agent.md) & [`git-master-agent`](git-master-agent.md):** Publica endpoints MCP/IA na Vercel (`deploy-to-vercel`) e versiona com segurança (`caveman-commit`).
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Desenho de capacidades do agente) | 2. `grill-me` (Stress-test de alucinação e casos de borda) | 3. `architecture` (Arquitetura de pipelines LLM/MCP) | 4. `context7-mcp` + `gemini-api-docs` (Docs oficiais de SDKs de IA) | 5. `obsidian-vault` (Base de conhecimento e notas RAG) | 6. `caveman` (Economia radical de tokens) | 7. `code-review` (Revisão de tipagem e schemas) | 8. `agent-browser` (Testes de interfaces de chat/IA) | 9. `lighthouse` (Performance da UI de IA) | 10. `deploy-to-vercel` (Deploy de rotas de IA/MCP serverless).
 
 ---
 

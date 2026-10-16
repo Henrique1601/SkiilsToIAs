@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 🧪 AGENTE ENGENHEIRO DE TESTES & TDD (`qa-testing-agent`)
@@ -45,23 +48,28 @@ Sua missão é construir uma muralha de testes automatizados que garanta que ref
 
 | Skill | Categoria | Quando Este Agente Aciona |
 | :--- | :--- | :--- |
-| [`tdd-workflow`](../../development/tdd-workflow/SKILL.md) | `development` | Metodologia TDD completa, ciclo Red-Green-Refactor e meta de 80%+ de cobertura. |
-| [`tdd`](../../development/tdd/SKILL.md) | `development` | Guia rápido de implementação test-first para módulos e funções. |
-| [`webapp-testing`](../../development/webapp-testing/SKILL.md) | `development` | Testes automatizados em aplicações web locais com Playwright e inspeção de logs. |
-| [`e2e-testing`](../../development/e2e-testing/SKILL.md) | `development` | Arquitetura de testes E2E Playwright, Page Object Models e estratégias anti-flakiness. |
-| [`browser-qa`](../../development/browser-qa/SKILL.md) | `development` | Validação visual e teste de interação pós-deploy. |
-| [`verification-loop`](../../ai-agents/verification-loop/SKILL.md) | `ai-agents` | Loop de validação automática contínua executando suítes de testes até a aprovação. |
-| [`python-testing`](../../development/python-testing/SKILL.md) | `development` | Padrões de testes Python com pytest, fixtures, parametrização e mocks. |
-| [`golang-testing`](../../development/golang-testing/SKILL.md) | `development` | Testes idiomáticos em Go com table-driven tests, subtests e benchmarks. |
-| [`csharp-testing`](../../development/csharp-testing/SKILL.md) | `development` | Padrões de teste C#/.NET com xUnit, FluentAssertions e testes de integração. |
+| [`tdd-workflow`](../development/tdd-workflow/SKILL.md) | `development` | Metodologia TDD completa, ciclo Red-Green-Refactor e meta de 80%+ de cobertura. |
+| [`tdd`](../development/tdd/SKILL.md) | `development` | Guia rápido de implementação test-first para módulos e funções. |
+| [`webapp-testing`](../development/webapp-testing/SKILL.md) | `development` | Testes automatizados em aplicações web locais com Playwright e inspeção de logs. |
+| [`e2e-testing`](../development/e2e-testing/SKILL.md) | `development` | Arquitetura de testes E2E Playwright, Page Object Models e estratégias anti-flakiness. |
+| [`browser-qa`](../development/browser-qa/SKILL.md) | `development` | Validação visual e teste de interação pós-deploy. |
+| [`verification-loop`](../ai-agents/verification-loop/SKILL.md) | `ai-agents` | Loop de validação automática contínua executando suítes de testes até a aprovação. |
+| [`python-testing`](../development/python-testing/SKILL.md) | `development` | Padrões de testes Python com pytest, fixtures, parametrização e mocks. |
+| [`golang-testing`](../development/golang-testing/SKILL.md) | `development` | Testes idiomáticos em Go com table-driven tests, subtests e benchmarks. |
+| [`csharp-testing`](../development/csharp-testing/SKILL.md) | `development` | Padrões de teste C#/.NET com xUnit, FluentAssertions e testes de integração. |
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](../global-master-agent.md):** Para criar testes antes de refatorar código, reproduzir bugs reportados ou auditar cobertura.
-- **Coordenação com o [`skills-orchestrator`](../skills-orchestrator.md):** Lidera a **Fase 6 (Testes, Segurança e Auditoria)** e o **Playbook D (Refatoração Segura)**.
-- **Parceria com o [`git-master-agent`](../git-master-agent.md):** Só autoriza o commit e push se a suíte de testes estiver 100% verde (`verification-loop`).
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione os frameworks de teste configurados (`vitest`, `jest`, `playwright`, `pytest`, `go test`), cobertura existente e rotas desprotegidas para selecionar as melhores skills das 512 disponíveis.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Lidera a **Fase 6 (Testes, Auditoria de Qualidade & Browser QA)** e o **Playbook de Refatoração Segura**.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`design-engineer-agent`](design-engineer-agent.md):** Abre a UI no **Agente Browser** (`agent-browser` + `chrome-devtools-mcp`) para testar responsividade, interações e acessibilidade visual.
+  - 🤝 **[`security-auditor-agent`](security-auditor-agent.md):** Une a suíte de testes funcionais com testes de segurança e **Code Review** (`code-review`).
+  - 🤝 **[`devops-cloud-agent`](devops-cloud-agent.md) & [`git-master-agent`](git-master-agent.md):** Só autoriza o commit (`caveman-commit`) e o deploy na **Vercel** (`deploy-to-vercel`) quando o `verification-loop` estiver 100% verde.
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Mapeamento de edge cases) | 2. `grill-me` (Caça implacável a cenários de falha) | 3. `architecture` (Testabilidade e injeção de dependência) | 4. `context7-mcp` (Docs atualizadas de Playwright/Vitest/Pytest) | 5. `obsidian-vault` (Relatórios de QA e planos de teste) | 6. `caveman` (Logs e asserções diretas) | 7. `code-review` & `caveman-review` (Inspeção estática rigorosa) | 8. `agent-browser` + `browser-qa` + `chrome-devtools-mcp` (Automação e QA visual no navegador) | 9. `lighthouse` (Auditoria automatizada de métricas web) | 10. `deploy-to-vercel` (Smoke tests em Preview URLs da Vercel).
 
 ---
 

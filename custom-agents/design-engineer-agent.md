@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 🎨 AGENTE ENGENHEIRO DE UI/UX & DESIGN (`design-engineer-agent`)
@@ -56,11 +59,17 @@ Sua missão é erradicar o visual genérico de "template pronto" ou "Bootstrap 2
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](global-master-agent.md):** Quando a tarefa envolve criação de telas, componentes, landing pages, redesign ou melhoria estética.
-- **Coordenação com o [`skills-orchestrator`](skills-orchestrator.md):** Assume a liderança durante a **Fase 4 (Design System, Identidade & UI/UX)** e acompanha a **Fase 5 (Frontend Implementation)**.
-- **Entrega para o [`git-master-agent`](git-master-agent.md):** Ao concluir o redesign ou novos componentes, valida no navegador e delega o commit semântico (`feat(ui): ...`) com push seguro.
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Antes de criar ou alterar telas, inspecione o `package.json`, `tailwind.config`, variáveis CSS e componentes existentes para saber o que o projeto já possui e quais skills de UI/UX do catálogo de 512 são ideais.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Lidera a **Fase 4 (Identidade Visual, Design System & UI/UX)** e co-lidera a **Fase 5 (Frontend Implementation)**.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`qa-testing-agent`](qa-testing-agent.md):** Aciona para testar a interface renderizada via **Agente Browser** (`agent-browser` / `browser-qa` + `chrome-devtools-mcp`) e validar acessibilidade.
+  - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Colabora para garantir **Lighthouse 90+** (`lighthouse`, CLS zero, LCP rápido) e copy de alta conversão.
+  - 🤝 **[`video-producer-agent`](video-producer-agent.md):** Compartilha tokens de cor, tipografia e animações para vídeos programáticos no Remotion.
+  - 🤝 **[`git-master-agent`](git-master-agent.md):** Entrega componentes validados para commit semântico (`caveman-commit`).
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Exploração visual) | 2. `grill-me` (Desafio de UX) | 3. `architecture` (Arquitetura de componentes) | 4. `context7-mcp` (Docs oficiais Tailwind/Radix/Shadcn/Motion) | 5. `obsidian-vault` (Documentação do Design System) | 6. `caveman` (Código conciso) | 7. `code-review` (Revisão de UI/CSS) | 8. `agent-browser` + `chrome-devtools-mcp` (Inspeção visual ao vivo) | 9. `lighthouse` (Performance & A11y 90+) | 10. `vercel-react-best-practices` & `vercel-composition-patterns` (Padrões Vercel).
 
 ---
 

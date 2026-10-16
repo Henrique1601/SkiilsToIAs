@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # ☁️ AGENTE DE INFRAESTRUTURA, DEVOPS & CLOUD (`devops-cloud-agent`)
@@ -45,23 +48,28 @@ Sua missão é eliminar qualquer fricção entre o ambiente de desenvolvimento l
 
 | Skill | Categoria | Quando Este Agente Aciona |
 | :--- | :--- | :--- |
-| [`docker-patterns`](../../devops-cloud/docker-patterns/SKILL.md) | `devops-cloud` | Dockerfiles multi-stage, compose multi-serviços, volumes e rede segura. |
-| [`deploy-to-vercel`](../../devops-cloud/deploy-to-vercel/SKILL.md) | `devops-cloud` | Deploys e configurações de projetos Next.js e React na Vercel com preview e produção. |
-| [`cloudflare-deploy`](../../devops-cloud/cloudflare-deploy/SKILL.md) | `devops-cloud` | Deploys em Cloudflare Pages, Workers, bindings D1 e KV storage. |
-| [`netlify-deploy`](../../devops-cloud/netlify-deploy/SKILL.md) | `devops-cloud` | Publicação de frontends e SPAs no ecossistema Netlify via CLI. |
-| [`azure-deploy`](../../devops-cloud/azure-deploy/SKILL.md) | `devops-cloud` | Provisionamento e deploy em serviços de nuvem corporativa Microsoft Azure. |
-| [`kubernetes-patterns`](../../devops-cloud/kubernetes-patterns/SKILL.md) | `devops-cloud` | Manifestos de Deployment, Service, Ingress, probes e autoscaling K8s. |
-| [`deployment-patterns`](../../devops-cloud/deployment-patterns/SKILL.md) | `devops-cloud` | Estratégias de blue-green, canary, rollback automático e checklists pré-deploy. |
-| [`production-audit`](../../devops-cloud/production-audit/SKILL.md) | `devops-cloud` | Lista de checagem completa de produção para evitar quedas no lançamento. |
-| [`homelab-network-setup`](../../devops-cloud/homelab-network-setup/SKILL.md) | `devops-cloud` | Configuração de redes locais, homelab, DNS e VPNs WireGuard. |
+| [`docker-patterns`](../devops-cloud/docker-patterns/SKILL.md) | `devops-cloud` | Dockerfiles multi-stage, compose multi-serviços, volumes e rede segura. |
+| [`deploy-to-vercel`](../devops-cloud/deploy-to-vercel/SKILL.md) | `devops-cloud` | Deploys e configurações de projetos Next.js e React na Vercel com preview e produção. |
+| [`cloudflare-deploy`](../devops-cloud/cloudflare-deploy/SKILL.md) | `devops-cloud` | Deploys em Cloudflare Pages, Workers, bindings D1 e KV storage. |
+| [`netlify-deploy`](../devops-cloud/netlify-deploy/SKILL.md) | `devops-cloud` | Publicação de frontends e SPAs no ecossistema Netlify via CLI. |
+| [`azure-deploy`](../devops-cloud/azure-deploy/SKILL.md) | `devops-cloud` | Provisionamento e deploy em serviços de nuvem corporativa Microsoft Azure. |
+| [`kubernetes-patterns`](../devops-cloud/kubernetes-patterns/SKILL.md) | `devops-cloud` | Manifestos de Deployment, Service, Ingress, probes e autoscaling K8s. |
+| [`deployment-patterns`](../devops-cloud/deployment-patterns/SKILL.md) | `devops-cloud` | Estratégias de blue-green, canary, rollback automático e checklists pré-deploy. |
+| [`production-audit`](../devops-cloud/production-audit/SKILL.md) | `devops-cloud` | Lista de checagem completa de produção para evitar quedas no lançamento. |
+| [`homelab-network-setup`](../devops-cloud/homelab-network-setup/SKILL.md) | `devops-cloud` | Configuração de redes locais, homelab, DNS e VPNs WireGuard. |
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](../global-master-agent.md):** Quando o usuário precisa colocar um site/app no ar, criar Dockerfiles ou configurar CI/CD.
-- **Coordenação com o [`skills-orchestrator`](../skills-orchestrator.md):** Assume a liderança da **Fase 7 (Cloud, DevOps, Infraestrutura & Deploy)**.
-- **Parceria com o [`git-master-agent`](../git-master-agent.md):** Garante que arquivos como `.dockerignore` e secrets não sejam acidentalmente commitados.
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione `vercel.json`, `Dockerfile`, `.github/workflows/`, `next.config` e variáveis de ambiente para identificar o que já está configurado e o que falta para um deploy de produção confiável.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Lidera a **Fase 7 (Cloud, DevOps, Infraestrutura & Deploy)**.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`qa-testing-agent`](qa-testing-agent.md) & [`security-auditor-agent`](security-auditor-agent.md):** Só inicia o deploy após o sinal verde dos testes (`verification-loop`) e da auditoria de segurança (`security-review`).
+  - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Entrega a URL de Preview/Produção na **Vercel** para auditoria imediata de **Lighthouse 90+** e SEO.
+  - 🤝 **[`git-master-agent`](git-master-agent.md):** Garante que `.dockerignore` e `.gitignore` bloqueiem secrets e registra tags de release (`caveman-commit`).
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Topologia de infra) | 2. `grill-me` (Teste de falhas, rollback e limites de custo) | 3. `architecture` & `architecture-decision-records` (ADRs de cloud/infra) | 4. `context7-mcp` (Docs oficiais Vercel/Docker/Cloudflare) | 5. `obsidian-vault` (Runbooks de deploy no Second Brain) | 6. `caveman` (Configs e logs enxutos) | 7. `code-review` (Revisão de pipelines CI/CD e Dockerfiles) | 8. `agent-browser` + `chrome-devtools-mcp` (Smoke-test real na URL publicada) | 9. `lighthouse` (Validação de performance pós-deploy) | 10. `deploy-to-vercel` & `vercel-react-best-practices` (Motor oficial de publicação na Vercel).
 
 ---
 

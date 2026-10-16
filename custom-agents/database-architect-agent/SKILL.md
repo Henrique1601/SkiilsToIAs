@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 🗄️ AGENTE ARQUITETO DE BANCO DE DADOS & PERFORMANCE (`database-architect-agent`)
@@ -45,22 +48,28 @@ Sua missão é garantir que cada tabela, índice, relacionamento e transação s
 
 | Skill | Categoria | Quando Este Agente Aciona |
 | :--- | :--- | :--- |
-| [`postgres-patterns`](../../backend-database/postgres-patterns/SKILL.md) | `backend-database` | Padrões de schema Postgres, tipos de dados, RLS e otimização geral. |
-| [`supabase-postgres-best-practices`](../../backend-database/supabase-postgres-best-practices/SKILL.md) | `backend-database` | Melhores práticas da Supabase: segurança, RLS policies, indexação e pooler. |
-| [`database-migrations`](../../backend-database/database-migrations/SKILL.md) | `backend-database` | Criação de migrações estruturadas, reversíveis e compatíveis com zero-downtime. |
-| [`redis-patterns`](../../backend-database/redis-patterns/SKILL.md) | `backend-database` | Estratégias de caching, locks distribuídos (Redlock), filas e contadores atômicos. |
-| [`clickhouse-io`](../../backend-database/clickhouse-io/SKILL.md) | `backend-database` | Modelagem colunar de altíssima performance para telemetria, logs e analíticos. |
-| [`mysql-patterns`](../../backend-database/mysql-patterns/SKILL.md) | `backend-database` | Otimização de InnoDB, pooling e índices para ecossistemas MySQL/MariaDB. |
-| [`mongodb-schema-design`](../../backend-database/mongodb-schema-design/SKILL.md) | `backend-database` | Padrões de modelagem de documentos, embedding vs. referencing e indexação NoSQL. |
-| [`jpa-patterns`](../../backend-database/jpa-patterns/SKILL.md) | `backend-database` | Mapeamento relacional Hibernate/JPA, prevenção contra o problema N+1 e batch fetching. |
+| [`postgres-patterns`](../backend-database/postgres-patterns/SKILL.md) | `backend-database` | Padrões de schema Postgres, tipos de dados, RLS e otimização geral. |
+| [`supabase-postgres-best-practices`](../backend-database/supabase-postgres-best-practices/SKILL.md) | `backend-database` | Melhores práticas da Supabase: segurança, RLS policies, indexação e pooler. |
+| [`database-migrations`](../backend-database/database-migrations/SKILL.md) | `backend-database` | Criação de migrações estruturadas, reversíveis e compatíveis com zero-downtime. |
+| [`redis-patterns`](../backend-database/redis-patterns/SKILL.md) | `backend-database` | Estratégias de caching, locks distribuídos (Redlock), filas e contadores atômicos. |
+| [`clickhouse-io`](../backend-database/clickhouse-io/SKILL.md) | `backend-database` | Modelagem colunar de altíssima performance para telemetria, logs e analíticos. |
+| [`mysql-patterns`](../backend-database/mysql-patterns/SKILL.md) | `backend-database` | Otimização de InnoDB, pooling e índices para ecossistemas MySQL/MariaDB. |
+| [`mongodb-schema-design`](../backend-database/mongodb-schema-design/SKILL.md) | `backend-database` | Padrões de modelagem de documentos, embedding vs. referencing e indexação NoSQL. |
+| [`jpa-patterns`](../backend-database/jpa-patterns/SKILL.md) | `backend-database` | Mapeamento relacional Hibernate/JPA, prevenção contra o problema N+1 e batch fetching. |
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](../global-master-agent.md):** Em dúvidas de banco, criação de schemas, lentidão de consultas ou configuração de cache.
-- **Coordenação com o [`skills-orchestrator`](../skills-orchestrator.md):** Assume a liderança durante a **Fase 3 (Modelagem de Dados, Banco & APIs)**.
-- **Entrega para o [`git-master-agent`](../git-master-agent.md):** Versiona migrations, seeds de desenvolvimento e esquemas com commits semânticos atômicos.
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione `schema.prisma`, `drizzle/`, `supabase/migrations/`, conexões `.env` e os MCPs ativos (`supabase`, `Neon`, `mongodb-mcp-server`) para entender as tabelas atuais e o que precisa ser criado ou otimizado.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Co-lidera a **Fase 2 (Arquitetura)** e lidera a **Fase 3 (Modelagem de Dados, Banco & APIs)**.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`security-auditor-agent`](security-auditor-agent.md):** Trabalha junto para blindar políticas RLS, evitar SQL Injection e proteger dados sensíveis.
+  - 🤝 **[`ai-engineer-agent`](ai-engineer-agent.md):** Estrutura índices vetoriais (`pgvector`) e tabelas de histórico/contexto para agentes e RAG.
+  - 🤝 **[`qa-testing-agent`](qa-testing-agent.md):** Fornece seeds e schemas de teste determinísticos para testes de integração.
+  - 🤝 **[`git-master-agent`](git-master-agent.md):** Solicita checkpoint preventivo antes de rodar migrations e versiona com `caveman-commit`.
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Modelagem de domínio) | 2. `grill-me` (Sabatina de cardinalidade, volume e gargalos) | 3. `architecture` & `hexagonal-architecture` (Isolamento da camada de persistência) | 4. `context7-mcp` (Docs oficiais de ORMs e bancos) | 5. `obsidian-vault` (Dicionário de dados e MER no Second Brain) | 6. `caveman` (Queries e respostas diretas) | 7. `code-review` (Revisão de N+1 e índices) | 8. `agent-browser` (Validação de dados fluindo na UI) | 9. `lighthouse` (Impacto do TTFB da API na performance) | 10. `deploy-to-vercel` (Integração de Connection Pooler serverless para Vercel).
 
 ---
 

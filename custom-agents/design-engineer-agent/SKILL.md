@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 🎨 AGENTE ENGENHEIRO DE UI/UX & DESIGN (`design-engineer-agent`)
@@ -44,23 +47,29 @@ Sua missão é erradicar o visual genérico de "template pronto" ou "Bootstrap 2
 
 | Skill | Categoria | Quando Este Agente Aciona |
 | :--- | :--- | :--- |
-| [`design-taste-frontend`](../../design/design-taste-frontend/SKILL.md) | `design` | Aplicação de direção de arte moderna, acabamento de produto e eliminação de visual genérico. |
-| [`emil-design-eng`](../../design/emil-design-eng/SKILL.md) | `design` | Polimento obsessivo de componentes, física de interface, micro-animações e sensação de produto de alto padrão. |
-| [`minimalist-ui`](../../design/minimalist-ui/SKILL.md) | `design` | Layouts bento-grid, paleta monocromática sofisticada e tipografia editorial de alto impacto. |
-| [`motion-ui`](../../design/motion-ui/SKILL.md) | `design` | Padrões de animação de componentes, drawers, dialogs e listas com Framer Motion. |
-| [`motion-patterns`](../../design/motion-patterns/SKILL.md) | `design` | Transições de página, staggering em grids e animações de saída suaves. |
-| [`brandkit`](../../design/brandkit/SKILL.md) | `design` | Definição de paleta de cores corporativa, tipografia de marca e tom visual. |
-| [`frontend-a11y`](../../development/frontend-a11y/SKILL.md) | `development` | Conformidade com acessibilidade, navegação por teclado e compatibilidade com leitores de tela. |
-| [`web-design-guidelines`](../../design/web-design-guidelines/SKILL.md) | `design` | Checklist de boas práticas de usabilidade e ergonomia digital. |
-| [`liquid-glass-design`](../../design/liquid-glass-design/SKILL.md) | `design` | Efeitos de vidro dinâmico, desfoque e reflexos sutis quando o projeto pedir estética moderna. |
+| [`design-taste-frontend`](../design/design-taste-frontend/SKILL.md) | `design` | Aplicação de direção de arte moderna, acabamento de produto e eliminação de visual genérico. |
+| [`emil-design-eng`](../design/emil-design-eng/SKILL.md) | `design` | Polimento obsessivo de componentes, física de interface, micro-animações e sensação de produto de alto padrão. |
+| [`minimalist-ui`](../design/minimalist-ui/SKILL.md) | `design` | Layouts bento-grid, paleta monocromática sofisticada e tipografia editorial de alto impacto. |
+| [`motion-ui`](../design/motion-ui/SKILL.md) | `design` | Padrões de animação de componentes, drawers, dialogs e listas com Framer Motion. |
+| [`motion-patterns`](../design/motion-patterns/SKILL.md) | `design` | Transições de página, staggering em grids e animações de saída suaves. |
+| [`brandkit`](../design/brandkit/SKILL.md) | `design` | Definição de paleta de cores corporativa, tipografia de marca e tom visual. |
+| [`frontend-a11y`](../development/frontend-a11y/SKILL.md) | `development` | Conformidade com acessibilidade, navegação por teclado e compatibilidade com leitores de tela. |
+| [`web-design-guidelines`](../design/web-design-guidelines/SKILL.md) | `design` | Checklist de boas práticas de usabilidade e ergonomia digital. |
+| [`liquid-glass-design`](../design/liquid-glass-design/SKILL.md) | `design` | Efeitos de vidro dinâmico, desfoque e reflexos sutis quando o projeto pedir estética moderna. |
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](../global-master-agent.md):** Quando a tarefa envolve criação de telas, componentes, landing pages, redesign ou melhoria estética.
-- **Coordenação com o [`skills-orchestrator`](../skills-orchestrator.md):** Assume a liderança durante a **Fase 4 (Design System, Identidade & UI/UX)** e acompanha a **Fase 5 (Frontend Implementation)**.
-- **Entrega para o [`git-master-agent`](../git-master-agent.md):** Ao concluir o redesign ou novos componentes, valida no navegador e delega o commit semântico (`feat(ui): ...`) com push seguro.
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Antes de criar ou alterar telas, inspecione o `package.json`, `tailwind.config`, variáveis CSS e componentes existentes para saber o que o projeto já possui e quais skills de UI/UX do catálogo de 512 são ideais.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Lidera a **Fase 4 (Identidade Visual, Design System & UI/UX)** e co-lidera a **Fase 5 (Frontend Implementation)**.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`qa-testing-agent`](qa-testing-agent.md):** Aciona para testar a interface renderizada via **Agente Browser** (`agent-browser` / `browser-qa` + `chrome-devtools-mcp`) e validar acessibilidade.
+  - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Colabora para garantir **Lighthouse 90+** (`lighthouse`, CLS zero, LCP rápido) e copy de alta conversão.
+  - 🤝 **[`video-producer-agent`](video-producer-agent.md):** Compartilha tokens de cor, tipografia e animações para vídeos programáticos no Remotion.
+  - 🤝 **[`git-master-agent`](git-master-agent.md):** Entrega componentes validados para commit semântico (`caveman-commit`).
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Exploração visual) | 2. `grill-me` (Desafio de UX) | 3. `architecture` (Arquitetura de componentes) | 4. `context7-mcp` (Docs oficiais Tailwind/Radix/Shadcn/Motion) | 5. `obsidian-vault` (Documentação do Design System) | 6. `caveman` (Código conciso) | 7. `code-review` (Revisão de UI/CSS) | 8. `agent-browser` + `chrome-devtools-mcp` (Inspeção visual ao vivo) | 9. `lighthouse` (Performance & A11y 90+) | 10. `vercel-react-best-practices` & `vercel-composition-patterns` (Padrões Vercel).
 
 ---
 

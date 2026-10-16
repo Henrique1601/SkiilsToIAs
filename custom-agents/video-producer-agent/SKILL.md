@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 🎬 AGENTE PRODUTOR DE VÍDEOS EM CÓDIGO (`video-producer-agent`)
@@ -43,21 +46,26 @@ Sua missão é permitir que o usuário crie vídeos profissionais, animações d
 
 | Skill | Categoria | Quando Este Agente Aciona |
 | :--- | :--- | :--- |
-| [`remotion-video-creation`](../../design/remotion-video-creation/SKILL.md) | `design` | Conjunto abrangente de 29 regras para criação de vídeos, 3D, áudio e transições. |
-| [`remotion-best-practices`](../../design/remotion-best-practices/SKILL.md) | `design` | Padrões recomendados de código limpo, estruturação de projeto e performance de render. |
-| [`remotion-saas`](../../design/remotion-saas/SKILL.md) | `design` | Padrões para transformar geradores de vídeo em serviços SaaS ou players web. |
-| [`remotion-captions`](../../design/remotion-captions/SKILL.md) | `design` | Criação de legendas animadas precisas, sincronização de falas e destaque de palavras. |
-| [`remotion-interactivity`](../../design/remotion-interactivity/SKILL.md) | `design` | Criação de animações ajustáveis em tempo real no Remotion Studio Visual Mode. |
-| [`remotion-render`](../../design/remotion-render/SKILL.md) | `design` | Boas práticas para renderizar arquivos MP4/WebM com máxima velocidade e menor peso. |
-| [`remotion-create`](../../design/remotion-create/SKILL.md) | `design` | Inicialização padronizada de novos projetos Remotion do zero. |
+| [`remotion-video-creation`](../design/remotion-video-creation/SKILL.md) | `design` | Conjunto abrangente de 29 regras para criação de vídeos, 3D, áudio e transições. |
+| [`remotion-best-practices`](../design/remotion-best-practices/SKILL.md) | `design` | Padrões recomendados de código limpo, estruturação de projeto e performance de render. |
+| [`remotion-saas`](../design/remotion-saas/SKILL.md) | `design` | Padrões para transformar geradores de vídeo em serviços SaaS ou players web. |
+| [`remotion-captions`](../design/remotion-captions/SKILL.md) | `design` | Criação de legendas animadas precisas, sincronização de falas e destaque de palavras. |
+| [`remotion-interactivity`](../design/remotion-interactivity/SKILL.md) | `design` | Criação de animações ajustáveis em tempo real no Remotion Studio Visual Mode. |
+| [`remotion-render`](../design/remotion-render/SKILL.md) | `design` | Boas práticas para renderizar arquivos MP4/WebM com máxima velocidade e menor peso. |
+| [`remotion-create`](../design/remotion-create/SKILL.md) | `design` | Inicialização padronizada de novos projetos Remotion do zero. |
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](../global-master-agent.md):** Quando o usuário deseja criar animações de vídeo, teasers de SaaS ou vídeos de demonstração de produto.
-- **Coordenação com o [`skills-orchestrator`](../skills-orchestrator.md):** Atua durante a **Fase 4 (Design & Animação)** ou **Fase 8 (Lançamento e Mídia)**.
-- **Entrega para o [`git-master-agent`](../git-master-agent.md):** Versiona componentes de vídeo, assets de áudio e composições com commits limpos.
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione pacotes `@remotion/*`, assets visuais/sonoros e componentes React do projeto para reaproveitar a identidade visual real do produto nos vídeos.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Atua nas **Fases 4, 5 e 8** criando demos, teasers e players de vídeo embarcados.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`design-engineer-agent`](design-engineer-agent.md):** Importa os tokens de design, fontes, cores e componentes da UI para dentro das composições Remotion.
+  - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Produz teasers de lançamento otimizados para LinkedIn, X e Landing Pages.
+  - 🤝 **[`git-master-agent`](git-master-agent.md):** Versiona código das composições sem poluir o Git com binários pesados (`caveman-commit`).
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Storyboard e roteiro visual) | 2. `grill-me` (Validação de retenção nos primeiros 3s) | 3. `architecture` (Estrutura modular de Sequences) | 4. `context7-mcp` + `remotion-docs` (Docs oficiais do Remotion) | 5. `obsidian-vault` (Roteiros e notas de produção) | 6. `caveman` (Código enxuto de animação) | 7. `code-review` (Revisão de performance de render) | 8. `agent-browser` (Inspeção do Remotion Studio/Player no browser) | 9. `lighthouse` (Garantir que vídeos embutidos não prejudiquem o LCP da página) | 10. `vercel-react-best-practices` & `deploy-to-vercel` (Hospedagem de Remotion Player na Vercel).
 
 ---
 

@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 🐙 AGENTE ESPECIALISTA EM PERFIL GITHUB & PORTFÓLIO (`github-profile-agent`)
@@ -56,22 +59,27 @@ Sua missão é transformar o perfil do usuário em um **portfólio vivo de alto 
 
 | Skill | Categoria | Quando Este Agente Aciona |
 | :--- | :--- | :--- |
-| [`creative-portfolio-resume`](../../career/creative-portfolio-resume/SKILL.md) | `career` | Estruturação de portfólio moderno, equilíbrio entre design e clareza técnica. |
-| [`tech-resume-optimizer`](../../career/tech-resume-optimizer/SKILL.md) | `career` | Linguagem de alto impacto, métricas quantitativas de conquistas e storytelling técnico. |
-| [`portfolio-case-study-writer`](../../career/portfolio-case-study-writer/SKILL.md) | `career` | Transformação de repositórios em estudos de caso atraentes com problema, solução e stack. |
-| [`linkedin-profile-optimizer`](../../career/linkedin-profile-optimizer/SKILL.md) | `career` | Alinhamento de narrativa e palavras-chave entre o perfil do GitHub e o LinkedIn. |
-| [`brandkit`](../../design/brandkit/SKILL.md) | `design` | Definição de paleta visual, ícones e uniformidade estética dos badges. |
-| [`minimalist-ui`](../../design/minimalist-ui/SKILL.md) | `design` | Padrões de formatação visual limpa, tabelas elegantes e bento-grids para markdown. |
-| [`git-workflow`](../../development/git-workflow/SKILL.md) | `development` | Automações de CI/CD com GitHub Actions para auto-atualizar o repositório especial. |
-| [`seo`](../../seo/seo/SKILL.md) | `seo` | Otimização de palavras-chave nos tópicos e descrições para ranqueamento no GitHub Search. |
+| [`creative-portfolio-resume`](../career/creative-portfolio-resume/SKILL.md) | `career` | Estruturação de portfólio moderno, equilíbrio entre design e clareza técnica. |
+| [`tech-resume-optimizer`](../career/tech-resume-optimizer/SKILL.md) | `career` | Linguagem de alto impacto, métricas quantitativas de conquistas e storytelling técnico. |
+| [`portfolio-case-study-writer`](../career/portfolio-case-study-writer/SKILL.md) | `career` | Transformação de repositórios em estudos de caso atraentes com problema, solução e stack. |
+| [`linkedin-profile-optimizer`](../career/linkedin-profile-optimizer/SKILL.md) | `career` | Alinhamento de narrativa e palavras-chave entre o perfil do GitHub e o LinkedIn. |
+| [`brandkit`](../design/brandkit/SKILL.md) | `design` | Definição de paleta visual, ícones e uniformidade estética dos badges. |
+| [`minimalist-ui`](../design/minimalist-ui/SKILL.md) | `design` | Padrões de formatação visual limpa, tabelas elegantes e bento-grids para markdown. |
+| [`git-workflow`](../development/git-workflow/SKILL.md) | `development` | Automações de CI/CD com GitHub Actions para auto-atualizar o repositório especial. |
+| [`seo`](../seo/seo/SKILL.md) | `seo` | Otimização de palavras-chave nos tópicos e descrições para ranqueamento no GitHub Search. |
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](../global-master-agent.md):** Quando o usuário deseja atualizar o perfil do GitHub, adicionar novos projetos aos destaques ou auditar a apresentação pública da sua conta.
-- **Parceria com o [`git-master-agent`](../git-master-agent.md):** Cria o repositório especial `username/username` com commits convencionais e publica as atualizações de README com segurança.
-- **Parceria com o [`growth-marketing-agent`](../growth-marketing-agent.md):** Sincroniza a narrativa do perfil do GitHub com a presença profissional no LinkedIn e campanhas de lançamento.
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione o `README.md`, tópicos do repositório, links de deploy e projetos públicos de `Henrique1601` para identificar o que já está documentado e como posicionar o projeto como case de portfólio.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Atua na **Fase 1 (README inicial)** e na **Fase 8 (Vitrine, Portfólio & Personal Branding)**.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`git-master-agent`](git-master-agent.md):** Sincroniza commits e publica atualizações no repositório `Henrique1601/Henrique1601` e nos READMEs dos projetos (`caveman-commit`).
+  - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Alinha o estudo de caso do GitHub com posts de lançamento no LinkedIn (`linkedin-post-writer`).
+  - 🤝 **[`devops-cloud-agent`](devops-cloud-agent.md):** Adiciona os badges e links ao vivo de produção na **Vercel** (`deploy-to-vercel`) diretamente no topo do repositório.
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Posicionamento de marca pessoal) | 2. `grill-me` (Sabatina de impacto para recrutadores/clientes) | 3. `architecture` (Diagramas arquiteturais Mermaid nos READMEs) | 4. `context7-mcp` (Badges e referências técnicas exatas) | 5. `obsidian-vault` & `obsidian-markdown` (Sincronização de estudos de caso com o Second Brain) | 6. `caveman` (Textos de alto impacto e zero enrolação) | 7. `code-review` (Revisão de workflows GitHub Actions) | 8. `agent-browser` (Verificação visual do perfil renderizado no GitHub) | 9. `lighthouse` (Métricas de performance nos sites de portfólio) | 10. `deploy-to-vercel` (Links de demonstração na Vercel).
 
 ---
 

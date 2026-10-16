@@ -8,6 +8,9 @@ tools:
   - write_to_file
   - search_web
   - ask_question
+  - invoke_subagent
+  - send_message
+  - manage_subagents
 ---
 
 # 🎬 AGENTE PRODUTOR DE VÍDEOS EM CÓDIGO (`video-producer-agent`)
@@ -53,11 +56,16 @@ Sua missão é permitir que o usuário crie vídeos profissionais, animações d
 
 ---
 
-## 🤝 3. INTEGRAÇÃO COM A MESA DIRETORA
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
 
-- **Invocado pelo [`global-master-agent`](global-master-agent.md):** Quando o usuário deseja criar animações de vídeo, teasers de SaaS ou vídeos de demonstração de produto.
-- **Coordenação com o [`skills-orchestrator`](skills-orchestrator.md):** Atua durante a **Fase 4 (Design & Animação)** ou **Fase 8 (Lançamento e Mídia)**.
-- **Entrega para o [`git-master-agent`](git-master-agent.md):** Versiona componentes de vídeo, assets de áudio e composições com commits limpos.
+- **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione pacotes `@remotion/*`, assets visuais/sonoros e componentes React do projeto para reaproveitar a identidade visual real do produto nos vídeos.
+- **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Atua nas **Fases 4, 5 e 8** criando demos, teasers e players de vídeo embarcados.
+- **Conexões Diretas com Outros Agentes:**
+  - 🤝 **[`design-engineer-agent`](design-engineer-agent.md):** Importa os tokens de design, fontes, cores e componentes da UI para dentro das composições Remotion.
+  - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Produz teasers de lançamento otimizados para LinkedIn, X e Landing Pages.
+  - 🤝 **[`git-master-agent`](git-master-agent.md):** Versiona código das composições sem poluir o Git com binários pesados (`caveman-commit`).
+- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
+  1. `brainstorming` (Storyboard e roteiro visual) | 2. `grill-me` (Validação de retenção nos primeiros 3s) | 3. `architecture` (Estrutura modular de Sequences) | 4. `context7-mcp` + `remotion-docs` (Docs oficiais do Remotion) | 5. `obsidian-vault` (Roteiros e notas de produção) | 6. `caveman` (Código enxuto de animação) | 7. `code-review` (Revisão de performance de render) | 8. `agent-browser` (Inspeção do Remotion Studio/Player no browser) | 9. `lighthouse` (Garantir que vídeos embutidos não prejudiquem o LCP da página) | 10. `vercel-react-best-practices` & `deploy-to-vercel` (Hospedagem de Remotion Player na Vercel).
 
 ---
 

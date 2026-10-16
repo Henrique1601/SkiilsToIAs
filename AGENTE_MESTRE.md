@@ -20,8 +20,28 @@ Em vez de se perder procurando manualmente qual skill utilizar entre centenas de
 > Para todas as operações de segurança de versionamento, checkpoints preventivos de backup (`backup/checkpoint-...`), Conventional Commits padronizados, bootstrap de novos projetos (README, MIT License Henrique, .gitignore) e sincronização multi-máquina (PC Trabalho vs. PC Pessoal), o Agente Mestre conecta-se diretamente ao [**`git-master-agent` (`custom-agents/git-master-agent.md`)**](custom-agents/git-master-agent.md).
 
 > [!IMPORTANT]
-> ### 👑 Ponto Único de Comando: Agente Global Supremo (`global-master-agent`)
-> Prefere não ter que escolher qual agente chamar? Ative simplesmente o [**`global-master-agent` (`custom-agents/global-master-agent.md`)**](custom-agents/global-master-agent.md). Ele comanda o `skills-orchestrator`, o `git-master-agent` e quaisquer novos agentes customizados automaticamente!
+> ### 👑 Ponto Único de Comando & Rede Conectada (12 Agentes em Full-Mesh)
+> O [**`skills-orchestrator` (`custom-agents/skills-orchestrator.md`)**](custom-agents/skills-orchestrator.md) e o [**`global-master-agent` (`custom-agents/global-master-agent.md`)**](custom-agents/global-master-agent.md) conectam-se diretamente a **todos os 12 Agentes Especialistas** (`git-master-agent`, `design-engineer-agent`, `database-architect-agent`, `ai-engineer-agent`, `qa-testing-agent`, `security-auditor-agent`, `devops-cloud-agent`, `growth-marketing-agent`, `video-producer-agent` e `github-profile-agent`).
+> Em cada projeto, os agentes fazem primeiro o diagnóstico **"O Que Tem vs. O Que Precisa"** e selecionam as melhores skills das 512 disponíveis em conjunto com o **Kit Universal Obrigatório de 10 Skills & MCPs**.
+
+---
+
+## 🔥 1.1 KIT UNIVERSAL OBRIGATÓRIO (10 SKILLS & MCPs PARA TODOS OS PROJETOS)
+
+Independentemente da linguagem, framework ou fase, todo projeto administrado pelo Agente Mestre e pelos agentes conectados utiliza obrigatoriamente estes **10 pilares universais**:
+
+| # | Pilar Universal | Skills Nativas Vinculadas | MCP Server / Integração | Papel Transversal em Todo Projeto |
+| :---: | :--- | :--- | :--- | :--- |
+| **1** | 🧠 **Brainstorm** | [`brainstorming`](development/brainstorming/SKILL.md) | — | Ideação criativa, exploração de requisitos e casos de uso antes de codificar. |
+| **2** | 🔥 **Grill Me** | [`grill-me`](documents-productivity/grill-me/SKILL.md), [`grill-with-docs`](documents-productivity/grill-with-docs/SKILL.md) | — | Sabatina implacável e stress-test do plano para eliminar ambiguidades e furos de negócio. |
+| **3** | 🏛️ **Architecture** | [`architecture`](backend-database/architecture/SKILL.md), [`architecture-decision-records`](backend-database/architecture-decision-records/SKILL.md), [`hexagonal-architecture`](backend-database/hexagonal-architecture/SKILL.md) | — | Desenho arquitetural limpo, fronteiras de domínio e registro formal de ADRs. |
+| **4** | 📚 **Context7** | [`context7-mcp`](ai-agents/context7-mcp/SKILL.md), [`context7-cli`](development/context7-cli/SKILL.md) | `context7` (Docs MCP) | Consulta em tempo real da documentação oficial atualizada das bibliotecas (zero alucinação). |
+| **5** | 💎 **Obsidian** | [`obsidian-vault`](documents-productivity/obsidian-vault/SKILL.md), [`obsidian-markdown`](documents-productivity/obsidian-markdown/SKILL.md) | `obsidian` / Vault Local | Memória persistente (*Second Brain*), documentação viva com wikilinks e índice do projeto. |
+| **6** | 🪨 **Caveman** | [`caveman`](utilities/caveman/SKILL.md), [`caveman-commit`](utilities/caveman-commit/SKILL.md), [`caveman-review`](utilities/caveman-review/SKILL.md), [`caveman-compress`](utilities/caveman-compress/SKILL.md) | — | Eficiência extrema de tokens, comunicação cirúrgica sem enrolação e commits enxutos. |
+| **7** | 🔍 **Code Review** | [`code-review`](development/code-review/SKILL.md), [`caveman-review`](utilities/caveman-review/SKILL.md) | — | Revisão estática e arquitetural rigorosa de todo código escrito ou modificado. |
+| **8** | 🌐 **Agente Browser** | [`agent-browser`](development/agent-browser/SKILL.md), [`browser-qa`](development/browser-qa/SKILL.md), [`webapp-testing`](development/webapp-testing/SKILL.md) | `chrome-devtools-mcp` | Navegação autônoma, inspeção visual de UI/DOM e testes interativos no navegador. |
+| **9** | 🚨 **Lighthouse** | [`lighthouse`](seo/lighthouse/SKILL.md), [`performance`](development/performance/SKILL.md) | `chrome-devtools-mcp` (`lighthouse_audit`) | Auditoria contínua de Performance, Acessibilidade, Boas Práticas, SEO e Core Web Vitals (**nota 90+**). |
+| **10** | ▲ **Vercel** | [`deploy-to-vercel`](devops-cloud/deploy-to-vercel/SKILL.md), [`vercel-react-best-practices`](development/vercel-react-best-practices/SKILL.md), [`vercel-composition-patterns`](development/vercel-composition-patterns/SKILL.md) | Vercel CLI / Deploy Pipeline | Boas práticas de engenharia React/Next.js e deploy contínuo de Preview/Produção na Vercel. |
 
 ---
 

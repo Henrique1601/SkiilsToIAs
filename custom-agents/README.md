@@ -25,28 +25,52 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 ---
 
-## 🤝 Sinergia Operacional: Hierarquia de Comando
+## 🌐 Sinergia Operacional: Rede Conectada (Full-Mesh) & Kit Universal
 
-O ecossistema é organizado de forma hierárquica para eliminar esforço cognitivo do desenvolvedor:
+Todos os **12 Agentes** estão interconectados em malha (*Full-Mesh*) através do **`skills-orchestrator`** e comandados pelo **`global-master-agent`**. Dependendo do projeto, os agentes inspecionam **o que o projeto já tem** e **o que precisa**, selecionando as melhores skills das 512 disponíveis em conjunto com o **Kit Universal Obrigatório de 10 Skills & MCPs**:
 
 ```mermaid
 flowchart TD
     User["👤 Usuário (Comando Único)"] --> GMA["👑 global-master-agent<br/>(Comandante Supremo & Ponto de Entrada Único)"]
 
-    GMA -->|"1. Versionamento, Backups & Sincronização"| GitMaster["🛡️ git-master-agent<br/>- Checkpoint preventivo antes de mexer<br/>- Conventional Commits e Push<br/>- Sync PC Trabalho vs PC Pessoal"]
-    
-    GMA -->|"2. Metodologia, Arquitetura & Fases"| Orch["🎯 skills-orchestrator<br/>- 9 Fases do Ciclo de Vida<br/>- Diagnóstico da fase atual<br/>- Prescrição do pipeline de skills"]
+    GMA <--> Orch["🎯 skills-orchestrator<br/>(Hub Central: 9 Fases + 512 Skills + 10 Universais)"]
+    GMA <--> GitMaster["🛡️ git-master-agent<br/>(Backups, Commits, Sync Multi-PC)"]
 
-    GMA -.->|"3. Especialistas Verticais Adicionais"| Future["🤖 Novos Agentes Customizados<br/>(ex: security-agent, devops-agent)"]
+    Orch <--> UI["🎨 design-engineer-agent"]
+    Orch <--> DB["🗄️ database-architect-agent"]
+    Orch <--> AI["🤖 ai-engineer-agent"]
+    Orch <--> QA["🧪 qa-testing-agent"]
+    Orch <--> Sec["🛡️ security-auditor-agent"]
+    Orch <--> DevOps["☁️ devops-cloud-agent"]
+    Orch <--> Growth["📈 growth-marketing-agent"]
+    Orch <--> Video["🎬 video-producer-agent"]
+    Orch <--> Profile["🐙 github-profile-agent"]
 
-    GitMaster --> Skills["🧰 512 Skills Especializadas em 11 Categorias"]
-    Orch --> Skills
+    DB <--> Sec
+    UI <--> QA
+    QA <--> DevOps
+    DevOps <--> Growth
+    DevOps <--> GitMaster
 ```
 
-1. **Chamada Única:** Em vez de lembrar qual agente acionar, você simplesmente conversa com o **`global-master-agent`**.
-2. **Proteção Automática:** Ele aciona o `git-master-agent` para garantir checkpoints de backup e sincronização multi-máquinas antes de qualquer alteração.
-3. **Execução Metódica:** Ele aciona o `skills-orchestrator` para conduzir as 9 fases e selecionar as skills ideais entre as 512 disponíveis.
-4. **Entrega Blindada:** Ele aciona o `git-master-agent` para auditar secrets, rodar o `verification-loop`, fazer o commit convencional e enviar ao GitHub.
+### 🔥 Kit Universal Obrigatório (Presente em Todos os Agentes e Projetos)
+
+| # | Ferramenta / Pilar | Skills Nativas & MCPs Associados | Função Transversal em Qualquer Projeto |
+| :---: | :--- | :--- | :--- |
+| **1** | 🧠 **Brainstorm** | `brainstorming` | Ideação criativa e exploração de requisitos ocultos antes de codificar. |
+| **2** | 🔥 **Grill Me** | `grill-me`, `grill-with-docs` | Sabatina implacável para encontrar furos de lógica, produto e arquitetura. |
+| **3** | 🏛️ **Architecture** | `architecture`, `architecture-decision-records`, `hexagonal-architecture` | Desenho de arquitetura limpa, desacoplamento e registro formal de ADRs. |
+| **4** | 📚 **Context7** | `context7-mcp`, `context7-cli` | Documentação oficial em tempo real para zero código alucinado ou defasado. |
+| **5** | 💎 **Obsidian** | `obsidian-vault`, `obsidian-markdown` | Gestão de conhecimento persistente (*Second Brain*), wikilinks e notas. |
+| **6** | 🪨 **Caveman** | `caveman`, `caveman-commit`, `caveman-review`, `caveman-compress` | Economia extrema de tokens, concisão cirúrgica e commits diretos. |
+| **7** | 🔍 **Code Review** | `code-review`, `caveman-review` | Revisão estática e estrutural rigorosa (SOLID, DRY, segurança e tipagem). |
+| **8** | 🌐 **Agente Browser** | `agent-browser`, `browser-qa`, `webapp-testing` + `chrome-devtools-mcp` | Navegação autônoma, inspeção visual de UI/DOM e testes interativos no browser. |
+| **9** | 🚨 **Lighthouse** | `lighthouse`, `performance` + `chrome-devtools-mcp` | Auditoria contínua de Performance, Acessibilidade, SEO e Core Web Vitals (90+). |
+| **10** | ▲ **Vercel** | `deploy-to-vercel`, `vercel-react-best-practices`, `vercel-composition-patterns` | Boas práticas de engenharia React/Next.js e deploy contínuo na Vercel. |
+
+1. **Diagnóstico "O Que Tem vs. O Que Precisa":** Ao entrar em qualquer projeto, o `skills-orchestrator` analisa os arquivos existentes e aciona os agentes especialistas necessários.
+2. **Proteção Automática:** O `git-master-agent` garante checkpoints de backup e sincronização multi-máquinas antes e depois de qualquer alteração.
+3. **Execução Conectada:** Os agentes colaboram horizontalmente (ex: `design-engineer-agent` ➡️ `qa-testing-agent` com `agent-browser` ➡️ `devops-cloud-agent` com `deploy-to-vercel` ➡️ `growth-marketing-agent` com `lighthouse`).
 
 ---
 
