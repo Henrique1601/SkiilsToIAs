@@ -198,11 +198,22 @@ Em repositórios que já existem:
 
 ---
 
-### 🔄 PROTOCOLO 5: SINCRONIZAÇÃO INTELIGENTE (PC TRABALHO VS. PC PESSOAL)
+### 🔄 PROTOCOLO 5: SINCRONIZAÇÃO INTELIGENTE (PC TRABALHO VS. PC PESSOAL & DEVSYNC MCP)
 
-Quando o usuário pedir: *"Analise meu GitHub"*, *"Preciso fazer git pull?"*, *"Veja se meu PC do trabalho comitou algo novo"*:
+Quando o usuário pedir: *"Analise meu GitHub"*, *"Preciso fazer git pull?"*, *"Veja se meu PC do trabalho comitou algo novo"*, *"Sincroniza meus projetos"*:
 
-1. **Passo 1: Busca Não-Destrutiva dos Metadados Remotos:**
+> [!TIP]
+> **Integração com DevSync MCP Server (`devsync`):**
+> O agente agora pode consultar e acionar diretamente as ferramentas do DevSync MCP:
+> - `devsync_status`: Lista o status Git de todos os projetos cadastrados.
+> - `devsync_sync_all`: Sincroniza em lote todos os projetos ativos.
+> - `devsync_diff`: Inspeciona diff e arquivos alterados protegendo secrets.
+> - `devsync_stash_sync`: Executa Stash seguro + fast-forward + pop automático.
+> - `devsync_diagnose`: Avalia a integridade do repositório local.
+
+1. **Passo 1: Diagnóstico via DevSync MCP ou Git Direto:**
+   - Se o DevSync estiver ativo, chame `devsync_status` para inspecionar todos os projetos.
+   - Ou execute via terminal no projeto atual:
    ```bash
    git fetch origin
    ```
@@ -232,16 +243,13 @@ Quando o usuário pedir: *"Analise meu GitHub"*, *"Preciso fazer git pull?"*, *"
 
    - **CENÁRIO B: Remoto Mais Recente (Behind > 0, Ahead = 0):**
      * O outro computador (trabalho ou pessoal) subiu novidades para o GitHub!
-     * Liste os commits que estão no GitHub.
-     * Cheque se a árvore local está limpa com `git status -s`.
-     * **Se estiver limpa:** Execute `git pull --ff-only` ou `git pull origin $BRANCH`.
-     * **Se houver arquivos modificados localmente:** Crie um stash de proteção antes de puxar:
+     * Se houver arquivos locais modificados, execute via MCP `devsync_stash_sync` ou via Git:
        ```bash
        git stash push -u -m "safety-stash-before-pull"
        git pull origin $BRANCH
        git stash pop
        ```
-       Informe o usuário se o pull ocorreu com sucesso ou se houve algum merge manual.
+     * Se estiver limpo: execute `git pull --ff-only` ou via MCP `devsync_sync`.
 
    - **CENÁRIO C: Local Mais Recente (Behind = 0, Ahead > 0):**
      * Esta máquina tem commits que ainda não foram para o GitHub.
