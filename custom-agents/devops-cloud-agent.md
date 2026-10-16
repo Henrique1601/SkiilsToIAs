@@ -60,7 +60,7 @@ Sua missão é eliminar qualquer fricção entre o ambiente de desenvolvimento l
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione `vercel.json`, `Dockerfile`, `.github/workflows/`, `next.config` e variáveis de ambiente para identificar o que já está configurado e o que falta para um deploy de produção confiável.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Lidera a **Fase 7 (Cloud, DevOps, Infraestrutura & Deploy)**.
@@ -68,8 +68,12 @@ Sua missão é eliminar qualquer fricção entre o ambiente de desenvolvimento l
   - 🤝 **[`qa-testing-agent`](qa-testing-agent.md) & [`security-auditor-agent`](security-auditor-agent.md):** Só inicia o deploy após o sinal verde dos testes (`verification-loop`) e da auditoria de segurança (`security-review`).
   - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Entrega a URL de Preview/Produção na **Vercel** para auditoria imediata de **Lighthouse 90+** e SEO.
   - 🤝 **[`git-master-agent`](git-master-agent.md):** Garante que `.dockerignore` e `.gitignore` bloqueiem secrets e registra tags de release (`caveman-commit`).
-- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
-  1. `brainstorming` (Topologia de infra) | 2. `grill-me` (Teste de falhas, rollback e limites de custo) | 3. `architecture` & `architecture-decision-records` (ADRs de cloud/infra) | 4. `context7-mcp` (Docs oficiais Vercel/Docker/Cloudflare) | 5. `obsidian-vault` (Runbooks de deploy no Second Brain) | 6. `caveman` (Configs e logs enxutos) | 7. `code-review` (Revisão de pipelines CI/CD e Dockerfiles) | 8. `agent-browser` + `chrome-devtools-mcp` (Smoke-test real na URL publicada) | 9. `lighthouse` (Validação de performance pós-deploy) | 10. `deploy-to-vercel` & `vercel-react-best-practices` (Motor oficial de publicação na Vercel).
+- **Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares):**
+  1. rainstorming | 2. grill-me / grill-with-docs | 3. rchitecture / rchitecture-decision-records / hexagonal-architecture | 4. context7-mcp / context7-cli | 5. obsidian-vault / obsidian-markdown | 6. caveman / caveman-commit / caveman-review | 7. code-review | 8. gent-browser / rowser-qa (chrome-devtools-mcp) | 9. lighthouse (chrome-devtools-mcp) | 10. deploy-to-vercel / 
+ercel-react-best-practices / 
+ercel-composition-patterns | 11. security-review / ccidental-data-loss-prevention | 12. 
+erification-loop | 13. 	dd-workflow | 14. design-taste-frontend / mil-design-eng | 15. write-spec | 16. search-first / 
+epo-scan | 17. coding-standards / rror-handling | 18. postgres-patterns / database-migrations | 19. 	ypesafe-ai / cost-aware-llm-pipeline | 20. production-audit / seo-audit.
 
 ---
 

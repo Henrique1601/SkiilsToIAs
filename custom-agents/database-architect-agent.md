@@ -59,7 +59,7 @@ Sua missão é garantir que cada tabela, índice, relacionamento e transação s
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione `schema.prisma`, `drizzle/`, `supabase/migrations/`, conexões `.env` e os MCPs ativos (`supabase`, `Neon`, `mongodb-mcp-server`) para entender as tabelas atuais e o que precisa ser criado ou otimizado.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Co-lidera a **Fase 2 (Arquitetura)** e lidera a **Fase 3 (Modelagem de Dados, Banco & APIs)**.
@@ -68,8 +68,12 @@ Sua missão é garantir que cada tabela, índice, relacionamento e transação s
   - 🤝 **[`ai-engineer-agent`](ai-engineer-agent.md):** Estrutura índices vetoriais (`pgvector`) e tabelas de histórico/contexto para agentes e RAG.
   - 🤝 **[`qa-testing-agent`](qa-testing-agent.md):** Fornece seeds e schemas de teste determinísticos para testes de integração.
   - 🤝 **[`git-master-agent`](git-master-agent.md):** Solicita checkpoint preventivo antes de rodar migrations e versiona com `caveman-commit`.
-- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
-  1. `brainstorming` (Modelagem de domínio) | 2. `grill-me` (Sabatina de cardinalidade, volume e gargalos) | 3. `architecture` & `hexagonal-architecture` (Isolamento da camada de persistência) | 4. `context7-mcp` (Docs oficiais de ORMs e bancos) | 5. `obsidian-vault` (Dicionário de dados e MER no Second Brain) | 6. `caveman` (Queries e respostas diretas) | 7. `code-review` (Revisão de N+1 e índices) | 8. `agent-browser` (Validação de dados fluindo na UI) | 9. `lighthouse` (Impacto do TTFB da API na performance) | 10. `deploy-to-vercel` (Integração de Connection Pooler serverless para Vercel).
+- **Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares):**
+  1. rainstorming | 2. grill-me / grill-with-docs | 3. rchitecture / rchitecture-decision-records / hexagonal-architecture | 4. context7-mcp / context7-cli | 5. obsidian-vault / obsidian-markdown | 6. caveman / caveman-commit / caveman-review | 7. code-review | 8. gent-browser / rowser-qa (chrome-devtools-mcp) | 9. lighthouse (chrome-devtools-mcp) | 10. deploy-to-vercel / 
+ercel-react-best-practices / 
+ercel-composition-patterns | 11. security-review / ccidental-data-loss-prevention | 12. 
+erification-loop | 13. 	dd-workflow | 14. design-taste-frontend / mil-design-eng | 15. write-spec | 16. search-first / 
+epo-scan | 17. coding-standards / rror-handling | 18. postgres-patterns / database-migrations | 19. 	ypesafe-ai / cost-aware-llm-pipeline | 20. production-audit / seo-audit.
 
 ---
 

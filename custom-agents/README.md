@@ -53,7 +53,7 @@ flowchart TD
     DevOps <--> GitMaster
 ```
 
-### 🔥 Kit Universal Obrigatório (Presente em Todos os Agentes e Projetos)
+### 🔥 Kit Universal Obrigatório (Top 20 Skills & MCPs em Todos os Agentes e Projetos)
 
 | # | Ferramenta / Pilar | Skills Nativas & MCPs Associados | Função Transversal em Qualquer Projeto |
 | :---: | :--- | :--- | :--- |
@@ -67,6 +67,16 @@ flowchart TD
 | **8** | 🌐 **Agente Browser** | `agent-browser`, `browser-qa`, `webapp-testing` + `chrome-devtools-mcp` | Navegação autônoma, inspeção visual de UI/DOM e testes interativos no browser. |
 | **9** | 🚨 **Lighthouse** | `lighthouse`, `performance` + `chrome-devtools-mcp` | Auditoria contínua de Performance, Acessibilidade, SEO e Core Web Vitals (90+). |
 | **10** | ▲ **Vercel** | `deploy-to-vercel`, `vercel-react-best-practices`, `vercel-composition-patterns` | Boas práticas de engenharia React/Next.js e deploy contínuo na Vercel. |
+| **11** | 🛡️ **Security & Data Guard** | `security-review`, `accidental-data-loss-prevention` | Proteção OWASP, zero vazamento de secrets (`.env`) e prevenção contra perda de dados. |
+| **12** | 🔄 **Verification Loop** | `verification-loop` | Loop automático (`build` + `typecheck` + `lint` + `test`) antes de concluir entregas. |
+| **13** | 🧪 **TDD Workflow** | `tdd-workflow`, `tdd` | Ciclo *Red-Green-Refactor* com meta de 80%+ de cobertura e zero regressões. |
+| **14** | 🎨 **Design Taste & Polish** | `design-taste-frontend`, `emil-design-eng` | Estética premium anti-template e microinterações nível Linear/Stripe/Apple. |
+| **15** | 📝 **Write Spec (PRD)** | `write-spec` | Especificação técnica formal e critérios de aceite claros após o `grill-me`. |
+| **16** | 🔎 **Search First & Repo Scan** | `search-first`, `repo-scan` | Auditoria do código existente e busca de soluções prontas antes de reinventar a roda. |
+| **17** | 🧱 **Coding Standards & Errors** | `coding-standards`, `error-handling` | Padronização de código limpo, imutabilidade, erros tipados e retries resilientes. |
+| **18** | 🗄️ **Postgres & Migrations** | `postgres-patterns`, `database-migrations` + MCPs `supabase` / `Neon` | Schemas relacionais com RLS, índices estratégicos e migrações zero-downtime. |
+| **19** | 🤖 **TypeSafe & Cost-Aware AI** | `typesafe-ai`, `cost-aware-llm-pipeline` | Schemas validados (Zod/JSON) para IA e roteamento inteligente de custos de tokens. |
+| **20** | 🚀 **Production & SEO Audit** | `production-audit`, `seo-audit` | Checklist pré/pós-lançamento: variáveis de produção, HTTPS, OpenGraph e indexação. |
 
 1. **Diagnóstico "O Que Tem vs. O Que Precisa":** Ao entrar em qualquer projeto, o `skills-orchestrator` analisa os arquivos existentes e aciona os agentes especialistas necessários.
 2. **Proteção Automática:** O `git-master-agent` garante checkpoints de backup e sincronização multi-máquinas antes e depois de qualquer alteração.

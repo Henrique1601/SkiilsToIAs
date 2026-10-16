@@ -70,7 +70,7 @@ Sua missão é transformar o perfil do usuário em um **portfólio vivo de alto 
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione o `README.md`, tópicos do repositório, links de deploy e projetos públicos de `Henrique1601` para identificar o que já está documentado e como posicionar o projeto como case de portfólio.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Atua na **Fase 1 (README inicial)** e na **Fase 8 (Vitrine, Portfólio & Personal Branding)**.
@@ -78,8 +78,12 @@ Sua missão é transformar o perfil do usuário em um **portfólio vivo de alto 
   - 🤝 **[`git-master-agent`](git-master-agent.md):** Sincroniza commits e publica atualizações no repositório `Henrique1601/Henrique1601` e nos READMEs dos projetos (`caveman-commit`).
   - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Alinha o estudo de caso do GitHub com posts de lançamento no LinkedIn (`linkedin-post-writer`).
   - 🤝 **[`devops-cloud-agent`](devops-cloud-agent.md):** Adiciona os badges e links ao vivo de produção na **Vercel** (`deploy-to-vercel`) diretamente no topo do repositório.
-- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
-  1. `brainstorming` (Posicionamento de marca pessoal) | 2. `grill-me` (Sabatina de impacto para recrutadores/clientes) | 3. `architecture` (Diagramas arquiteturais Mermaid nos READMEs) | 4. `context7-mcp` (Badges e referências técnicas exatas) | 5. `obsidian-vault` & `obsidian-markdown` (Sincronização de estudos de caso com o Second Brain) | 6. `caveman` (Textos de alto impacto e zero enrolação) | 7. `code-review` (Revisão de workflows GitHub Actions) | 8. `agent-browser` (Verificação visual do perfil renderizado no GitHub) | 9. `lighthouse` (Métricas de performance nos sites de portfólio) | 10. `deploy-to-vercel` (Links de demonstração na Vercel).
+- **Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares):**
+  1. rainstorming | 2. grill-me / grill-with-docs | 3. rchitecture / rchitecture-decision-records / hexagonal-architecture | 4. context7-mcp / context7-cli | 5. obsidian-vault / obsidian-markdown | 6. caveman / caveman-commit / caveman-review | 7. code-review | 8. gent-browser / rowser-qa (chrome-devtools-mcp) | 9. lighthouse (chrome-devtools-mcp) | 10. deploy-to-vercel / 
+ercel-react-best-practices / 
+ercel-composition-patterns | 11. security-review / ccidental-data-loss-prevention | 12. 
+erification-loop | 13. 	dd-workflow | 14. design-taste-frontend / mil-design-eng | 15. write-spec | 16. search-first / 
+epo-scan | 17. coding-standards / rror-handling | 18. postgres-patterns / database-migrations | 19. 	ypesafe-ai / cost-aware-llm-pipeline | 20. production-audit / seo-audit.
 
 ---
 

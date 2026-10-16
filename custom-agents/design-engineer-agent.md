@@ -59,7 +59,7 @@ Sua missão é erradicar o visual genérico de "template pronto" ou "Bootstrap 2
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Antes de criar ou alterar telas, inspecione o `package.json`, `tailwind.config`, variáveis CSS e componentes existentes para saber o que o projeto já possui e quais skills de UI/UX do catálogo de 512 são ideais.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Lidera a **Fase 4 (Identidade Visual, Design System & UI/UX)** e co-lidera a **Fase 5 (Frontend Implementation)**.
@@ -68,8 +68,12 @@ Sua missão é erradicar o visual genérico de "template pronto" ou "Bootstrap 2
   - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Colabora para garantir **Lighthouse 90+** (`lighthouse`, CLS zero, LCP rápido) e copy de alta conversão.
   - 🤝 **[`video-producer-agent`](video-producer-agent.md):** Compartilha tokens de cor, tipografia e animações para vídeos programáticos no Remotion.
   - 🤝 **[`git-master-agent`](git-master-agent.md):** Entrega componentes validados para commit semântico (`caveman-commit`).
-- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
-  1. `brainstorming` (Exploração visual) | 2. `grill-me` (Desafio de UX) | 3. `architecture` (Arquitetura de componentes) | 4. `context7-mcp` (Docs oficiais Tailwind/Radix/Shadcn/Motion) | 5. `obsidian-vault` (Documentação do Design System) | 6. `caveman` (Código conciso) | 7. `code-review` (Revisão de UI/CSS) | 8. `agent-browser` + `chrome-devtools-mcp` (Inspeção visual ao vivo) | 9. `lighthouse` (Performance & A11y 90+) | 10. `vercel-react-best-practices` & `vercel-composition-patterns` (Padrões Vercel).
+- **Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares):**
+  1. rainstorming | 2. grill-me / grill-with-docs | 3. rchitecture / rchitecture-decision-records / hexagonal-architecture | 4. context7-mcp / context7-cli | 5. obsidian-vault / obsidian-markdown | 6. caveman / caveman-commit / caveman-review | 7. code-review | 8. gent-browser / rowser-qa (chrome-devtools-mcp) | 9. lighthouse (chrome-devtools-mcp) | 10. deploy-to-vercel / 
+ercel-react-best-practices / 
+ercel-composition-patterns | 11. security-review / ccidental-data-loss-prevention | 12. 
+erification-loop | 13. 	dd-workflow | 14. design-taste-frontend / mil-design-eng | 15. write-spec | 16. search-first / 
+epo-scan | 17. coding-standards / rror-handling | 18. postgres-patterns / database-migrations | 19. 	ypesafe-ai / cost-aware-llm-pipeline | 20. production-audit / seo-audit.
 
 ---
 

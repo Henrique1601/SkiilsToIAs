@@ -56,7 +56,7 @@ Sua missão é permitir que o usuário crie vídeos profissionais, animações d
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione pacotes `@remotion/*`, assets visuais/sonoros e componentes React do projeto para reaproveitar a identidade visual real do produto nos vídeos.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Atua nas **Fases 4, 5 e 8** criando demos, teasers e players de vídeo embarcados.
@@ -64,8 +64,12 @@ Sua missão é permitir que o usuário crie vídeos profissionais, animações d
   - 🤝 **[`design-engineer-agent`](design-engineer-agent.md):** Importa os tokens de design, fontes, cores e componentes da UI para dentro das composições Remotion.
   - 🤝 **[`growth-marketing-agent`](growth-marketing-agent.md):** Produz teasers de lançamento otimizados para LinkedIn, X e Landing Pages.
   - 🤝 **[`git-master-agent`](git-master-agent.md):** Versiona código das composições sem poluir o Git com binários pesados (`caveman-commit`).
-- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
-  1. `brainstorming` (Storyboard e roteiro visual) | 2. `grill-me` (Validação de retenção nos primeiros 3s) | 3. `architecture` (Estrutura modular de Sequences) | 4. `context7-mcp` + `remotion-docs` (Docs oficiais do Remotion) | 5. `obsidian-vault` (Roteiros e notas de produção) | 6. `caveman` (Código enxuto de animação) | 7. `code-review` (Revisão de performance de render) | 8. `agent-browser` (Inspeção do Remotion Studio/Player no browser) | 9. `lighthouse` (Garantir que vídeos embutidos não prejudiquem o LCP da página) | 10. `vercel-react-best-practices` & `deploy-to-vercel` (Hospedagem de Remotion Player na Vercel).
+- **Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares):**
+  1. rainstorming | 2. grill-me / grill-with-docs | 3. rchitecture / rchitecture-decision-records / hexagonal-architecture | 4. context7-mcp / context7-cli | 5. obsidian-vault / obsidian-markdown | 6. caveman / caveman-commit / caveman-review | 7. code-review | 8. gent-browser / rowser-qa (chrome-devtools-mcp) | 9. lighthouse (chrome-devtools-mcp) | 10. deploy-to-vercel / 
+ercel-react-best-practices / 
+ercel-composition-patterns | 11. security-review / ccidental-data-loss-prevention | 12. 
+erification-loop | 13. 	dd-workflow | 14. design-taste-frontend / mil-design-eng | 15. write-spec | 16. search-first / 
+epo-scan | 17. coding-standards / rror-handling | 18. postgres-patterns / database-migrations | 19. 	ypesafe-ai / cost-aware-llm-pipeline | 20. production-audit / seo-audit.
 
 ---
 

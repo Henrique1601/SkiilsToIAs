@@ -26,9 +26,9 @@ Em vez de se perder procurando manualmente qual skill utilizar entre centenas de
 
 ---
 
-## 🔥 1.1 KIT UNIVERSAL OBRIGATÓRIO (10 SKILLS & MCPs PARA TODOS OS PROJETOS)
+## 🔥 1.1 KIT UNIVERSAL OBRIGATÓRIO (TOP 20 SKILLS & MCPs PARA TODOS OS PROJETOS)
 
-Independentemente da linguagem, framework ou fase, todo projeto administrado pelo Agente Mestre e pelos agentes conectados utiliza obrigatoriamente estes **10 pilares universais**:
+Independentemente da linguagem, framework ou fase, todo projeto administrado pelo Agente Mestre e pelos agentes conectados utiliza obrigatoriamente estes **20 pilares universais**:
 
 | # | Pilar Universal | Skills Nativas Vinculadas | MCP Server / Integração | Papel Transversal em Todo Projeto |
 | :---: | :--- | :--- | :--- | :--- |
@@ -42,6 +42,16 @@ Independentemente da linguagem, framework ou fase, todo projeto administrado pel
 | **8** | 🌐 **Agente Browser** | [`agent-browser`](development/agent-browser/SKILL.md), [`browser-qa`](development/browser-qa/SKILL.md), [`webapp-testing`](development/webapp-testing/SKILL.md) | `chrome-devtools-mcp` | Navegação autônoma, inspeção visual de UI/DOM e testes interativos no navegador. |
 | **9** | 🚨 **Lighthouse** | [`lighthouse`](seo/lighthouse/SKILL.md), [`performance`](development/performance/SKILL.md) | `chrome-devtools-mcp` (`lighthouse_audit`) | Auditoria contínua de Performance, Acessibilidade, Boas Práticas, SEO e Core Web Vitals (**nota 90+**). |
 | **10** | ▲ **Vercel** | [`deploy-to-vercel`](devops-cloud/deploy-to-vercel/SKILL.md), [`vercel-react-best-practices`](development/vercel-react-best-practices/SKILL.md), [`vercel-composition-patterns`](development/vercel-composition-patterns/SKILL.md) | Vercel CLI / Deploy Pipeline | Boas práticas de engenharia React/Next.js e deploy contínuo de Preview/Produção na Vercel. |
+| **11** | 🛡️ **Security & Data Guard** | [`security-review`](utilities/security-review/SKILL.md), [`accidental-data-loss-prevention`](devops-cloud/accidental-data-loss-prevention/SKILL.md) | — | Proteção OWASP Top 10, bloqueio contra vazamento de `.env`/secrets e trava contra comandos destrutivos. |
+| **12** | 🔄 **Verification Loop** | [`verification-loop`](ai-agents/verification-loop/SKILL.md) | — | Loop obrigatório de verificação (`build` + `typecheck` + `lint` + `test`) antes de concluir entregas. |
+| **13** | 🧪 **TDD Workflow** | [`tdd-workflow`](development/tdd-workflow/SKILL.md), [`tdd`](development/tdd/SKILL.md) | — | Ciclo *Red-Green-Refactor* com meta de 80%+ de cobertura e prevenção de regressões. |
+| **14** | 🎨 **Design Taste & Polish** | [`design-taste-frontend`](design/design-taste-frontend/SKILL.md), [`emil-design-eng`](design/emil-design-eng/SKILL.md) | — | Estética premium anti-template e microinterações fluidas nível Linear/Stripe/Apple. |
+| **15** | 📝 **Write Spec (PRD)** | [`write-spec`](documents-productivity/write-spec/SKILL.md) | — | Transforma o `brainstorming` + `grill-me` em PRD técnico com critérios de aceite testáveis. |
+| **16** | 🔎 **Search First & Repo Scan** | [`search-first`](documents-productivity/search-first/SKILL.md), [`repo-scan`](development/repo-scan/SKILL.md) | — | Auditoria do código existente no projeto e busca de pacotes prontos antes de reinventar código. |
+| **17** | 🧱 **Coding Standards & Errors** | [`coding-standards`](development/coding-standards/SKILL.md), [`error-handling`](development/error-handling/SKILL.md) | — | Convenções de código limpo, imutabilidade, erros tipados, retries e circuit breakers. |
+| **18** | 🗄️ **Postgres & Migrations** | [`postgres-patterns`](backend-database/postgres-patterns/SKILL.md), [`database-migrations`](backend-database/database-migrations/SKILL.md) | `supabase`, `Neon` MCPs | Modelagem relacional com RLS ativa, índices estratégicos e migrações seguras zero-downtime. |
+| **19** | 🤖 **TypeSafe & Cost-Aware AI** | [`typesafe-ai`](ai-agents/typesafe-ai/SKILL.md), [`cost-aware-llm-pipeline`](ai-agents/cost-aware-llm-pipeline/SKILL.md) | `gemini-api-docs` MCP | Schemas estritos (Zod/JSON) para IA e roteamento inteligente de modelos e custos de tokens. |
+| **20** | 🚀 **Production & SEO Audit** | [`production-audit`](devops-cloud/production-audit/SKILL.md), [`seo-audit`](seo/seo-audit/SKILL.md) | — | Checklist completo pré/pós-lançamento: variáveis de produção, HTTPS, OpenGraph, sitemap e indexação. |
 
 ---
 

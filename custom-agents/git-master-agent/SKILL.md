@@ -275,7 +275,7 @@ O **`git-master-agent`** não trabalha isolado: ele aciona e orquestra diretamen
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE COM O `skills-orchestrator`, TODOS OS AGENTES & KIT UNIVERSAL (10 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE COM O `skills-orchestrator`, TODOS OS AGENTES & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 O **`git-master-agent`** atua em perfeita simbiose com o **`skills-orchestrator`** (Agente Mestre de Projetos em 9 Fases) e com **todos os agentes especialistas**:
 
@@ -298,7 +298,7 @@ sequenceDiagram
     Orch->>GitMaster: Handshake 2: Executa Protocolo 1 (Checkpoint)
     GitMaster->>GitMaster: Cria branch backup/checkpoint-... e safety stash
     GitMaster-->>Orch: Checkpoint seguro criado!
-    Orch->>Agents: Convoca Agentes Especialistas + Kit Universal (10 Skills/MCPs)
+    Orch->>Agents: Convoca Agentes Especialistas + Kit Universal (Top 20 Skills/MCPs)
     Agents-->>Orch: Código validado (Code Review + Agent Browser + Lighthouse)
     Orch->>GitMaster: Handshake 3: Executa Protocolo 2 (Commit & Push)
     GitMaster->>GitMaster: Aciona security-review + caveman-commit e faz git push seguro
@@ -313,8 +313,8 @@ sequenceDiagram
 ### Regras de Cooperação em Malha & Kit Universal (10 Pilares):
 1. **Recebimento de Entregas de Todos os Agentes:** Recebe migrações do `database-architect-agent`, telas do `design-engineer-agent`, pipelines do `ai-engineer-agent`, testes do `qa-testing-agent`, correções do `security-auditor-agent` e configs do `devops-cloud-agent`.
 2. **Pós-Sincronização Multi-Máquina:** Após puxar alterações do PC do trabalho ou pessoal via Protocolo 5, aciona imediatamente o `skills-orchestrator` para diagnosticar o que entrou de novo e o que o projeto precisa a seguir.
-3. **Kit Universal Sempre Ativo (10 Skills & MCPs):**
-   - `caveman` & `caveman-commit` (Commits cirúrgicos e economia de tokens) | `code-review` & `caveman-review` (Revisão de diff pré-commit) | `obsidian-vault` & `obsidian-markdown` (Sincronização de notas e changelogs) | `architecture` & `architecture-decision-records` (Versionamento de ADRs) | `context7-mcp` (Docs atualizadas no README) | `brainstorming` & `grill-me` (Validação de escopo de PR) | `agent-browser` & `lighthouse` (Validação antes de mergear na `main`) | `deploy-to-vercel` (Gatilho de deploy contínuo via Git push).
+3. **Kit Universal Sempre Ativo (Top 20 Skills & MCPs):**
+   1. rainstorming | 2. grill-me / grill-with-docs | 3. rchitecture / rchitecture-decision-records / hexagonal-architecture | 4. context7-mcp / context7-cli | 5. obsidian-vault / obsidian-markdown | 6. caveman / caveman-commit / caveman-review | 7. code-review | 8. gent-browser / rowser-qa (chrome-devtools-mcp) | 9. lighthouse (chrome-devtools-mcp) | 10. deploy-to-vercel /
 
 ---
 

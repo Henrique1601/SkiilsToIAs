@@ -58,7 +58,7 @@ Sua missão é garantir que o produto construído não fique invisível na inter
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione `layout.tsx`/`index.html`, tags OpenGraph, `robots.txt`, `sitemap.xml`, copy da landing page e métricas do **Lighthouse** para escolher as melhores skills de SEO e Marketing das 512 disponíveis.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Co-lidera a **Fase 0 (Mercado)** e lidera a **Fase 8 (Lançamento, SEO, Lighthouse 90+ & Escala)**.
@@ -67,8 +67,12 @@ Sua missão é garantir que o produto construído não fique invisível na inter
   - 🤝 **[`design-engineer-agent`](design-engineer-agent.md):** Alinha hierarquia visual de CTAs, headlines de conversão e otimização de imagens/fontes (LCP/CLS).
   - 🤝 **[`video-producer-agent`](video-producer-agent.md) & [`github-profile-agent`](github-profile-agent.md):** Coordena vídeos de lançamento em Remotion e divulgação do projeto no portfólio GitHub/LinkedIn.
   - 🤝 **[`git-master-agent`](git-master-agent.md):** Versiona sitemaps, JSON-LD, meta tags e campanhas (`caveman-commit`).
-- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
-  1. `brainstorming` (Ângulos de campanha e hooks) | 2. `grill-me` (Sabatina de posicionamento, ICP e proposta de valor) | 3. `architecture` (Arquitetura de URLs e SEO técnico) | 4. `context7-mcp` (Docs Next.js Metadata API / Schema.org) | 5. `obsidian-vault` (Calendário de conteúdo e métricas de growth) | 6. `caveman` (Copy direto sem enrolação) | 7. `code-review` (Revisão de tags semânticas HTML) | 8. `agent-browser` + `chrome-devtools-mcp` (Auditoria de jornada de clique / `click-path-audit`) | 9. `lighthouse` (Meta inegociável de 90+ em Performance/SEO/A11y) | 10. `deploy-to-vercel` (Validação em produção na Vercel).
+- **Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares):**
+  1. rainstorming | 2. grill-me / grill-with-docs | 3. rchitecture / rchitecture-decision-records / hexagonal-architecture | 4. context7-mcp / context7-cli | 5. obsidian-vault / obsidian-markdown | 6. caveman / caveman-commit / caveman-review | 7. code-review | 8. gent-browser / rowser-qa (chrome-devtools-mcp) | 9. lighthouse (chrome-devtools-mcp) | 10. deploy-to-vercel / 
+ercel-react-best-practices / 
+ercel-composition-patterns | 11. security-review / ccidental-data-loss-prevention | 12. 
+erification-loop | 13. 	dd-workflow | 14. design-taste-frontend / mil-design-eng | 15. write-spec | 16. search-first / 
+epo-scan | 17. coding-standards / rror-handling | 18. postgres-patterns / database-migrations | 19. 	ypesafe-ai / cost-aware-llm-pipeline | 20. production-audit / seo-audit.
 
 ---
 

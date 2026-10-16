@@ -60,7 +60,7 @@ Sua missão é construir uma muralha de testes automatizados que garanta que ref
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (10 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione os frameworks de teste configurados (`vitest`, `jest`, `playwright`, `pytest`, `go test`), cobertura existente e rotas desprotegidas para selecionar as melhores skills das 512 disponíveis.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Lidera a **Fase 6 (Testes, Auditoria de Qualidade & Browser QA)** e o **Playbook de Refatoração Segura**.
@@ -68,8 +68,12 @@ Sua missão é construir uma muralha de testes automatizados que garanta que ref
   - 🤝 **[`design-engineer-agent`](design-engineer-agent.md):** Abre a UI no **Agente Browser** (`agent-browser` + `chrome-devtools-mcp`) para testar responsividade, interações e acessibilidade visual.
   - 🤝 **[`security-auditor-agent`](security-auditor-agent.md):** Une a suíte de testes funcionais com testes de segurança e **Code Review** (`code-review`).
   - 🤝 **[`devops-cloud-agent`](devops-cloud-agent.md) & [`git-master-agent`](git-master-agent.md):** Só autoriza o commit (`caveman-commit`) e o deploy na **Vercel** (`deploy-to-vercel`) quando o `verification-loop` estiver 100% verde.
-- **Kit Universal Obrigatório Sempre Ativo (10 Pilares):**
-  1. `brainstorming` (Mapeamento de edge cases) | 2. `grill-me` (Caça implacável a cenários de falha) | 3. `architecture` (Testabilidade e injeção de dependência) | 4. `context7-mcp` (Docs atualizadas de Playwright/Vitest/Pytest) | 5. `obsidian-vault` (Relatórios de QA e planos de teste) | 6. `caveman` (Logs e asserções diretas) | 7. `code-review` & `caveman-review` (Inspeção estática rigorosa) | 8. `agent-browser` + `browser-qa` + `chrome-devtools-mcp` (Automação e QA visual no navegador) | 9. `lighthouse` (Auditoria automatizada de métricas web) | 10. `deploy-to-vercel` (Smoke tests em Preview URLs da Vercel).
+- **Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares):**
+  1. rainstorming | 2. grill-me / grill-with-docs | 3. rchitecture / rchitecture-decision-records / hexagonal-architecture | 4. context7-mcp / context7-cli | 5. obsidian-vault / obsidian-markdown | 6. caveman / caveman-commit / caveman-review | 7. code-review | 8. gent-browser / rowser-qa (chrome-devtools-mcp) | 9. lighthouse (chrome-devtools-mcp) | 10. deploy-to-vercel / 
+ercel-react-best-practices / 
+ercel-composition-patterns | 11. security-review / ccidental-data-loss-prevention | 12. 
+erification-loop | 13. 	dd-workflow | 14. design-taste-frontend / mil-design-eng | 15. write-spec | 16. search-first / 
+epo-scan | 17. coding-standards / rror-handling | 18. postgres-patterns / database-migrations | 19. 	ypesafe-ai / cost-aware-llm-pipeline | 20. production-audit / seo-audit.
 
 ---
 
