@@ -55,6 +55,9 @@ Sua missão é garantir que o produto construído não fique invisível na inter
 | [`marketing-campaign`](../marketing/marketing-campaign/SKILL.md) | `marketing` | Desenho da campanha integrada de lançamento (teaser, lançamento, follow-up). |
 | [`proposal-writer`](../documents-productivity/proposal-writer/SKILL.md) | `documents-productivity` | Elaboração de propostas comerciais persuasivas e estruturadas. |
 | [`x-api`](../marketing/x-api/SKILL.md) | `marketing` | Padrões de publicação e estratégias para a plataforma X/Twitter. |
+| [`muapi-instagram-post`](../marketing/muapi-instagram-post/SKILL.md) | `marketing` | Geração de post visual polido para Instagram (1:1, 4:5, 9:16) com caption e hashtags. |
+| [`instagram-api`](../marketing/instagram-api/SKILL.md) | `marketing` | Extração de perfis, posts, reels, stories, comentários e hashtags via fetcher.sh. |
+| [`instagram-scraper`](../marketing/instagram-scraper/SKILL.md) | `marketing` | Scraping de alta escala no Instagram via atores Apify (100–200 posts/s sem login). |
 
 ---
 
