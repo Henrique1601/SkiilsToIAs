@@ -272,6 +272,8 @@ O **`git-master-agent`** não trabalha isolado: ele aciona e orquestra diretamen
 | Skill | Categoria | Quando o Agente Aciona |
 | :--- | :--- | :--- |
 | [`git-workflow`](../development/git-workflow/SKILL.md) | `development` | Padrões de branch, convenções de mensagem semântica, cherry-pick e estratégias de merge vs. rebase linear. |
+| [using-git-worktrees](../development/using-git-worktrees/SKILL.md) | development | Gestão de múltiplas branches e agentes paralelos em worktrees isolados sem alternar branches. |
+| [git-guardrails-claude-code](../development/git-guardrails-claude-code/SKILL.md) | development | Travas preventivas e proteções ativas contra comandos git destrutivos e perda de dados. |
 | [`security-review`](../utilities/security-review/SKILL.md) | `utilities` | Varredura preventiva pré-commit para bloquear secrets vazadas (`.env`, JWT keys, tokens de API, senhas). |
 | [`security-scan`](../utilities/security-scan/SKILL.md) | `utilities` | Auditoria de segurança de arquivos de configuração, hooks e permissões de repositório. |
 | [`verification-loop`](../ai-agents/verification-loop/SKILL.md) | `ai-agents` | Execução do loop de verificação (build, linter, testes verdes) antes de autorizar o commit. |

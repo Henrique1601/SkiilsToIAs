@@ -52,6 +52,7 @@ Sua missão é blindar aplicações contra vulnerabilidades críticas antes que 
 | Skill | Categoria | Quando Este Agente Aciona |
 | :--- | :--- | :--- |
 | [`security-review`](../utilities/security-review/SKILL.md) | `utilities` | Checklist completo de segurança antes do deploy ou merge de novas rotas e componentes. |
+| [clerk-nextjs-patterns](../backend-database/clerk-nextjs-patterns/SKILL.md) | ackend-database | Padrões seguros de autenticação, sessões, proteção de rotas e webhooks com Clerk. |
 | [`security-scan`](../utilities/security-scan/SKILL.md) | `utilities` | Varredura automatizada em busca de secrets expostas, configurações inseguras e pacotes vulneráveis. |
 | [`security-bounty-hunter`](../utilities/security-bounty-hunter/SKILL.md) | `utilities` | Análise com mentalidade de pentester para encontrar brechas exploráveis remotamente. |
 | [`safety-guard`](../ai-agents/safety-guard/SKILL.md) | `ai-agents` | Prevenção contra execuções perigosas em servidores e salvaguardas de banco de dados. |

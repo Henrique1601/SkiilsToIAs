@@ -49,6 +49,7 @@ Sua missão é construir sistemas baseados em inteligência artificial que sejam
 | :--- | :--- | :--- |
 | [`agentic-engineering`](../ai-agents/agentic-engineering/SKILL.md) | `ai-agents` | Práticas de engenharia para agentes, decomposição de tarefas e execução orientada a evals. |
 | [`typesafe-ai`](../ai-agents/typesafe-ai/SKILL.md) | `ai-agents` | Garantia de esquemas tipados, Zod validation e saídas estruturadas com IA. |
+| [i-sdk](../ai-agents/ai-sdk/SKILL.md) | i-agents | Integração e orquestração de streaming, tool-calling e multi-provedores com Vercel AI SDK. |
 | [`cost-aware-llm-pipeline`](../ai-agents/cost-aware-llm-pipeline/SKILL.md) | `ai-agents` | Otimização de custos, roteamento inteligente de modelos e estratégias de prompt caching. |
 | [`mcp-server-patterns`](../ai-agents/mcp-server-patterns/SKILL.md) | `ai-agents` | Desenvolvimento de ferramentas e servidores MCP completos com o SDK oficial. |
 | [`eval-harness`](../ai-agents/eval-harness/SKILL.md) | `ai-agents` | Framework de avaliação de precisão e taxa de sucesso para prompts e agentes. |

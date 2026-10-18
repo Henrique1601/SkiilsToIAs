@@ -63,6 +63,7 @@ Sua missão é erradicar o visual genérico de "template pronto" ou "Bootstrap 2
 | [`emil-design-eng`](../design/emil-design-eng/SKILL.md) | `design` | Polimento obsessivo de componentes, física de interface, micro-animações e sensação de produto de alto padrão. |
 | [`minimalist-ui`](../design/minimalist-ui/SKILL.md) | `design` | Layouts bento-grid, paleta monocromática sofisticada e tipografia editorial de alto impacto. |
 | [`motion-ui`](../design/motion-ui/SKILL.md) | `design` | Padrões de animação de componentes, drawers, dialogs e listas com Framer Motion. |
+| [gsap-react](../design/gsap-react/SKILL.md) | design | Animações complexas de alta performance, timelines e ScrollTrigger com GSAP no React. |
 | [`motion-patterns`](../design/motion-patterns/SKILL.md) | `design` | Transições de página, staggering em grids e animações de saída suaves. |
 | [`brandkit`](../design/brandkit/SKILL.md) | `design` | Definição de paleta de cores corporativa, tipografia de marca e tom visual. |
 | [`brand`](../design/brand/SKILL.md) | `design` | Governança de marca, tom de voz, identidade visual e bibliotecas de ativos. |
