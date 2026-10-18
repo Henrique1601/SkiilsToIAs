@@ -52,6 +52,8 @@ Sua missão é construir uma muralha de testes automatizados que garanta que ref
 | [`tdd`](../development/tdd/SKILL.md) | `development` | Guia rápido de implementação test-first para módulos e funções. |
 | [`webapp-testing`](../development/webapp-testing/SKILL.md) | `development` | Testes automatizados em aplicações web locais com Playwright e inspeção de logs. |
 | [`e2e-testing`](../development/e2e-testing/SKILL.md) | `development` | Arquitetura de testes E2E Playwright, Page Object Models e estratégias anti-flakiness. |
+| [playwright-cli](../development/playwright-cli/SKILL.md) | development | Automação e execução interativa de testes de ponta a ponta com Playwright CLI. |
+| [playwright-best-practices](../development/playwright-best-practices/SKILL.md) | development | Padrões de arquitetura, Page Objects, resiliência contra flakes e CI para Playwright. |
 | [`browser-qa`](../development/browser-qa/SKILL.md) | `development` | Validação visual e teste de interação pós-deploy. |
 | [`verification-loop`](../ai-agents/verification-loop/SKILL.md) | `ai-agents` | Loop de validação automática contínua executando suítes de testes até a aprovação. |
 | [`python-testing`](../development/python-testing/SKILL.md) | `development` | Padrões de testes Python com pytest, fixtures, parametrização e mocks. |

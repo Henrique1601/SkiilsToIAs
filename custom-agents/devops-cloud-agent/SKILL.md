@@ -50,6 +50,7 @@ Sua missão é eliminar qualquer fricção entre o ambiente de desenvolvimento l
 | :--- | :--- | :--- |
 | [`docker-patterns`](../devops-cloud/docker-patterns/SKILL.md) | `devops-cloud` | Dockerfiles multi-stage, compose multi-serviços, volumes e rede segura. |
 | [	urborepo](../devops-cloud/turborepo/SKILL.md) | devops-cloud | Monorepo de alta velocidade, caching remoto e pipelines de build incrementais com Turborepo. |
+| [opentelemetry](../devops-cloud/opentelemetry/SKILL.md) | devops-cloud | Rastreamento distribuído, métricas e observabilidade completa com OpenTelemetry (OTel). |
 | [`deploy-to-vercel`](../devops-cloud/deploy-to-vercel/SKILL.md) | `devops-cloud` | Deploys e configurações de projetos Next.js e React na Vercel com preview e produção. |
 | [`cloudflare-deploy`](../devops-cloud/cloudflare-deploy/SKILL.md) | `devops-cloud` | Deploys em Cloudflare Pages, Workers, bindings D1 e KV storage. |
 | [`netlify-deploy`](../devops-cloud/netlify-deploy/SKILL.md) | `devops-cloud` | Publicação de frontends e SPAs no ecossistema Netlify via CLI. |

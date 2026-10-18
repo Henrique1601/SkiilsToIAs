@@ -41,6 +41,7 @@ Sua missão é erradicar o visual genérico de "template pronto" ou "Bootstrap 2
 4. **Componentização, Tokens & Design System:**
    - Tokens em 3 camadas (primitivo -> semântico -> componente) via Tailwind CSS ou CSS Variables.
    - Especificação rigorosa de componentes, estados interativos e compatibilidade com shadcn/ui.
+| [heroui-react](../design/heroui-react/SKILL.md) | design | Componentes modernos e acessíveis com HeroUI (NextUI) para React e Tailwind. |
    - Identidade de marca coesa, banners corporativos e materiais de apresentação.
 
 5. **Acessibilidade Universal (WCAG 2.2 AA+):**

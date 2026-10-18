@@ -49,6 +49,7 @@ Sua missão é garantir que cada tabela, índice, relacionamento e transação s
 | Skill | Categoria | Quando Este Agente Aciona |
 | :--- | :--- | :--- |
 | [`postgres-patterns`](../backend-database/postgres-patterns/SKILL.md) | `backend-database` | Padrões de schema Postgres, tipos de dados, RLS e otimização geral. |
+| [convex](../backend-database/convex/SKILL.md) | ackend-database | Banco de dados reativo em tempo real, schema definitions, queries e mutations com Convex. |
 | [`supabase-postgres-best-practices`](../backend-database/supabase-postgres-best-practices/SKILL.md) | `backend-database` | Melhores práticas da Supabase: segurança, RLS policies, indexação e pooler. |
 | [`database-migrations`](../backend-database/database-migrations/SKILL.md) | `backend-database` | Criação de migrações estruturadas, reversíveis e compatíveis com zero-downtime. |
 | [`redis-patterns`](../backend-database/redis-patterns/SKILL.md) | `backend-database` | Estratégias de caching, locks distribuídos (Redlock), filas e contadores atômicos. |
