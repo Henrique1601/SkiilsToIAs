@@ -3,9 +3,9 @@
 
 <div align="center">
 
-[![Skills](https://img.shields.io/badge/Skills-512%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
+[![Skills](https://img.shields.io/badge/Skills-584%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
 [![Agentes Customizados](https://img.shields.io/badge/Agentes-12%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
-[![Servidores MCP](https://img.shields.io/badge/MCP-5%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
+[![Servidores MCP](https://img.shields.io/badge/MCP-6%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
 [![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-green?style=for-the-badge)](LICENSE)
 [![Autor](https://img.shields.io/badge/Autor-Henrique%20Bezerra%20Dos%20Santos-18181B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Henrique1601)
@@ -21,8 +21,8 @@ O **`SkiilsToIAs`** é a central de engenharia e inteligência operacional desen
 Desenvolvido para eliminar respostas genéricas (*AI slop*), prevenir quebras de build e conectar os modelos ao ecossistema real de desenvolvimento, o repositório é arquitetado em **3 pilares fundamentais**:
 
 1. 👑 **12 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Perfil do GitHub), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
-2. 🧠 **512 Skills Especializadas ([11 Categorias](#-visão-geral-das-categorias)):** Manuais acionáveis com convenções estritas, arquitetura limpa, boas práticas de frameworks modernos, testes TDD e otimização de tokens de contexto (Caveman mode).
-3. 🔌 **5 Servidores MCP Integrados ([`mcps/`](mcps/)):** Conexões via Model Context Protocol para bancos de dados serverless (Neon Postgres), automação e inspeção de browser (Chrome DevTools), engenharia reversa de binários (REA), documentação no Notion e funil de vendas ativo (Prospector CRM).
+2. 🧠 **584 Skills Especializadas ([11 Categorias](#-visão-geral-das-categorias)):** Manuais acionáveis com convenções estritas, arquitetura limpa, boas práticas de frameworks modernos, testes TDD e otimização de tokens de contexto (Caveman mode).
+3. 🔌 **6 Servidores MCP Integrados ([`mcps/`](mcps/)):** Conexões via Model Context Protocol para coordenação Git multi-máquina (DevSync), bancos de dados serverless (Neon Postgres), automação e inspeção de browser (Chrome DevTools), engenharia reversa de binários (REA), documentação no Notion e funil de vendas ativo (Prospector CRM).
 
 ---
 
@@ -46,19 +46,20 @@ flowchart TD
         GMA --> AG_GH["🐙 github-profile"]
     end
 
-    subgraph P2 ["🧠 2. Camada de Conhecimento Especializado (512 Skills)"]
-        SO -.-> S_Design["🎨 Design & UI/UX (65)"]
-        SO -.-> S_Dev["💻 Desenvolvimento & Testes (89)"]
-        SO -.-> S_Back["🗄️ Backend & Bancos (61)"]
-        SO -.-> S_Cloud["☁️ Cloud & DevOps (44)"]
-        SO -.-> S_AI["🤖 IA & Metaprogramação (95)"]
-        SO -.-> S_Docs["📄 Documentos (26)"]
+    subgraph P2 ["🧠 2. Camada de Conhecimento Especializado (584 Skills)"]
+        SO -.-> S_Design["🎨 Design & UI/UX (75)"]
+        SO -.-> S_Dev["💻 Desenvolvimento & Testes (94)"]
+        SO -.-> S_Back["🗄️ Backend & Bancos (63)"]
+        SO -.-> S_Cloud["☁️ Cloud & DevOps (46)"]
+        SO -.-> S_AI["🤖 IA & Metaprogramação (96)"]
+        SO -.-> S_Docs["📄 Documentos (27)"]
         SO -.-> S_Biz["📊 Negócios (43)"]
         SO -.-> S_Util["🛠️ Utilitários & Caveman (31)"]
-        SO -.-> S_Outras["📣 Marketing (27) | 🎯 Carreira (23) | 🔍 SEO (8)"]
+        SO -.-> S_Outras["📣 Marketing (73) | 🎯 Carreira (23) | 🔍 SEO (13)"]
     end
 
     subgraph P3 ["🔌 3. Camada de Ferramentas & Ferramentaria Real (mcps/)"]
+        AG_Git ==> MCP_DevSync["🔄 DevSync\n(Sincronização Multi-Máquina)"]
         S_Back ==> MCP_Neon["🐘 Neon Postgres\n(Serverless DB & Branching)"]
         S_Dev ==> MCP_Chrome["🌐 Chrome DevTools\n(Screenshots, DOM, Lighthouse)"]
         S_Dev ==> MCP_REA["🔬 REA Agents\n(Engenharia Reversa & Binários)"]
@@ -89,23 +90,23 @@ flowchart TD
 
 | Categoria | Pasta | Quantidade | Foco Principal |
 |---|---|:---:|---|
-| [🎨 Design & UI/UX](#design) | [`design/`](design/) | **65** | Skills especializadas em interface de usuário, design systems, estética anti-slop, micro-interações, tipografia, animações e vídeo programático (Remotion). |
-| [🔍 SEO & Mecanismos de Busca](#seo) | [`seo/`](seo/) | **8** | Skills dedicadas a auditoria técnica de SEO, otimização de Core Web Vitals, indexação e inteligência competitiva. |
-| [📣 Marketing & Vendas](#marketing) | [`marketing/`](marketing/) | **27** | Skills para comunicação de marca, criação de campanhas visuais, réguas de e-mail marketing, LinkedIn marketing, copywriting e conversão. |
+| [🎨 Design & UI/UX](#design) | [`design/`](design/) | **75** | Skills especializadas em interface de usuário, design systems, estética anti-slop, micro-interações, tipografia, animações e vídeo programático (Remotion). |
+| [🔍 SEO & Mecanismos de Busca](#seo) | [`seo/`](seo/) | **13** | Skills dedicadas a auditoria técnica de SEO, otimização de Core Web Vitals, indexação e inteligência competitiva. |
+| [📣 Marketing & Vendas](#marketing) | [`marketing/`](marketing/) | **73** | Skills para comunicação de marca, criação de campanhas visuais, réguas de e-mail marketing, LinkedIn marketing, copywriting e conversão. |
 | [🎯 Carreira & Empregabilidade](#career) | [`career/`](career/) | **23** | Skills para elaboração de currículos de alto impacto (compatíveis com ATS), cartas de apresentação, preparação para entrevistas e negociação salarial. |
-| [💻 Desenvolvimento & Testes](#development) | [`development/`](development/) | **89** | Engenharia de software, frameworks modernos (React, Next.js, Vue, Swift, Kotlin), arquitetura limpa, automação Playwright e TDD. |
-| [☁️ Cloud & DevOps](#devops-cloud) | [`devops-cloud/`](devops-cloud/) | **44** | Infraestrutura como código, nuvem (Azure AI Foundry, Cloudflare, Netlify, Vercel), Docker, Kubernetes e redes/homelab. |
-| [🗄️ Backend & Bancos de Dados](#backend-database) | [`backend-database/`](backend-database/) | **61** | Bancos relacionais e NoSQL (Postgres, Supabase, Neon, MongoDB, Redis, ClickHouse), frameworks backend e otimização de queries. |
-| [🤖 Agentes de IA & Metaprogramação](#ai-agents) | [`ai-agents/`](ai-agents/) | **95** | Criação e engenharia de subagentes autônomos, servidores MCP (Model Context Protocol), harnesses, loops contínuos e segurança de IA. |
-| [📄 Documentos & Produtividade](#documents-productivity) | [`documents-productivity/`](documents-productivity/) | **26** | Manipulação automatizada de documentos de escritório (Word, Excel, PowerPoint, PDF), pesquisa científica, patentes e Obsidian. |
+| [💻 Desenvolvimento & Testes](#development) | [`development/`](development/) | **94** | Engenharia de software, frameworks modernos (React, Next.js, Vue, Swift, Kotlin), arquitetura limpa, automação Playwright e TDD. |
+| [☁️ Cloud & DevOps](#devops-cloud) | [`devops-cloud/`](devops-cloud/) | **46** | Infraestrutura como código, nuvem (Azure AI Foundry, Cloudflare, Netlify, Vercel), Docker, Kubernetes e redes/homelab. |
+| [🗄️ Backend & Bancos de Dados](#backend-database) | [`backend-database/`](backend-database/) | **63** | Bancos relacionais e NoSQL (Postgres, Supabase, Neon, MongoDB, Redis, ClickHouse), frameworks backend e otimização de queries. |
+| [🤖 Agentes de IA & Metaprogramação](#ai-agents) | [`ai-agents/`](ai-agents/) | **96** | Criação e engenharia de subagentes autônomos, servidores MCP (Model Context Protocol), harnesses, loops contínuos e segurança de IA. |
+| [📄 Documentos & Produtividade](#documents-productivity) | [`documents-productivity/`](documents-productivity/) | **27** | Manipulação automatizada de documentos de escritório (Word, Excel, PowerPoint, PDF), pesquisa científica, patentes e Obsidian. |
 | [📊 Gestão & Negócios](#business-management) | [`business-management/`](business-management/) | **43** | Análise de métricas e KPIs, governança, conformidade regulatória (HIPAA), PRDs, roadmaps, faturamento e briefings executivos. |
 | [🛠️ Utilitários & Otimização](#utilities) | [`utilities/`](utilities/) | **31** | Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multimídia (Mediabunny), git e ferramentas de suporte. |
 
 > [!NOTE]
 > ### 📦 Total de Recursos no Repositório
-> * 🧠 **512 Skills Especializadas** distribuídas em 11 categorias técnicas e de negócio.
+> * 🧠 **584 Skills Especializadas** distribuídas em 11 categorias técnicas e de negócio.
 > * 👑 **12 Agentes Customizados** com papéis de elite e orquestração central.
-> * 🔌 **5 Servidores MCP Integrados** com documentação e templates prontos para Antigravity, Claude e Cursor.
+> * 🔌 **6 Servidores MCP Integrados** com documentação e templates prontos para Antigravity, Claude e Cursor.
 
 ## 🤖 Agentes Customizados (`custom-agents/`)
 
@@ -136,6 +137,7 @@ O repositório conta agora com uma pasta dedicada para **servidores MCP**, centr
 
 | Servidor MCP | Tipo / Transporte | Descrição Principal | Documentação |
 |---|:---:|---|:---:|
+| 🔄 **`devsync`** | Stdio (Node.js) | Servidor nativo do DevSync v0.4.0 para sincronização e coordenação Git multi-máquina (Casa vs. Trabalho). | [`mcps/devsync/`](mcps/devsync/README.md) |
 | 💼 **`prospector-crm`** | Streamable HTTP | Servidor do Prospector CRM conectado ao Neon Postgres (150+ leads). Expõe `list_leads` e `create_leads`. | [`mcps/prospector-crm/`](mcps/prospector-crm/README.md) |
 | 🐘 **`mcp-server-neon`** | Remote SSE | Gestão serverless do Postgres Neon, branching instantâneo de bancos de dados e migrations. | [`mcps/neon-postgres/`](mcps/neon-postgres/README.md) |
 | 📝 **`notion-mcp-server`** | Stdio (`npx`) | Integração oficial com workspaces do Notion, leitura e escrita de páginas e databases. | [`mcps/notion/`](mcps/notion/README.md) |
