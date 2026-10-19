@@ -27,4 +27,5 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 ## 🌐 Sinergia Operacional: Rede Conectada (Full-Mesh) & Kit Universal
 
-Todos os **12 Agentes** estão interconectados em malha (*Full-Mesh*) através do **`skills-orchestrator`** e comandados pelo **`global-master-agent`**. Dependendo do projeto, os agentes inspecionam **o que o projeto já tem** e **o que precisa**, selecionando as melhores skills das 635 disponíveis em conjunto com o **Kit Universal Obrigatório de 20 Skills & MCPs**.
+Todos os **12 Agentes** estão interconectados em malha (*Full-Mesh*) através do **`skills-orchestrator`** e comandados pelo **`global-master-agent`**. Dependendo do projeto, os agentes inspecionam **o que o projeto já tem** e **o que precisa**, selecionando as melhores skills das 658 disponíveis em conjunto com o **Kit Universal Obrigatório de 20 Skills & MCPs**.
+

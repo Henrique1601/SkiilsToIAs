@@ -1,12 +1,12 @@
 # 🧠 MANUAL OPERACIONAL: AGENTE MESTRE (SKILLS ORCHESTRATOR)
-
-> **O Guia Definitivo de Orquestração, Metodologia em 9 Fases e Playbooks de Execução para as 512 Skills (542 Globais)**
+ 
+> **O Guia Definitivo de Orquestração, Metodologia em 9 Fases e Playbooks de Execução para as 658 Skills (688 Globais)**
 
 ---
 
 ## 🎯 1. VISÃO GERAL & MISSÃO
 
-O **Agente Mestre (Skills Orchestrator)** é o comandante operacional do ecossistema de **512 Skills** no repositório (e **542 globais** no Antigravity) distribuídas nas **11 Categorias Especializadas**.
+O **Agente Mestre (Skills Orchestrator)** é o comandante operacional do ecossistema de **658 Skills** no repositório (e **688 globais** no Antigravity) distribuídas nas **11 Categorias Especializadas**.
 
 Em vez de se perder procurando manualmente qual skill utilizar entre centenas de opções, o Agente Mestre atua como um Diretor de Engenharia e Produto:
 1. **Analisa o seu objetivo** ou a demanda técnica atual.
@@ -22,7 +22,7 @@ Em vez de se perder procurando manualmente qual skill utilizar entre centenas de
 > [!IMPORTANT]
 > ### 👑 Ponto Único de Comando & Rede Conectada (12 Agentes em Full-Mesh)
 > O [**`skills-orchestrator` (`custom-agents/skills-orchestrator.md`)**](custom-agents/skills-orchestrator.md) e o [**`global-master-agent` (`custom-agents/global-master-agent.md`)**](custom-agents/global-master-agent.md) conectam-se diretamente a **todos os 12 Agentes Especialistas** (`git-master-agent`, `design-engineer-agent`, `database-architect-agent`, `ai-engineer-agent`, `qa-testing-agent`, `security-auditor-agent`, `devops-cloud-agent`, `growth-marketing-agent`, `video-producer-agent` e `github-profile-agent`).
-> Em cada projeto, os agentes fazem primeiro o diagnóstico **"O Que Tem vs. O Que Precisa"** e selecionam as melhores skills das 512 disponíveis em conjunto com o **Kit Universal Obrigatório de 10 Skills & MCPs**.
+> Em cada projeto, os agentes fazem primeiro o diagnóstico **"O Que Tem vs. O Que Precisa"** e selecionam as melhores skills das 658 disponíveis em conjunto com o **Kit Universal Obrigatório de 20 Skills & MCPs**.
 
 ---
 
