@@ -148,6 +148,48 @@ O repositório conta agora com uma pasta dedicada para **servidores MCP**, centr
 
 ---
 
+## ⚡ Instalação Rápida em Novo Computador (1-Clique)
+
+Precisa configurar um novo computador, formatou a máquina ou quer disponibilizar todas as **584 skills**, **12 agentes** e **servidores MCP** para outra pessoa da equipe?
+
+O repositório possui scripts automatizados prontos para uso em **PowerShell** (Windows) e **Python** (Multiplataforma: Windows, Linux, macOS):
+
+### Opção 1: PowerShell (Windows - 1 Comando)
+Abra o PowerShell no diretório do repositório clonado e execute:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+```
+*Opções adicionais:*
+```powershell
+# Instalar apenas para Antigravity / Gemini CLI
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -Target gemini
+
+# Instalar apenas para Claude Code / Desktop
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -Target claude
+
+# Instalar ignorando MCPs
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -SkipMcp
+```
+
+### Opção 2: Python (Multiplataforma: Windows / Linux / macOS)
+Executável em qualquer sistema com Python 3.8+:
+```bash
+python scripts/install.py
+```
+*Opções adicionais:*
+```bash
+python scripts/install.py --all           # Instala para todos os clientes detectados
+python scripts/install.py --gemini        # Instala apenas para Gemini / Antigravity
+python scripts/install.py --claude        # Instala apenas para Claude Code & Claude Desktop
+python scripts/install.py --skills-only   # Instala apenas as skills
+python scripts/install.py --mcp-only      # Configura apenas os servidores MCP
+```
+
+> [!TIP]
+> Os instaladores detectam automaticamente os caminhos de configuração padrão (`~/.gemini/config/`, `~/.claude/`, `%APPDATA%\Claude`), copiam as skills preservando estruturas de categorias ou achatam para o Claude Code conforme a convenção de cada ferramenta, e mesclam os MCPs no arquivo `mcp_config.json` sem sobrescrever seus dados existentes!
+
+---
+
 ## 🚀 Como Utilizar
 
 ### 1. Como Subagente no Antigravity / Gemini CLI
