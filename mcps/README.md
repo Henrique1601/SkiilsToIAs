@@ -31,7 +31,8 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 🌐 [**`chrome-devtools-mcp`**](chrome-devtools/README.md) | **Stdio** (Local) | `chrome-devtools-mcp@latest` | Inspeção e controle de browser headless/real. Captura de screenshots, inspeção do console/rede, auditoria Lighthouse e execução de scripts na página. |
 | 🔬 [**`rea`**](rea/README.md) | **Stdio** (Local) | `rea-agents@6.0.0` | Engenharia reversa avançada, inspeção e desmontagem de binários nativos (x86/x64/ARM), análise de grafos de chamadas e auditoria de segurança. |
 | 🧠 **`ai-memory`** | **Streamable HTTP** (Local) | `http://127.0.0.1:49374/mcp` | Servidor de memória semântica persistente entre sessões, grafo de conhecimento e notas operacionais de contexto. |
-| 🎨 **`lovable`** | **Streamable HTTP** (Remoto) | `https://mcp.lovable.dev` | Plataforma de prototipagem rápida e desenvolvimento web assistido por IA. |
+| 🎨 [**`lovable`**](https://mcp.lovable.dev) | **Streamable HTTP** (Remoto) | `https://mcp.lovable.dev` | Plataforma de prototipagem rápida e desenvolvimento web assistido por IA. |
+| 📱 [**`buffer`**](buffer/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.buffer.com/mcp` | Gerenciamento multicanal de mídias sociais (LinkedIn, X, Instagram), agendamento de posts, análise de engajamento e métricas via Buffer. |
 
 ---
 
