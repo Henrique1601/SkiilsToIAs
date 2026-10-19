@@ -1,6 +1,73 @@
 # 🧠 Skills to IAs (`SkiilsToIAs`)
+### 🚀 Sistema Operacional de Engenharia para Agentes Autônomos de Inteligência Artificial
 
-Repositório centralizado e categorizado contendo **512 skills especializadas** para agentes autônomos de Inteligência Artificial (compatível com **Antigravity**, **Claude Code**, **Cursor**, **Copilot CLI**, entre outros).
+<div align="center">
+
+[![Skills](https://img.shields.io/badge/Skills-512%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
+[![Agentes Customizados](https://img.shields.io/badge/Agentes-12%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
+[![Servidores MCP](https://img.shields.io/badge/MCP-5%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
+[![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
+[![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-green?style=for-the-badge)](LICENSE)
+[![Autor](https://img.shields.io/badge/Autor-Henrique%20Bezerra%20Dos%20Santos-18181B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Henrique1601)
+
+</div>
+
+---
+
+## 💡 O Que é o `SkiilsToIAs`?
+
+O **`SkiilsToIAs`** é a central de engenharia e inteligência operacional desenvolvida para transformar modelos de linguagem (LLMs) comuns em **agentes de software autônomos de padrão sênior**. Compatível nativamente com **Google Antigravity / Gemini CLI**, **Claude Code**, **Cursor IDE**, **Windsurf**, **Copilot CLI** e **Aider**.
+
+Desenvolvido para eliminar respostas genéricas (*AI slop*), prevenir quebras de build e conectar os modelos ao ecossistema real de desenvolvimento, o repositório é arquitetado em **3 pilares fundamentais**:
+
+1. 👑 **12 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Perfil do GitHub), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
+2. 🧠 **512 Skills Especializadas ([11 Categorias](#-visão-geral-das-categorias)):** Manuais acionáveis com convenções estritas, arquitetura limpa, boas práticas de frameworks modernos, testes TDD e otimização de tokens de contexto (Caveman mode).
+3. 🔌 **5 Servidores MCP Integrados ([`mcps/`](mcps/)):** Conexões via Model Context Protocol para bancos de dados serverless (Neon Postgres), automação e inspeção de browser (Chrome DevTools), engenharia reversa de binários (REA), documentação no Notion e funil de vendas ativo (Prospector CRM).
+
+---
+
+## 🏛️ Arquitetura dos 3 Pilares
+
+```mermaid
+flowchart TD
+    subgraph P1 ["👑 1. Camada de Orquestração (custom-agents/)"]
+        GMA["👑 global-master-agent\n(Comando Central & Roteamento)"]
+        SO["🎯 skills-orchestrator\n(Framework Metodológico 9 Fases)"]
+        GMA --> SO
+        GMA --> AG_Git["🛡️ git-master-agent"]
+        GMA --> AG_DB["🗄️ database-architect"]
+        GMA --> AG_UX["🎨 design-engineer"]
+        GMA --> AG_Cloud["☁️ devops-cloud"]
+        GMA --> AG_QA["🧪 qa-testing"]
+        GMA --> AG_Sec["🛡️ security-auditor"]
+        GMA --> AG_AI["🤖 ai-engineer"]
+        GMA --> AG_Growth["📈 growth-marketing"]
+        GMA --> AG_Vid["🎬 video-producer"]
+        GMA --> AG_GH["🐙 github-profile"]
+    end
+
+    subgraph P2 ["🧠 2. Camada de Conhecimento Especializado (512 Skills)"]
+        SO -.-> S_Design["🎨 Design & UI/UX (65)"]
+        SO -.-> S_Dev["💻 Desenvolvimento & Testes (89)"]
+        SO -.-> S_Back["🗄️ Backend & Bancos (61)"]
+        SO -.-> S_Cloud["☁️ Cloud & DevOps (44)"]
+        SO -.-> S_AI["🤖 IA & Metaprogramação (95)"]
+        SO -.-> S_Docs["📄 Documentos (26)"]
+        SO -.-> S_Biz["📊 Negócios (43)"]
+        SO -.-> S_Util["🛠️ Utilitários & Caveman (31)"]
+        SO -.-> S_Outras["📣 Marketing (27) | 🎯 Carreira (23) | 🔍 SEO (8)"]
+    end
+
+    subgraph P3 ["🔌 3. Camada de Ferramentas & Ferramentaria Real (mcps/)"]
+        S_Back ==> MCP_Neon["🐘 Neon Postgres\n(Serverless DB & Branching)"]
+        S_Dev ==> MCP_Chrome["🌐 Chrome DevTools\n(Screenshots, DOM, Lighthouse)"]
+        S_Dev ==> MCP_REA["🔬 REA Agents\n(Engenharia Reversa & Binários)"]
+        S_Docs ==> MCP_Notion["📝 Notion MCP\n(Workspaces, Databases, Wikis)"]
+        S_AI ==> MCP_CRM["💼 Prospector CRM\n(Streamable HTTP, 150+ Leads)"]
+    end
+```
+
+---
 
 > [!IMPORTANT]
 > ### 🤖 Conheça o Agente Mestre (Skills Orchestrator)
@@ -16,6 +83,7 @@ Repositório centralizado e categorizado contendo **512 skills especializadas** 
 > - **Prompts Prontos**: Exemplos práticos para copiar e colar para as 512 skills catalogadas!
 
 ---
+
 
 ## 📊 Visão Geral das Categorias
 
@@ -33,7 +101,11 @@ Repositório centralizado e categorizado contendo **512 skills especializadas** 
 | [📊 Gestão & Negócios](#business-management) | [`business-management/`](business-management/) | **43** | Análise de métricas e KPIs, governança, conformidade regulatória (HIPAA), PRDs, roadmaps, faturamento e briefings executivos. |
 | [🛠️ Utilitários & Otimização](#utilities) | [`utilities/`](utilities/) | **31** | Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multimídia (Mediabunny), git e ferramentas de suporte. |
 
-> **Total de Skills catalogadas:** 512 skills em 11 categorias
+> [!NOTE]
+> ### 📦 Total de Recursos no Repositório
+> * 🧠 **512 Skills Especializadas** distribuídas em 11 categorias técnicas e de negócio.
+> * 👑 **12 Agentes Customizados** com papéis de elite e orquestração central.
+> * 🔌 **5 Servidores MCP Integrados** com documentação e templates prontos para Antigravity, Claude e Cursor.
 
 ## 🤖 Agentes Customizados (`custom-agents/`)
 
@@ -738,10 +810,18 @@ Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multim
 
 ## 🤝 Como Contribuir
 
-1. Adicione sua skill na pasta da categoria correspondente (`<categoria>/<nova-skill>/SKILL.md`).
-2. Certifique-se de incluir frontmatter YAML com `name` e `description` claros.
-3. Envie um Pull Request!
+1. Faça um Fork do projeto no GitHub.
+2. Crie uma branch para sua nova skill ou melhoria de agente (`git checkout -b feature/minha-nova-skill`).
+3. Adicione sua skill na pasta da categoria correspondente (`<categoria>/<nova-skill>/SKILL.md`).
+4. Certifique-se de incluir frontmatter YAML com `name` e `description` claros e objetivos.
+5. Envie um Pull Request seguindo o padrão de **Conventional Commits**!
 
 ---
 
-Feito com 🧠 para potencializar o desenvolvimento assistido por Inteligência Artificial.
+## 📜 Licença & Autoria
+
+Distribuído sob a licença **MIT**. Consulte o arquivo [`LICENSE`](LICENSE) para mais detalhes.
+
+Desenvolvido e mantido por [**Henrique Bezerra Dos Santos**](https://github.com/Henrique1601) (`@Henrique1601`).
+
+*Feito com 🧠 para potencializar a nova era da engenharia de software assistida por Inteligência Artificial.*
