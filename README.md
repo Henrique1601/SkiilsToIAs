@@ -3,7 +3,7 @@
 
 <div align="center">
 
-[![Skills](https://img.shields.io/badge/Skills-658%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
+[![Skills](https://img.shields.io/badge/Skills-598%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
 [![Agentes Customizados](https://img.shields.io/badge/Agentes-12%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
 [![Servidores MCP](https://img.shields.io/badge/MCP-8%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
@@ -21,7 +21,7 @@ O **`SkiilsToIAs`** é a central de engenharia e inteligência operacional desen
 Desenvolvido para eliminar respostas genéricas (*AI slop*), prevenir quebras de build e conectar os modelos ao ecossistema real de desenvolvimento, o repositório é arquitetado em **3 pilares fundamentais**:
 
 1. 👑 **12 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Perfil do GitHub), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
-2. 🧠 **658 Skills Especializadas (584 locais / 658 globais) ([11 Categorias](#-visão-geral-das-categorias)):** Manuais acionáveis com convenções estritas, arquitetura limpa, boas práticas de frameworks modernos, testes TDD e otimização de tokens de contexto (Caveman mode).
+2. 🧠 **672 Skills Especializadas (598 locais / 672 globais) ([11 Categorias](#-visão-geral-das-categorias)):** Manuais acionáveis com convenções estritas, arquitetura limpa, boas práticas de frameworks modernos, testes TDD e otimização de tokens de contexto (Caveman mode).
 3. 🔌 **8 Servidores MCP Integrados ([`mcps/`](mcps/)):** Conexões via Model Context Protocol para coordenação Git multi-máquina (DevSync), mockups e frames profissionais (Shots Studio), automação de redes sociais (Buffer), bancos de dados serverless (Neon Postgres), automação e inspeção de browser (Chrome DevTools), engenharia reversa de binários (REA), documentação no Notion e funil de vendas ativo (Prospector CRM).
 
 ---
@@ -48,14 +48,14 @@ flowchart TD
 
     subgraph P2 ["🧠 2. Camada de Conhecimento Especializado (658 Skills)"]
         SO -.-> S_Design["🎨 Design & UI/UX (75)"]
-        SO -.-> S_Dev["💻 Desenvolvimento & Testes (94)"]
+        SO -.-> S_Dev["💻 Desenvolvimento & Testes (101)"]
         SO -.-> S_Back["🗄️ Backend & Bancos (63)"]
         SO -.-> S_Cloud["☁️ Cloud & DevOps (46)"]
-        SO -.-> S_AI["🤖 IA & Metaprogramação (96)"]
+        SO -.-> S_AI["🤖 IA & Metaprogramação (98)"]
         SO -.-> S_Docs["📄 Documentos (27)"]
         SO -.-> S_Biz["📊 Negócios (43)"]
         SO -.-> S_Util["🛠️ Utilitários & Caveman (31)"]
-        SO -.-> S_Outras["📣 Marketing (73) | 🎯 Carreira (23) | 🔍 SEO (13)"]
+        SO -.-> S_Outras["📣 Marketing (78) | 🎯 Carreira (23) | 🔍 SEO (13)"]
     end
 
     subgraph P3 ["🔌 3. Camada de Ferramentas & Ferramentaria Real (mcps/)"]
@@ -152,7 +152,7 @@ O repositório conta agora com uma pasta dedicada para **servidores MCP**, centr
 
 ## ⚡ Instalação Rápida em Novo Computador (1-Clique)
 
-Precisa configurar um novo computador, formatou a máquina ou quer disponibilizar todas as **658 skills**, **12 agentes** e **servidores MCP** para outra pessoa da equipe?
+Precisa configurar um novo computador, formatou a máquina ou quer disponibilizar todas as **598 skills**, **12 agentes** e **servidores MCP** para outra pessoa da equipe?
 
 O repositório possui scripts automatizados prontos para uso em **PowerShell** (Windows) e **Python** (Multiplataforma: Windows, Linux, macOS):
 
