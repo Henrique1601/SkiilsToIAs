@@ -5,7 +5,7 @@
 
 [![Skills](https://img.shields.io/badge/Skills-658%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
 [![Agentes Customizados](https://img.shields.io/badge/Agentes-12%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
-[![Servidores MCP](https://img.shields.io/badge/MCP-7%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
+[![Servidores MCP](https://img.shields.io/badge/MCP-8%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
 [![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-green?style=for-the-badge)](LICENSE)
 [![Autor](https://img.shields.io/badge/Autor-Henrique%20Bezerra%20Dos%20Santos-18181B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Henrique1601)
@@ -22,7 +22,7 @@ Desenvolvido para eliminar respostas genéricas (*AI slop*), prevenir quebras de
 
 1. 👑 **12 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Perfil do GitHub), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
 2. 🧠 **658 Skills Especializadas (584 locais / 658 globais) ([11 Categorias](#-visão-geral-das-categorias)):** Manuais acionáveis com convenções estritas, arquitetura limpa, boas práticas de frameworks modernos, testes TDD e otimização de tokens de contexto (Caveman mode).
-3. 🔌 **7 Servidores MCP Integrados ([`mcps/`](mcps/)):** Conexões via Model Context Protocol para coordenação Git multi-máquina (DevSync), bancos de dados serverless (Neon Postgres), automação e inspeção de browser (Chrome DevTools), engenharia reversa de binários (REA), documentação no Notion e funil de vendas ativo (Prospector CRM).
+3. 🔌 **8 Servidores MCP Integrados ([`mcps/`](mcps/)):** Conexões via Model Context Protocol para coordenação Git multi-máquina (DevSync), mockups e frames profissionais (Shots Studio), automação de redes sociais (Buffer), bancos de dados serverless (Neon Postgres), automação e inspeção de browser (Chrome DevTools), engenharia reversa de binários (REA), documentação no Notion e funil de vendas ativo (Prospector CRM).
 
 ---
 
@@ -138,6 +138,7 @@ O repositório conta agora com uma pasta dedicada para **servidores MCP**, centr
 | Servidor MCP | Tipo / Transporte | Descrição Principal | Documentação |
 |---|:---:|---|:---:|
 | ⚡ **`buffer`** | Remote HTTP | Automação e agendamento de posts em redes sociais (LinkedIn, X, Instagram, Facebook, Threads, etc.). | [`mcps/buffer/`](mcps/buffer/README.md) |
+| 📸 **shots-studio** | Stdio (Node.js) | Geração programática de mockups, frames de dispositivos (iPhone, MacBook) e snippets de código elegantes. | [mcps/shots-studio/](mcps/shots-studio/README.md) |
 | 🔄 **`devsync`** | Stdio (Node.js) | Servidor nativo do DevSync v0.4.0 para sincronização e coordenação Git multi-máquina (Casa vs. Trabalho). | [`mcps/devsync/`](mcps/devsync/README.md) |
 | 💼 **`prospector-crm`** | Streamable HTTP | Servidor do Prospector CRM conectado ao Neon Postgres (150+ leads). Expõe `list_leads` e `create_leads`. | [`mcps/prospector-crm/`](mcps/prospector-crm/README.md) |
 | 🐘 **`mcp-server-neon`** | Remote SSE | Gestão serverless do Postgres Neon, branching instantâneo de bancos de dados e migrations. | [`mcps/neon-postgres/`](mcps/neon-postgres/README.md) |
@@ -869,4 +870,4 @@ Distribuído sob a licença **MIT**. Consulte o arquivo [`LICENSE`](LICENSE) par
 
 Desenvolvido e mantido por [**Henrique Bezerra Dos Santos**](https://github.com/Henrique1601) (`@Henrique1601`).
 
-*Feito com 🧠 para potencializar a nova era da engenharia de software assistida por Inteligência Artificial.*
+*Feito com 🧠 para potencializar a nova era da engenharia de software assistida por Inteligência Artificial.*

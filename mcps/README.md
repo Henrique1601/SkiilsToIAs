@@ -33,6 +33,7 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 🧠 **`ai-memory`** | **Streamable HTTP** (Local) | `http://127.0.0.1:49374/mcp` | Servidor de memória semântica persistente entre sessões, grafo de conhecimento e notas operacionais de contexto. |
 | 🎨 [**`lovable`**](https://mcp.lovable.dev) | **Streamable HTTP** (Remoto) | `https://mcp.lovable.dev` | Plataforma de prototipagem rápida e desenvolvimento web assistido por IA. |
 | 📱 [**`buffer`**](buffer/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.buffer.com/mcp` | Gerenciamento multicanal de mídias sociais (LinkedIn, X, Instagram), agendamento de posts, análise de engajamento e métricas via Buffer. |
+| 📸 [**`shots-studio`**](shots-studio/README.md) | **Stdio** (Local Node) | `shots-studio/mcp-server/index.ts` | Geração programática de mockups, dispositivos (iPhone, MacBook, Apple Watch), social posts para X/LinkedIn e frames de snippets de código elegantes. |
 
 ---
 

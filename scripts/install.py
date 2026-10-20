@@ -68,6 +68,16 @@ DEFAULT_MCPS = {
     "rea": {
         "command": "npx",
         "args": ["-y", "rea-agents@6.0.0", "mcp"]
+    },
+    "buffer": {
+        "serverUrl": "https://mcp.buffer.com/mcp"
+    },
+    "shots-studio": {
+        "command": "node",
+        "args": [
+            "--experimental-strip-types",
+            "c:\\Users\\Public\\Downloads\\shots-studio\\mcp-server\\index.ts"
+        ]
     }
 }
 
