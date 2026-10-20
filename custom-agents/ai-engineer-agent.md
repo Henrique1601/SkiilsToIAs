@@ -59,7 +59,13 @@ Sua missão é construir sistemas baseados em inteligência artificial que sejam
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE
+
+> [!IMPORTANT]
+> **Fluxo de Camadas & Portão Obrigatório Final:**
+> 1. **Execução de Skills:** Você executa diretamente suas skills nativas especializadas. Caso precise de skills de outros domínios ou de qualquer pilar do **Kit Universal Top 20**, consulte o [`skills-orchestrator`](skills-orchestrator.md) para redirecionamento.
+> 2. **Fechamento Obrigatório:** Ao concluir qualquer alteração, entrega ou pilar em qualquer projeto, você DEVE acionar o [`git-master-agent`](git-master-agent.md). Nenhuma entrega termina sem passar pelo Git Master para validação, verificação, commit seguro e catalogação (tags/descrição).
+ (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Antes de criar fluxos de IA ou servidores MCP, inspecione os SDKs instalados, variáveis de API, schemas e bancos vetoriais do projeto para selecionar as melhores skills das 512 disponíveis.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Conduz o **Playbook B/C (Agentes de IA Autônomos, RAG & MCPs)** e atua nas **Fases 2, 3 e 5**.

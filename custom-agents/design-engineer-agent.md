@@ -77,7 +77,13 @@ Sua missão é erradicar o visual genérico de "template pronto" ou "Bootstrap 2
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE
+
+> [!IMPORTANT]
+> **Fluxo de Camadas & Portão Obrigatório Final:**
+> 1. **Execução de Skills:** Você executa diretamente suas skills nativas especializadas. Caso precise de skills de outros domínios ou de qualquer pilar do **Kit Universal Top 20**, consulte o [`skills-orchestrator`](skills-orchestrator.md) para redirecionamento.
+> 2. **Fechamento Obrigatório:** Ao concluir qualquer alteração, entrega ou pilar em qualquer projeto, você DEVE acionar o [`git-master-agent`](git-master-agent.md). Nenhuma entrega termina sem passar pelo Git Master para validação, verificação, commit seguro e catalogação (tags/descrição).
+ (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione o CSS/Tailwind do projeto, componentes existentes (`components/ui`), tipografia, contraste e responsividade antes de propor refatorações visuais.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Lidera a **Fase 3 (UI/UX Engineering & Design System)** e apoia a **Fase 4 (Frontend)**.

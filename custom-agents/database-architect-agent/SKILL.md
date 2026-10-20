@@ -60,7 +60,13 @@ Sua missão é garantir que cada tabela, índice, relacionamento e transação s
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE
+
+> [!IMPORTANT]
+> **Fluxo de Camadas & Portão Obrigatório Final:**
+> 1. **Execução de Skills:** Você executa diretamente suas skills nativas especializadas. Caso precise de skills de outros domínios ou de qualquer pilar do **Kit Universal Top 20**, consulte o [`skills-orchestrator`](skills-orchestrator.md) para redirecionamento.
+> 2. **Fechamento Obrigatório:** Ao concluir qualquer alteração, entrega ou pilar em qualquer projeto, você DEVE acionar o [`git-master-agent`](git-master-agent.md). Nenhuma entrega termina sem passar pelo Git Master para validação, verificação, commit seguro e catalogação (tags/descrição).
+ (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione `schema.prisma`, `drizzle/`, `supabase/migrations/`, conexões `.env` e os MCPs ativos (`supabase`, `Neon`, `mongodb-mcp-server`) para entender as tabelas atuais e o que precisa ser criado ou otimizado.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Co-lidera a **Fase 2 (Arquitetura)** e lidera a **Fase 3 (Modelagem de Dados, Banco & APIs)**.

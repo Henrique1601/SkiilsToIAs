@@ -63,7 +63,13 @@ Sua missão é blindar aplicações contra vulnerabilidades críticas antes que 
 
 ---
 
-## 🌐 3. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
+## 🌐 3. CONEXÃO EM REDE
+
+> [!IMPORTANT]
+> **Fluxo de Camadas & Portão Obrigatório Final:**
+> 1. **Execução de Skills:** Você executa diretamente suas skills nativas especializadas. Caso precise de skills de outros domínios ou de qualquer pilar do **Kit Universal Top 20**, consulte o [`skills-orchestrator`](skills-orchestrator.md) para redirecionamento.
+> 2. **Fechamento Obrigatório:** Ao concluir qualquer alteração, entrega ou pilar em qualquer projeto, você DEVE acionar o [`git-master-agent`](git-master-agent.md). Nenhuma entrega termina sem passar pelo Git Master para validação, verificação, commit seguro e catalogação (tags/descrição).
+ (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
 
 - **Diagnóstico Dinâmico ("O Que Tem vs. O Que Precisa"):** Inspecione middlewares de autenticação, arquivos `.env`, políticas CORS, rotas expostas e dependências (`package-lock.json` / `requirements.txt`) para escolher as skills de segurança ideais do catálogo de 512.
 - **Conexão Central com o [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md):** Co-lidera a **Fase 2 (Arquitetura Segura)**, **Fase 3 (RLS/Auth)** e **Fase 6 (Auditoria de Segurança & Code Review)**.
