@@ -4,7 +4,7 @@
 <div align="center">
 
 [![Skills](https://img.shields.io/badge/Skills-598%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
-[![Agentes Customizados](https://img.shields.io/badge/Agentes-12%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
+[![Agentes Customizados](https://img.shields.io/badge/Agentes-13%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
 [![Servidores MCP](https://img.shields.io/badge/MCP-8%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
 [![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-green?style=for-the-badge)](LICENSE)
@@ -20,7 +20,7 @@ O **`SkiilsToIAs`** é a central de engenharia e inteligência operacional desen
 
 Desenvolvido para eliminar respostas genéricas (*AI slop*), prevenir quebras de build e conectar os modelos ao ecossistema real de desenvolvimento, o repositório é arquitetado em **3 pilares fundamentais**:
 
-1. 👑 **12 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Perfil do GitHub), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
+1. 👑 **13 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Perfil do GitHub), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
 2. 🧠 **672 Skills Especializadas (598 locais / 672 globais) ([11 Categorias](#-visão-geral-das-categorias)):** Manuais acionáveis com convenções estritas, arquitetura limpa, boas práticas de frameworks modernos, testes TDD e otimização de tokens de contexto (Caveman mode).
 3. 🔌 **8 Servidores MCP Integrados ([`mcps/`](mcps/)):** Conexões via Model Context Protocol para coordenação Git multi-máquina (DevSync), mockups e frames profissionais (Shots Studio), automação de redes sociais (Buffer), bancos de dados serverless (Neon Postgres), automação e inspeção de browser (Chrome DevTools), engenharia reversa de binários (REA), documentação no Notion e funil de vendas ativo (Prospector CRM).
 
@@ -33,7 +33,9 @@ flowchart TD
     subgraph P1 ["👑 1. Camada de Orquestração (custom-agents/)"]
         GMA["👑 global-master-agent\n(Comando Central & Roteamento)"]
         SO["🎯 skills-orchestrator\n(Framework Metodológico 9 Fases)"]
+        GMA --> PMA["📋 planning-master-agent\n(Estratégia, Riscos, DAG & PRD)"]
         GMA --> SO
+        PMA <--> SO
         GMA --> AG_Git["🛡️ git-master-agent"]
         GMA --> AG_DB["🗄️ database-architect"]
         GMA --> AG_UX["🎨 design-engineer"]
@@ -105,7 +107,7 @@ flowchart TD
 > [!NOTE]
 > ### 📦 Total de Recursos no Repositório
 > * 🧠 **658 Skills Especializadas** (584 locais / 658 integradas globalmente) distribuídas em 11 categorias técnicas e de negócio.
-> * 👑 **12 Agentes Customizados** com papéis de elite e orquestração central.
+> * 👑 **13 Agentes Customizados** com papéis de elite e orquestração central.
 > * 🔌 **7 Servidores MCP Integrados** com documentação e templates prontos para Antigravity, Claude e Cursor.
 
 ## 🤖 Agentes Customizados (`custom-agents/`)
@@ -114,6 +116,7 @@ Além das 512 skills, o repositório conta com uma pasta dedicada para agentes o
 
 | Agente | Arquivo | Descrição |
 |---|---|---|
+| 📋 **`planning-master-agent`** (Mestre de Planejamento) | [`custom-agents/planning-master-agent.md`](custom-agents/planning-master-agent.md) | **CPO e Staff Program Manager.** Sabatina implacável, decomposição atômica de tarefas, grafo de dependências (DAG), análise de riscos (Pre-Mortem) e critérios de aceite testáveis. |
 | 👑 **`global-master-agent`** (Agente Global Supremo) | [`custom-agents/global-master-agent.md`](custom-agents/global-master-agent.md) | **Ponto único de comando.** Orquestra automaticamente todos os outros 11 agentes e as 512 skills do repositório. Você só precisa chamar este agente! |
 | 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador mestre das 512 skills (542 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
 | 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`custom-agents/git-master-agent.md`](custom-agents/git-master-agent.md) | Backups preventivos (`backup/checkpoint-...`), Conventional Commits, bootstrap de novos projetos (README, MIT License, .gitignore) e sincronização multi-máquina (PC Trabalho vs. PC Pessoal). |
@@ -152,7 +155,7 @@ O repositório conta agora com uma pasta dedicada para **servidores MCP**, centr
 
 ## ⚡ Instalação Rápida em Novo Computador (1-Clique)
 
-Precisa configurar um novo computador, formatou a máquina ou quer disponibilizar todas as **598 skills**, **12 agentes** e **servidores MCP** para outra pessoa da equipe?
+Precisa configurar um novo computador, formatou a máquina ou quer disponibilizar todas as **598 skills**, **13 agentes** e **servidores MCP** para outra pessoa da equipe?
 
 O repositório possui scripts automatizados prontos para uso em **PowerShell** (Windows) e **Python** (Multiplataforma: Windows, Linux, macOS):
 
