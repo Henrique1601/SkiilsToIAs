@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="60%" stop-color="#070b14" />
+      <stop offset="100%" stop-color="#020408" />
+    </radialGradient>
+
+    <!-- Core Neural Gradient -->
+    <linearGradient id="cyberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="35%" stop-color="#6366f1" />
+      <stop offset="70%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="goldAccent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+
+    <linearGradient id="circuitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Filters for Glow -->
+    <filter id="coreGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="intenseGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="28" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Dark Canvas -->
+  <rect width="800" height="800" rx="160" fill="url(#bgGlow)" />
+  <rect width="796" height="796" x="2" y="2" rx="158" fill="none" stroke="#1e293b" stroke-width="2" opacity="0.6" />
+
+  <!-- Background Cyber Lattice (Subtle Hex Ring) -->
+  <g opacity="0.12" stroke="#38bdf8" stroke-width="1.5" fill="none">
+    <circle cx="400" cy="400" r="320" stroke-dasharray="8 12" />
+    <circle cx="400" cy="400" r="260" stroke-dasharray="4 8" />
+    <polygon points="400,100 660,250 660,550 400,700 140,550 140,250" />
+    <polygon points="400,160 608,280 608,520 400,640 192,520 192,280" stroke-dasharray="6 6" />
+  </g>
+
+  <!-- Ambient Light Bloom -->
+  <circle cx="400" cy="380" r="160" fill="#6366f1" opacity="0.25" filter="url(#intenseGlow)" />
+  <circle cx="400" cy="420" r="120" fill="#38bdf8" opacity="0.2" filter="url(#intenseGlow)" />
+
+  <!-- Full-Mesh Synaptic Links (Outer Network) -->
+  <g stroke="url(#cyberGradient)" stroke-width="2.5" opacity="0.55" stroke-linecap="round">
+    <line x1="400" y1="210" x2="270" y2="280" />
+    <line x1="400" y1="210" x2="530" y2="280" />
+    <line x1="270" y1="280" x2="220" y2="400" />
+    <line x1="530" y1="280" x2="580" y2="400" />
+    <line x1="220" y1="400" x2="270" y2="520" />
+    <line x1="580" y1="400" x2="530" y2="520" />
+    <line x1="270" y1="520" x2="400" y2="590" />
+    <line x1="530" y1="520" x2="400" y2="590" />
+    <!-- Cross Mesh -->
+    <line x1="270" y1="280" x2="400" y2="380" stroke-dasharray="4 6" opacity="0.4" />
+    <line x1="530" y1="280" x2="400" y2="380" stroke-dasharray="4 6" opacity="0.4" />
+    <line x1="220" y1="400" x2="400" y2="380" stroke-dasharray="4 6" opacity="0.4" />
+    <line x1="580" y1="400" x2="400" y2="380" stroke-dasharray="4 6" opacity="0.4" />
+  </g>
+
+  <!-- Neural Mesh Nodes (13 Agentes / Especialistas) -->
+  <g fill="#0b0f19" stroke="url(#cyberGradient)" stroke-width="3">
+    <!-- North Node (Global Master) -->
+    <circle cx="400" cy="210" r="14" stroke="url(#goldAccent)" stroke-width="4" filter="url(#coreGlow)" />
+    <circle cx="400" cy="210" r="6" fill="#fbbf24" />
+
+    <!-- Upper Ring -->
+    <circle cx="270" cy="280" r="10" />
+    <circle cx="270" cy="280" r="4" fill="#38bdf8" />
+    <circle cx="530" cy="280" r="10" />
+    <circle cx="530" cy="280" r="4" fill="#818cf8" />
+
+    <!-- Mid Ring -->
+    <circle cx="220" cy="400" r="10" />
+    <circle cx="220" cy="400" r="4" fill="#38bdf8" />
+    <circle cx="580" cy="400" r="10" />
+    <circle cx="580" cy="400" r="4" fill="#c084fc" />
+
+    <!-- Lower Ring -->
+    <circle cx="270" cy="520" r="10" />
+    <circle cx="270" cy="520" r="4" fill="#a855f7" />
+    <circle cx="530" cy="520" r="10" />
+    <circle cx="530" cy="520" r="4" fill="#ec4899" />
+
+    <!-- South Node (Git Master Final Gate) -->
+    <circle cx="400" cy="590" r="12" stroke="#38bdf8" stroke-width="3" filter="url(#coreGlow)" />
+    <circle cx="400" cy="590" r="5" fill="#38bdf8" />
+  </g>
+
+  <!-- Central Cybernetic Brain / Quantum AI Nucleus -->
+  <g filter="url(#coreGlow)">
+    <!-- Left Hemisphere -->
+    <path d="M 390 280 
+             C 340 280, 290 315, 290 370 
+             C 290 405, 310 425, 330 440 
+             C 305 455, 300 485, 320 510 
+             C 340 535, 375 530, 390 515
+             Z" 
+          fill="none" 
+          stroke="url(#cyberGradient)" 
+          stroke-width="9" 
+          stroke-linejoin="round" 
+          stroke-linecap="round" />
+
+    <!-- Right Hemisphere -->
+    <path d="M 410 280 
+             C 460 280, 510 315, 510 370 
+             C 510 405, 490 425, 470 440 
+             C 495 455, 500 485, 480 510 
+             C 460 535, 425 530, 410 515
+             Z" 
+          fill="none" 
+          stroke="url(#cyberGradient)" 
+          stroke-width="9" 
+          stroke-linejoin="round" 
+          stroke-linecap="round" />
+
+    <!-- Inner Synaptic Folds & Circuits -->
+    <path d="M 330 360 Q 360 375 390 350" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" />
+    <path d="M 470 360 Q 440 375 410 350" fill="none" stroke="#a855f7" stroke-width="4" stroke-linecap="round" />
+    <path d="M 340 430 Q 370 420 390 440" fill="none" stroke="#6366f1" stroke-width="4" stroke-linecap="round" />
+    <path d="M 460 430 Q 430 420 410 440" fill="none" stroke="#c084fc" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- Central Glowing Singularity Core -->
+  <g filter="url(#coreGlow)">
+    <circle cx="400" cy="400" r="18" fill="url(#cyberGradient)" />
+    <circle cx="400" cy="400" r="8" fill="#ffffff" />
+    <circle cx="400" cy="400" r="28" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6" stroke-dasharray="6 4" />
+  </g>
+
+  <!-- Crown / Halo (Master Authority & OS Sovereign Emblem) -->
+  <g filter="url(#coreGlow)">
+    <path d="M 365 240 L 400 220 L 435 240 L 425 255 L 375 255 Z" fill="url(#goldAccent)" opacity="0.9" />
+  </g>
+
+  <!-- Subtle High-Tech Brand Typography -->
+  <text x="400" y="670" 
+        text-anchor="middle" 
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif" 
+        font-size="34" 
+        font-weight="800" 
+        letter-spacing="6" 
+        fill="#f8fafc">
+    SKIILS<tspan fill="#38bdf8">TO</tspan><tspan fill="#a855f7">IAS</tspan>
+  </text>
+  
+  <text x="400" y="705" 
+        text-anchor="middle" 
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif" 
+        font-size="14" 
+        font-weight="600" 
+        letter-spacing="4" 
+        fill="#64748b">
+    AUTONOMOUS AI AGENT OPERATING SYSTEM
+  </text>
+</svg>

@@ -3,6 +3,10 @@
 
 <div align="center">
 
+<p align="center">
+  <img src="assets/logo.png" alt="SkiilsToIAs Logo" width="220" />
+</p>
+
 [![Skills](https://img.shields.io/badge/Skills-598%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
 [![Agentes Customizados](https://img.shields.io/badge/Agentes-13%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
 [![Servidores MCP](https://img.shields.io/badge/MCP-8%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
