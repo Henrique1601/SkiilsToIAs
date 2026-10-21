@@ -72,6 +72,9 @@ DEFAULT_MCPS = {
     "buffer": {
         "serverUrl": "https://mcp.buffer.com/mcp"
     },
+    "apollo": {
+        "serverUrl": "https://mcp.apollo.io/mcp"
+    },
     "shots-studio": {
         "command": "node",
         "args": [
