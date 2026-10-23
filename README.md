@@ -7,7 +7,7 @@
   <img src="assets/logo.png" alt="SkiilsToIAs Logo" width="220" />
 </p>
 
-[![Skills](https://img.shields.io/badge/Skills-598%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
+[![Skills](https://img.shields.io/badge/Skills-629%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
 [![Agentes Customizados](https://img.shields.io/badge/Agentes-14%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
 [![Servidores MCP](https://img.shields.io/badge/MCP-25%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
@@ -101,15 +101,15 @@ flowchart TD
 |---|---|:---:|---|
 | [🎨 Design & UI/UX](#design) | [`design/`](design/) | **75** | Skills especializadas em interface de usuário, design systems, estética anti-slop, micro-interações, tipografia, animações e vídeo programático (Remotion). |
 | [🔍 SEO & Mecanismos de Busca](#seo) | [`seo/`](seo/) | **13** | Skills dedicadas a auditoria técnica de SEO, otimização de Core Web Vitals, indexação e inteligência competitiva. |
-| [📣 Marketing & Vendas](#marketing) | [`marketing/`](marketing/) | **73** | Skills para comunicação de marca, criação de campanhas visuais, réguas de e-mail marketing, LinkedIn marketing, copywriting e conversão. |
+| [📣 Marketing & Vendas](#marketing) | [`marketing/`](marketing/) | **87** | Skills para comunicação de marca, criação de campanhas visuais, réguas de e-mail marketing, LinkedIn marketing, copywriting e conversão. |
 | [🎯 Carreira & Empregabilidade](#career) | [`career/`](career/) | **23** | Skills para elaboração de currículos de alto impacto (compatíveis com ATS), cartas de apresentação, preparação para entrevistas e negociação salarial. |
-| [💻 Desenvolvimento & Testes](#development) | [`development/`](development/) | **94** | Engenharia de software, frameworks modernos (React, Next.js, Vue, Swift, Kotlin), arquitetura limpa, automação Playwright e TDD. |
-| [☁️ Cloud & DevOps](#devops-cloud) | [`devops-cloud/`](devops-cloud/) | **46** | Infraestrutura como código, nuvem (Azure AI Foundry, Cloudflare, Netlify, Vercel), Docker, Kubernetes e redes/homelab. |
-| [🗄️ Backend & Bancos de Dados](#backend-database) | [`backend-database/`](backend-database/) | **63** | Bancos relacionais e NoSQL (Postgres, Supabase, Neon, MongoDB, Redis, ClickHouse), frameworks backend e otimização de queries. |
-| [🤖 Agentes de IA & Metaprogramação](#ai-agents) | [`ai-agents/`](ai-agents/) | **96** | Criação e engenharia de subagentes autônomos, servidores MCP (Model Context Protocol), harnesses, loops contínuos e segurança de IA. |
+| [💻 Desenvolvimento & Testes](#development) | [`development/`](development/) | **104** | Engenharia de software, frameworks modernos (React, Next.js, Vue, Swift, Kotlin), arquitetura limpa, automação Playwright e TDD. |
+| [☁️ Cloud & DevOps](#devops-cloud) | [`devops-cloud/`](devops-cloud/) | **54** | Infraestrutura como código, nuvem (Azure AI Foundry, Cloudflare, Netlify, Vercel), Docker, Kubernetes e redes/homelab. |
+| [🗄️ Backend & Bancos de Dados](#backend-database) | [`backend-database/`](backend-database/) | **71** | Bancos relacionais e NoSQL (Postgres, Supabase, Neon, MongoDB, Redis, ClickHouse), frameworks backend e otimização de queries. |
+| [🤖 Agentes de IA & Metaprogramação](#ai-agents) | [`ai-agents/`](ai-agents/) | **98** | Criação e engenharia de subagentes autônomos, servidores MCP (Model Context Protocol), harnesses, loops contínuos e segurança de IA. |
 | [📄 Documentos & Produtividade](#documents-productivity) | [`documents-productivity/`](documents-productivity/) | **27** | Manipulação automatizada de documentos de escritório (Word, Excel, PowerPoint, PDF), pesquisa científica, patentes e Obsidian. |
 | [📊 Gestão & Negócios](#business-management) | [`business-management/`](business-management/) | **43** | Análise de métricas e KPIs, governança, conformidade regulatória (HIPAA), PRDs, roadmaps, faturamento e briefings executivos. |
-| [🛠️ Utilitários & Otimização](#utilities) | [`utilities/`](utilities/) | **31** | Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multimídia (Mediabunny), git e ferramentas de suporte. |
+| [🛠️ Utilitários & Otimização](#utilities) | [`utilities/`](utilities/) | **34** | Modo ultra-conciso (Caveman) para economia massiva de tokens de contexto, multimídia (Mediabunny), git e ferramentas de suporte. |
 
 > [!NOTE]
 > ### 📦 Total de Recursos no Repositório

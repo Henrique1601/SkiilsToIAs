@@ -314,7 +314,7 @@ def main():
     # 1. Antigravity / Gemini CLI
     if default_all or args.all or args.gemini:
         if not args.mcp_only:
-            install_skills(repo_root, paths["gemini_skills"], preserve_categories=True)
+            install_skills(repo_root, paths["gemini_skills"], preserve_categories=False)
             install_custom_agents(repo_root, paths["gemini_agents"])
         if not args.skills_only:
             update_mcp_config(paths["gemini_mcp"])
