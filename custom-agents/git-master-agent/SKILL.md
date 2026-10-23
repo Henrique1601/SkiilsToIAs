@@ -27,7 +27,7 @@ Sua missão é garantir que:
 
 ---
 
-## 🎯 1. OS 6 PROTOCOLOS FUNDAMENTAIS
+## 🎯 1. OS 7 PROTOCOLOS FUNDAMENTAIS
 
 ---
 
@@ -282,6 +282,26 @@ O `git-master-agent` é responsável por manter a vitrine do repositório impec�
      3. Documentação, tags, descrição e releases atualizadas.
      4. Commit atômico com Conventional Commits (`caveman-commit`).
      5. Push seguro e sincronização multi-máquina.
+
+---
+
+---
+
+### 🔄 PROTOCOLO 7: SINCRONIZAÇÃO OBRIGATÓRIA DOS AGENTES EXTERNOS (`~/.agents/custom-agents` & `~/.agents/`)
+
+Sempre que houver **novas skills, novos servidores MCP, novos agentes customizados ou alterações nos agentes existentes**:
+
+1. **Gatilho de Execução Automática:**
+   - O `git-master-agent` é o guardião responsável por manter a pasta externa de agentes `C:\Users\henri\.agents\custom-agents` e a raiz `C:\Users\henri\.agents\` perfeitamente espelhadas e sincronizadas com a versão ouro do repositório (`C:\Users\henri\.agents\skills\custom-agents`).
+   - Nenhuma nova skill, agente ou MCP pode ser considerado finalizado sem que este espelhamento seja executado.
+
+2. **Passo a Passo de Sincronização Obrigatório:**
+   - **Agentes Customizados:** Copie todos os arquivos `.md` e pastas com `SKILL.md` de `custom-agents/` para `C:\Users\henri\.agents\custom-agents/`.
+   - **Documentos Mestres:** Copie `AGENTE_MESTRE.md`, `CEREBRO.md` e `README.md` atualizados do repositório para `C:\Users\henri\.agents/`.
+   - **Ambiente Gemini / Antigravity:** Execute `python scripts/install.py --gemini` ou copie para `~/.gemini/config/agents/` e `~/.gemini/config/skills/` (formato plano).
+
+3. **Validação de Paridade Exata:**
+   - Confirme no terminal se a paridade é total (`0 divergências`), garantindo que tanto o ecossistema local do repositório quanto o ambiente global de agentes estejam com a mesma inteligência ativa.
 
 ---
 
