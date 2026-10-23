@@ -9,7 +9,7 @@
 
 [![Skills](https://img.shields.io/badge/Skills-598%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
 [![Agentes Customizados](https://img.shields.io/badge/Agentes-14%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
-[![Servidores MCP](https://img.shields.io/badge/MCP-16%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
+[![Servidores MCP](https://img.shields.io/badge/MCP-19%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
 [![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-green?style=for-the-badge)](LICENSE)
 [![Autor](https://img.shields.io/badge/Autor-Henrique%20Bezerra%20Dos%20Santos-18181B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Henrique1601)

@@ -110,6 +110,19 @@ DEFAULT_MCPS = {
     "Prisma-Remote": {
         "command": "npx",
         "args": ["-y", "mcp-remote", "https://mcp.prisma.io/mcp"]
+    },
+    "google-maps": {
+        "command": "npx",
+        "args": ["-y", "@cablate/mcp-google-map", "--stdio"],
+        "env": {"GOOGLE_MAPS_API_KEY": "SUA_CHAVE_API_GOOGLE_MAPS"}
+    },
+    "vercel": {
+        "command": "npx",
+        "args": ["-y", "mcp-remote", "https://mcp.vercel.com"]
+    },
+    "netlify": {
+        "command": "npx",
+        "args": ["-y", "@netlify/mcp"]
     }
 }
 

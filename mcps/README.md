@@ -41,6 +41,9 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 🖥️ [**`desktop-commander`**](desktop-commander/README.md) | **Stdio** (Local) | `@wonderwhy-er/desktop-commander@latest` | Automação nativa desktop, manipulação avançada do sistema de arquivos local, controle de processos e periféricos. |
 | ◬ [**`Prisma-Remote`**](prisma/README.md) | **Bridge Remoto** | `https://mcp.prisma.io/mcp` | Gerenciamento de schemas Prisma ORM, migrations, inspeção de modelos relacionais e otimização de consultas a banco de dados. |
 | 🧠 [**`ai-memory`**](ai-memory/README.md) | **Streamable HTTP** (Local) | `http://127.0.0.1:49374/mcp` | Governança de contexto persistente entre sessões, grafo de conhecimento, manutenção contínua de wiki e `memory_lint`. |
+| 🗺️ [**`google-maps`**](google-maps/README.md) | **Stdio** (Local) | `@cablate/mcp-google-map` | Geocodificação, Places, cálculo de rotas, distâncias e tráfego com a Google Maps Platform. |
+| ▲ [**`vercel`**](vercel/README.md) | **Bridge Remoto** | `https://mcp.vercel.com` | Gestão de deploys, previews, domínios, DNS e variáveis de ambiente na Vercel. |
+| 🌐 [**`netlify`**](netlify/README.md) | **Stdio** (Local) | `@netlify/mcp` | Gestão de sites, deploys de preview, builds, formulários e serverless functions na Netlify. |
 
 ---
 
