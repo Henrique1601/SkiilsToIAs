@@ -44,6 +44,10 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 🗺️ [**`google-maps`**](google-maps/README.md) | **Stdio** (Local) | `@cablate/mcp-google-map` | Geocodificação, Places, cálculo de rotas, distâncias e tráfego com a Google Maps Platform. |
 | ▲ [**`vercel`**](vercel/README.md) | **Bridge Remoto** | `https://mcp.vercel.com` | Gestão de deploys, previews, domínios, DNS e variáveis de ambiente na Vercel. |
 | 🌐 [**`netlify`**](netlify/README.md) | **Stdio** (Local) | `@netlify/mcp` | Gestão de sites, deploys de preview, builds, formulários e serverless functions na Netlify. |
+| 🍃 [**`mongodb-atlas`**](mongodb-atlas/README.md) | **Stdio** (Local) | `mongodb-atlas-mcp-remote@latest` | Gestão de clusters NoSQL MongoDB Atlas, pipelines de agregação, índices e monitoramento. |
+| 📱 [**`browserstack`**](browserstack/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.browserstack.com/mcp` | Execução remota e em larga escala de testes E2E em navegadores e dispositivos móveis reais (iOS/Android). |
+| 🎵 [**`youtube-music`**](youtube-music/README.md) | **Stdio** (Local) | `youtube-music-server` | Busca musical semântica, controle de playback e gerenciamento de biblioteca no YouTube Music. |
+| 🎧 [**`spotify`**](spotify/README.md) | **Stdio** (Local `uv`) | `spotify-mcp` | Controle completo do player Spotify, descoberta de faixas e manipulação de playlists via API Web. |
 
 ---
 

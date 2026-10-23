@@ -119,6 +119,40 @@
         "-y",
         "@netlify/mcp"
       ]
+    },
+    "mongodb-atlas-mcp-remote": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mongodb-atlas-mcp-remote@latest"
+      ],
+      "env": {
+        "MDB_MCP_API_CLIENT_ID": "SEU_CLIENT_ID_ATLAS",
+        "MDB_MCP_API_CLIENT_SECRET": "SEU_CLIENT_SECRET_ATLAS"
+      }
+    },
+    "browserstack": {
+      "serverUrl": "https://mcp.browserstack.com/mcp"
+    },
+    "youtube-music-server": {
+      "command": "node",
+      "args": [
+        "c:\\caminho\\para\\youtube-music-server\\build\\index.js"
+      ]
+    },
+    "spotify": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "c:\\caminho\\para\\spotify-mcp",
+        "run",
+        "spotify-mcp"
+      ],
+      "env": {
+        "SPOTIFY_CLIENT_ID": "SEU_CLIENT_ID_SPOTIFY",
+        "SPOTIFY_CLIENT_SECRET": "SEU_CLIENT_SECRET_SPOTIFY",
+        "SPOTIFY_REDIRECT_URI": "http://127.0.0.1:8080/callback"
+      }
     }
   }
 }
