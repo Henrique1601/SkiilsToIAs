@@ -48,6 +48,8 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 📱 [**`browserstack`**](browserstack/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.browserstack.com/mcp` | Execução remota e em larga escala de testes E2E em navegadores e dispositivos móveis reais (iOS/Android). |
 | 🎵 [**`youtube-music`**](youtube-music/README.md) | **Stdio** (Local) | `youtube-music-server` | Busca musical semântica, controle de playback e gerenciamento de biblioteca no YouTube Music. |
 | 🎧 [**`spotify`**](spotify/README.md) | **Stdio** (Local `uv`) | `spotify-mcp` | Controle completo do player Spotify, descoberta de faixas e manipulação de playlists via API Web. |
+| 📐 [**`drawio`**](drawio/README.md) | **Stdio** (Local) | `@next-ai-drawio/mcp-server@latest` | Criação, renderização e edição programática de diagramas de arquitetura, UML e fluxogramas no Draw.io. |
+| 💼 [**`mcp-server-linkedin`**](linkedin/README.md) | **Stdio** (Local `uvx`) | `mcp-server-linkedin@latest` | Publicação de posts profissionais, agendamento de artigos e gestão de presença executiva no LinkedIn. |
 
 ---
 

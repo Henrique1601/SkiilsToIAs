@@ -152,6 +152,15 @@ DEFAULT_MCPS = {
             "SPOTIFY_CLIENT_SECRET": "SEU_CLIENT_SECRET_SPOTIFY",
             "SPOTIFY_REDIRECT_URI": "http://127.0.0.1:8080/callback"
         }
+    },
+    "drawio": {
+        "command": "npx",
+        "args": ["-y", "@next-ai-drawio/mcp-server@latest"]
+    },
+    "mcp-server-linkedin": {
+        "command": "uvx",
+        "args": ["mcp-server-linkedin@latest"],
+        "env": {"UV_HTTP_TIMEOUT": "300"}
     }
 }
 
