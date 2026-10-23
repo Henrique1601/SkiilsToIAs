@@ -34,6 +34,13 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 🎨 [**`lovable`**](https://mcp.lovable.dev) | **Streamable HTTP** (Remoto) | `https://mcp.lovable.dev` | Plataforma de prototipagem rápida e desenvolvimento web assistido por IA. |
 | 📱 [**`buffer`**](buffer/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.buffer.com/mcp` | Gerenciamento multicanal de mídias sociais (LinkedIn, X, Instagram), agendamento de posts, análise de engajamento e métricas via Buffer. |
 | 📸 [**`shots-studio`**](shots-studio/README.md) | **Stdio** (Local Node) | `shots-studio/mcp-server/index.ts` | Geração programática de mockups, dispositivos (iPhone, MacBook, Apple Watch), social posts para X/LinkedIn e frames de snippets de código elegantes. |
+| 🐙 [**`github`**](github/README.md) | **Streamable HTTP** (Remoto) | `https://api.githubcopilot.com/mcp/` | Servidor GitHub MCP para inspeção de repositórios, PRs, issues, commits, branches e integração direta com GitHub Copilot. |
+| 🎭 [**`playwright`**](playwright/README.md) | **Stdio** (Local) | `@playwright/mcp@latest` | Automação avançada de testes E2E, controle de browsers headless/headful, screenshots e traces visuais com o time de QA. |
+| 🌐 [**`brightdata`**](brightdata/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.brightdata.com/mcp` | Web scraping em larga escala, proxies residenciais inteligentes em 195+ países e desbloqueio automatizado de páginas (Web Unlocker). |
+| ✨ [**`magicuidesign-mcp`**](magic-ui/README.md) | **Stdio** (Local) | `@magicuidesign/mcp@latest` | Catálogo e injeção de componentes modernos de UI/UX (Magic UI, React, Tailwind CSS, Framer Motion). |
+| 🖥️ [**`desktop-commander`**](desktop-commander/README.md) | **Stdio** (Local) | `@wonderwhy-er/desktop-commander@latest` | Automação nativa desktop, manipulação avançada do sistema de arquivos local, controle de processos e periféricos. |
+| ◬ [**`Prisma-Remote`**](prisma/README.md) | **Bridge Remoto** | `https://mcp.prisma.io/mcp` | Gerenciamento de schemas Prisma ORM, migrations, inspeção de modelos relacionais e otimização de consultas a banco de dados. |
+| 🧠 [**`ai-memory`**](ai-memory/README.md) | **Streamable HTTP** (Local) | `http://127.0.0.1:49374/mcp` | Governança de contexto persistente entre sessões, grafo de conhecimento, manutenção contínua de wiki e `memory_lint`. |
 
 ---
 

@@ -81,6 +81,35 @@ DEFAULT_MCPS = {
             "--experimental-strip-types",
             "c:\\Users\\Public\\Downloads\\shots-studio\\mcp-server\\index.ts"
         ]
+    },
+    "ai-memory": {
+        "serverUrl": "http://127.0.0.1:49374/mcp",
+        "timeout": 5000
+    },
+    "github": {
+        "serverUrl": "https://api.githubcopilot.com/mcp/",
+        "headers": {
+            "Authorization": "Bearer SUA_CHAVE_GITHUB_PAT_AQUI"
+        }
+    },
+    "playwright": {
+        "command": "npx",
+        "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "brightdata": {
+        "serverUrl": "https://mcp.brightdata.com/mcp?token=SEU_TOKEN_BRIGHTDATA_AQUI"
+    },
+    "magicuidesign-mcp": {
+        "command": "npx",
+        "args": ["-y", "@magicuidesign/mcp@latest"]
+    },
+    "desktop-commander": {
+        "command": "npx",
+        "args": ["-y", "@wonderwhy-er/desktop-commander@latest"]
+    },
+    "Prisma-Remote": {
+        "command": "npx",
+        "args": ["-y", "mcp-remote", "https://mcp.prisma.io/mcp"]
     }
 }
 
