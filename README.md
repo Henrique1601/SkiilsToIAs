@@ -8,7 +8,7 @@
 </p>
 
 [![Skills](https://img.shields.io/badge/Skills-598%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
-[![Agentes Customizados](https://img.shields.io/badge/Agentes-13%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
+[![Agentes Customizados](https://img.shields.io/badge/Agentes-14%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
 [![Servidores MCP](https://img.shields.io/badge/MCP-9%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
 [![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-green?style=for-the-badge)](LICENSE)
@@ -38,8 +38,11 @@ flowchart TD
         GMA["👑 global-master-agent\n(Comando Central & Roteamento)"]
         SO["🎯 skills-orchestrator\n(Framework Metodológico 9 Fases)"]
         GMA --> PMA["📋 planning-master-agent\n(Estratégia, Riscos, DAG & PRD)"]
+        GMA --> MEM["🧠 memory-architect-agent\n(Governança de Memória & Contexto Persistente)"]
         GMA --> SO
         PMA <--> SO
+        MEM <--> SO
+        MEM <--> PMA
         GMA --> AG_Git["🛡️ git-master-agent"]
         GMA --> AG_DB["🗄️ database-architect"]
         GMA --> AG_UX["🎨 design-engineer"]
@@ -120,8 +123,9 @@ Além das 512 skills, o repositório conta com uma pasta dedicada para agentes o
 
 | Agente | Arquivo | Descrição |
 |---|---|---|
+| 👑 **`global-master-agent`** (Agente Global Supremo) | [`custom-agents/global-master-agent.md`](custom-agents/global-master-agent.md) | **Ponto único de comando.** Orquestra automaticamente todos os outros 13 agentes e todo o catálogo de skills do repositório. Você só precisa chamar este agente! |
 | 📋 **`planning-master-agent`** (Mestre de Planejamento) | [`custom-agents/planning-master-agent.md`](custom-agents/planning-master-agent.md) | **CPO e Staff Program Manager.** Sabatina implacável, decomposição atômica de tarefas, grafo de dependências (DAG), análise de riscos (Pre-Mortem) e critérios de aceite testáveis. |
-| 👑 **`global-master-agent`** (Agente Global Supremo) | [`custom-agents/global-master-agent.md`](custom-agents/global-master-agent.md) | **Ponto único de comando.** Orquestra automaticamente todos os outros 11 agentes e as 512 skills do repositório. Você só precisa chamar este agente! |
+| 🧠 **`memory-architect-agent`** (Arquiteto de Memória & Contexto) | [`custom-agents/memory-architect-agent.md`](custom-agents/memory-architect-agent.md) | **Governança de Memória e Continuidade Persistente.** Resgate de decisões históricas, handoffs entre sessões, manutenção contínua da Wiki, auto-auditoria com `memory_lint` e persistência sem perda de contexto usando as 23 ferramentas do MCP `ai-memory`. |
 | 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`custom-agents/skills-orchestrator.md`](custom-agents/skills-orchestrator.md) | Orquestrador mestre das 512 skills (542 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
 | 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`custom-agents/git-master-agent.md`](custom-agents/git-master-agent.md) | Backups preventivos (`backup/checkpoint-...`), Conventional Commits, bootstrap de novos projetos (README, MIT License, .gitignore) e sincronização multi-máquina (PC Trabalho vs. PC Pessoal). |
 | 🎨 **`design-engineer-agent`** (Engenheiro de UI/UX) | [`custom-agents/design-engineer-agent.md`](custom-agents/design-engineer-agent.md) | Interfaces modernas estilo Linear/Apple, microinterações, Framer Motion, acessibilidade WCAG 2.2 e design anti-template. |

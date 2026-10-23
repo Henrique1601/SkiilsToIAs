@@ -10,9 +10,10 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 | Agente | Arquivo | Descrição |
 | :--- | :--- | :--- |
-| 👑 **`global-master-agent`** (Agente Global Supremo) | [`global-master-agent.md`](global-master-agent.md) | **Ponto único de comando e entrada.** Você só precisa chamar ele: ele orquestra nos bastidores todos os outros 12 agentes e as 658 skills do repositório. |
+| 👑 **`global-master-agent`** (Agente Global Supremo) | [`global-master-agent.md`](global-master-agent.md) | **Ponto único de comando e entrada.** Você só precisa chamar ele: ele orquestra nos bastidores todos os outros 13 agentes e as 658 skills do repositório. |
 | 📋 **`planning-master-agent`** (Mestre de Planejamento) | [`planning-master-agent.md`](planning-master-agent.md) | **CPO e Staff Program Manager.** Sabatina implacável, decomposição atômica de tarefas, grafo de dependências (DAG), análise de riscos (Pre-Mortem) e critérios de aceite testáveis. |
 | 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 658 skills (688 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
+| 🧠 **`memory-architect-agent`** (Arquiteto de Memória & Contexto) | [`memory-architect-agent.md`](memory-architect-agent.md) | **Governança de Memória e Continuidade Persistente.** Resgate de decisões históricas, handoffs entre sessões, manutenção contínua da Wiki, auto-auditoria com `memory_lint` e persistência sem perda de contexto usando as 23 ferramentas do MCP `ai-memory`. |
 | 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`git-master-agent.md`](git-master-agent.md) | **Portão Obrigatório Final de Todo Projeto/Pilar.** Backups preventivos, Conventional Commits seguros, sincronização multi-máquina e catalogação com tags/descrição no GitHub. |
 | 🎨 **`design-engineer-agent`** (Engenheiro de UI/UX) | [`design-engineer-agent.md`](design-engineer-agent.md) | Interfaces refinadas, design intelligence (`ui-ux-pro-max`), tokens de 3 camadas, microinterações, Framer Motion e acessibilidade WCAG 2.2. |
 | 🛡️ **`security-auditor-agent`** (Auditor de Segurança) | [`security-auditor-agent.md`](security-auditor-agent.md) | Auditoria defensiva/ofensiva OWASP Top 10, autenticação segura (JWT/OAuth), proteção contra injection e bloqueio de vazamento de secrets. |
@@ -34,9 +35,12 @@ flowchart TD
     
     GMA <--> PLAN["📋 planning-master-agent<br/>(Estratégia, Riscos, DAG & PRD)"]
     GMA <--> ORCH["🎯 skills-orchestrator<br/>(Hub Central: Metodologia 9 Fases + 658 Skills)"]
+    GMA <--> MEM["🧠 memory-architect-agent<br/>(Continuidade, Wiki & Governança de Contexto)"]
     
     %% Camada 1 para Camada 2
     PLAN <--> ORCH
+    MEM <--> ORCH
+    MEM <--> PLAN
     ORCH <--> UI["🎨 design-engineer-agent"]
     ORCH <--> DB["🗄️ database-architect-agent"]
     ORCH <--> AI["🤖 ai-engineer-agent"]
@@ -68,6 +72,7 @@ flowchart TD
     GROWTH ==>|Portão Obrigatório Final| GIT
     VIDEO ==>|Portão Obrigatório Final| GIT
     PROFILE ==>|Portão Obrigatório Final| GIT
+    MEM ==>|Portão Obrigatório Final| GIT
     GMA <--> GIT
 ```
 
