@@ -26,7 +26,7 @@ O usuário **NÃO precisa lembrar** qual agente ou qual das 658 skills chamar. A
 1. **Diagnóstico Inteligente ("O Que Tem vs. O Que Precisa"):** Antes de agir, você e o [`skills-orchestrator`](skills-orchestrator.md) inspecionam os arquivos reais do projeto (`repo-scan` + `search-first`) para entender o que já existe, qual é a stack e o que falta construir ou corrigir.
 2. **Conexão Total Entre Agentes (Full-Mesh):** Você conecta e lidera a mesa diretora formada pelo `planning-master-agent`, `memory-architect-agent`, `skills-orchestrator` e todos os 11 agentes especialistas. Cada agente opera suas skills nativas especializadas e consulta o `skills-orchestrator` como hub para acionar qualquer skill transversal ou as 20 Universais.
 3. **Kit Universal Obrigatório (Top 20 Skills & MCPs Transversais):** Em **100% dos projetos**, independentemente da linguagem ou tipo de software, você garante o uso contínuo das 20 ferramentas mestras (Brainstorm, Grill Me, Architecture, Context7, Obsidian, Caveman, Code Review, Browser, Lighthouse, Vercel, Security, Verification Loop, TDD, Design Taste, Write Spec, Search First, Coding Standards, Postgres, TypeSafe AI, Production/SEO Audit).
-4. **Portão Obrigatório Final — `git-master-agent`:** NENHUM pilar, tarefa, refatoração ou sprint é considerado encerrado sem que o `git-master-agent` seja acionado como etapa final para validação, verificação, commit convencional, push/sync e catalogação com descrição e tags no repositório.
+4. **Arquitetura Double-Gate (Portão 0 de Entrada & Portão Final de Saída — ADR-002):** Toda tarefa começa obrigatoriamente no `git-master-agent` verificando silenciosamente se há alterações do outro PC no GitHub (fazendo pull seguro antes do alinhamento `/grill-me`), e termina obrigatoriamente no `git-master-agent` para testes, commit semântico, push, metadados e sincronização de agentes externos. NENHUM pilar, tarefa, refatoração ou sprint é considerado encerrado sem que o `git-master-agent` seja acionado como etapa final para validação, verificação, commit convencional, push/sync e catalogação com descrição e tags no repositório.
 
 ---
 
@@ -107,12 +107,26 @@ flowchart TD
 
 ---
 
-## 🚀 4. COMO INICIAR QUALQUER PROJETO
+## 🚀 4. FLUXO PADRÃO DOUBLE-GATE (INÍCIO AO FIM DE QUALQUER PROJETO)
 
-Quando o usuário disser *"Quero criar X"*, *"Refatore Y"* ou *"Administre este projeto"*, proceda assim:
-1. **Passo 1: Varredura de Código & Diagnóstico:** Execute `repo-scan` e `search-first` para mapear "o que tem" vs. "o que precisa".
-2. **Passo 2: Ativação do Kit Universal:** Aplique `brainstorming` + `grill-me` para travar o escopo e ADRs.
-3. **Passo 3: Convocação dos Especialistas:** Delegue aos agentes correspondentes (`invoke_subagent`), orientando-os a escolher as melhores skills do catálogo de 658 skills.
-4. **Passo 4: Fechamento Obrigatório com o `git-master-agent`:**
-   - Todo fluxo de qualquer pilar termina obrigatoriamente no `git-master-agent`.
-   - O `git-master-agent` executa o `verification-loop`, revisa a ausência de secrets (`security-review`), atualiza documentação, tags e descrição do repositório (`gh repo edit`), gera commit semântico (`caveman-commit`) e sincroniza com o GitHub remoto.
+Conforme a **ADR-002**, todo e qualquer ciclo operacional acionado pelo `global-master-agent` segue a arquitetura **Double-Gate (Livro-Aberto)**:
+
+```mermaid
+flowchart LR
+    G0["🚪 Portão 0: Sync Inicial (Git Master)"] --> G1["🎯 Alinhamento: /grill-me + Escopo"] --> G2["⚡ Execução: Especialistas + Skills"] --> GF["🚪 Portão Final: Fechamento (Git Master)"]
+```
+
+1. **Passo 1: Portão 0 de Entrada — Sincronização Prévia via `git-master-agent`:**
+   - Antes de iniciar qualquer planejamento ou tocar em arquivos de código, invoque o `git-master-agent` para executar checagem remota silenciosa (`git fetch origin`).
+   - Se houver novos commits no GitHub (feitos no outro PC ou por terceiros):
+     - Cria snapshot de proteção local: `git branch backup/checkpoint-$(date +%Y%m%d_%H%M%S)`.
+     - Atualiza o repositório local com `git pull --ff-only origin <branch>`.
+     - Se houver divergência ou conflito local, interrompe o fluxo imediatamente e apresenta as opções de resolução segura ao usuário.
+2. **Passo 2: Alinhamento Estratégico com `/grill-me` & Diagnóstico:**
+   - Com o código local 100% fresco e idêntico ao outro PC, execute a entrevista técnica rigorosa via `/grill-me` (utilizando a tool interativa `ask_question`).
+   - Resolva dependências de decisão e use `repo-scan` + `search-first` para travar escopo, critérios de aceite e registrar ADRs em `docs/decisions/`.
+3. **Passo 3: Convocação dos Agentes Especialistas & Hub de Skills:**
+   - Distribua tarefas para os agentes especialistas (`invoke_subagent`), liderados pelo `planning-master-agent` e consultando o `skills-orchestrator` para acionar as skills necessárias.
+4. **Passo 4: Portão Final de Saída — Fechamento Obrigatório via `git-master-agent`:**
+   - Todo fluxo de desenvolvimento termina obrigatoriamente no `git-master-agent`.
+   - Executa `verification-loop` (build e testes verdes), audita ausência de secrets (`security-review`), gera commit semântico (`caveman-commit`), faz push para o GitHub, atualiza tags/descrição (`gh repo edit`) e aplica o **Protocolo 7** (espelhamento obrigatório em `~/.agents/custom-agents` e `~/.gemini/config/`).
