@@ -200,22 +200,26 @@ Quando for criar ou inicializar um repositório novo do zero:
      SOFTWARE.
      ```
 
-4. **Criação do `README.md` Completo e Profissional:**
-   - Título impactante com Badges (Stack, Licença MIT, Status, Releases se aplicável).
-   - Descrição em 2-3 parágrafos da dor que o projeto resolve.
-   - Diagrama ASCII ou Mermaid da arquitetura.
-   - Pré-requisitos (Node.js, Docker, Python, .NET, Go, etc.).
-   - Guia de Inicialização Rápida (`git clone`, install, run).
-   - Seção de Download/Instalação (apontando para as GitHub Releases no caso de `.exe`).
-   - Variáveis de ambiente necessárias (`.env.example`).
-   - Guia de contribuição e licença.
+4. **Criação do `README.md` Padrão Ouro Institucional (ADR-003):**
+   Todo README gerado ou atualizado pelo `git-master-agent` deve conter obrigatoriamente a seguinte anatomia profissional:
+   - **Ícone / Logotipo / GIF de Demonstração:** Centralizado no topo com `<p align="center"><img src="..." width="260" alt="App Logo/Demo" /></p>`. Se o projeto for um aplicativo, software ou ferramenta visual, inclua um GIF animado demonstrativo do produto ou print de alta resolução da interface em ação.
+   - **Título de Impacto & Badges Dinâmicos:** Badges de Stack, Versão (`v1.0.0+`), Status de CI/CD, GitHub Releases, Licença MIT e Autor.
+   - **Barra de Acesso Rápido (Quick Links):** Links diretos e visíveis no cabeçalho:
+     `[🚀 Download do Instalador (.exe)]` | `[⚡ Primeiros Passos]` | `[🌐 Website]` | `[📚 Documentação]` | `[📦 Releases]`
+   - **O Que É & Problema que Resolve:** Descrição executiva de alto nível (2-3 parágrafos claros).
+   - **Download & Instalação para Apps de PC (Instalável e Executável):** Se o software for para desktop/PC, forneça instruções claras para o usuário final baixar o executável/instalador direto na aba de Releases, além do setup para desenvolvedores (`git clone`, setup de dependências).
+   - **Capturas de Tela & Demonstração:** Prints e exemplos reais de uso.
+   - **Variáveis de Ambiente (`.env.example`):** Tabela documentando cada secret.
+   - **Arquitetura & Contribuição:** Diagrama Mermaid e guia de Conventional Commits.
 
-5. **Configuração de Releases Automatizadas para Binários (`.exe` / Assets):**
-   - Se o projeto for um CLI, Desktop App ou gerar executáveis (`.exe` / `.zip` / `.tar.gz`), **NUNCA comite os binários pesados diretamente no repositório**.
-   - Crie o workflow de CI/CD em `.github/workflows/release.yml`:
-     * Disparado por tag (ex: `git tag v1.0.0 && git push origin v1.0.0`) ou evento de Release.
-     * Compila o binário em runners limpos (ex: `windows-latest`).
-     * Faz o upload automático do `.exe` diretamente nas **GitHub Releases**, gerando link direto de download no README.
+5. **Configuração Mandatória de Releases v1.0.0+ para Apps Executáveis (`.exe` / `.msi` / `.zip`):**
+   - Se o projeto for um CLI, Desktop App ou software para PC, os binários devem ser **instaláveis e executáveis**.
+   - **DESDE A PRIMEIRA VERSÃO (`v1.0.0`)**, configure o pipeline `.github/workflows/release.yml`:
+     * Disparo automático a cada tag semântica (ex: `v1.0.0`, `v1.0.1`) ou evento de Release.
+     * Compilação limpa em runner de CI (`windows-latest`, `ubuntu-latest`, `macos-latest`).
+     * Upload automático dos artefatos (`.exe`, `.msi`, `.zip`) para as **GitHub Releases**.
+     * Links diretos para os assets da Release apontados no `README.md`.
+     * **Regra Anti-Bloat:** `.exe`, `.msi` e artefatos compilados são estritamente ignorados no `.gitignore` e **nunca** comitados diretamente na árvore do Git.
 
 6. **Catalogação Inicial & Metadados no GitHub:**
    - Sincronize `description` e `keywords` nos manifestos do projeto (`package.json`, `pyproject.toml`, `Cargo.toml`).
