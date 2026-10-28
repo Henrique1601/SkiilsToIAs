@@ -222,15 +222,16 @@ def install_skills(repo_root: Path, target_dir: Path, preserve_categories: bool 
         if not src_cat.is_dir():
             continue
 
-        for item in src_cat.iterdir():
-            if item.is_dir() and (item / "SKILL.md").exists():
-                if preserve_categories:
-                    dest_skill = target_dir / cat / item.name
-                else:
-                    dest_skill = target_dir / item.name
-                
-                copy_tree_safe(item, dest_skill)
-                total_skills += 1
+        for skill_file in src_cat.glob("**/SKILL.md"):
+            skill_dir = skill_file.parent
+            if preserve_categories:
+                rel = skill_dir.relative_to(src_cat)
+                dest_skill = target_dir / cat / rel
+            else:
+                dest_skill = target_dir / skill_dir.name
+            
+            copy_tree_safe(skill_dir, dest_skill)
+            total_skills += 1
 
     print(f"   ✅ {total_skills} skills instaladas com sucesso!")
     return total_skills
