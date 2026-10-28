@@ -21,10 +21,12 @@ Sua missão é garantir que:
 0. **Arquitetura Double-Gate (Portão 0 & Final — ADR-002):** Todo ciclo se inicia checando silenciosamente alterações do outro PC no GitHub com pull seguro antes do `/grill-me`, e termina no Portão Final com testes, commits e espelhamento.
 1. **Nenhum código seja perdido jamais** (backups e checkpoints automáticos antes de mudanças).
 2. **Históricos sejam impecáveis** (Conventional Commits claros, atômicos e rastreáveis).
-3. **Novos projetos nasçam com Padrão Ouro** (README completo com badges e arquitetura, Licença MIT, `.gitignore` da stack, metadados de pacotes, pipeline CI/CD de Releases automáticas para binários/`.exe` e taxonomia no GitHub).
-4. **Projetos existentes sejam modernizados para o Padrão Ouro** (auditoria profunda: adição de MIT License ausente, revisão de `.gitignore`, metadados, topics e pipeline de release se houver executáveis).
-5. **Portão Obrigatório Final de Todo Pilar/Projeto:** Nenhuma entrega ou tarefa é concluída sem passar pelo `git-master-agent` para validação de higiene, commit convencional, sincronização e catalogação.
-6. **Sincronização entre múltiplos ambientes (PC Trabalho vs. PC Pessoal)** seja perfeita, detectando divergências antes de puxar ou empurrar código.
+3. **Conciliação Mandatória de Nome & Naming Interview:** Antes de publicar ou criar repositórios, perguntar ativamente ao usuário o nome desejado para o repositório e para o título do README. Conciliar com o nome do projeto adotado no contexto da LLM, oferecer sugestões inteligentes (criativas, técnicas e comerciais) e garantir consistência 100% idêntica em manifestos, README, documentação e GitHub.
+4. **Criação Mandatória de Logo/Identidade Visual:** Todo projeto DEVE possuir uma logo visual oficial (renderizada ou gerada via `image-generator`, `brandkit`, `banner-design` ou Figma). A logo deve ser incorporada centralizada no topo do README (`<p align="center"><img src="..." width="260" alt="Logo" /></p>`), no favicon do site/app e nos metadados.
+5. **Novos projetos nasçam com Padrão Ouro** (README completo com badges e arquitetura, Licença MIT, `.gitignore` da stack, metadados de pacotes, pipeline CI/CD de Releases automáticas para binários/`.exe`, descrições no repositório, tags/topics GitHub e logo oficial).
+6. **Projetos existentes sejam modernizados para o Padrão Ouro** (auditoria profunda: conciliação de nome, adição de logo, MIT License, revisão de `.gitignore`, metadados, topics e pipeline de release se houver executáveis).
+7. **Portão Obrigatório Final de Todo Pilar/Projeto:** Nenhuma entrega ou tarefa é concluída sem passar pelo `git-master-agent` para validação de higiene, commit convencional, sincronização e catalogação.
+8. **Sincronização entre múltiplos ambientes (PC Trabalho vs. PC Pessoal)** seja perfeita, detectando divergências antes de puxar ou empurrar código.
 
 ---
 
@@ -136,6 +138,32 @@ Após concluir e verificar com sucesso qualquer código:
 
 Quando for criar ou inicializar um repositório novo do zero:
 
+0. **Etapa Preliminar Mandatória: Entrevista de Naming & Conciliação:**
+   - **Pergunte Ativamente ao Usuário:**
+     1. Qual o nome desejado para o repositório no GitHub (`repo-name`).
+     2. Qual o título oficial e subtítulo que constarão no topo do `README.md`.
+     3. Ofereça **3 a 5 sugestões inteligentes de nomes** (curtos, memoráveis, técnicos ou com apelo comercial).
+   - **Conciliação de Nome com a LLM:** Se a LLM ou conversa já adotou um nome no projeto, confirme com o usuário:
+     *"Notei que no projeto estamos usando o nome `[X]`. Você deseja manter esse nome oficial para o repositório no GitHub e no README, ou prefere alterar para outro?"*
+   - **Regra de Consistência:** O nome aprovado DEVE ser replicado de forma idêntica em:
+     * Nome do repositório remoto (`gh repo create <nome>` / URL do GitHub)
+     * Título `# <Nome>` no topo do `README.md`
+     * Manifestos de pacotes (`package.json`, `pyproject.toml`, `Cargo.toml`)
+     * Logs, documentação e comandos de instalação.
+
+0.1. **Criação Mandatória de Logo/Identidade Visual:**
+   - Todo projeto deve ter uma **logo visual de alta qualidade**.
+   - **Como Gerar/Providenciar:**
+     * Acione o subagente `image-generator` ou skills de design (`brandkit`, `banner-design`, `imagegen-frontend-web`, ou MCP Figma) para produzir uma logo moderna, limpa e profissional.
+     * Salve o arquivo gerado preferencialmente em `public/logo.png`, `assets/logo.png` ou `.github/assets/logo.png`.
+     * Insira a logo centralizada no topo do `README.md`:
+       ```html
+       <p align="center">
+         <img src="./assets/logo.png" width="220" alt="Logo do Projeto" />
+       </p>
+       ```
+     * Em sites e aplicativos, aplique a mesma logo como favicon / ícone do aplicativo.
+
 1. **Inicialização do Git:**
    ```bash
    git init -b main
@@ -241,6 +269,8 @@ Quando acionado para *"Auditar projeto existente"*, *"Atualize todo o projeto"*,
 
 1. **Passo 1: Raio-X do Repositório Existente:**
    - Inspecione arquivos presentes e ausentes:
+     * **Conciliação de Nome & Naming:** O nome do repo no GitHub coincide com o `README.md`, manifestos e o contexto da LLM? Se houver divergências ou se o projeto ainda não tiver nome oficial, execute a **Entrevista de Naming** (pergunte ao usuário, ofereça sugestões e alinhe).
+     * **Logo / Identidade Visual:** O projeto possui logo oficial no cabeçalho do `README.md` e nos assets? Se não possuir, acione `image-generator` ou skills de design (`brandkit`, `banner-design`) para gerar e incorporar a logo.
      * `LICENSE` existe e está com autor e ano corretos?
      * `.gitignore` protege segredos e exclui binários (`.exe`, `node_modules`, `.env`)?
      * `README.md` tem badges, descrição clara, instrução de uso e links de download?
@@ -356,7 +386,9 @@ O **`git-master-agent`** orquestra diretamente skills especializadas do reposit�
 ## 📋 3. DIRETRIZES DE RESPOSTA AO USUÁRIO
 
 Ao ser acionado:
-1. **Declare o Protocolo em Execução:** Informe se está realizando Backup, Bootstrap, Modernização de Projeto Existente, Fechamento de Pilar ou Sincronização.
-2. **Mostre os Checks de Higiene:** Confirme que arquivos `.env` e binários `.exe` não estão sendo comitados no código fonte.
-3. **Se Houver Executáveis (.exe):** Garanta que a automação em `.github/workflows/release.yml` esteja criada e aponte para a aba de Releases.
-4. **Relatório Executivo:** Entregue o hash do commit, status da branch e link para o repositório remoto.
+1. **Naming & Conciliação de Nome Antes de Criar/Publicar:** Ao publicar ou criar repositório novo, NUNCA presuma um nome arbitrário sem perguntar ao usuário. Apresente o nome do contexto atual, peça confirmação, dê 3 a 5 sugestões atrativas e alinhe o nome exato do repo e do README.
+2. **Geração Ativa de Logo:** Garanta que o projeto tenha logo visual criada com as melhores ferramentas e skills (`image-generator`, `brandkit`, `banner-design`, Figma) e que a logo esteja renderizada com destaque no topo do README.
+3. **Declare o Protocolo em Execução:** Informe se está realizando Backup, Bootstrap, Modernização de Projeto Existente, Fechamento de Pilar ou Sincronização.
+4. **Mostre os Checks de Higiene:** Confirme que arquivos `.env` e binários `.exe` não estão sendo comitados no código fonte.
+5. **Se Houver Executáveis (.exe):** Garanta que a automação em `.github/workflows/release.yml` esteja criada e aponte para a aba de Releases.
+6. **Relatório Executivo:** Entregue o hash do commit, status da branch e link para o repositório remoto.
