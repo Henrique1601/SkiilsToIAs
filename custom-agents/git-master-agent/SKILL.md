@@ -338,13 +338,17 @@ O `git-master-agent` é responsável por manter a vitrine do repositório impec�
      - Forneça no terminal o comando exato pronto para o usuário copiar e colar após autenticar (`gh auth login`).
      - Instrua os tópicos recomendados na seção "Metadados do Repositório".
 
-3. **Portão Obrigatório de Fechamento de Pilar:**
+3. **Portão Obrigatório de Fechamento de Pilar (Com Handoff Automático de Memória):**
    - Todo fluxo de desenvolvimento se encerra acionando o `git-master-agent`:
-     1. Status limpo e verificação de secrets (`security-review`).
-     2. Build e testes verdes (`verification-loop`).
-     3. Documentação, tags, descrição e releases atualizadas.
-     4. Commit atômico com Conventional Commits (`caveman-commit`).
-     5. Push seguro e sincronização multi-máquina.
+     1. **Auditoria de Higiene & Secrets:** Status limpo e verificação de secrets (`security-review`).
+     2. **Validação Técnica:** Build e testes verdes (`verification-loop`).
+     3. **Documentação & Metadados:** Documentação, tags, descrição, releases e logo oficial atualizadas.
+     4. **Handoff Automático de Memória (Zero Amnésia):**
+        - Acionar o `memory-architect-agent` para registrar o Memo de Fechamento via `memory_write_memo` com o hash do commit, decisões tomadas e pendências imediatas.
+        - Se novas entidades ou padrões foram descobertos, atualizar o grafo com `memory_create_entity` / `memory_create_relation`.
+        - Compilar a base de conhecimento viva com `memory_wiki_compile`.
+     5. **Commit Atômico:** Conventional Commits claros e rastreáveis (`caveman-commit`).
+     6. **Push Seguro & Sincronização:** Sincronização multi-máquina e atualização no GitHub.
 
 ---
 

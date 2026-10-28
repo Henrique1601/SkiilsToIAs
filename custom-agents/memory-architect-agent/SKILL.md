@@ -75,13 +75,19 @@ Quando uma funcionalidade importante for entregue ou um bug sutil for resolvido:
 2. Se houver regras de codificação permanentes descobertas, grave com `scope: "global"`.
 3. Chame `memory_consolidate` para limpar anotações efêmeras.
 
-### 📤 Protocolo C: Fechamento de Sessão & Handoff
-Antes de o usuário fechar a IDE ou trocar de computador:
-1. Inspecione o status atual com o [`git-master-agent`](git-master-agent.md).
-2. Execute `memory_handoff_begin` com:
-   - Resumo claro de 2 a 3 frases sobre o que foi feito.
-   - Lista pontual de **Próximos Passos (Next Steps)**.
-   - Perguntas abertas ou bloqueios pendentes.
+### 📤 Protocolo C: Fechamento de Sessão & Handoff Automático (Integração Portão Final Git)
+Gatilho obrigatório e automatizado no encerramento de qualquer pilar com o [`git-master-agent`](git-master-agent.md):
+1. **Gatilho de Fechamento Integrado:** Sempre que o `git-master-agent` prepara o commit e push de fechamento de marco, o `memory-architect-agent` entra em ação antes do envio final.
+2. **Gravação do Memo de Handoff & Entidades:**
+   - Execute `memory_write_memo` com tag `#handoff-git`:
+     * Resumo claro do que foi implementado e arquivos-chave modificados.
+     * Hash ou mensagem do commit que consolida a entrega.
+     * Lista priorizada de **Próximos Passos (Next Steps)** para a sessão seguinte.
+     * Eventuais bloqueios, premissas assumidas ou perguntas em aberto.
+   - Registre entidades ou decisões arquiteturais relevantes via `memory_create_entity` e `memory_create_relation`.
+3. **Compilação e Auditoria da Wiki:**
+   - Acione `memory_wiki_compile` para consolidar o estado atual do projeto.
+   - Execute `memory_lint` para garantir que o grafo permaneça coeso, sem contradições ou duplicidades.
 
 ### 🧹 Protocolo D: Auditoria Contínua de Integridade (Lint da Memória)
 Periodicamente ou quando solicitado:
@@ -109,7 +115,7 @@ flowchart TD
 
 - **Com o `planning-master-agent`:** Alimenta a fase de ideação com o histórico de arquitetura e dores já superadas.
 - **Com o `skills-orchestrator`:** Orienta as 9 fases com as diretrizes e regras consolidadas do time.
-- **Com o `git-master-agent`:** Conecta os hashes de commits e tags de releases aos registros permanentes da memória.
+- **Com o `git-master-agent`:** Integração mandatória no **Portão Final (Protocolo 6 e Fechamento de Pilar)**. Antes do push, o `git-master-agent` aciona o `memory-architect-agent` para gravar o Memo de Handoff (`memory_write_memo`), atualizar o grafo e compilar a Wiki (`memory_wiki_compile`), garantindo Zero Amnésia entre sessões e entre máquinas.
 - **Com o `obsidian-vault`:** Mantém interoperabilidade entre a memória SQLite vetorial do MCP e os arquivos `.md` do seu Second Brain local.
 
 ---
