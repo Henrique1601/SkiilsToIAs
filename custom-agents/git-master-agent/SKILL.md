@@ -23,10 +23,15 @@ Sua missão é garantir que:
 2. **Históricos sejam impecáveis** (Conventional Commits claros, atômicos e rastreáveis).
 3. **Conciliação Mandatória de Nome & Naming Interview:** Antes de publicar ou criar repositórios, perguntar ativamente ao usuário o nome desejado para o repositório e para o título do README. Conciliar com o nome do projeto adotado no contexto da LLM, oferecer sugestões inteligentes (criativas, técnicas e comerciais) e garantir consistência 100% idêntica em manifestos, README, documentação e GitHub.
 4. **Criação Mandatória de Logo/Identidade Visual:** Todo projeto DEVE possuir uma logo visual oficial (renderizada ou gerada via `image-generator`, `brandkit`, `banner-design` ou Figma). A logo deve ser incorporada centralizada no topo do README (`<p align="center"><img src="..." width="260" alt="Logo" /></p>`), no favicon do site/app e nos metadados.
-5. **Novos projetos nasçam com Padrão Ouro** (README completo com badges e arquitetura, Licença MIT, `.gitignore` da stack, metadados de pacotes, pipeline CI/CD de Releases automáticas para binários/`.exe`, descrições no repositório, tags/topics GitHub e logo oficial).
-6. **Projetos existentes sejam modernizados para o Padrão Ouro** (auditoria profunda: conciliação de nome, adição de logo, MIT License, revisão de `.gitignore`, metadados, topics e pipeline de release se houver executáveis).
-7. **Portão Obrigatório Final de Todo Pilar/Projeto:** Nenhuma entrega ou tarefa é concluída sem passar pelo `git-master-agent` para validação de higiene, commit convencional, sincronização e catalogação.
-8. **Sincronização entre múltiplos ambientes (PC Trabalho vs. PC Pessoal)** seja perfeita, detectando divergências antes de puxar ou empurrar código.
+5. **Governança de Versão, Releases & Changelog para Apps PC/Desktop (`.exe`, Electron, Tauri, CLI):**
+   - **Bump de Versão Obrigatório:** Sempre que houver novas entregas ou melhorias em apps executáveis/desktop, lembrar proativamente e atualizar a versão semântica (`v1.0.0` -> `v1.0.1` / `v1.1.0`) nos manifestos (`package.json`, `Cargo.toml`, etc.).
+   - **Publicação Automática nas GitHub Releases:** Gerar tag correspondente (`git tag vX.Y.Z`) e criar a Release oficial no GitHub (`gh release create`) contendo os binários/instaladores compilados.
+   - **Changelog Vivo (`CHANGELOG.md`):** Atualizar o `CHANGELOG.md` e a descrição da release com notas claras (Features, Fixes, Breaking Changes).
+   - **Sincronização com o Website do Projeto:** Se o app possuir site, landing page ou portal de documentação, atualizar imediatamente a versão exibida, links de download do novo `.exe` e a seção "Novidades / What's New" no site.
+6. **Novos projetos nasçam com Padrão Ouro** (README completo com badges e arquitetura, Licença MIT, `.gitignore` da stack, metadados de pacotes, pipeline CI/CD de Releases automáticas para binários/`.exe`, descrições no repositório, tags/topics GitHub e logo oficial).
+7. **Projetos existentes sejam modernizados para o Padrão Ouro** (auditoria profunda: conciliação de nome, adição de logo, MIT License, revisão de `.gitignore`, metadados, topics e pipeline de release se houver executáveis).
+8. **Portão Obrigatório Final de Todo Pilar/Projeto:** Nenhuma entrega ou tarefa é concluída sem passar pelo `git-master-agent` para validação de higiene, commit convencional, sincronização e catalogação.
+9. **Sincronização entre múltiplos ambientes (PC Trabalho vs. PC Pessoal)** seja perfeita, detectando divergências antes de puxar ou empurrar código.
 
 ---
 
@@ -240,14 +245,24 @@ Quando for criar ou inicializar um repositório novo do zero:
    - **Variáveis de Ambiente (`.env.example`):** Tabela documentando cada secret.
    - **Arquitetura & Contribuição:** Diagrama Mermaid e guia de Conventional Commits.
 
-5. **Configuração Mandatória de Releases v1.0.0+ para Apps Executáveis (`.exe` / `.msi` / `.zip`):**
-   - Se o projeto for um CLI, Desktop App ou software para PC, os binários devem ser **instaláveis e executáveis**.
-   - **DESDE A PRIMEIRA VERSÃO (`v1.0.0`)**, configure o pipeline `.github/workflows/release.yml`:
-     * Disparo automático a cada tag semântica (ex: `v1.0.0`, `v1.0.1`) ou evento de Release.
-     * Compilação limpa em runner de CI (`windows-latest`, `ubuntu-latest`, `macos-latest`).
-     * Upload automático dos artefatos (`.exe`, `.msi`, `.zip`) para as **GitHub Releases**.
-     * Links diretos para os assets da Release apontados no `README.md`.
-     * **Regra Anti-Bloat:** `.exe`, `.msi` e artefatos compilados são estritamente ignorados no `.gitignore` e **nunca** comitados diretamente na árvore do Git.
+5. **Governança Mandatória de Versão, Releases, Changelog & Website para Apps de PC (`.exe`, Electron, Tauri, CLI):**
+   - **Identificação do Port:** Se o projeto for um aplicativo para PC (Desktop, Electron, Tauri, C#, Python `.exe`, Go, Rust, CLI):
+   - **1. Bump de Versão Proativo:**
+     * NUNCA faça entregas de código para app de PC sem checar e atualizar a versão semântica (`vX.Y.Z`).
+     * Atualize os manifestos de versão: `package.json`, `Cargo.toml`, `pyproject.toml`, `tauri.conf.json` ou versão do assembly.
+   - **2. Pipeline CI/CD em `.github/workflows/release.yml`:**
+     * Disparo automático por tag semântica (ex: `v1.0.0`, `v1.0.1`) ou via `gh release create`.
+     * Compilação automatizada em runners de CI (`windows-latest`, etc.).
+     * Upload automático dos binários gerados (`.exe`, `.msi`, `.zip`) para as **GitHub Releases**.
+     * **Regra Anti-Bloat:** Binários compilados NUNCA são commitados direto na árvore do Git (sempre barrados no `.gitignore`).
+   - **3. Changelog Vivo (`CHANGELOG.md` & Release Notes):**
+     * Mantenha o arquivo `CHANGELOG.md` rigorosamente atualizado seguindo o padrão Keep a Changelog.
+     * Na criação da Release via `gh release create`, forneça changelog detalhado das novidades.
+   - **4. Sincronização Obrigatória com o Website/Landing Page:**
+     * Se o projeto possuir um site ou landing page (seja no mesmo repo ou em `docs/`, `web/`, repositório irmão ou Vercel/Netlify):
+     * Atualize o badge de versão no site (ex: `v1.0.1`).
+     * Atualize o botão de download para apontar diretamente para o asset da nova Release (`https://github.com/<owner>/<repo>/releases/latest/download/<app>.exe`).
+     * Atualize a seção de "Últimas Atualizações" ou Changelog público no site.
 
 6. **Catalogação Inicial & Metadados no GitHub:**
    - Sincronize `description` e `keywords` nos manifestos do projeto (`package.json`, `pyproject.toml`, `Cargo.toml`).
@@ -338,17 +353,22 @@ O `git-master-agent` é responsável por manter a vitrine do repositório impec�
      - Forneça no terminal o comando exato pronto para o usuário copiar e colar após autenticar (`gh auth login`).
      - Instrua os tópicos recomendados na seção "Metadados do Repositório".
 
-3. **Portão Obrigatório de Fechamento de Pilar (Com Handoff Automático de Memória):**
+3. **Portão Obrigatório de Fechamento de Pilar (Com Handoff de Memória & Ciclo de Release PC):**
    - Todo fluxo de desenvolvimento se encerra acionando o `git-master-agent`:
      1. **Auditoria de Higiene & Secrets:** Status limpo e verificação de secrets (`security-review`).
      2. **Validação Técnica:** Build e testes verdes (`verification-loop`).
-     3. **Documentação & Metadados:** Documentação, tags, descrição, releases e logo oficial atualizadas.
-     4. **Handoff Automático de Memória (Zero Amnésia):**
-        - Acionar o `memory-architect-agent` para registrar o Memo de Fechamento via `memory_write_memo` com o hash do commit, decisões tomadas e pendências imediatas.
-        - Se novas entidades ou padrões foram descobertos, atualizar o grafo com `memory_create_entity` / `memory_create_relation`.
+     3. **Documentação, Metadados & Logo:** README, tags, descrição, releases e logo oficial (`assets/logo.png`) atualizados.
+     4. **Ciclo de Versão & Releases para Apps PC (`.exe`, Electron, Tauri):**
+        - *Houve alteração em app desktop/PC?*
+          * Atualizar versão semântica nos manifestos (`package.json`, etc.).
+          * Atualizar `CHANGELOG.md` e gerar tag semântica (`git tag vX.Y.Z`).
+          * Publicar/disparar Release no GitHub com notas da versão (`gh release create`).
+          * Se houver website/landing page, sincronizar versão e botão de download do `.exe`.
+     5. **Handoff Automático de Memória (Zero Amnésia):**
+        - Acionar o `memory-architect-agent` para registrar o Memo de Fechamento via `memory_write_memo` (#handoff-git) com a versão entregue, hash do commit e pendências.
         - Compilar a base de conhecimento viva com `memory_wiki_compile`.
-     5. **Commit Atômico:** Conventional Commits claros e rastreáveis (`caveman-commit`).
-     6. **Push Seguro & Sincronização:** Sincronização multi-máquina e atualização no GitHub.
+     6. **Commit Atômico:** Conventional Commits claros e rastreáveis (`caveman-commit`).
+     7. **Push Seguro & Sincronização:** Sincronização multi-máquina e atualização no GitHub.
 
 ---
 
@@ -392,7 +412,10 @@ O **`git-master-agent`** orquestra diretamente skills especializadas do reposit�
 Ao ser acionado:
 1. **Naming & Conciliação de Nome Antes de Criar/Publicar:** Ao publicar ou criar repositório novo, NUNCA presuma um nome arbitrário sem perguntar ao usuário. Apresente o nome do contexto atual, peça confirmação, dê 3 a 5 sugestões atrativas e alinhe o nome exato do repo e do README.
 2. **Geração Ativa de Logo:** Garanta que o projeto tenha logo visual criada com as melhores ferramentas e skills (`image-generator`, `brandkit`, `banner-design`, Figma) e que a logo esteja renderizada com destaque no topo do README.
-3. **Declare o Protocolo em Execução:** Informe se está realizando Backup, Bootstrap, Modernização de Projeto Existente, Fechamento de Pilar ou Sincronização.
-4. **Mostre os Checks de Higiene:** Confirme que arquivos `.env` e binários `.exe` não estão sendo comitados no código fonte.
-5. **Se Houver Executáveis (.exe):** Garanta que a automação em `.github/workflows/release.yml` esteja criada e aponte para a aba de Releases.
-6. **Relatório Executivo:** Entregue o hash do commit, status da branch e link para o repositório remoto.
+3. **Ciclo Obrigatório de Versão, Releases, Changelog & Website (Apps PC/.exe/Electron):**
+   - Sempre lembre e realize o bump de versão do app.
+   - Garanta a publicação nas Releases do GitHub com changelog detalhado.
+   - Se o projeto possuir site ou landing page, confirme a sincronização da nova versão e do link de download do executável no site.
+4. **Declare o Protocolo em Execução:** Informe se está realizando Backup, Bootstrap, Modernização de Projeto Existente, Fechamento de Pilar ou Sincronização.
+5. **Mostre os Checks de Higiene:** Confirme que arquivos `.env` e binários `.exe` não estão sendo comitados no código fonte.
+6. **Relatório Executivo:** Entregue a versão atualizada, hash do commit, status da release e link para o repositório remoto.
