@@ -10,7 +10,7 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 | Agente | Arquivo | Descrição |
 | :--- | :--- | :--- |
-| 👑 **`global-master-agent`** (Agente Global Supremo) | [`global-master-agent.md`](global-master-agent.md) | **Ponto único de comando e entrada.** Você só precisa chamar ele: ele orquestra nos bastidores todos os outros 13 agentes e as 658 skills do repositório. |
+| 👑 **`global-master-agent`** (Agente Global Supremo) | [`global-master-agent.md`](global-master-agent.md) | **Ponto único de comando e entrada.** Você só precisa chamar ele: ele orquestra nos bastidores todos os outros 14 agentes e as 658 skills do repositório. |
 | 📋 **`planning-master-agent`** (Mestre de Planejamento) | [`planning-master-agent.md`](planning-master-agent.md) | **CPO e Staff Program Manager.** Sabatina implacável, decomposição atômica de tarefas, grafo de dependências (DAG), análise de riscos (Pre-Mortem) e critérios de aceite testáveis. |
 | 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 658 skills (688 globais). Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
 | 🧠 **`memory-architect-agent`** (Arquiteto de Memória & Contexto) | [`memory-architect-agent.md`](memory-architect-agent.md) | **Governança de Memória e Continuidade Persistente.** Resgate de decisões históricas, handoffs entre sessões, manutenção contínua da Wiki, auto-auditoria com `memory_lint` e persistência sem perda de contexto usando as 23 ferramentas do MCP `ai-memory`. |
@@ -23,6 +23,7 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 | 🤖 **`ai-engineer-agent`** (Engenheiro de IA & Agentes) | [`ai-engineer-agent.md`](ai-engineer-agent.md) | Desenvolvimento de agentes autônomos, Vercel AI SDK (`ai-sdk`), servidores MCP, saídas estruturadas tipadas (TypeSafe AI) e RAG sem alucinação. |
 | 📈 **`growth-marketing-agent`** (Estrategista de Growth) | [`growth-marketing-agent.md`](growth-marketing-agent.md) | SEO técnico, AI-SEO generativo, CRO, onboarding, pricing, paywalls, suíte Instagram Marketing, Buffer e campanhas multicanal de lançamento. |
 | 🎬 **`video-producer-agent`** (Produtor de Vídeos Remotion) | [`video-producer-agent.md`](video-producer-agent.md) | Produção programática de vídeos com React/Remotion, kinetic typography, legendas automáticas, áudio sincronizado, slides e teasers de SaaS. |
+| 📱 **`social-publisher-agent`** (Especialista em Social Media & Demo) | [`social-publisher-agent.md`](social-publisher-agent.md) | Captura de telas 4K (`chrome-devtools`, `playwright`, `desktop-commander`), mockups 3D (`shots-studio`), copywriting de engenharia anti-slop, decisões estruturadas (`typesafe-ai`) e agendamento/publicação no Instagram e LinkedIn via Buffer MCP. |
 | 🐙 **`github-profile-agent`** (Especialista em Perfil do GitHub) | [`github-profile-agent.md`](github-profile-agent.md) | Otimização do perfil público (`username/username`), README dinâmico, banners personalizados, métricas em tempo real e curadoria de pinned repos. |
 
 ---
@@ -50,6 +51,7 @@ flowchart TD
     ORCH <--> GROWTH["📈 growth-marketing-agent"]
     ORCH <--> VIDEO["🎬 video-producer-agent"]
     ORCH <--> PROFILE["🐙 github-profile-agent"]
+    ORCH <--> SOCIAL["📱 social-publisher-agent"]
 
     %% Camada 2: Execução Direta + Consulta ao Hub
     UI -.->|Consulta Transversal| ORCH
