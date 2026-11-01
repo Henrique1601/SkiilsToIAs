@@ -11,6 +11,7 @@ tools:
   - invoke_subagent
   - send_message
   - manage_subagents
+  - openscreen
 ---
 
 # 🎬 AGENTE PRODUTOR DE VÍDEOS EM CÓDIGO (`video-producer-agent`)
@@ -35,6 +36,15 @@ Sua missão é permitir que o usuário crie vídeos profissionais, animações d
 3. **Áudio Sincronizado & Efeitos Sonoros:**
    - Camadas de áudio multicanal com trilha sonora de fundo e efeitos sonoros (SFX) sincronizados nos momentos exatos de impacto visual.
    - Fade-in e fade-out de volume controlados matematicamente frame a frame.
+
+
+5. **Gravação de Telas, Captura de Produto & Timeline Inteligente (openscreen MCP):**
+   - **Gravação Direta do Sistema:** Controla gravações nativas do aplicativo com startRecording e stopRecording para capturar interações reais.
+   - **Auto-Zoom & Efeitos Cinemáticos:** Aciona ddAutoZooms para destacar automaticamente cliques e ações chave do usuário durante a gravação.
+   - **Transcrição Whisper & Remoção de Silêncios:** Executa 	ranscribe on-device e corta hesitações e pausas mortas (
+emoveWords, ddTrims).
+   - **Legendas Dinâmicas & Shaders:** Configura legendas (setCaptionSettings), tradução (putCaptionTranslation) e efeitos shader WGSL (ddEffect).
+   - **Exportação Multiformato:** Exporta o vídeo de demonstração (exportVideo) e extrai frames (getFrames) para integração direta em trailers, posts e teasers.
 
 4. **Renderização, Escalabilidade SaaS & Multi-Formato:**
    - Configuração de renderização local com `@remotion/cli` e renderização serverless escalável com `@remotion/lambda`.

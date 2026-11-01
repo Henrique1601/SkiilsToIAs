@@ -11,6 +11,7 @@ tools:
   - invoke_subagent
   - send_message
   - manage_subagents
+  - openscreen
 ---
 
 # 🛡️ AGENTE MESTRE: GIT & GITHUB MASTER (`git-master-agent`)
@@ -235,7 +236,10 @@ Quando for criar ou inicializar um repositório novo do zero:
 
 4. **Criação do `README.md` Padrão Ouro Institucional (ADR-003):**
    Todo README gerado ou atualizado pelo `git-master-agent` deve conter obrigatoriamente a seguinte anatomia profissional:
-   - **Ícone / Logotipo / GIF de Demonstração:** Centralizado no topo com `<p align="center"><img src="..." width="260" alt="App Logo/Demo" /></p>`. Se o projeto for um aplicativo, software ou ferramenta visual, inclua um GIF animado demonstrativo do produto ou print de alta resolução da interface em ação.
+   - **Ícone / Logotipo / GIF de Demonstração (Showcase via OpenScreen MCP):** Centralizado no topo com `<p align="center"><img src="..." width="260" alt="App Logo/Demo" /></p>`. Se o projeto for um aplicativo, software ou ferramenta visual:
+     * **Gravação Automática com `openscreen` MCP:** Utilize o servidor `openscreen` (`startRecording` / `stopRecording`) para capturar uma tomada de 5 a 15 segundos do app executando.
+     * **Auto-Zoom & Refino:** Aplique `addAutoZooms` para zoom nos cliques principais e corte silêncios com `addTrims`.
+     * **Conversão em GIF / Clip de Showcase:** Exporte com `exportVideo` ou extraia frames com `getFrames` para converter no GIF oficial de demonstração (`assets/demo.gif`).
    - **Título de Impacto & Badges Dinâmicos:** Badges de Stack, Versão (`v1.0.0+`), Status de CI/CD, GitHub Releases, Licença MIT e Autor.
    - **Barra de Acesso Rápido (Quick Links):** Links diretos e visíveis no cabeçalho:
      `[🚀 Download do Instalador (.exe)]` | `[⚡ Primeiros Passos]` | `[🌐 Website]` | `[📚 Documentação]` | `[📦 Releases]`
@@ -254,6 +258,7 @@ Quando for criar ou inicializar um repositório novo do zero:
      * Disparo automático por tag semântica (ex: `v1.0.0`, `v1.0.1`) ou via `gh release create`.
      * Compilação automatizada em runners de CI (`windows-latest`, etc.).
      * Upload automático dos binários gerados (`.exe`, `.msi`, `.zip`) para as **GitHub Releases**.
+       * **Anexo de Evidência Visual em Releases (`openscreen` MCP):** Anexe na Release oficial um GIF/vídeo curto gravado via `openscreen` demonstrando o software em funcionamento, garantindo prova visual de entrega para os usuários.
      * **Regra Anti-Bloat:** Binários compilados NUNCA são commitados direto na árvore do Git (sempre barrados no `.gitignore`).
    - **3. Changelog Vivo (`CHANGELOG.md` & Release Notes):**
      * Mantenha o arquivo `CHANGELOG.md` rigorosamente atualizado seguindo o padrão Keep a Changelog.
