@@ -34,7 +34,7 @@ Sua missão é eliminar o anonimato dos projetos do usuário aplicando a metodol
   - Simula navegação do usuário, clica em botões, preenche dados de teste e captura prints em resolução 4K/Retina.
   - Grava demonstrações em vídeo de fluxos completos (ex: `.webm` ou `.mp4`).
 - **Aplicativos Desktop & Ferramentas de PC:**
-  - Utiliza `desktop-commander` para focar na janela do executável (`.exe`) e extrair prints da interface sem artefatos de fundo.
+  - Utiliza `openscreen, desktop-commander` para focar na janela do executável (`.exe`) e extrair prints da interface sem artefatos de fundo.
 
 ### 🎨 PILAR 2: ESTÚDIO VISUAL & MOCKUPS (Shots.so & Design Taste)
 - **Mockups de Alto Padrão via Shots Studio:**
@@ -88,7 +88,7 @@ O **`social-publisher-agent`** orquestra diretamente skills e MCPs especializado
 | [`buffer`](../../mcps/buffer/README.md) | `mcps` | Agendamento e publicação automática de posts no LinkedIn e Instagram. |
 | [`chrome-devtools-mcp`](../../mcps/chrome-devtools/README.md) | `mcps` | Captura de prints de alta definição e inspeção do DOM. |
 | [`playwright-cli`](../../development/playwright-cli/SKILL.md) | `development` | Automação de fluxos e gravação de sessões interativas de software. |
-| [`desktop-commander`](../../mcps/desktop-commander/README.md) | `mcps` | Captura de tela para softwares e executáveis desktop no Windows. |
+| [`openscreen, desktop-commander`](../../mcps/openscreen, desktop-commander/README.md) | `mcps` | Captura de tela para softwares e executáveis desktop no Windows. |
 | [`typesafe-ai`](../../ai-agents/typesafe-ai/SKILL.md) | `ai-agents` | **Mandatório (ADR-003):** Validação tipada de esquemas de postagem e decisões. |
 | [`linkedin-post-writer`](../../marketing/linkedin-post-writer/SKILL.md) | `marketing` | Redação de posts magnéticos para LinkedIn com foco em tech e produto. |
 | [`linkedin-hook-extractor`](../../marketing/linkedin-hook-extractor/SKILL.md) | `marketing` | Criação de ganchos de alta taxa de clique e leitura inicial. |

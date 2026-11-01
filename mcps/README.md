@@ -50,6 +50,7 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 🎧 [**`spotify`**](spotify/README.md) | **Stdio** (Local `uv`) | `spotify-mcp` | Controle completo do player Spotify, descoberta de faixas e manipulação de playlists via API Web. |
 | 📐 [**`drawio`**](drawio/README.md) | **Stdio** (Local) | `@next-ai-drawio/mcp-server@latest` | Criação, renderização e edição programática de diagramas de arquitetura, UML e fluxogramas no Draw.io. |
 | 💼 [**`mcp-server-linkedin`**](linkedin/README.md) | **Stdio** (Local `uvx`) | `mcp-server-linkedin@latest` | Publicação de posts profissionais, agendamento de artigos e gestão de presença executiva no LinkedIn. |
+| 🎥 [**openscreen**](openscreen/README.md) | **Streamable HTTP** (Local SSE) | http://127.0.0.1:47821/mcp | Gravação inteligente de tela, timeline não-linear, transcrição on-device Whisper, auto-zoom em cliques, remoção de silêncios/pausas, legendas automáticas e exportação de vídeos. |
 
 ---
 
