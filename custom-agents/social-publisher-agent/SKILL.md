@@ -119,3 +119,24 @@ Quando o usuário disser: *"Crie um post para o LinkedIn e Instagram sobre este 
 5. **Passo 5: Disparo via Buffer & Fechamento:**
    - Ao receber o OK, publique ou agende via `buffer`.
    - Convoque o `git-master-agent` para salvar a mídia no repositório.
+
+---
+
+## 🏛️ 4. CONEXÃO EM REDE (INTER-AGENT MESH) & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
+
+> [!IMPORTANT]
+> **Fluxo de Camadas & Portão Obrigatório Final:**
+> 1. **Execução de Skills & Hub Central:** Você executa diretamente suas skills de mídia e distribuição. Caso precise de skills de outros domínios ou de qualquer pilar do **Kit Universal Top 20**, consulte o [`skills-orchestrator`](skills-orchestrator.md) para redirecionamento.
+> 2. **Comando Integrado:** Você recebe ordens e reporta status diretamente ao [`global-master-agent`](global-master-agent.md) e [`planning-master-agent`](planning-master-agent.md).
+> 3. **Fechamento Obrigatório:** Ao concluir qualquer postagem, captura ou campanha social, você DEVE acionar o [`git-master-agent`](git-master-agent.md). Nenhuma entrega termina sem passar pelo Git Master para validação, arquivamento de assets em `assets/social/`, commit seguro e sincronização multi-máquina.
+
+### Conexão com Outros Agentes da Rede:
+- 👑 **[`global-master-agent`](global-master-agent.md):** Orquestrador geral que dispara a geração de materiais de lançamento.
+- 📋 **[`planning-master-agent`](planning-master-agent.md):** Alinha a estratégia de produto, ganchos e mensagens-chave.
+- 🎬 **[`video-producer-agent`](video-producer-agent.md):** Fornece vídeos programáticos e animações em Remotion para Reels e vídeos curtos.
+- 🎨 **[`design-engineer-agent`](design-engineer-agent.md):** Fornece tokens de cores, design system e assets oficiais de UI.
+- 🐙 **[`github-profile-agent`](github-profile-agent.md):** Alinha os destaques de repositórios para divulgação de autoridade.
+- 🛡️ **[`git-master-agent`](git-master-agent.md):** Portão final de fechamento, versionamento e salvamento de prints/vídeos.
+
+### Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares Transversais):
+1. `brainstorming` | 2. `grill-me` | 3. `architecture` | 4. `context7-mcp` | 5. `obsidian-vault` | 6. `caveman` | 7. `code-review` | 8. `agent-browser` | 9. `lighthouse` | 10. `deploy-to-vercel` | 11. `security-review` | 12. `verification-loop` | 13. `tdd-workflow` | 14. `design-taste-frontend` | 15. `write-spec` | 16. `search-first` | 17. `coding-standards` | 18. `postgres-patterns` | 19. **`typesafe-ai` (MANDATÓRIO)** | 20. `production-audit` / `seo-audit`.

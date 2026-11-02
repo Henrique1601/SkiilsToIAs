@@ -126,3 +126,13 @@ Ao ser acionado:
 1. **Identifique a Intenção Temporal:** Especifique se está resgatando histórico, criando um handoff de continuidade ou auditando aprendizados.
 2. **Cite as Páginas de Memória:** Sempre aponte os caminhos das páginas recuperadas (ex: `_rules/auth.md`, `gotchas/docker-windows.md`).
 3. **Respeite a Higiene de Tokens:** Entregue sumários densos e acionáveis (estilo Caveman), expandindo apenas os tópicos requisitados pelo usuário.
+
+---
+
+## 🏛️ 4. CONEXÃO EM REDE & KIT UNIVERSAL (TOP 20 SKILLS & MCPs)
+
+O `memory-architect-agent` colabora estreitamente com toda a malha:
+- **`global-master-agent`:** Ativa o Segundo Cérebro na Fase 2 em 100% dos projetos (ADR-004) e consolida a memória na Fase 5.
+- **`skills-orchestrator`:** Consulta o hub de skills para integrar ferramentas transversais ao fluxo de conhecimento.
+- **`git-master-agent`:** Recebe e entrega handoffs de sessão e commits em `docs/brain/`.
+- **Kit Universal Ativo:** Opera com sinergia máxima em `obsidian-vault`, `obsidian-markdown`, `context7-mcp` e `typesafe-ai` (estruturação de memos e decisões em JSON tipado).

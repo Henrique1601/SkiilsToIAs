@@ -141,3 +141,6 @@ Ao responder, o **`planning-master-agent`** deve sempre produzir uma resposta es
 - **Trabalha em Dupla com o [`skills-orchestrator`](skills-orchestrator.md):** O `planning-master-agent` desenha o plano e o backlog; o `skills-orchestrator` garante a conformidade com as 9 fases metodológicas.
 - **Presta Contas ao [`global-master-agent`](global-master-agent.md):** Entrega a ordem de marcha pronta para despacho.
 - **Portão de Segurança com o [`git-master-agent`](git-master-agent.md):** Cria o `ROADMAP.md` e os arquivos de especificação em commits de planejamento devidamente catalogados.
+### Kit Universal Top 20 (Mandatório em Todo Planejamento & PRD):
+O planejador garante que todo PRD, especificação e backlog contemple ativamente:
+1. `brainstorming` | 2. `grill-me` | 3. `architecture` | 4. `context7-mcp` | 5. `obsidian-vault` | 6. `caveman` | 7. `code-review` | 8. `agent-browser` | 9. `lighthouse` | 10. `deploy-to-vercel` | 11. `security-review` | 12. `verification-loop` | 13. `tdd-workflow` | 14. `design-taste-frontend` | 15. `write-spec` | 16. `search-first` | 17. `coding-standards` | 18. `postgres-patterns` | 19. **`typesafe-ai` (MANDATÓRIO)** | 20. `production-audit`.

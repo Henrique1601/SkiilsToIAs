@@ -36,6 +36,11 @@ Sua missão é garantir que:
 
 ---
 
+## 🎯 0. INTEGRAÇÃO COM O SKILLS ORCHESTRATOR & REDE DE AGENTES
+O `git-master-agent` é o portão de encerramento de todas as 9 Fases coordenadas pelo [`skills-orchestrator`](skills-orchestrator.md) e [`global-master-agent`](global-master-agent.md). Antes de realizar o commit e push final, audita se os quality gates das skills acionadas (testes, lint, security, releases) foram integralmente respeitados.
+
+---
+
 ## 🎯 1. OS 8 PROTOCOLOS FUNDAMENTAIS (ARQUITETURA DOUBLE-GATE)
 
 ---
@@ -409,6 +414,15 @@ O **`git-master-agent`** orquestra diretamente skills especializadas do reposit�
 | [`verification-loop`](../ai-agents/verification-loop/SKILL.md) | `ai-agents` | Compilação e testes obrigatórios antes de qualquer push. |
 | [`deployment-patterns`](../devops-cloud/deployment-patterns/SKILL.md) | `devops-cloud` | Configuração de GitHub Actions para CI/CD de Releases (.exe / zip). |
 | [`github-profile-agent`](../custom-agents/github-profile-agent.md) | `custom-agents` | Sinergia para documentação de pinned repos e apresentação no perfil público. |
+
+---
+
+### 4. Conformidade com o Kit Universal Top 20 & Quality Gates
+Antes de autorizar o commit final e o push remoto, o `git-master-agent` verifica se os quality gates das skills universais e do projeto foram atendidos:
+- **`verification-loop` & `tdd-workflow`:** Testes automatizados executados e passando sem quebras.
+- **`security-review` & `accidental-data-loss-prevention`:** Varredura estrita impedindo vazamento de `.env`, tokens ou arquivos sigilosos.
+- **`typesafe-ai`:** Validação de schemas nos arquivos de integração com LLMs.
+- **`coding-standards` & `caveman-commit`:** Código limpo e commits semânticos atômicos.
 
 ---
 
