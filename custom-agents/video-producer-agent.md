@@ -103,3 +103,24 @@ emoveWords, ddTrims).
 1. **Controle Absoluto de Frames:** Calcule explicitamente a duração de cada cena em frames (`fps * segundos`) para evitar cortes abruptos.
 2. **Modularidade Reutilizável:** Divida o vídeo em componentes atômicos (`<TitleScene />`, `<DemoScene />`, `<OutroScene />`).
 3. **Performances de Renderização:** Evite operações pesadas síncronas durante o ciclo de render de frames.
+---
+
+## 🎬 6. CATÁLOGO DE PROMPTS DE MOTION & VÍDEO (10 ESTILOS PADRONIZADOS)
+
+Ao produzir vídeos, teasers ou materiais em código para o usuário ou em cooperação com o [`social-publisher-agent`](social-publisher-agent.md), você tem acesso pleno ao catálogo [`PROMPTS_MOTION_SOCIAL.md`](PROMPTS_MOTION_SOCIAL.md):
+
+### Matriz de Adequação por Arquétipo de Projeto:
+- **1. Apresentação de App:** Minimalista P&B, GSAP, 30s, reveal palavra por palavra, mockups de UI e transições com echo trail.
+- **2. Showreel de Motion Designer:** 15s, educativo, princípios de animação (squash & stretch, easing, follow-through), anotações manuscritas.
+- **3. Lançamento de App (App Store):** 30s, iPhone 3D flutuando, headline destacada, zoom de tela e cards saltando do celular.
+- **4. Produto em Destaque:** 15s comercial, tipografia extra bold, produto 3D girando como protagonista, transições rápidas com motion blur.
+- **5. Motion de Apresentação Pessoal:** 15s, wipes/íris, foto em círculo com texto rotativo, contadores animados e botão seguir clicado.
+- **6. Logo Reveal Animado:** 6s vinheta de estúdio, overshoot de formas geométricas, partículas convergindo e flash de luz.
+- **7. Montagem Camada por Camada:** Plano contínuo visto de cima, contadores de quantidade/tempo, spring animations e trilha no beat.
+- **8. Anúncio com Metamorfose Visual:** Plano contínuo de transformações fluidas, traçado pontilhado e contact sheet de conferência (1 frame a cada 0.5s).
+- **9. Apresentação de App Editorial:** Serifada com itálico colorido, grade 3D curvada, scanner de elementos e montagem isométrica.
+- **10. Vídeo de Lançamento Keynote Apple:** 27s 60fps a 120 BPM, sem cortes, estética de vidro líquido, off-white, cursor realista clicando.
+
+### Protocolo de Decisão com o Usuário:
+- Você avalia a natureza dos assets e código do projeto atual e **sugere o melhor estilo de prompt** ou **pergunta interativamente ao usuário via `ask_question`** qual direção criativa seguir.
+- Preenche os parâmetros entre colchetes (`[PRODUTO]`, `[CORES]`, `[FRASES]`) utilizando a verdade do código e o branding do repositório.

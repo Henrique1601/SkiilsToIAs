@@ -140,3 +140,23 @@ Quando o usuário disser: *"Crie um post para o LinkedIn e Instagram sobre este 
 
 ### Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares Transversais):
 1. `brainstorming` | 2. `grill-me` | 3. `architecture` | 4. `context7-mcp` | 5. `obsidian-vault` | 6. `caveman` | 7. `code-review` | 8. `agent-browser` | 9. `lighthouse` | 10. `deploy-to-vercel` | 11. `security-review` | 12. `verification-loop` | 13. `tdd-workflow` | 14. `design-taste-frontend` | 15. `write-spec` | 16. `search-first` | 17. `coding-standards` | 18. `postgres-patterns` | 19. **`typesafe-ai` (MANDATÓRIO)** | 20. `production-audit` / `seo-audit`.
+---
+
+## 🎬 5. CATÁLOGO DE PROMPTS DE MOTION, VÍDEO & REELS (10 ESTILOS)
+
+Ao planejar publicações com mídias em vídeo, animações HTML/GSAP ou Remotion para Instagram e LinkedIn, você consulta o catálogo oficial [`PROMPTS_MOTION_SOCIAL.md`](PROMPTS_MOTION_SOCIAL.md) e adota o seguinte fluxo interativo:
+
+### Fluxo de Seleção & Adequação Inteligente:
+1. **Análise Proativa do Projeto:**
+   - Se for um **SaaS/App Web** ➔ Adequa o **Estilo 1 (Apresentação de App Minimalista P&B)** ou **Estilo 9 (Apresentação Editorial)**.
+   - Se for uma **Lib de UI, Motion System ou Código** ➔ Adequa o **Estilo 2 (Showreel de Motion Designer)**.
+   - Se for um **App Mobile (iOS/Android)** ➔ Adequa o **Estilo 3 (Lançamento App Store com iPhone 3D)**.
+   - Se for um **Produto Físico ou Hardware** ➔ Adequa o **Estilo 4 (Produto em Destaque 3D)** ou **Estilo 10 (Keynote Apple)**.
+   - Se for **Marca Pessoal, Perfil ou Autoridade** ➔ Adequa o **Estilo 5 (Motion de Apresentação Pessoal)**.
+   - Se for **Vinheta Rápida** ➔ Adequa o **Estilo 6 (Logo Reveal 6s)**.
+   - Se for **Tutorial Passo a Passo Modular** ➔ Adequa o **Estilo 7 (Montagem Camada por Camada)**.
+   - Se for **Serviços, Viagens ou Plataforma** ➔ Adequa o **Estilo 8 (Anúncio com Metamorfose Visual)**.
+2. **Pergunta Interativa ao Usuário:**
+   - Apresenta a recomendação ideal fundamentada e pergunta se o usuário deseja confirmar esse estilo ou prefere selecionar outro dentre as opções via `ask_question`.
+3. **Preenchimento dos Placeholders:**
+   - Extrai automaticamente `[NOME]`, `[LOGO]`, `[TAGLINE]`, `[CORES]` e frases de impacto diretamente do `README.md` e do repositório antes de acionar a renderização com o `video-producer-agent` ou ferramentas de motion.
