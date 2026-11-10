@@ -50,6 +50,7 @@ Independentemente do tipo de projeto (SaaS, Mobile, IA, API, Landing Page, Micro
 | **18** | 🗄️ **Postgres & Migrations** | [`postgres-patterns`](../backend-database/postgres-patterns/SKILL.md), [`database-migrations`](../backend-database/database-migrations/SKILL.md) | `supabase`, `Neon` MCPs | Modelagem relacional com RLS ativa, indexação estratégica e migrações seguras zero-downtime com rollback. |
 | **19** | 🤖 **TypeSafe & Cost-Aware AI** | [`typesafe-ai`](../ai-agents/typesafe-ai/SKILL.md), [`cost-aware-llm-pipeline`](../ai-agents/cost-aware-llm-pipeline/SKILL.md) | `gemini-api-docs` MCP | Saídas de IA estritamente validadas (Zod/JSON Schema), roteamento inteligente de modelos e economia de tokens. |
 | **20** | 🚀 **Production & SEO Audit** | [`production-audit`](../devops-cloud/production-audit/SKILL.md), [`seo-audit`](../seo/seo-audit/SKILL.md), [`ai-seo`](../seo/ai-seo/SKILL.md) | — | Checklist completo pré/pós-lançamento: variáveis de ambiente, HTTPS, headers, OpenGraph, sitemap e indexação orgânica/generativa. |
+| **21** | 🪚 **Ponytail** | [`ponytail`](../ai-agents/ponytail/SKILL.md), [`ponytail-review`](../ai-agents/ponytail-review/SKILL.md), [`ponytail-audit`](../ai-agents/ponytail-audit/SKILL.md) | `ponytail` | **MANDATÓRIO EM 100% DOS PROJETOS:** Anti-overengineering permanente. Prioriza soluções nativas, corta boilerplate e impede adição de dependências supérfluas. |
 
 ---
 

@@ -139,7 +139,7 @@ Quando o usuário disser: *"Crie um post para o LinkedIn e Instagram sobre este 
 - 🛡️ **[`git-master-agent`](git-master-agent.md):** Portão final de fechamento, versionamento e salvamento de prints/vídeos.
 
 ### Kit Universal Obrigatório Sempre Ativo (Top 20 Pilares Transversais):
-1. `brainstorming` | 2. `grill-me` | 3. `architecture` | 4. `context7-mcp` | 5. `obsidian-vault` | 6. `caveman` | 7. `code-review` | 8. `agent-browser` | 9. `lighthouse` | 10. `deploy-to-vercel` | 11. `security-review` | 12. `verification-loop` | 13. `tdd-workflow` | 14. `design-taste-frontend` | 15. `write-spec` | 16. `search-first` | 17. `coding-standards` | 18. `postgres-patterns` | 19. **`typesafe-ai` (MANDATÓRIO)** | 20. `production-audit` / `seo-audit`.
+1. `brainstorming` | 2. `grill-me` | 3. `architecture` | 4. `context7-mcp` | 5. `obsidian-vault` | 6. `caveman` | 7. `code-review` | 8. `agent-browser` | 9. `lighthouse` | 10. `deploy-to-vercel` | 11. `security-review` | 12. `verification-loop` | 13. `tdd-workflow` | 14. `design-taste-frontend` | 15. `write-spec` | 16. `search-first` | 17. `coding-standards` | 18. `postgres-patterns` | 19. **`typesafe-ai` (MANDATÓRIO) | 21. `ponytail` (Anti-Overengineering Mandatório)** | 20. `production-audit` / `seo-audit`.
 ---
 
 ## 🎬 5. CATÁLOGO DE PROMPTS DE MOTION, VÍDEO & REELS (10 ESTILOS)
