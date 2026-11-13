@@ -167,6 +167,10 @@ DEFAULT_MCPS = {
         "headers": {
             "Authorization": "Bearer "
         }
+    },
+    "botprogracraft": {
+        "command": "node",
+        "args": ["C:/Users/Public/Downloads/BotPrograCraft/packages/mcp-server/dist/index.js"]
     }
 }
 

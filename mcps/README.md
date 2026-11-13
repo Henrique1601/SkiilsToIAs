@@ -51,6 +51,7 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 📐 [**`drawio`**](drawio/README.md) | **Stdio** (Local) | `@next-ai-drawio/mcp-server@latest` | Criação, renderização e edição programática de diagramas de arquitetura, UML e fluxogramas no Draw.io. |
 | 💼 [**`mcp-server-linkedin`**](linkedin/README.md) | **Stdio** (Local `uvx`) | `mcp-server-linkedin@latest` | Publicação de posts profissionais, agendamento de artigos e gestão de presença executiva no LinkedIn. |
 | 🎥 [**openscreen**](openscreen/README.md) | **Streamable HTTP** (Local SSE) | http://127.0.0.1:47821/mcp | Gravação inteligente de tela, timeline não-linear, transcrição on-device Whisper, auto-zoom em cliques, remoção de silêncios/pausas, legendas automáticas e exportação de vídeos. |
+| 🤖 **`botprogracraft`** | **Stdio** (Local Node) | `C:/Users/Public/Downloads/BotPrograCraft/packages/mcp-server/dist/index.js` | Servidor MCP Stdio do **BotPrograCraft** (`@botprogracraft/mcp-server`) que expõe contexto ao vivo da IDE, frames de tela, prompts de tutor e progresso de aprendizado. |
 
 ---
 
