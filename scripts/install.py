@@ -161,6 +161,12 @@ DEFAULT_MCPS = {
         "command": "uvx",
         "args": ["mcp-server-linkedin@latest"],
         "env": {"UV_HTTP_TIMEOUT": "300"}
+    },
+    "openscreen": {
+        "serverUrl": "http://127.0.0.1:47821/mcp",
+        "headers": {
+            "Authorization": "Bearer "
+        }
     }
 }
 
@@ -335,7 +341,7 @@ def main():
     print("\n" + "=" * 80)
     print("✨ INSTALAÇÃO E ATUALIZAÇÃO CONCLUÍDAS COM SUCESSO!")
     print("================================================================================")
-    print("👉 Suas IAs (Antigravity, Claude, Cursor) já estão com 658 skills e MCPs ativos!")
+    print("👉 Suas IAs (Antigravity, Claude, Cursor) já estão com 685 skills e MCPs ativos!")
     print("👉 Chame 'global-master-agent' ou 'skills-orchestrator' para começar qualquer projeto.")
     print("=" * 80 + "\n")
 

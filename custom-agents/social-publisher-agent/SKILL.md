@@ -43,7 +43,7 @@ Sua missão é eliminar o anonimato dos projetos do usuário aplicando a metodol
     - Sombras suaves com física natural (`shadow-spread` / `shadow-adaptive`).
     - Fundos com gradientes modernos (Radiant, Cosmic ou Minimal Dark).
 - **Vídeos e Demos Curtas:**
-  - Colabora com o [`video-producer-agent`](../video-producer-agent.md) e `remotion-video-creation` para gerar teasers dinâmicos de 15-30s com zoom nos recursos do projeto e legendas cinéticas.
+  - Colabora com o [`video-producer-agent`](video-producer-agent.md) e `remotion-video-creation` para gerar teasers dinâmicos de 15-30s com zoom nos recursos do projeto e legendas cinéticas.
 
 ### ✍️ PILAR 3: COPYWRITING PERSUASIVO ANTI-SLOP (LinkedIn & Instagram)
 - **Foco Específico em LinkedIn:**
@@ -84,20 +84,20 @@ O **`social-publisher-agent`** orquestra diretamente skills e MCPs especializado
 
 | Skill / MCP | Categoria | Papel na Operação |
 |---|---|---|
-| [`shots-studio`](../../mcps/shots-studio/README.md) | `mcps` | Geração de mockups 3D, frames macOS, Safari e presets de paletas no Shots.so. |
-| [`buffer`](../../mcps/buffer/README.md) | `mcps` | Agendamento e publicação automática de posts no LinkedIn e Instagram. |
-| [`chrome-devtools-mcp`](../../mcps/chrome-devtools/README.md) | `mcps` | Captura de prints de alta definição e inspeção do DOM. |
-| [`playwright-cli`](../../development/playwright-cli/SKILL.md) | `development` | Automação de fluxos e gravação de sessões interativas de software. |
-| [`openscreen, desktop-commander`](../../mcps/openscreen, desktop-commander/README.md) | `mcps` | Captura de tela para softwares e executáveis desktop no Windows. |
-| [`typesafe-ai`](../../ai-agents/typesafe-ai/SKILL.md) | `ai-agents` | **Mandatório (ADR-003):** Validação tipada de esquemas de postagem e decisões. |
-| [`linkedin-post-writer`](../../marketing/linkedin-post-writer/SKILL.md) | `marketing` | Redação de posts magnéticos para LinkedIn com foco em tech e produto. |
-| [`linkedin-hook-extractor`](../../marketing/linkedin-hook-extractor/SKILL.md) | `marketing` | Criação de ganchos de alta taxa de clique e leitura inicial. |
-| [`ig-caption-writer`](../../marketing/ig-caption-writer/SKILL.md) | `marketing` | Redação de legendas persuasivas e livres de tom genérico de IA no Instagram. |
-| [`ig-carousel-planner`](../../marketing/ig-carousel-planner/SKILL.md) | `marketing` | Planejamento slide a slide de carrosséis visuais de projetos. |
-| [`ig-hashtag-strategist`](../../marketing/ig-hashtag-strategist/SKILL.md) | `marketing` | Dimensionamento e curadoria de hashtags por relevância. |
-| [`design-taste-frontend`](../../design/design-taste-frontend/SKILL.md) | `design` | Curadoria estética de imagens, cores e composições visuais. |
-| [`video-producer-agent`](../video-producer-agent.md) | `custom-agents` | Criação de animações e teasers programáticos em Remotion quando houver vídeo. |
-| [`git-master-agent`](../git-master-agent.md) | `custom-agents` | Portão Final: versionamento dos assets em `assets/social/` e sincronização. |
+| [`shots-studio`](../mcps/shots-studio/README.md) | `mcps` | Geração de mockups 3D, frames macOS, Safari e presets de paletas no Shots.so. |
+| [`buffer`](../mcps/buffer/README.md) | `mcps` | Agendamento e publicação automática de posts no LinkedIn e Instagram. |
+| [`chrome-devtools-mcp`](../mcps/chrome-devtools/README.md) | `mcps` | Captura de prints de alta definição e inspeção do DOM. |
+| [`playwright-cli`](../development/playwright-cli/SKILL.md) | `development` | Automação de fluxos e gravação de sessões interativas de software. |
+| [`openscreen`](../mcps/openscreen/README.md) & [`desktop-commander`](../mcps/desktop-commander/README.md) | `mcps` | Captura de tela para softwares e executáveis desktop no Windows. |
+| [`typesafe-ai`](../ai-agents/typesafe-ai/SKILL.md) | `ai-agents` | **Mandatório (ADR-003):** Validação tipada de esquemas de postagem e decisões. |
+| [`linkedin-post-writer`](../marketing/linkedin-post-writer/SKILL.md) | `marketing` | Redação de posts magnéticos para LinkedIn com foco em tech e produto. |
+| [`linkedin-hook-extractor`](../marketing/linkedin-hook-extractor/SKILL.md) | `marketing` | Criação de ganchos de alta taxa de clique e leitura inicial. |
+| [`ig-caption-writer`](../marketing/ig-caption-writer/SKILL.md) | `marketing` | Redação de legendas persuasivas e livres de tom genérico de IA no Instagram. |
+| [`ig-carousel-planner`](../marketing/ig-carousel-planner/SKILL.md) | `marketing` | Planejamento slide a slide de carrosséis visuais de projetos. |
+| [`ig-hashtag-strategist`](../marketing/ig-hashtag-strategist/SKILL.md) | `marketing` | Dimensionamento e curadoria de hashtags por relevância. |
+| [`design-taste-frontend`](../design/design-taste-frontend/SKILL.md) | `design` | Curadoria estética de imagens, cores e composições visuais. |
+| [`video-producer-agent`](video-producer-agent.md) | `custom-agents` | Criação de animações e teasers programáticos em Remotion quando houver vídeo. |
+| [`git-master-agent`](git-master-agent.md) | `custom-agents` | Portão Final: versionamento dos assets em `assets/social/` e sincronização. |
 
 ---
 
