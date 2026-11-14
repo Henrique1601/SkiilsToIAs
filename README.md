@@ -8,7 +8,7 @@
 </p>
 
 [![Skills](https://img.shields.io/badge/Skills-685%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
-[![Agentes Customizados](https://img.shields.io/badge/Agentes-16%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
+[![Agentes Customizados](https://img.shields.io/badge/Agentes-17%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
 [![Servidores MCP](https://img.shields.io/badge/MCP-26%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
 [![Versão](https://img.shields.io/badge/Vers%C3%A3o-v1.0.0-0284C7?style=for-the-badge&logo=semanticrelease&logoColor=white)](https://github.com/Henrique1601/SkiilsToIAs/releases/latest)
@@ -20,7 +20,7 @@
   <a href="https://github.com/Henrique1601/SkiilsToIAs/releases/latest"><b>📦 Download do Bundle (.zip)</b></a> •
   <a href="#-como-utilizar"><b>⚡ Primeiros Passos</b></a> •
   <a href="#-catálogo-completo-de-skills-por-categoria"><b>📚 Documentação de Skills</b></a> •
-  <a href="custom-agents/"><b>👑 16 Agentes Especialistas</b></a> •
+  <a href="custom-agents/"><b>👑 17 Agentes Especialistas</b></a> •
   <a href="mcps/"><b>🔌 26 Servidores MCP</b></a> •
   <a href="CHANGELOG.md"><b>📋 Changelog</b></a>
 </p>
@@ -35,7 +35,7 @@ O **`SkiilsToIAs`** é a central de engenharia e inteligência operacional desen
 
 Desenvolvido para eliminar respostas genéricas (*AI slop*), prevenir quebras de build e conectar os modelos ao ecossistema real de desenvolvimento, o repositório é arquitetado em **3 pilares fundamentais**:
 
-1. 👑 **16 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Perfil do GitHub), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
+1. 👑 **17 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Perfil do GitHub), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
 2. 🧠 **685 Skills Especializadas (685 locais / 788 globais) ([11 Categorias](#-visão-geral-das-categorias)):** Manuais acionáveis com convenções estritas, arquitetura limpa, boas práticas de frameworks modernos, testes TDD e otimização de tokens de contexto (Caveman mode).
 3. 🔌 **26 Servidores MCP Integrados ([`mcps/`](mcps/)):** Conexões via Model Context Protocol para coordenação Git multi-máquina (DevSync), mockups e frames profissionais (Shots Studio), automação de redes sociais (Buffer), bancos de dados serverless (Neon Postgres), automação e inspeção de browser (Chrome DevTools), engenharia reversa de binários (REA), documentação no Notion e funil de vendas ativo (Prospector CRM) e prospecção/inteligência B2B global (Apollo.io).
 
@@ -66,6 +66,7 @@ flowchart TD
         GMA --> AG_Vid["🎬 video-producer"]
         GMA --> AG_GH["🐙 github-profile"]
         GMA --> AG_Social["📱 social-publisher"]
+        GMA --> AG_RAG["🧠 rag-architect"]
     end
 
     subgraph P2 ["🧠 2. Camada de Conhecimento Especializado (658 Skills)"]
