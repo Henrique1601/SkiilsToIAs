@@ -1,5 +1,6 @@
-# Caches e bancos gerados localmente
+# Caches, estados locais e bancos gerados localmente
 .cache/
+.netlify/
 __pycache__/
 *.pyc
 *.pyo

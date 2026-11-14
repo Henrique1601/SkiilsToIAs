@@ -221,7 +221,7 @@ def collect_mcps(root: Path) -> list[dict[str, str]]:
     return items
 
 
-def build_catalog(root: Path = REPO_ROOT, output: Path = OUTPUT_PATH) -> dict:
+def collect_catalog_data(root: Path = REPO_ROOT) -> dict:
     skills = collect_skills(root)
     agents = collect_agents(root)
     mcps = collect_mcps(root)
@@ -233,8 +233,7 @@ def build_catalog(root: Path = REPO_ROOT, output: Path = OUTPUT_PATH) -> dict:
         for cat, count in sorted(cat_counts.items(), key=lambda x: (-x[1], x[0]))
     ]
 
-    catalog = {
-        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    return {
         "counts": {
             "total": len(items),
             "skills": len(skills),
@@ -245,6 +244,14 @@ def build_catalog(root: Path = REPO_ROOT, output: Path = OUTPUT_PATH) -> dict:
         "items": items,
     }
 
+
+def build_catalog(root: Path = REPO_ROOT, output: Path = OUTPUT_PATH) -> dict:
+    data = collect_catalog_data(root)
+    catalog = {
+        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        **data,
+    }
+
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
         json.dumps(catalog, indent=2, ensure_ascii=False) + "\n",
@@ -253,9 +260,33 @@ def build_catalog(root: Path = REPO_ROOT, output: Path = OUTPUT_PATH) -> dict:
     return catalog
 
 
+def is_catalog_fresh(root: Path = REPO_ROOT, output: Path = OUTPUT_PATH) -> bool:
+    if not output.is_file():
+        return False
+    try:
+        existing = json.loads(output.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+
+    expected = collect_catalog_data(root)
+    return (
+        existing.get("counts") == expected["counts"]
+        and existing.get("categories") == expected["categories"]
+        and existing.get("items") == expected["items"]
+    )
+
+
 def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
+
+    if "--check" in sys.argv[1:]:
+        if is_catalog_fresh():
+            print("Catalog is up-to-date.")
+            return 0
+        print("Catalog is stale or missing. Run: python scripts/build_catalog.py")
+        return 1
+
     catalog = build_catalog()
     c = catalog["counts"]
     print(

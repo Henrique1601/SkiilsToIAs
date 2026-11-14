@@ -27,3 +27,6 @@ jobs:
 
       - name: Run Repository Audit
         run: python scripts/audit_repo.py
+
+      - name: Verify Web Catalog Freshness
+        run: python scripts/build_catalog.py --check

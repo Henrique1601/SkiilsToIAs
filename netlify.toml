@@ -1,0 +1,15 @@
+[build]
+  publish = "docs/catalog"
+  command = "python3 scripts/build_catalog.py"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/catalog.json"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
