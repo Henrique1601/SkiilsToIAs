@@ -19,7 +19,7 @@ Servidor do **OpenScreen MCP** (`openscreen v2.1.2+`) para gravação inteligent
     "openscreen": {
       "serverUrl": "http://127.0.0.1:47821/mcp",
       "headers": {
-        "Authorization": "Bearer hw9LpTNFHtvvL-AVRrDPe2we4Y7N2Aa-mQmeFTb8WsM"
+        "Authorization": "Bearer <OPENSCREEN_MCP_TOKEN>"
       }
     }
   }

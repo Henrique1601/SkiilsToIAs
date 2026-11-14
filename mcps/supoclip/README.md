@@ -19,7 +19,7 @@ Servidor do **SupoClip MCP** (`supoclip_mcp v1.30.0+`) para corte automático e 
     "supoclip": {
       "serverUrl": "https://mcp.supoclip.com/mcp",
       "headers": {
-        "Authorization": "Bearer sk_HAv2PK7oSdD2nSPpwa3Jh7gaAyf4ekqgRBMN88hX3uY"
+        "Authorization": "Bearer sk_<SUPOCLIP_API_KEY>"
       }
     }
   }

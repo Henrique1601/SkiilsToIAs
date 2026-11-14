@@ -1,0 +1,14 @@
+# Caches e bancos gerados localmente
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# Variáveis de ambiente e secrets
+.env
+.env.local
+.env.*.local
+
+# Builds e pacotes de distribuição
+dist/
+node_modules/

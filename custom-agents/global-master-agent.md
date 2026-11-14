@@ -162,7 +162,13 @@ flowchart TD
   - Registrar decisões estruturadas em `docs/decisions/` (ADRs).
 
 ### ⚡ FASE 4: Execução Especializada & Hub de Skills (`skills-orchestrator`)
-- O `skills-orchestrator` distribui as frentes de trabalho para a malha de especialistas (Design, Database, Backend, Cloud, QA, Vídeo, Social Media, etc.):
+- O `skills-orchestrator` escolhe o modo de execução conforme o DAG da Fase 3:
+  - **Subagente Único / Sequencial:** Tarefas acopladas, edição nos mesmos arquivos ou escopo pequeno (ex.: bugfix pontual, migração única, refatoração linear).
+  - **Orquestração Paralela Nativa (`/swarm`):** Tarefas com **2+ frentes independentes** (ex.: Frontend + Backend + Testes/Infra) que podem rodar em paralelo:
+    - **Ownership Disjunto:** Cada worker recebe arquivos/diretórios exclusivos (zero colisão no mesmo arquivo; usar `workspace:"share"` se houver build/edição concorrente).
+    - **Verificador Dedicado:** Incluir um worker `verifier` (somente leitura/validação) para rodar `verification-loop` e checar integração antes da Fase 5.
+    - **Brief Enxuto:** Cada worker inicia sem histórico; o brief define arquivos sob sua posse, restrições e critério de pronto, reportando no board.
+- **Regras Transversais de Execução:**
   - **TypeSafe AI Obrigatório (ADR-003):** 100% das chamadas a modelos e decisões de IA devem ter schemas tipados (Zod/JSON) e controle de confiança.
   - **TDD & Qualidade:** Testes automatizados antes ou em paralelo ao código.
   - **Design Taste:** Estética premium anti-slop (Linear/Apple).
