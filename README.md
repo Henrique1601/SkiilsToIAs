@@ -9,6 +9,7 @@
 
 [![Skills](https://img.shields.io/badge/Skills-685%20Especializadas-2563EB?style=for-the-badge&logo=codewars&logoColor=white)](#-catálogo-completo-de-skills-por-categoria)
 [![Agentes Customizados](https://img.shields.io/badge/Agentes-17%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
+[![RAG Híbrido](https://img.shields.io/badge/RAG-pgvector%20%7C%20H%C3%ADbrido%20%7C%20HNSW-10B981?style=for-the-badge&logo=postgresql&logoColor=white)](docs/brain/RAG_ARCHITECTURE.md)
 [![Servidores MCP](https://img.shields.io/badge/MCP-26%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
 [![Versão](https://img.shields.io/badge/Vers%C3%A3o-v1.0.0-0284C7?style=for-the-badge&logo=semanticrelease&logoColor=white)](https://github.com/Henrique1601/SkiilsToIAs/releases/latest)
@@ -22,10 +23,28 @@
   <a href="#-catálogo-completo-de-skills-por-categoria"><b>📚 Documentação de Skills</b></a> •
   <a href="custom-agents/"><b>👑 17 Agentes Especialistas</b></a> •
   <a href="mcps/"><b>🔌 26 Servidores MCP</b></a> •
+  <a href="docs/brain/RAG_ARCHITECTURE.md"><b>🧠 RAG & Base de Conhecimento</b></a> •
   <a href="CHANGELOG.md"><b>📋 Changelog</b></a>
 </p>
 
 </div>
+
+---
+
+---
+
+## ⚡ 🧠 RAG NATIVO EM TODO O PROJETO (Retrieval-Augmented Generation)
+
+> [!TIP]
+> ### 🔍 Como o `SkiilsToIAs` Opera com RAG de Alta Fidelidade
+> Este ecossistema foi projetado para **eliminar a sobrecarga de contexto e alucinações**, integrando uma arquitetura **RAG Universal** ativa em 100% das operações:
+> 
+> - 🐘 **Banco Vetorial & pgvector Nativo:** Todo o conhecimento de **685 Skills**, **26 Servidores MCP** e notas do Segundo Cérebro é indexado via vetores (`pgvector` com índice HNSW) no **Neon Postgres** e no **Supabase**.
+> - 🔍 **Busca Híbrida Inteligente:** Combina **Similaridade de Cosseno** (compreensão profunda de conceitos, ideias e sinônimos) com **Busca Textual BM25 / Full-Text Search** (precisão milimétrica para erros, termos técnicos, nomes e comandos).
+> - ✂️ **Chunking Semântico Contextual:** Divisão de arquivos preservando hierarquia de cabeçalhos (`#`, `##`), listas e tabelas (500 a 1000 tokens com 10-15% de overlap).
+> - 🛡️ **TypeSafe AI & Zero Alucinação:** As respostas são estritamente validadas via esquemas **Zod**, exigindo **citação compulsória da fonte e trecho exato**, eliminando completamente invenções de código.
+> - 🪚 **Filosofia Ponytail (Anti-Overengineering):** Reduz o consumo de tokens em mais de **90%**, trazendo cirurgicamente apenas as 2 ou 3 skills exatas necessárias para resolver qualquer tarefa em milissegundos.
+> - 🧠 **Agente Dedicado:** Comandado pelo novo [**`rag-architect-agent`**](custom-agents/rag-architect-agent.md) e fundamentado pelo manual [**`rag-architecture-patterns`**](ai-agents/rag-architecture-patterns/SKILL.md) e [**`docs/brain/RAG_ARCHITECTURE.md`**](docs/brain/RAG_ARCHITECTURE.md).
 
 ---
 
@@ -35,7 +54,7 @@ O **`SkiilsToIAs`** é a central de engenharia e inteligência operacional desen
 
 Desenvolvido para eliminar respostas genéricas (*AI slop*), prevenir quebras de build e conectar os modelos ao ecossistema real de desenvolvimento, o repositório é arquitetado em **3 pilares fundamentais**:
 
-1. 👑 **17 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Perfil do GitHub), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
+1. 👑 **17 Agentes Customizados ([`custom-agents/`](custom-agents/)):** Personas especialistas com papéis definidos (RAG & Busca Vetorial, Git, Banco de Dados, Design, Segurança, QA, DevOps, IA, Growth, Vídeo e Redes Sociais), orquestrados pelo **`global-master-agent`** e guiados metodologicamente em 9 fases pelo **`skills-orchestrator`**.
 2. 🧠 **685 Skills Especializadas (685 locais / 788 globais) ([11 Categorias](#-visão-geral-das-categorias)):** Manuais acionáveis com convenções estritas, arquitetura limpa, boas práticas de frameworks modernos, testes TDD e otimização de tokens de contexto (Caveman mode).
 3. 🔌 **26 Servidores MCP Integrados ([`mcps/`](mcps/)):** Conexões via Model Context Protocol para coordenação Git multi-máquina (DevSync), mockups e frames profissionais (Shots Studio), automação de redes sociais (Buffer), bancos de dados serverless (Neon Postgres), automação e inspeção de browser (Chrome DevTools), engenharia reversa de binários (REA), documentação no Notion e funil de vendas ativo (Prospector CRM) e prospecção/inteligência B2B global (Apollo.io).
 
@@ -82,6 +101,7 @@ flowchart TD
     end
 
     subgraph P3 ["🔌 3. Camada de Ferramentas & Ferramentaria Real (mcps/)"]
+        AG_RAG ==> MCP_RAG["🧠 pgvector / RAG Híbrido\n(Busca Vetorial & HNSW em Chunks)"]
         AG_Git ==> MCP_DevSync["🔄 DevSync\n(Sincronização Multi-Máquina)"]
         S_Back ==> MCP_Neon["🐘 Neon Postgres\n(Serverless DB & Branching)"]
         S_Dev ==> MCP_Chrome["🌐 Chrome DevTools\n(Screenshots, DOM, Lighthouse)"]
