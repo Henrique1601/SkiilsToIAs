@@ -22,7 +22,9 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 
 ## 📊 Catálogo de Servidores MCP
 
-| Identificador | Tipo / Transporte | Pacote / Endpoint | Descrição & Principais Ferramentas |
+| Identificador |
+| ✂️ [**`supoclip`**](supoclip/README.md) | **Streamable HTTP** (Remoto SSE) | `https://mcp.supoclip.com/mcp` | Corte automatizado de vídeos longos em clipes virais verticais (Shorts, Reels, TikTok), pontuação de viralidade por IA, legendas dinâmicas (Hormozi/MrBeast) e sobreposição de B-roll. |
+ Tipo / Transporte | Pacote / Endpoint | Descrição & Principais Ferramentas |
 |---|:---:|---|---|
 | 💼 [**`prospector-crm`**](prospector-crm/README.md) | **Streamable HTTP** (Remoto) | `https://api-prospector-delta.vercel.app/api/mcp` | Servidor proprietário do **Prospector CRM** conectado ao Neon Postgres (150+ leads). Expõe [`list_leads`](prospector-crm/README.md#list_leads) (filtro e busca) e [`create_leads`](prospector-crm/README.md#create_leads) (cadastro com desduplicação). |
 | 🔄 [**`devsync`**](devsync/README.md) | **Stdio** (Local) | `node src/cli.js mcp` | Servidor nativo do **DevSync v0.4.0** para sincronização Git resiliente multi-máquina (Casa vs. Trabalho). Expõe `devsync_status`, `devsync_sync`, `devsync_sync_all`, `devsync_diff`, `devsync_stash_sync`, `devsync_diagnose`, `devsync_history` e `devsync_pause_resume`. |

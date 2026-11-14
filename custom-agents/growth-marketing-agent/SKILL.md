@@ -11,6 +11,7 @@ tools:
   - invoke_subagent
   - send_message
   - manage_subagents
+  - supoclip
 ---
 
 # 📈 AGENTE DE LANÇAMENTO, SEO & GROWTH (`growth-marketing-agent`)
@@ -77,6 +78,7 @@ Sua missão é garantir que o produto construído não fique invisível na inter
 | [`instagram-api`](../marketing/instagram-api/SKILL.md) | `marketing` | Extração de perfis, posts, reels, stories, comentários e hashtags via fetcher.sh. |
 | [`instagram-scraper`](../marketing/instagram-scraper/SKILL.md) | `marketing` | Scraping de alta escala no Instagram via atores Apify (100–200 posts/s sem login). |
 | [`x-api`](../marketing/x-api/SKILL.md) | `marketing` | Padrões de publicação e estratégias para a plataforma X/Twitter. |
+| [`supoclip`](../mcps/supoclip/README.md) | `mcps` | Geração rápida de cortes em vídeo para anúncios e testes A/B orgânicos no TikTok/Reels. |
 | [`social`](../marketing/social/SKILL.md) | `marketing` | Distribuição multicanal e adaptação de conteúdo para todas as redes sociais. |
 | [`content-strategy`](../marketing/content-strategy/SKILL.md) | `marketing` | Estratégia editorial completa orientada a intenção do cliente e autoridade no nicho. |
 | [`copywriting`](../marketing/copywriting/SKILL.md) | `marketing` | Redação persuasiva para landing pages, VSLs e páginas de alta conversão. |

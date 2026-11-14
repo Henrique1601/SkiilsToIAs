@@ -181,6 +181,12 @@
       "args": [
         "C:/Users/Public/Downloads/BotPrograCraft/packages/mcp-server/dist/index.js"
       ]
+    },
+    "supoclip": {
+      "serverUrl": "https://mcp.supoclip.com/mcp",
+      "headers": {
+        "Authorization": "Bearer "
+      }
     }
   }
 }

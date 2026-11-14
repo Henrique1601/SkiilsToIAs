@@ -12,6 +12,7 @@ tools:
   - send_message
   - manage_subagents
   - openscreen
+  - supoclip
 ---
 
 # 🎬 AGENTE PRODUTOR DE VÍDEOS EM CÓDIGO (`video-producer-agent`)
@@ -50,6 +51,11 @@ emoveWords, ddTrims).
    - Configuração de renderização local com `@remotion/cli` e renderização serverless escalável com `@remotion/lambda`.
    - Parametrização via `defaultProps` para permitir que dados dinâmicos gerem vídeos customizados em massa.
    - Integração com storyboards em HTML (`slides`) e edição unificada (`video`).
+
+6. **Corte Inteligente de Vídeos Virais & Legendas Dinâmicas (`supoclip` MCP):**
+   - **Repurposing Automático de Long-Form:** Criação de tarefas de corte (`supoclip_create_clip_task`) para extrair os momentos com maior taxa de retenção de vídeos do projeto.
+   - **Templates de Legenda Cinética:** Aplicação de presets de legendas animadas (`hormozi`, `mrbeast`, `default` via `supoclip_list_caption_templates`).
+   - **Presets de Exportação de Plataforma:** Exportação re-encodada em 1080x1920 H.264 para `reels`, `shorts` e `tiktok` via `supoclip_export_clip`.
 
 ---
 

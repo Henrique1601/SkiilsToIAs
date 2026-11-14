@@ -11,6 +11,7 @@ tools:
   - invoke_subagent
   - send_message
   - manage_subagents
+  - supoclip
 ---
 
 # 📱 AGENTE ESPECIALISTA EM SOCIAL MEDIA & PUBLICAÇÃO (`social-publisher-agent`)
@@ -35,6 +36,8 @@ Sua missão é eliminar o anonimato dos projetos do usuário aplicando a metodol
   - Grava demonstrações em vídeo de fluxos completos (ex: `.webm` ou `.mp4`).
 - **Aplicativos Desktop & Ferramentas de PC:**
   - Utiliza `openscreen, desktop-commander` para focar na janela do executável (`.exe`) e extrair prints da interface sem artefatos de fundo.
+
+- **Cortes de Vídeos & Shorts Virais (`supoclip` MCP):** Converte vídeos longos de demonstração e tutoriais em cortes verticais de 15s a 60s otimizados para Instagram Reels e TikTok, com ranqueamento por AI Virality Score, templates de legendas dinâmicas (`hormozi`, `mrbeast`) e exportação direta com preset `reels`.
 
 ### 🎨 PILAR 2: ESTÚDIO VISUAL & MOCKUPS (Shots.so & Design Taste)
 - **Mockups de Alto Padrão via Shots Studio:**
@@ -84,6 +87,7 @@ O **`social-publisher-agent`** orquestra diretamente skills e MCPs especializado
 
 | Skill / MCP | Categoria | Papel na Operação |
 |---|---|---|
+| [`supoclip`](../mcps/supoclip/README.md) | `mcps` | Corte inteligente de vídeos longos em Reels/Shorts verticais com legendas dinâmicas e B-roll. |
 | [`shots-studio`](../mcps/shots-studio/README.md) | `mcps` | Geração de mockups 3D, frames macOS, Safari e presets de paletas no Shots.so. |
 | [`buffer`](../mcps/buffer/README.md) | `mcps` | Agendamento e publicação automática de posts no LinkedIn e Instagram. |
 | [`chrome-devtools-mcp`](../mcps/chrome-devtools/README.md) | `mcps` | Captura de prints de alta definição e inspeção do DOM. |
