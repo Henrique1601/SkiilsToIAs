@@ -317,6 +317,7 @@ def main():
     parser.add_argument("--claude", action="store_true", help="Instala apenas para Claude Code e Claude Desktop")
     parser.add_argument("--mcp-only", action="store_true", help="Instala apenas as configurações de servidores MCP")
     parser.add_argument("--skills-only", action="store_true", help="Instala apenas as skills")
+    parser.add_argument("--with-hook", action="store_true", help="Instala o hook git pre-commit (audit_repo + catalog check)")
     args = parser.parse_args()
 
     default_all = not (args.gemini or args.claude or args.mcp_only or args.skills_only)
@@ -327,6 +328,7 @@ def main():
         if not args.mcp_only:
             install_skills(repo_root, paths["gemini_skills"], preserve_categories=False)
             install_custom_agents(repo_root, paths["gemini_agents"])
+            install_custom_agents(repo_root, Path.home() / ".agents" / "custom-agents")
         if not args.skills_only:
             update_mcp_config(paths["gemini_mcp"])
 
@@ -342,10 +344,15 @@ def main():
         if not args.mcp_only:
             install_skills(repo_root, paths["openclaw_skills"], preserve_categories=False)
 
+    if args.with_hook and (repo_root / ".git" / "hooks").is_dir():
+        from sync_all import install_pre_commit_hook
+        hook_path = install_pre_commit_hook(repo_root)
+        print(f"\n🪝 Hook pre-commit instalado em: {hook_path}")
+
     print("\n" + "=" * 80)
     print("✨ INSTALAÇÃO E ATUALIZAÇÃO CONCLUÍDAS COM SUCESSO!")
     print("================================================================================")
-    print("👉 Suas IAs (Antigravity, Claude, Cursor) já estão com 685 skills e MCPs ativos!")
+    print("👉 Suas IAs (Antigravity, Claude, Cursor) já estão com skills, 17 agentes e MCPs ativos!")
     print("👉 Chame 'global-master-agent' ou 'skills-orchestrator' para começar qualquer projeto.")
     print("=" * 80 + "\n")
 

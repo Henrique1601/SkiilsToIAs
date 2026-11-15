@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-15T02:38:23Z",
+  "generated_at": "2026-11-15T15:38:37Z",
   "counts": {
-    "total": 680,
-    "skills": 636,
+    "total": 693,
+    "skills": 639,
     "agents": 17,
-    "mcps": 27
+    "mcps": 37
   },
   "categories": [
     {
@@ -25,26 +25,26 @@
     },
     {
       "name": "backend-database",
-      "count": 71
+      "count": 72
     },
     {
       "name": "devops-cloud",
-      "count": 54
+      "count": 55
     },
     {
       "name": "business-management",
       "count": 43
     },
     {
+      "name": "mcps",
+      "count": 37
+    },
+    {
       "name": "utilities",
-      "count": 34
+      "count": 35
     },
     {
       "name": "documents-productivity",
-      "count": 27
-    },
-    {
-      "name": "mcps",
       "count": 27
     },
     {
@@ -964,6 +964,14 @@
       "description": "Provides BigQuery SQL query optimization techniques, execution best practices, and performance tuning rules for high-efficiency querying. Use when optimizing BigQuery SQL queries, reducing query costs, or designing performant SQL transformations.",
       "path": "backend-database/bigquery-sql/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill bigquery-sql"
+    },
+    {
+      "name": "brazil-payments-pix",
+      "category": "backend-database",
+      "type": "skill",
+      "description": "Padrões de integração para pagamentos no Brasil (Pix, Mercado Pago, Asaas, Stripe BR): webhooks idempotentes, HMAC, QR Code Copia e Cola e conciliação.",
+      "path": "backend-database/brazil-payments-pix/SKILL.md",
+      "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill brazil-payments-pix"
     },
     {
       "name": "building-data-apps",
@@ -3598,6 +3606,14 @@
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill deployment-patterns"
     },
     {
+      "name": "desktop-packaging-release",
+      "category": "devops-cloud",
+      "type": "skill",
+      "description": "Empacotamento, assinatura, auto-update e publicação de Releases v1.0.0+ para apps desktop Windows (.exe/.msi), macOS (.dmg) e Linux (.AppImage) com Electron, Tauri ou PyInstaller.",
+      "path": "devops-cloud/desktop-packaging-release/SKILL.md",
+      "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill desktop-packaging-release"
+    },
+    {
       "name": "docker-patterns",
       "category": "devops-cloud",
       "type": "skill",
@@ -5078,6 +5094,14 @@
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill messages-ops"
     },
     {
+      "name": "n8n-whatsapp-automation",
+      "category": "utilities",
+      "type": "skill",
+      "description": "Padrões de automação com n8n e WhatsApp (Cloud API oficial ou Evolution API): webhooks seguros, fila com retry, dedupe de mensagens e limites anti-ban.",
+      "path": "utilities/n8n-whatsapp-automation/SKILL.md",
+      "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill n8n-whatsapp-automation"
+    },
+    {
       "name": "nano-banana-2",
       "category": "utilities",
       "type": "skill",
@@ -5326,12 +5350,36 @@
       "install_hint": "mcps/buffer/README.md"
     },
     {
+      "name": "canva",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor oficial do Canva MCP via mcp-remote para criação, edição, busca, comentários, brand templates e exportação de designs e apresentações no Canva.",
+      "path": "mcps/canva/README.md",
+      "install_hint": "mcps/canva/README.md"
+    },
+    {
       "name": "chrome-devtools",
       "category": "mcps",
       "type": "mcp",
       "description": "Servidor de Model Context Protocol (MCP) para automação, depuração e inspeção profunda de aplicações web através do Chrome DevTools Protocol (CDP).",
       "path": "mcps/chrome-devtools/README.md",
       "install_hint": "mcps/chrome-devtools/README.md"
+    },
+    {
+      "name": "cloudrun",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor oficial do Google Cloud Run MCP (@google-cloud/cloud-run-mcp) para listar projetos/serviços, inspecionar logs e publicar containers ou pastas locais no Cloud Run.",
+      "path": "mcps/cloudrun/README.md",
+      "install_hint": "mcps/cloudrun/README.md"
+    },
+    {
+      "name": "context7",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor oficial do Context7 MCP para busca de documentação oficial atualizada de bibliotecas e frameworks em tempo real, evitando APIs depreciadas e alucinações.",
+      "path": "mcps/context7/README.md",
+      "install_hint": "mcps/context7/README.md"
     },
     {
       "name": "desktop-commander",
@@ -5374,6 +5422,14 @@
       "install_hint": "mcps/google-maps/README.md"
     },
     {
+      "name": "linear",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor oficial do Linear MCP (linear-mcp-server) para gestão de issues, ciclos, projetos, roadmaps, comentários e revisão de diffs no Linear.",
+      "path": "mcps/linear/README.md",
+      "install_hint": "mcps/linear/README.md"
+    },
+    {
       "name": "linkedin",
       "category": "mcps",
       "type": "mcp",
@@ -5382,12 +5438,28 @@
       "install_hint": "mcps/linkedin/README.md"
     },
     {
+      "name": "lovable",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor oficial do Lovable MCP para gerenciamento de workspaces, criação e deploy de projetos Lovable, inspeção de arquivos, drafts, banco de dados e analytics.",
+      "path": "mcps/lovable/README.md",
+      "install_hint": "mcps/lovable/README.md"
+    },
+    {
       "name": "magic-ui",
       "category": "mcps",
       "type": "mcp",
       "description": "Servidor oficial do Magic UI MCP (@magicuidesign/mcp) para catálogo e geração de componentes modernos de interface de usuário (React, Next.js, Tailwind CSS e Framer Motion).",
       "path": "mcps/magic-ui/README.md",
       "install_hint": "mcps/magic-ui/README.md"
+    },
+    {
+      "name": "mobbin",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor oficial do Mobbin MCP para pesquisa de referências reais de UI/UX, fluxos de onboarding, telas e seções de produtos digitais iOS, Android e Web.",
+      "path": "mcps/mobbin/README.md",
+      "install_hint": "mcps/mobbin/README.md"
     },
     {
       "name": "mongodb-atlas",
@@ -5428,6 +5500,14 @@
       "description": "Servidor do OpenScreen MCP (openscreen v2.1.2+) para gravação inteligente de tela, controle de timelines, edição baseada em transcrição Whisper (on-device), auto-zoom em cliques, efeitos de shader WGSL, legendas automáticas e exportação de vídeos para redes sociais e demonstra...",
       "path": "mcps/openscreen/README.md",
       "install_hint": "mcps/openscreen/README.md"
+    },
+    {
+      "name": "perplexity-ask",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor do Perplexity Ask MCP (server-perplexity-ask) para pesquisa web em tempo real com síntese e citações de fontes usando a Sonar API da Perplexity.",
+      "path": "mcps/perplexity-ask/README.md",
+      "install_hint": "mcps/perplexity-ask/README.md"
     },
     {
       "name": "playwright",
@@ -5478,6 +5558,14 @@
       "install_hint": "mcps/spotify/README.md"
     },
     {
+      "name": "supabase",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor oficial do Supabase MCP para gestão de projetos, execução de SQL, aplicação de migrations, Edge Functions, geração de tipos TypeScript, logs e advisors de segurança/performance.",
+      "path": "mcps/supabase/README.md",
+      "install_hint": "mcps/supabase/README.md"
+    },
+    {
       "name": "supoclip",
       "category": "mcps",
       "type": "mcp",
@@ -5492,6 +5580,22 @@
       "description": "Servidor oficial do Vercel MCP (mcp-remote https://mcp.vercel.com) para gerenciamento de projetos, deploys em tempo real, monitoramento de builds, domínios, DNS e variáveis de ambiente na plataforma Vercel.",
       "path": "mcps/vercel/README.md",
       "install_hint": "mcps/vercel/README.md"
+    },
+    {
+      "name": "vertex-ai-search",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor oficial do Google Vertex AI Search (Discovery Engine) MCP para busca semântica empresarial, grounded search e recuperação de documentos em data stores do Google Cloud.",
+      "path": "mcps/vertex-ai-search/README.md",
+      "install_hint": "mcps/vertex-ai-search/README.md"
+    },
+    {
+      "name": "windsor",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor oficial do Windsor.ai MCP para consulta unificada de dados de marketing, mídia paga, atribuição e analytics conectados ao workspace Windsor.",
+      "path": "mcps/windsor/README.md",
+      "install_hint": "mcps/windsor/README.md"
     },
     {
       "name": "youtube-music",

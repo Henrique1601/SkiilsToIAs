@@ -53,6 +53,16 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 📐 [**`drawio`**](drawio/README.md) | **Stdio** (Local) | `@next-ai-drawio/mcp-server@latest` | Criação, renderização e edição programática de diagramas de arquitetura, UML e fluxogramas no Draw.io. |
 | 💼 [**`mcp-server-linkedin`**](linkedin/README.md) | **Stdio** (Local `uvx`) | `mcp-server-linkedin@latest` | Publicação de posts profissionais, agendamento de artigos e gestão de presença executiva no LinkedIn. |
 | 🎥 [**openscreen**](openscreen/README.md) | **Streamable HTTP** (Local SSE) | http://127.0.0.1:47821/mcp | Gravação inteligente de tela, timeline não-linear, transcrição on-device Whisper, auto-zoom em cliques, remoção de silêncios/pausas, legendas automáticas e exportação de vídeos. |
+| 🟢 [**`supabase`**](supabase/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.supabase.com/mcp` | Gestão de projetos Supabase, SQL, migrations, Edge Functions, logs, advisors e geração de tipos TypeScript. |
+| 📚 [**`context7`**](context7/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.context7.com/mcp` | Busca de documentação oficial atualizada de bibliotecas e frameworks em tempo real (Kit Universal). |
+| 🎨 [**`canva`**](canva/README.md) | **Bridge Remoto** (`npx`) | `https://mcp.canva.com/mcp` | Criação, edição, brand templates, geração de imagens e exportação de designs no Canva. |
+| ☁️ [**`cloudrun`**](cloudrun/README.md) | **Stdio** (Local `npx`) | `@google-cloud/cloud-run-mcp` | Deploy de containers ou pastas locais e inspeção de serviços/logs no Google Cloud Run. |
+| 📋 [**`linear`**](linear/README.md) | **Bridge Remoto** (`npx`) | `https://mcp.linear.app/sse` | Gestão de issues, ciclos, projetos, milestones, comentários e documentos no Linear. |
+| 💜 [**`lovable`**](lovable/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.lovable.dev` | Criação, edição de código, drafts, banco de dados e deploy de apps na Lovable. |
+| 📱 [**`mobbin`**](mobbin/README.md) | **Streamable HTTP** (Remoto) | `https://api.mobbin.com/mcp` | Pesquisa de referências reais de UI/UX, telas e fluxos iOS, Android e Web no Mobbin. |
+| 🔎 [**`perplexity-ask`**](perplexity-ask/README.md) | **Stdio** (Local `npx`) | `server-perplexity-ask` | Pesquisa web em tempo real com síntese e citações via Perplexity Sonar API. |
+| 📊 [**`windsor`**](windsor/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.windsor.ai` | Consulta unificada de métricas de mídia paga, atribuição e analytics no Windsor.ai. |
+| 🔍 [**`vertex-ai-search`**](vertex-ai-search/README.md) | **Streamable HTTP** (Remoto) | `https://discoveryengine.googleapis.com/mcp` | Busca semântica empresarial e grounded search via Google Vertex AI Search. |
 | 🤖 **`botprogracraft`** | **Stdio** (Local Node) | `C:/Users/Public/Downloads/BotPrograCraft/packages/mcp-server/dist/index.js` | Servidor MCP Stdio do **BotPrograCraft** (`@botprogracraft/mcp-server`) que expõe contexto ao vivo da IDE, frames de tela, prompts de tutor e progresso de aprendizado. |
 
 ---
