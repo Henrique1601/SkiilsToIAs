@@ -1,6 +1,7 @@
 # Caches, estados locais e bancos gerados localmente
 .cache/
 .netlify/
+graphify-out/
 __pycache__/
 *.pyc
 *.pyo
