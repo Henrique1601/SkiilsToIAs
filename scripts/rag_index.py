@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import closing
 import hashlib
 import json
 import os
@@ -260,7 +261,7 @@ def index_sqlite(
     stats = {"total_files": len(files), "indexed": 0, "skipped": 0, "removed": 0, "chunks": 0}
     export_docs: list[dict[str, Any]] = []
 
-    with sqlite3.connect(db_path) as conn:
+    with closing(sqlite3.connect(db_path)) as conn:
         init_sqlite(conn, rebuild=rebuild)
         existing = {
             row[0]: (row[1], row[2])

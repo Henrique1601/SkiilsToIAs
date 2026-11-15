@@ -30,3 +30,6 @@ jobs:
 
       - name: Verify Web Catalog Freshness
         run: python scripts/build_catalog.py --check
+
+      - name: Run Unit Tests
+        run: python -m unittest discover -s tests -v

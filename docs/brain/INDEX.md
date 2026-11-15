@@ -9,6 +9,10 @@ Bem-vindo à base de conhecimento persistente do projeto **SkiilsToIAs**, gerenc
 - [[GOTCHAS]] — Armadilhas superadas, lições aprendidas e bugs evitados.
 - [[RAG_ARCHITECTURE]] — Diretrizes de implementação de pipelines RAG de alta fidelidade e baixo custo.
 
+## 🌐 Ferramentas & Catálogo
+- Catálogo Web Interativo (Netlify): https://skiilstoias-catalog.netlify.app
+- Sincronização & Auditoria: `python scripts/sync_all.py --mirror --install-hook`
+
 ---
 
 ## ⚡ Regras de Ouro do Ecossistema

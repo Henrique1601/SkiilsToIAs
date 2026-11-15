@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Lean CLI search over the SkiilsToIAs SQLite FTS5/BM25 RAG index."""
+"""Lean CLI search over the SkiilsToIAs SQLite FTS5/BM25 and optional pgvector RAG index."""
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sqlite3
 import sys
@@ -12,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 DEFAULT_DB = Path(".cache/rag_index.db")
+DEFAULT_EMBED_MODEL = "text-embedding-3-small"
 
 
 def configure_utf8_stdio() -> None:
@@ -69,12 +71,15 @@ def search_index(
     sql += " ORDER BY score DESC LIMIT ?"
     params.append(top_k)
 
-    with sqlite3.connect(db_path) as conn:
+    conn = sqlite3.connect(db_path)
+    try:
         rows = conn.execute(sql, params).fetchall()
         if not rows and " AND " in fts_and:
             fts_or = build_fts_query(query, "OR")
             params[0] = fts_or
             rows = conn.execute(sql, params).fetchall()
+    finally:
+        conn.close()
 
     results: list[dict[str, Any]] = []
     for path, dtype, section, content, score in rows:
@@ -91,9 +96,97 @@ def search_index(
     return results
 
 
+def reciprocal_rank_fusion(
+    lexical_results: list[dict[str, Any]],
+    semantic_results: list[dict[str, Any]],
+    top_k: int = 5,
+    rrf_k: int = 60,
+) -> list[dict[str, Any]]:
+    """Fuse lexical (BM25) and semantic (vector) ranked lists via Reciprocal Rank Fusion."""
+    merged: dict[tuple[str, str], dict[str, Any]] = {}
+    scores: dict[tuple[str, str], float] = {}
+
+    for rank, item in enumerate(lexical_results, start=1):
+        key = (item["path"], item["section"])
+        merged[key] = dict(item)
+        scores[key] = scores.get(key, 0.0) + 1.0 / (rrf_k + rank)
+
+    for rank, item in enumerate(semantic_results, start=1):
+        key = (item["path"], item["section"])
+        if key not in merged:
+            merged[key] = dict(item)
+        scores[key] = scores.get(key, 0.0) + 1.0 / (rrf_k + rank)
+
+    ranked_keys = sorted(scores, key=lambda k: scores[k], reverse=True)[:top_k]
+    fused: list[dict[str, Any]] = []
+    for key in ranked_keys:
+        entry = merged[key]
+        entry["score"] = round(scores[key], 6)
+        fused.append(entry)
+    return fused
+
+
+def search_pgvector(
+    query: str,
+    database_url: str,
+    api_key: str,
+    model: str = DEFAULT_EMBED_MODEL,
+    top_k: int = 10,
+    doc_type: str | None = None,
+) -> list[dict[str, Any]]:
+    """Query PostgreSQL pgvector cosine similarity using OpenAI embeddings."""
+    try:
+        import psycopg  # type: ignore
+    except ImportError as exc:
+        raise RuntimeError(
+            "Semantic pgvector search requires 'psycopg'. Install with: pip install psycopg[binary]"
+        ) from exc
+
+    scripts_dir = str(Path(__file__).resolve().parent)
+    if scripts_dir not in sys.path:
+        sys.path.insert(0, scripts_dir)
+    from rag_index import fetch_openai_embeddings
+
+    query_vec = fetch_openai_embeddings([query], api_key, model)[0]
+    vec_literal = "[" + ",".join(f"{x:.8f}" for x in query_vec) + "]"
+
+    sql = """
+        SELECT
+            d.path,
+            d.doc_type,
+            c.section,
+            c.content,
+            1 - (c.embedding <=> %s::vector) AS score
+        FROM chunks c
+        JOIN documents d ON d.id = c.document_id
+        WHERE c.embedding IS NOT NULL
+    """
+    params: list[Any] = [vec_literal]
+    if doc_type:
+        sql += " AND d.doc_type = %s"
+        params.append(doc_type)
+    sql += " ORDER BY c.embedding <=> %s::vector LIMIT %s"
+    params.extend([vec_literal, top_k])
+
+    with psycopg.connect(database_url) as conn:
+        rows = conn.execute(sql, params).fetchall()
+
+    return [
+        {
+            "path": path,
+            "doc_type": dtype,
+            "section": section,
+            "score": round(float(score), 4),
+            "snippet": make_snippet(content),
+            "content": content,
+        }
+        for path, dtype, section, content, score in rows
+    ]
+
+
 def main() -> int:
     configure_utf8_stdio()
-    parser = argparse.ArgumentParser(description="Search SkiilsToIAs local RAG index.")
+    parser = argparse.ArgumentParser(description="Search SkiilsToIAs local/hybrid RAG index.")
     parser.add_argument("query", help="Search query string")
     parser.add_argument("--top", type=int, default=5, help="Maximum results to return (default: 5)")
     parser.add_argument("--db", type=Path, default=DEFAULT_DB, help="SQLite FTS5 database path")
@@ -103,12 +196,34 @@ def main() -> int:
         default=None,
         help="Filter by document type",
     )
+    parser.add_argument(
+        "--semantic",
+        action="store_true",
+        help="Enable hybrid pgvector + FTS5 RRF search (requires DATABASE_URL, OPENAI_API_KEY, psycopg)",
+    )
     parser.add_argument("--json", action="store_true", dest="as_json", help="Output JSON")
     args = parser.parse_args()
 
+    top_k = max(1, args.top)
     try:
-        results = search_index(args.db, args.query, top_k=max(1, args.top), doc_type=args.type)
-    except FileNotFoundError as exc:
+        if args.semantic:
+            database_url = os.environ.get("DATABASE_URL", "").strip()
+            api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+            if not database_url or not api_key:
+                print(
+                    "Error: --semantic requires DATABASE_URL and OPENAI_API_KEY environment variables.",
+                    file=sys.stderr,
+                )
+                return 1
+            model = os.environ.get("OPENAI_EMBEDDING_MODEL", DEFAULT_EMBED_MODEL).strip() or DEFAULT_EMBED_MODEL
+            lexical = search_index(args.db, args.query, top_k=max(top_k * 2, 10), doc_type=args.type)
+            semantic = search_pgvector(
+                args.query, database_url, api_key, model=model, top_k=max(top_k * 2, 10), doc_type=args.type
+            )
+            results = reciprocal_rank_fusion(lexical, semantic, top_k=top_k)
+        else:
+            results = search_index(args.db, args.query, top_k=top_k, doc_type=args.type)
+    except (FileNotFoundError, RuntimeError) as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 1
 

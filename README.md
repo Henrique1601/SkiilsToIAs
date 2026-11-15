@@ -11,6 +11,7 @@
 [![Agentes Customizados](https://img.shields.io/badge/Agentes-17%20Especialistas-7C3AED?style=for-the-badge&logo=openai&logoColor=white)](#-agentes-customizados-custom-agents)
 [![RAG Híbrido](https://img.shields.io/badge/RAG-pgvector%20%7C%20H%C3%ADbrido%20%7C%20HNSW-10B981?style=for-the-badge&logo=postgresql&logoColor=white)](docs/brain/RAG_ARCHITECTURE.md)
 [![Servidores MCP](https://img.shields.io/badge/MCP-27%20Servidores-059669?style=for-the-badge&logo=serverfault&logoColor=white)](#-servidores-mcp-model-context-protocol-mcps)
+[![Catálogo Web](https://img.shields.io/badge/Cat%C3%A1logo%20Web-Netlify%20Live-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://skiilstoias-catalog.netlify.app)
 [![Compatibilidade](https://img.shields.io/badge/Compat%C3%ADvel-Antigravity%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Copilot-EA580C?style=for-the-badge&logo=githubactions&logoColor=white)](#-como-utilizar)
 [![Versão](https://img.shields.io/badge/Vers%C3%A3o-v1.0.0-0284C7?style=for-the-badge&logo=semanticrelease&logoColor=white)](https://github.com/Henrique1601/SkiilsToIAs/releases/latest)
 [![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-green?style=for-the-badge)](LICENSE)
@@ -24,6 +25,7 @@
   <a href="custom-agents/"><b>👑 17 Agentes Especialistas</b></a> •
   <a href="mcps/"><b>🔌 27 Servidores MCP</b></a> •
   <a href="docs/brain/RAG_ARCHITECTURE.md"><b>🧠 RAG & Base de Conhecimento</b></a> •
+  <a href="https://skiilstoias-catalog.netlify.app"><b>🌐 Catálogo Interativo (Live)</b></a> •
   <a href="CHANGELOG.md"><b>📋 Changelog</b></a>
 </p>
 

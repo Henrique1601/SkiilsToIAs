@@ -14,3 +14,7 @@ Registro de erros comuns e como evitá-los:
 3. **Injeção de Prompts & Vazamento de Dados via RAG:**
    - *Erro:* Recuperar pedaços de documentos que contêm dados sensíveis ou prompts hostis e injetar sem sanitização no prompt do modelo.
    - *Solução:* TypeSafe AI para validar a resposta do LLM e filtro de permissões (RLS) no momento da busca no banco vetorial.
+
+4. **Windows Console (`cp1252`), PowerShell e Extensões da IDE:**
+   - *Erro:* Imprimir emojis em Python sem `reconfigure(encoding="utf-8")`, usar `&&` no PowerShell antigo ou manter caminhos de versão antiga no `mcp_config.json` após update da extensão `.antigravity-ide`.
+   - *Solução:* Configurar `UTF-8` em todos os scripts CLI, usar `;` no PowerShell e validar com `python scripts/mcp_health.py`.
