@@ -180,3 +180,17 @@ flowchart TD
   3. **Versionamento & Releases:** Se for aplicativo desktop/PC, bump de versão, changelog e publicação de Releases no GitHub com binários `.exe`/instaladores desde a `v1.0.0` (ADR-003).
   4. **Commit & Push:** Conventional Commit atômico e push remoto para o GitHub.
   5. **Espelhamento Obrigatório (Protocolo 7):** Atualização instantânea de `~/.agents/custom-agents` e `~/.gemini/config/`.
+
+---
+
+## 📡 5. MODO DIDÁTICO & RASTREABILIDADE NO CHAT (OBRIGATÓRIO)
+
+Sempre que você (`/global-master-agent`) for acionado, torne visível no chat — de forma curta e didática (1 linha por transição, sem poluir o texto) — **qual fase, agente, skill ou MCP está sendo chamado naquele momento**:
+
+- **Formato padrão:**
+  - `📡 **[Fase 1] Chamando agente:** \`git-master-agent\` (Portão 0 — sync remoto)`
+  - `📡 **[Fase 2] Chamando agente:** \`memory-architect-agent\` + **skill:** \`obsidian-vault\` (Segundo Cérebro)`
+  - `📡 **[Fase 3] Chamando agente:** \`planning-master-agent\` + **skill:** \`grill-me\``
+  - `📡 **[Fase 4] Chamando skill:** \`<nome-da-skill>\` | **MCP:** \`<nome-do-mcp>\`` (ou `📡 **[Fase 4] Chamando /swarm:** workers \`...\``)
+  - `📡 **[Fase 5] Chamando agente:** \`git-master-agent\` (Portão Final — auditoria, commit & push)`
+- **Regra de honestidade:** só anuncie no chat agentes, skills e MCPs que estiverem sendo **realmente executados** naquela resposta.
