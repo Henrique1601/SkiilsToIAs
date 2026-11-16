@@ -17,7 +17,6 @@ jobs:
   deploy:
     name: Build & Deploy Catalog
     runs-on: ubuntu-latest
-    if: ${{ secrets.NETLIFY_AUTH_TOKEN != '' && secrets.NETLIFY_SITE_ID != '' }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -31,7 +30,15 @@ jobs:
         run: python scripts/build_catalog.py --check
 
       - name: Deploy to Netlify
+        if: ${{ env.NETLIFY_AUTH_TOKEN != '' && env.NETLIFY_SITE_ID != '' }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: npx --yes netlify-cli deploy --prod --dir=docs/catalog --site="$NETLIFY_SITE_ID"
+
+      - name: Notice if Netlify Secrets Not Configured
+        if: ${{ env.NETLIFY_AUTH_TOKEN == '' || env.NETLIFY_SITE_ID == '' }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: echo "Skipping Netlify auto-deploy (configure NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID secrets to enable)."

@@ -15,6 +15,7 @@ if str(SCRIPTS_DIR) not in sys.path:
 
 import audit_repo
 import build_catalog
+import eval_rag
 import graph_enrich
 import mcp_health
 import rag_index
@@ -164,6 +165,28 @@ class TestBootstrapAndSyncAndMcp(unittest.TestCase):
         tool_names = {t["name"] for t in list_resp["result"]["tools"]}
         self.assertIn("skills_rag_search", tool_names)
         self.assertIn("skills_catalog_lookup", tool_names)
+        self.assertIn("skills_graph_query", tool_names)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            gpath = root / "graph.json"
+            gpath.write_text(
+                '{"nodes":[{"id":"n1","label":"Agent: global-master-agent","source_file":"custom-agents/global-master-agent.md","community":1},'
+                '{"id":"n2","label":"Skill: graphify","source_file":"ai-agents/graphify/SKILL.md","community":1}],'
+                '"links":[{"source":"n1","target":"n2","relation":"uses_skill"}]}',
+                encoding="utf-8",
+            )
+            gres = skills_mcp.graph_query("global-master-agent", max_nodes=10, graph_path=gpath)
+            self.assertEqual(gres["seed_count"], 1)
+            self.assertEqual(len(gres["nodes"]), 2)
+            self.assertEqual(len(gres["edges"]), 1)
+
+            db_path = root / "rag.db"
+            (root / "ai-agents" / "graphify").mkdir(parents=True)
+            (root / "ai-agents" / "graphify" / "SKILL.md").write_text("# graphify\ngraphify knowledge graph", encoding="utf-8")
+            rag_index.index_sqlite(root, db_path)
+            metrics = eval_rag.evaluate_rag(db_path, cases=[("graphify", "ai-agents/graphify/SKILL.md")], top_k=3)
+            self.assertEqual(metrics["hits"], 1)
 
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

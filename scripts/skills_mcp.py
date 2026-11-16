@@ -71,6 +71,18 @@ TOOLS: list[dict[str, Any]] = [
             "required": ["name", "out_dir"],
         },
     },
+    {
+        "name": "skills_graph_query",
+        "description": "Query the local graphify-out/graph.json knowledge graph (nodes + 1-hop neighbors).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "Substring or symbol to match in node labels, ids, or paths"},
+                "max_nodes": {"type": "integer", "default": 20, "minimum": 1, "maximum": 50},
+            },
+            "required": ["query"],
+        },
+    },
 ]
 
 
@@ -96,6 +108,63 @@ def catalog_lookup(
         if len(matches) >= limit:
             break
     return {"counts": data.get("counts", {}), "matched": len(matches), "items": matches}
+
+
+def graph_query(
+    query: str,
+    max_nodes: int = 20,
+    graph_path: Path | None = None,
+) -> dict[str, Any]:
+    path = graph_path or (REPO_ROOT / "graphify-out" / "graph.json")
+    if not path.is_file():
+        raise FileNotFoundError(f"Graph not found at '{path}'. Run /graphify first.")
+
+    data = json.loads(path.read_text(encoding="utf-8"))
+    nodes = data.get("nodes", [])
+    links = data.get("links", data.get("edges", []))
+    q = query.strip().lower()
+    if not q:
+        return {"total_nodes": len(nodes), "matched_nodes": [], "edges": []}
+
+    by_id = {n["id"]: n for n in nodes if "id" in n}
+    seeds = [
+        n for n in nodes
+        if q in str(n.get("label", "")).lower()
+        or q in str(n.get("id", "")).lower()
+        or q in str(n.get("source_file", "")).lower()
+    ][:max_nodes]
+    seed_ids = {n["id"] for n in seeds}
+
+    rel_edges = []
+    neighbor_ids: set[str] = set()
+    for link in links:
+        src, tgt = link.get("source"), link.get("target")
+        if src in seed_ids or tgt in seed_ids:
+            rel_edges.append({"source": src, "target": tgt, "relation": link.get("relation", "")})
+            if src in by_id:
+                neighbor_ids.add(src)
+            if tgt in by_id:
+                neighbor_ids.add(tgt)
+            if len(rel_edges) >= max_nodes * 2:
+                break
+
+    combined_ids = list(seed_ids) + [nid for nid in neighbor_ids if nid not in seed_ids]
+    result_nodes = [
+        {
+            "id": by_id[nid].get("id"),
+            "label": by_id[nid].get("label"),
+            "source_file": by_id[nid].get("source_file", ""),
+            "community": by_id[nid].get("community"),
+        }
+        for nid in combined_ids[:max_nodes]
+        if nid in by_id
+    ]
+    return {
+        "total_nodes": len(nodes),
+        "seed_count": len(seeds),
+        "nodes": result_nodes,
+        "edges": rel_edges,
+    }
 
 
 def execute_tool(name: str, args: dict[str, Any]) -> Any:
@@ -139,6 +208,11 @@ def execute_tool(name: str, args: dict[str, Any]) -> Any:
             cmd.append("--dry-run")
         proc = subprocess.run(cmd, cwd=REPO_ROOT, capture_output=True, text=True, check=True)
         return {"returncode": proc.returncode, "output": proc.stdout.strip()}
+    if name == "skills_graph_query":
+        return graph_query(
+            query=str(args["query"]),
+            max_nodes=max(1, min(50, int(args.get("max_nodes", 20)))),
+        )
     raise KeyError(f"Unknown tool: {name}")
 
 
