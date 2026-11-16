@@ -15,9 +15,11 @@ if str(SCRIPTS_DIR) not in sys.path:
 
 import audit_repo
 import build_catalog
+import graph_enrich
 import mcp_health
 import rag_index
 import rag_search
+import skills_mcp
 import sync_all
 
 
@@ -154,6 +156,30 @@ class TestBootstrapAndSyncAndMcp(unittest.TestCase):
             )
             self.assertEqual(copied, 3)
             self.assertEqual(mismatches, 0)
+
+    def test_skills_mcp_and_graph_enrich(self) -> None:
+        init_resp = skills_mcp.handle_request({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}})
+        self.assertEqual(init_resp["result"]["serverInfo"]["name"], "skiilstoias-mcp")
+        list_resp = skills_mcp.handle_request({"jsonrpc": "2.0", "id": 2, "method": "tools/list", "params": {}})
+        tool_names = {t["name"] for t in list_resp["result"]["tools"]}
+        self.assertIn("skills_rag_search", tool_names)
+        self.assertIn("skills_catalog_lookup", tool_names)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "custom-agents").mkdir(parents=True)
+            (root / "mcps" / "supoclip").mkdir(parents=True)
+            (root / "docs" / "brain").mkdir(parents=True)
+            (root / "ai-agents" / "graphify").mkdir(parents=True)
+            (root / "mcps" / "supoclip" / "README.md").write_text("# SupoClip\n", encoding="utf-8")
+            (root / "ai-agents" / "graphify" / "SKILL.md").write_text("---\nname: graphify\ndescription: g\n---\n", encoding="utf-8")
+            (root / "custom-agents" / "global-master-agent.md").write_text("Uses `supoclip` and `graphify`.\n", encoding="utf-8")
+            (root / "docs" / "brain" / "INDEX.md").write_text("[[DECISIONS]]\n", encoding="utf-8")
+            (root / "docs" / "brain" / "DECISIONS.md").write_text("# Decisions\n", encoding="utf-8")
+
+            sem = graph_enrich.build_ecosystem_semantic(root)
+            self.assertGreaterEqual(len(sem["nodes"]), 4)
+            self.assertGreaterEqual(len(sem["edges"]), 3)
 
 
 if __name__ == "__main__":

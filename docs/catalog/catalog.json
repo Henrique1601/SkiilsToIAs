@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-15T15:56:19Z",
+  "generated_at": "2026-11-16T16:29:13Z",
   "counts": {
-    "total": 694,
+    "total": 695,
     "skills": 640,
     "agents": 17,
-    "mcps": 37
+    "mcps": 38
   },
   "categories": [
     {
@@ -37,7 +37,7 @@
     },
     {
       "name": "mcps",
-      "count": 37
+      "count": 38
     },
     {
       "name": "utilities",
@@ -5556,6 +5556,14 @@
       "description": "O servidor MCP do FrameCraft / Shots Studio conecta os agentes de design, marketing e desenvolvimento à suíte de geração programática de mockups, frames e layouts visuais de alta fidelidade para apresentações, redes sociais (X/Twitter, LinkedIn, Instagram, Dribbble, YouTube, P...",
       "path": "mcps/shots-studio/README.md",
       "install_hint": "mcps/shots-studio/README.md"
+    },
+    {
+      "name": "skiilstoias",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor MCP Stdio zero-dependência nativo deste repositório (scripts/skills_mcp.py), permitindo que qualquer agente ou IDE consulte diretamente o RAG local, o catálogo, o healthcheck de MCPs e o bootstrap Padrão Ouro.",
+      "path": "mcps/skiilstoias/README.md",
+      "install_hint": "mcps/skiilstoias/README.md"
     },
     {
       "name": "spotify",

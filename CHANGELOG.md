@@ -6,6 +6,18 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.
 
 ---
 
+## [1.1.0] - 2026-11-16
+
+### ✨ Novidades & Infraestrutura Executável
+- **Servidor MCP Nativo (`scripts/skills_mcp.py`):** Servidor stdio zero-dependência expondo `skills_rag_search`, `skills_catalog_lookup`, `skills_mcp_health` e `skills_bootstrap_project`.
+- **Motor RAG Executável (`scripts/rag_index.py`, `scripts/rag_search.py`, `scripts/rag_schema.sql`):** Indexação SQLite FTS5/BM25 local + busca híbrida opcional `pgvector` com Reciprocal Rank Fusion (`--semantic`).
+- **Orquestração Paralela `/swarm`:** Integrada à Fase 4 do `global-master-agent` e roteamento `RAG + Graphify` no `skills-orchestrator`.
+- **Catálogo Web Interativo no Netlify:** `docs/catalog/` publicado em `https://skiilstoias-catalog.netlify.app` com workflow automático (`.github/workflows/deploy-catalog.yml`), botão direto para o GitHub e atalho `/`.
+- **Grafo de Conhecimento (`graphify` + `scripts/graph_enrich.py`):** Integração de nós AST de código com agentes, MCPs e Segundo Cérebro.
+- **Automação & Qualidade:** `scripts/bootstrap_project.py`, `scripts/audit_repo.py`, `scripts/mcp_health.py`, `scripts/sync_all.py` (`--mirror`, `--install-hook`), suíte `tests/test_core_scripts.py` no CI e 11 novos MCPs + 4 novas skills (`brazil-payments-pix`, `desktop-packaging-release`, `n8n-whatsapp-automation`, `graphify`).
+
+---
+
 ## [1.0.0] - 2026-11-14
 
 ### 🚀 Lançamento Oficial do Padrão Ouro (v1.0.0)

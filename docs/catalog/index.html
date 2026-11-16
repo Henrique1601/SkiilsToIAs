@@ -669,6 +669,15 @@
             actions.appendChild(pathBtn);
           }
 
+          const ghLink = document.createElement("a");
+          ghLink.className = "path-btn";
+          ghLink.href = `https://github.com/Henrique1601/SkiilsToIAs/blob/main/${item.path}`;
+          ghLink.target = "_blank";
+          ghLink.rel = "noopener noreferrer";
+          ghLink.textContent = "GitHub";
+          ghLink.style.textDecoration = "none";
+          actions.appendChild(ghLink);
+
           footer.append(pathEl, actions);
           card.append(top, desc, footer);
           frag.appendChild(card);
@@ -738,6 +747,13 @@
         })
         .then(hydrate)
         .catch((err) => showFallback(err.message));
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "/" && document.activeElement !== searchInput && !/^(INPUT|TEXTAREA)$/.test(document.activeElement?.tagName || "")) {
+          e.preventDefault();
+          searchInput.focus();
+        }
+      });
     })();
   </script>
 </body>
