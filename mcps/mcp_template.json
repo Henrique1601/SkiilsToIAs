@@ -187,6 +187,9 @@
       "headers": {
         "Authorization": "Bearer "
       }
+    },
+    "solides-vagas": {
+      "serverUrl": "https://mcp.solides.com.br/ats/candidate"
     }
   }
 }

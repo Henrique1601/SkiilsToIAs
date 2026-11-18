@@ -171,6 +171,9 @@ DEFAULT_MCPS = {
     "botprogracraft": {
         "command": "node",
         "args": ["C:/Users/Public/Downloads/BotPrograCraft/packages/mcp-server/dist/index.js"]
+    },
+    "solides-vagas": {
+        "serverUrl": "https://mcp.solides.com.br/ats/candidate"
     }
 }
 
