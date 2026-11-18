@@ -63,7 +63,8 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 🔎 [**`perplexity-ask`**](perplexity-ask/README.md) | **Stdio** (Local `npx`) | `server-perplexity-ask` | Pesquisa web em tempo real com síntese e citações via Perplexity Sonar API. |
 | 📊 [**`windsor`**](windsor/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.windsor.ai` | Consulta unificada de métricas de mídia paga, atribuição e analytics no Windsor.ai. |
 | 🔍 [**`vertex-ai-search`**](vertex-ai-search/README.md) | **Streamable HTTP** (Remoto) | `https://discoveryengine.googleapis.com/mcp` | Busca semântica empresarial e grounded search via Google Vertex AI Search. |
-| 🧠 [**`skiilstoias`**](skiilstoias/README.md) | **Stdio** (Local Python) | `scripts/skills_mcp.py` | Servidor MCP nativo deste repositório: `skills_rag_search`, `skills_catalog_lookup`, `skills_mcp_health` e `skills_bootstrap_project`. |
+| 🧠 [**`skiilstoias`**](skiilstoias/README.md) | **Stdio** (Local Python) | `scripts/skills_mcp.py` | Servidor MCP nativo deste repositório: `skills_rag_search`, `skills_catalog_lookup`, `skills_mcp_health`, `skills_bootstrap_project` e `skills_graph_query`. |
+| 💼 [**`solides-vagas`**](solides-vagas/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.solides.com.br/ats/candidate` | Servidor MCP da **Sólides Vagas (ATS)** para busca e acompanhamento de vagas para candidatos. |
 | 🤖 **`botprogracraft`** | **Stdio** (Local Node) | `C:/Users/Public/Downloads/BotPrograCraft/packages/mcp-server/dist/index.js` | Servidor MCP Stdio do **BotPrograCraft** (`@botprogracraft/mcp-server`) que expõe contexto ao vivo da IDE, frames de tela, prompts de tutor e progresso de aprendizado. |
 | 💼 **`solides-vagas`** | **Streamable HTTP** (Remoto) | `https://mcp.solides.com.br/ats/candidate` | Servidor MCP remoto da **Sólides Vagas** (ATS / portal de vagas para candidatos). |
 

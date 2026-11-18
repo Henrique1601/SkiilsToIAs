@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-16T17:30:07Z",
+  "generated_at": "2026-11-18T22:52:55Z",
   "counts": {
-    "total": 695,
+    "total": 696,
     "skills": 640,
     "agents": 17,
-    "mcps": 38
+    "mcps": 39
   },
   "categories": [
     {
@@ -37,7 +37,7 @@
     },
     {
       "name": "mcps",
-      "count": 38
+      "count": 39
     },
     {
       "name": "utilities",
@@ -5564,6 +5564,14 @@
       "description": "Servidor MCP Stdio zero-dependência nativo deste repositório (scripts/skills_mcp.py), permitindo que qualquer agente ou IDE consulte diretamente o RAG local, o catálogo, o healthcheck de MCPs e o bootstrap Padrão Ouro.",
       "path": "mcps/skiilstoias/README.md",
       "install_hint": "mcps/skiilstoias/README.md"
+    },
+    {
+      "name": "solides-vagas",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Servidor MCP HTTP da Sólides Vagas (ATS) para consulta de vagas e suporte à jornada de candidatos via Model Context Protocol.",
+      "path": "mcps/solides-vagas/README.md",
+      "install_hint": "mcps/solides-vagas/README.md"
     },
     {
       "name": "spotify",
