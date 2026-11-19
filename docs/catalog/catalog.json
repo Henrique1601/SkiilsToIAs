@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T18:39:13Z",
+  "generated_at": "2026-11-19T18:48:26Z",
   "counts": {
     "total": 697,
     "skills": 640,
@@ -5241,7 +5241,7 @@
       "name": "global-master-agent",
       "category": "custom-agents",
       "type": "agent",
-      "description": "Agente Global Supremo e Comandante Central de Projetos. Ponto único de contato: conecta todos os 16 agentes em rede (Full-Mesh), diagnostica o que o projeto tem vs. o que precisa, aplica o Kit Universal Top 20 Skills & MCPs e orquestra o catálogo completo de 685 skills e 26 servidores MCP.",
+      "description": "Agente Global Supremo e Comandante Central de Projetos. Ponto único de contato: conecta todos os 18 agentes em rede (Full-Mesh), diagnostica o que o projeto tem vs. o que precisa, aplica o Kit Universal Top 20 Skills & MCPs e orquestra o catálogo completo de 685 skills e 28 servidores MCP.",
       "path": "custom-agents/global-master-agent.md",
       "install_hint": "custom-agents/global-master-agent.md"
     },
@@ -5305,7 +5305,7 @@
       "name": "skills-orchestrator",
       "category": "custom-agents",
       "type": "agent",
-      "description": "Agente Mestre Orquestrador de 685 Skills no repositório (715 globais) e Coordenador Central da Rede de 17 Agentes. Conduz qualquer projeto inspecionando o que já existe vs. o que precisa, aplicando o Kit Universal Top 20 Skills & MCPs e conectando todos os agentes especialistas nas 9 fases.",
+      "description": "Agente Mestre Orquestrador de 685 Skills no repositório (715 globais) e Coordenador Central da Rede de 18 Agentes. Conduz qualquer projeto inspecionando o que já existe vs. o que precisa, aplicando o Kit Universal Top 20 Skills & MCPs e conectando todos os agentes especialistas nas 9 fases.",
       "path": "custom-agents/skills-orchestrator.md",
       "install_hint": "custom-agents/skills-orchestrator.md"
     },
