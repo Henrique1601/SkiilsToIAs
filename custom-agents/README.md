@@ -26,6 +26,7 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 | 🎬 **`video-producer-agent`** (Produtor de Vídeos Remotion) | [`video-producer-agent.md`](video-producer-agent.md) | Produção programática de vídeos com React/Remotion, kinetic typography, legendas automáticas, áudio sincronizado, slides e teasers de SaaS. |
 | 📱 **`social-publisher-agent`** (Especialista em Social Media & Demo) | [`social-publisher-agent.md`](social-publisher-agent.md) | Captura de telas 4K (`chrome-devtools`, `playwright`, `desktop-commander`), mockups 3D (`shots-studio`), copywriting de engenharia anti-slop, decisões estruturadas (`typesafe-ai`) e agendamento/publicação no Instagram e LinkedIn via Buffer MCP. |
 | 🐙 **`github-profile-agent`** (Especialista em Perfil do GitHub) | [`github-profile-agent.md`](github-profile-agent.md) | Otimização do perfil público (`username/username`), README dinâmico, banners personalizados, métricas em tempo real e curadoria de pinned repos. |
+| 💼 **`job-copilot-agent`** (Copiloto de Carreira & Candidaturas) | [`job-copilot-agent.md`](job-copilot-agent.md) | **Modelo Cowork (Pré-preenchimento).** Descoberta de vagas (`solides-vagas`, LinkedIn, Gupy, Indeed), match score (`job-description-analyzer`), adaptação de CV (`resume-tailor`), pré-preenchimento assistido e log estruturado no Notion. |
 
 ---
 
@@ -55,6 +56,7 @@ flowchart TD
     ORCH <--> VIDEO["🎬 video-producer-agent"]
     ORCH <--> PROFILE["🐙 github-profile-agent"]
     ORCH <--> SOCIAL["📱 social-publisher-agent"]
+    ORCH <--> JOB["💼 job-copilot-agent"]
 
     %% Camada 2: Execução Direta + Consulta ao Hub
     UI -.->|Consulta Transversal| ORCH
@@ -78,6 +80,7 @@ flowchart TD
     GROWTH ==>|Portão Obrigatório Final| GIT
     VIDEO ==>|Portão Obrigatório Final| GIT
     PROFILE ==>|Portão Obrigatório Final| GIT
+    JOB ==>|Portão Obrigatório Final| GIT
     MEM ==>|Portão Obrigatório Final| GIT
     GMA <--> GIT
 ```
