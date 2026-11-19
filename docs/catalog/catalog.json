@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-18T22:52:55Z",
+  "generated_at": "2026-11-19T12:22:39Z",
   "counts": {
-    "total": 696,
+    "total": 697,
     "skills": 640,
-    "agents": 17,
+    "agents": 18,
     "mcps": 39
   },
   "categories": [
@@ -53,7 +53,7 @@
     },
     {
       "name": "custom-agents",
-      "count": 17
+      "count": 18
     },
     {
       "name": "seo",
@@ -5252,6 +5252,14 @@
       "description": "Agente de Lançamento, SEO & Tração de Produto. Especialista em auditoria técnica de SEO, performance Lighthouse 90+, planos de conteúdo e postagens para LinkedIn, sequências de e-mails de conversão, campanhas de lançamento, CRO e tração multicanal.",
       "path": "custom-agents/growth-marketing-agent.md",
       "install_hint": "custom-agents/growth-marketing-agent.md"
+    },
+    {
+      "name": "job-copilot-agent",
+      "category": "custom-agents",
+      "type": "agent",
+      "description": "Agente Cowork de Carreira & Candidaturas (Human-in-the-Loop). Descobre vagas (Sólides MCP, LinkedIn, Gupy, Indeed e sites diretos), calcula match score, adapta currículo/carta sem inventar dados, pré-preenche formulários até a revisão final e registra cada passo no Notion.",
+      "path": "custom-agents/job-copilot-agent.md",
+      "install_hint": "custom-agents/job-copilot-agent.md"
     },
     {
       "name": "memory-architect-agent",
