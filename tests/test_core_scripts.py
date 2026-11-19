@@ -137,26 +137,31 @@ class TestBootstrapAndSyncAndMcp(unittest.TestCase):
         self.assertNotIn("secret123", masked_url)
         self.assertIn("apiKey=", masked_url)
 
-    def test_sync_all_hook_and_mirror(self) -> None:
+    def test_sync_all_agents_and_mcps(self) -> None:
+        from unittest import mock
+
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            (root / ".git" / "hooks").mkdir(parents=True)
-            hook = sync_all.install_pre_commit_hook(root)
-            self.assertTrue(hook.is_file())
-            self.assertIn("audit_repo.py", hook.read_text(encoding="utf-8"))
-
             agents_src = root / "custom-agents"
-            (agents_src / "global-master-agent").mkdir(parents=True)
+            agents_src.mkdir(parents=True)
             (agents_src / "demo-agent.md").write_text("# Demo Agent\n", encoding="utf-8")
-            (agents_src / "global-master-agent" / "SKILL.md").write_text("# GMA Skill\n", encoding="utf-8")
+            (root / "mcps").mkdir(parents=True)
+            (root / "mcps" / "mcp_template.json").write_text('{"mcpServers":{"demo":{}}}', encoding="utf-8")
+            gem_mcp = root / "gem" / "mcp_config.json"
+            gem_mcp.parent.mkdir(parents=True)
+            gem_mcp.write_text('{"mcpServers":{"demo":{}}}', encoding="utf-8")
 
-            copied, mismatches = sync_all.mirror_protocol7(
-                repo_root=root,
-                gemini_dir=root / "gemini_cfg",
-                agents_dir=root / "agents_cfg",
-            )
-            self.assertEqual(copied, 3)
-            self.assertEqual(mismatches, 0)
+            with mock.patch.multiple(
+                sync_all,
+                REPO=root,
+                GEM_AGENTS=root / "gem" / "agents",
+                GEM_SKILLS=root / "gem" / "skills",
+                GEM_MCP=gem_mcp,
+            ):
+                total, errors = sync_all.sync_agents()
+                self.assertEqual(total, 1)
+                self.assertEqual(errors, [])
+                self.assertEqual(sync_all.check_mcps(), [])
 
     def test_skills_mcp_and_graph_enrich(self) -> None:
         init_resp = skills_mcp.handle_request({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}})
