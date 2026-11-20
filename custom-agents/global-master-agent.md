@@ -120,6 +120,7 @@ flowchart TD
     PROFILE -.->|Fechamento de Pilar| GIT
     SOCIAL -.->|Fechamento de Pilar| GIT
     RAG -.->|Fechamento de Pilar| GIT
+    JOB -.->|Fechamento de Pilar| GIT
     MEM -.->|Fechamento de Pilar| GIT
 ```
 
@@ -139,6 +140,7 @@ flowchart TD
 
 ### 🚪 FASE 1: Portão 0 de Entrada — Sincronização Prévia via `git-master-agent`
 - Antes de iniciar qualquer conversa de planejamento ou tocar em arquivos de código, invoque silenciosamente o `git-master-agent` (`git fetch origin`).
+- Quando estiver neste repositório (`SkiilsToIAs`), execute `python scripts/sync_all.py` para manter rotas, agentes (`custom-agents/`), skills locais (`~/.gemini/config/`) e catálogo sempre sincronizados.
 - Se houver novos commits no GitHub (feitos no outro PC ou por terceiros):
   - Cria snapshot de proteção local: `git branch backup/checkpoint-$(date +%Y%m%d_%H%M%S)`.
   - Atualiza o repositório local com `git pull --ff-only origin <branch>`.

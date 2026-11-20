@@ -156,6 +156,7 @@ class TestBootstrapAndSyncAndMcp(unittest.TestCase):
                 REPO=root,
                 GEM_AGENTS=root / "gem" / "agents",
                 GEM_SKILLS=root / "gem" / "skills",
+                AGENTS_CUSTOM=root / "agents_custom",
                 GEM_MCP=gem_mcp,
             ):
                 total, errors = sync_all.sync_agents()

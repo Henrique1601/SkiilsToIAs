@@ -389,8 +389,8 @@ O `git-master-agent` é responsável por manter a vitrine do repositório impec�
 Sempre que houver **novas skills, novos servidores MCP, novos agentes customizados ou alterações nos agentes existentes**:
 
 1. **Gatilho de Execução Automática:**
-   - O `git-master-agent` é o guardião responsável por manter a pasta externa de agentes `C:\Users\henri\.agents\custom-agents` e a raiz `C:\Users\henri\.agents\` perfeitamente espelhadas e sincronizadas com a versão ouro do repositório (`C:\Users\henri\.agents\skills\custom-agents`).
-   - Nenhuma nova skill, agente ou MCP pode ser considerado finalizado sem que este espelhamento seja executado.
+   - O `git-master-agent` é o guardião responsável por manter `C:\Users\henri\.agents\custom-agents`, `~/.gemini/config/agents/`, `~/.gemini/config/skills/` e as rotas do `global-master-agent` / `skills-orchestrator` perfeitamente sincronizadas com a versão ouro do repositório (`C:\Users\henri\.agents\skills\custom-agents`).
+   - Sempre que `git-master-agent` ou `global-master-agent` rodar neste repositório (no Portão 0 após pull ou no Portão Final), execute `python scripts/sync_all.py` para atualizar espelhos, catálogo e checar se todo novo agente tem rota configurada.
 
 2. **Passo a Passo de Sincronização Obrigatório:**
    - **Agentes Customizados:** Copie todos os arquivos `.md` e pastas com `SKILL.md` de `custom-agents/` para `C:\Users\henri\.agents\custom-agents/`.

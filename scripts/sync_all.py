@@ -11,6 +11,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 GEM_AGENTS = Path.home() / ".gemini" / "config" / "agents"
 GEM_SKILLS = Path.home() / ".gemini" / "config" / "skills"
+AGENTS_CUSTOM = Path.home() / ".agents" / "custom-agents"
 GEM_MCP = Path.home() / ".gemini" / "config" / "mcp_config.json"
 
 
@@ -21,6 +22,7 @@ def sha256(path: Path) -> str:
 def sync_agents() -> tuple[int, list[str]]:
     GEM_AGENTS.mkdir(parents=True, exist_ok=True)
     GEM_SKILLS.mkdir(parents=True, exist_ok=True)
+    AGENTS_CUSTOM.mkdir(parents=True, exist_ok=True)
 
     agent_mds = sorted(
         p
@@ -35,6 +37,7 @@ def sync_agents() -> tuple[int, list[str]]:
         skill_md = skill_dir / "SKILL.md"
         shutil.copy2(md, skill_md)
         shutil.copy2(md, GEM_AGENTS / md.name)
+        shutil.copy2(md, AGENTS_CUSTOM / md.name)
         if (GEM_AGENTS / stem).is_dir():
             shutil.copy2(skill_md, GEM_AGENTS / stem / "SKILL.md")
         (GEM_SKILLS / stem).mkdir(parents=True, exist_ok=True)
@@ -44,11 +47,28 @@ def sync_agents() -> tuple[int, list[str]]:
             sha256(md)
             == sha256(skill_md)
             == sha256(GEM_AGENTS / md.name)
+            == sha256(AGENTS_CUSTOM / md.name)
             == sha256(GEM_SKILLS / stem / "SKILL.md")
         ):
             errors.append(stem)
 
     return len(agent_mds), errors
+
+
+def check_agent_routes() -> list[str]:
+    """Verify every custom agent has routing references in global-master-agent and skills-orchestrator."""
+    gma_path = REPO / "custom-agents" / "global-master-agent.md"
+    orch_path = REPO / "custom-agents" / "skills-orchestrator.md"
+    if not gma_path.is_file() or not orch_path.is_file():
+        return []
+    gma_text = gma_path.read_text(encoding="utf-8", errors="replace")
+    orch_text = orch_path.read_text(encoding="utf-8", errors="replace")
+    agent_mds = sorted(
+        p.stem
+        for p in (REPO / "custom-agents").glob("*.md")
+        if p.name.lower() not in ("readme.md", "prompts_motion_social.md")
+    )
+    return [stem for stem in agent_mds if stem not in gma_text or stem not in orch_text]
 
 
 def check_mcps() -> list[str]:
@@ -61,15 +81,16 @@ def check_mcps() -> list[str]:
 
 def main() -> int:
     total_agents, agent_errors = sync_agents()
+    unrouted = check_agent_routes()
     missing_mcps = check_mcps()
 
     res_build = subprocess.run([sys.executable, str(REPO / "scripts" / "build_catalog.py")], check=False)
     res_check = subprocess.run([sys.executable, str(REPO / "scripts" / "build_catalog.py"), "--check"], check=False)
 
-    print(f"Agents synced: {total_agents}, parity errors: {agent_errors}")
+    print(f"Agents synced: {total_agents}, parity errors: {agent_errors}, unrouted: {unrouted}")
     print(f"Template MCPs missing in Gemini config: {missing_mcps}")
 
-    if agent_errors or missing_mcps or res_build.returncode != 0 or res_check.returncode != 0:
+    if agent_errors or unrouted or missing_mcps or res_build.returncode != 0 or res_check.returncode != 0:
         return 1
     return 0
 
