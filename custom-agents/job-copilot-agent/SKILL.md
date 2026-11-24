@@ -84,10 +84,10 @@ Cada vaga processada segue este fluxo auditável:
 4. **Pré-preenchimento Assistido (`application-form-filler` + `browser` / `playwright`):**
    - Preenche o formulário, captura **screenshot da revisão** e **para antes do botão final de envio**.
 5. **Registro Duplo (Notion + JSONL Estruturado):**
-   - **Notion (`notion-mcp-server`):** registra cada vaga na página **"Candidaturas & Pipeline de Vagas"** (Page ID: `41d37ba8-6649-8134-9f8c-ef6ba427c3ee`; subpágina de perfil: `41d37ba8-6649-81d5-b389-ca5f14e2fcbc`) contendo obrigatoriamente:
-     - **O que é a vaga:** título, empresa, localidade/modelo (`Remoto`/`Híbrido`/`Presencial`), tipo (`Simplificada`/`Normal`), link direto e objetivo principal da posição.
-     - **Tecnologias:** lista clara das tecnologias/stack obrigatórias e desejáveis pedidas na descrição.
-     - **Resumo da vaga para leitura posterior:** síntese objetiva das responsabilidades, requisitos, diferenciais, Match Score, Track de CV aplicado (`Full-Stack`/`Front-End`/`Back-End`/`AI Engineer`), Status atual e passos executados.
+   - **Notion (`notion-mcp-server`):** manter a página **"Candidaturas & Pipeline de Vagas"** (Page ID: `41d37ba8-6649-8134-9f8c-ef6ba427c3ee`; subpágina de perfil: `41d37ba8-6649-81d5-b389-ca5f14e2fcbc`) **sempre organizada em seções e tabelas Markdown** (`⏳ Fila de Ação` separada em `🇧🇷 Brasil` e `🇵🇹 Portugal & 🇪🇺 UE`, `🚀 Candidaturas Enviadas`, `🛑 Bloqueadas / Aguardando Login`, `🔎 Descobertas & Em Triagem`, `❌ Descartadas`):
+     - **Atualização in-place obrigatória:** use `API-retrieve-page-markdown` + `API-update-page-markdown` (`update_content`) para **mover e atualizar a vaga na tabela correta** (1 única linha por vaga, sem duplicar nem empilhar bullets `"🔄 Atualização ..."` no rodapé).
+     - **Conteúdo obrigatório por vaga:** **O que é a vaga** (título, empresa, região/modelo), **Tecnologias**, **Resumo + pendência/próximo passo**, **Match Score** e **Link clicável**.
+     - **Preservar subpáginas:** nunca remover `<page url="...">Perfil Mestre & Tracks de CV (PT / EN)</page>`.
    - **Log Local Estruturado (`scripts/job_copilot_log.py`):** grava eventos em `~/.gemini/job-copilot/runs/YYYY-MM-DD.jsonl` (`step`, `status`, `timestamp`, `platform`, `track`, `language`, `match_score`, `job_url`, `screenshot_path`, `error_reason`) para alimentar o futuro **Dashboard Web**.
 6. **Entrega da Fila para Revisão Humana:**
    - Apresenta o resumo diário das vagas pré-preenchidas com link direto e próximos passos.
