@@ -1,34 +1,37 @@
 # 🎞️ Concat Video Editor MCP Server (`concat`)
 
-Bridge MCP **Stdio zero-dependência** (`scripts/concat_mcp.py`) para o daemon JSON-RPC local do editor de vídeo **Concat** (`127.0.0.1:7420`), com autenticação automática na primeira linha (`auth` + `token`).
+Servidor MCP nativo oficial do editor de vídeo **Concat** (`--mcp`), com suporte a criação/edição de projetos, timeline, mídia, templates e renderização/exportação.
 
 ---
 
-## ⚡ Configuração & Transporte
+## ⚡ Configuração & Transporte (Stdio Nativo)
 
-- **Tipo / Transporte:** Stdio Bridge -> TCP JSON-RPC local (`127.0.0.1:7420`)
-- **Script:** `scripts/concat_mcp.py`
-- **Autenticação:** Variável de ambiente `CONCAT_TOKEN` (nunca versionar o token real).
+- **Tipo / Transporte:** Stdio (Executável nativo com `--mcp`)
 
-### Configuração no `mcp_config.json`:
+### Windows (`mcp_config.json`):
 
 ```json
 {
   "mcpServers": {
     "concat": {
-      "command": "python",
-      "args": ["c:/Users/henri/.agents/skills/scripts/concat_mcp.py"],
-      "env": {
-        "CONCAT_HOST": "127.0.0.1",
-        "CONCAT_PORT": "7420",
-        "CONCAT_TOKEN": "${CONCAT_TOKEN}"
-      }
+      "command": "C:\\Users\\henri\\AppData\\Local\\Programs\\Concat\\concat.exe",
+      "args": ["--mcp"]
     }
   }
 }
 ```
 
-## 🛠️ Ferramentas & Métodos Suportados
-- `concat_version` / `concat_project_list` / `concat_project_get`
-- `concat_edit_apply` / `concat_export_run`
-- `concat_call`: acesso completo aos 22 métodos do Concat (`project.*`, `edit.*`, `media.*`, `catalogue.list`, `template.*`, `export.*`, `preview.frame`, `version`).
+### macOS (`mcp_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "concat": {
+      "command": "/Applications/Concat.app/Contents/MacOS/concat",
+      "args": ["--mcp"]
+    }
+  }
+}
+```
+
+> **Alternativa via TCP Daemon (`127.0.0.1:7420`):** caso utilize o daemon TCP autenticado por token, este repositório também inclui a bridge zero-dependência [`scripts/concat_mcp.py`](../../scripts/concat_mcp.py) (`CONCAT_HOST`, `CONCAT_PORT`, `CONCAT_TOKEN`).

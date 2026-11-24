@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T18:52:21Z",
+  "generated_at": "2026-11-24T22:31:35Z",
   "counts": {
     "total": 700,
     "skills": 640,
@@ -5409,7 +5409,7 @@
       "name": "concat",
       "category": "mcps",
       "type": "mcp",
-      "description": "Bridge MCP Stdio zero-dependência (scripts/concat_mcp.py) para o daemon JSON-RPC local do editor de vídeo Concat (127.0.0.1:7420), com autenticação automática na primeira linha (auth + token).",
+      "description": "Servidor MCP nativo oficial do editor de vídeo Concat (--mcp), com suporte a criação/edição de projetos, timeline, mídia, templates e renderização/exportação.",
       "path": "mcps/concat/README.md",
       "install_hint": "mcps/concat/README.md"
     },
