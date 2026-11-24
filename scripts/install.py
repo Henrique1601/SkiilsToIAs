@@ -174,6 +174,9 @@ DEFAULT_MCPS = {
     },
     "solides-vagas": {
         "serverUrl": "https://mcp.solides.com.br/ats/candidate"
+    },
+    "lovable": {
+        "serverUrl": "https://mcp.lovable.dev"
     }
 }
 

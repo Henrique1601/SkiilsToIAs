@@ -28,11 +28,10 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 |---|:---:|---|---|
 | 💼 [**`prospector-crm`**](prospector-crm/README.md) | **Streamable HTTP** (Remoto) | `https://api-prospector-delta.vercel.app/api/mcp` | Servidor proprietário do **Prospector CRM** conectado ao Neon Postgres (150+ leads). Expõe [`list_leads`](prospector-crm/README.md#list_leads) (filtro e busca) e [`create_leads`](prospector-crm/README.md#create_leads) (cadastro com desduplicação). |
 | 🔄 [**`devsync`**](devsync/README.md) | **Stdio** (Local) | `node src/cli.js mcp` | Servidor nativo do **DevSync v0.4.0** para sincronização Git resiliente multi-máquina (Casa vs. Trabalho). Expõe `devsync_status`, `devsync_sync`, `devsync_sync_all`, `devsync_diff`, `devsync_stash_sync`, `devsync_diagnose`, `devsync_history` e `devsync_pause_resume`. |
-| 🐘 [**`neon-postgres`**](neon-postgres/README.md) | **Remote SSE / Bridge** | `https://mcp.neon.tech/sse` | Gestão serverless de banco de dados PostgreSQL Neon, branching instantâneo de bancos, inspeção de schemas, migrations zero-downtime e tuning de queries. |
+| 🐘 [**`neon-postgres`** / `mcp-server-neon`](neon-postgres/README.md) | **Remote SSE / Bridge** | `https://mcp.neon.tech/sse` | Gestão serverless de banco de dados PostgreSQL Neon, branching instantâneo de bancos, inspeção de schemas, migrations zero-downtime e tuning de queries. |
 | 📝 [**`notion-mcp-server`**](notion/README.md) | **Stdio** (Local) | `@notionhq/notion-mcp-server` | Integração oficial com workspaces Notion. Leitura/escrita de páginas, manipulação de bancos de dados (*databases*), busca semântica e blocos de conteúdo. |
 | 🌐 [**`chrome-devtools-mcp`**](chrome-devtools/README.md) | **Stdio** (Local) | `chrome-devtools-mcp@latest` | Inspeção e controle de browser headless/real. Captura de screenshots, inspeção do console/rede, auditoria Lighthouse e execução de scripts na página. |
 | 🔬 [**`rea`**](rea/README.md) | **Stdio** (Local) | `rea-agents@6.0.0` | Engenharia reversa avançada, inspeção e desmontagem de binários nativos (x86/x64/ARM), análise de grafos de chamadas e auditoria de segurança. |
-| 🎨 [**`lovable`**](https://mcp.lovable.dev) | **Streamable HTTP** (Remoto) | `https://mcp.lovable.dev` | Plataforma de prototipagem rápida e desenvolvimento web assistido por IA. |
 | 📱 [**`buffer`**](buffer/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.buffer.com/mcp` | Gerenciamento multicanal de mídias sociais (LinkedIn, X, Instagram), agendamento de posts, análise de engajamento e métricas via Buffer. |
 | 📸 [**`shots-studio`**](shots-studio/README.md) | **Stdio** (Local Node) | `shots-studio/mcp-server/index.ts` | Geração programática de mockups, dispositivos (iPhone, MacBook, Apple Watch), social posts para X/LinkedIn e frames de snippets de código elegantes. |
 | 🐙 [**`github`**](github/README.md) | **Streamable HTTP** (Remoto) | `https://api.githubcopilot.com/mcp/` | Servidor GitHub MCP para inspeção de repositórios, PRs, issues, commits, branches e integração direta com GitHub Copilot. |
@@ -66,7 +65,7 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 💼 [**`solides-vagas`**](solides-vagas/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.solides.com.br/ats/candidate` | Servidor MCP da **Sólides Vagas (ATS)** para busca e acompanhamento de vagas para candidatos. |
 | 🎞️ [**`concat`**](concat/README.md) | **Stdio Bridge** -> TCP (`127.0.0.1:7420`) | `scripts/concat_mcp.py` | Editor de vídeo **Concat**: projetos, timeline (`edit.apply`), mídia, templates, preview e exportação (`export.run`). |
 | 🤖 **`botprogracraft`** | **Stdio** (Local Node) | `C:/Users/Public/Downloads/BotPrograCraft/packages/mcp-server/dist/index.js` | Servidor MCP Stdio do **BotPrograCraft** (`@botprogracraft/mcp-server`) que expõe contexto ao vivo da IDE, frames de tela, prompts de tutor e progresso de aprendizado. |
-| 💼 **`solides-vagas`** | **Streamable HTTP** (Remoto) | `https://mcp.solides.com.br/ats/candidate` | Servidor MCP remoto da **Sólides Vagas** (ATS / portal de vagas para candidatos). |
+| 🎯 **`apollo`** | **Streamable HTTP** (Remoto) | `https://mcp.apollo.io/mcp` | Enriquecimento B2B, busca de contatos, empresas e inteligência comercial via Apollo.io. |
 
 ---
 

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T17:19:24Z",
+  "generated_at": "2026-11-24T18:52:21Z",
   "counts": {
-    "total": 698,
+    "total": 700,
     "skills": 640,
-    "agents": 18,
+    "agents": 20,
     "mcps": 40
   },
   "categories": [
@@ -53,7 +53,7 @@
     },
     {
       "name": "custom-agents",
-      "count": 18
+      "count": 20
     },
     {
       "name": "seo",
@@ -5198,6 +5198,14 @@
       "install_hint": "custom-agents/appsec-pentest-agent.md"
     },
     {
+      "name": "data-analytics-agent",
+      "category": "custom-agents",
+      "type": "agent",
+      "description": "Agente de Analytics, BI & Engenharia de Dados. Especialista em SQL analítico, modelagem dimensional, KPIs de negócio, dashboards executivos (Postgres, ClickHouse, BigQuery, Looker) e pipelines de métricas.",
+      "path": "custom-agents/data-analytics-agent.md",
+      "install_hint": "custom-agents/data-analytics-agent.md"
+    },
+    {
       "name": "database-architect-agent",
       "category": "custom-agents",
       "type": "agent",
@@ -5241,7 +5249,7 @@
       "name": "global-master-agent",
       "category": "custom-agents",
       "type": "agent",
-      "description": "Agente Global Supremo e Comandante Central de Projetos. Ponto único de contato: conecta todos os 18 agentes em rede (Full-Mesh), diagnostica o que o projeto tem vs. o que precisa, aplica o Kit Universal Top 20 Skills & MCPs e orquestra o catálogo completo de 685 skills e 28 servidores MCP.",
+      "description": "Agente Global Supremo e Comandante Central de Projetos. Ponto único de contato: conecta todos os 20 agentes em rede (Full-Mesh), diagnostica o que o projeto tem vs. o que precisa, aplica o Kit Universal Top 20 Skills & MCPs e orquestra o catálogo completo de 685 skills e 29 servidores MCP.",
       "path": "custom-agents/global-master-agent.md",
       "install_hint": "custom-agents/global-master-agent.md"
     },
@@ -5268,6 +5276,14 @@
       "description": "Agente Arquiteto de Memória, Contexto & Aprendizado Contínuo. Especialista em persistência entre sessões, resgate de contexto histórico, gestão do servidor ai-memory MCP, handoffs entre máquinas/agentes e prevenção de amnésia operacional.",
       "path": "custom-agents/memory-architect-agent.md",
       "install_hint": "custom-agents/memory-architect-agent.md"
+    },
+    {
+      "name": "mobile-engineer-agent",
+      "category": "custom-agents",
+      "type": "agent",
+      "description": "Agente Engenheiro Mobile (iOS, Android & Cross-Platform). Especialista em React Native, Expo, Flutter/Dart, Kotlin/Android Studio, Compose Multiplatform e publicação em App Store / Google Play.",
+      "path": "custom-agents/mobile-engineer-agent.md",
+      "install_hint": "custom-agents/mobile-engineer-agent.md"
     },
     {
       "name": "planning-master-agent",
@@ -5305,7 +5321,7 @@
       "name": "skills-orchestrator",
       "category": "custom-agents",
       "type": "agent",
-      "description": "Agente Mestre Orquestrador de 685 Skills no repositório (715 globais) e Coordenador Central da Rede de 18 Agentes. Conduz qualquer projeto inspecionando o que já existe vs. o que precisa, aplicando o Kit Universal Top 20 Skills & MCPs e conectando todos os agentes especialistas nas 9 fases.",
+      "description": "Agente Mestre Orquestrador de 685 Skills no repositório (715 globais) e Coordenador Central da Rede de 20 Agentes. Conduz qualquer projeto inspecionando o que já existe vs. o que precisa, aplicando o Kit Universal Top 20 Skills & MCPs e conectando todos os agentes especialistas nas 9 fases.",
       "path": "custom-agents/skills-orchestrator.md",
       "install_hint": "custom-agents/skills-orchestrator.md"
     },

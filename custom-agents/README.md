@@ -10,9 +10,9 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 
 | Agente | Arquivo | Descrição |
 | :--- | :--- | :--- |
-| 👑 **`global-master-agent`** (Agente Global Supremo) | [`global-master-agent.md`](global-master-agent.md) | **Ponto único de comando e entrada.** Você só precisa chamar ele: ele orquestra nos bastidores todos os outros 17 agentes e as 685 skills do repositório. |
+| 👑 **`global-master-agent`** (Agente Global Supremo) | [`global-master-agent.md`](global-master-agent.md) | **Ponto único de comando e entrada.** Você só precisa chamar ele: ele orquestra nos bastidores todos os outros 19 agentes e as 685 skills do repositório. |
 | 📋 **`planning-master-agent`** (Mestre de Planejamento) | [`planning-master-agent.md`](planning-master-agent.md) | **CPO e Staff Program Manager.** Sabatina implacável, decomposição atômica de tarefas, grafo de dependências (DAG), análise de riscos (Pre-Mortem) e critérios de aceite testáveis. |
-| 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 685 skills (715 globais) e 28 MCPs. Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
+| 🎯 **`skills-orchestrator`** (Agente Mestre de Projetos) | [`skills-orchestrator.md`](skills-orchestrator.md) | Orquestrador mestre das 685 skills (715 globais) e 29 MCPs. Conduz qualquer projeto técnico ou de negócio com metodologia em 9 fases (da ideação ao go-to-market). |
 | 🧠 **`memory-architect-agent`** (Arquiteto de Memória & Contexto) | [`memory-architect-agent.md`](memory-architect-agent.md) | **Governança de Memória e Continuidade Persistente.** Resgate de decisões históricas, handoffs entre sessões, manutenção contínua da Wiki, auto-auditoria com `memory_lint` e persistência sem perda de contexto usando as 23 ferramentas do MCP `ai-memory`. |
 | 🛡️ **`git-master-agent`** (Agente Mestre de Git & GitHub) | [`git-master-agent.md`](git-master-agent.md) | **Portão Obrigatório Final de Todo Projeto/Pilar.** Backups preventivos, Conventional Commits seguros, sincronização multi-máquina e catalogação com tags/descrição no GitHub. |
 | 🎨 **`design-engineer-agent`** (Engenheiro de UI/UX) | [`design-engineer-agent.md`](design-engineer-agent.md) | Interfaces refinadas, design intelligence (`ui-ux-pro-max`), tokens de 3 camadas, microinterações, Framer Motion e acessibilidade WCAG 2.2. |
@@ -26,7 +26,9 @@ Enquanto as **skills** (distribuídas nas 11 categorias deste repositório) repr
 | 🎬 **`video-producer-agent`** (Produtor de Vídeos Remotion) | [`video-producer-agent.md`](video-producer-agent.md) | Produção programática de vídeos com React/Remotion, kinetic typography, legendas automáticas, áudio sincronizado, slides e teasers de SaaS. |
 | 📱 **`social-publisher-agent`** (Especialista em Social Media & Demo) | [`social-publisher-agent.md`](social-publisher-agent.md) | Captura de telas 4K (`chrome-devtools`, `playwright`, `desktop-commander`), mockups 3D (`shots-studio`), copywriting de engenharia anti-slop, decisões estruturadas (`typesafe-ai`) e agendamento/publicação no Instagram e LinkedIn via Buffer MCP. |
 | 🐙 **`github-profile-agent`** (Especialista em Perfil do GitHub) | [`github-profile-agent.md`](github-profile-agent.md) | Otimização do perfil público (`username/username`), README dinâmico, banners personalizados, métricas em tempo real e curadoria de pinned repos. |
-| 💼 **`job-copilot-agent`** (Copiloto de Carreira & Candidaturas) | [`job-copilot-agent.md`](job-copilot-agent.md) | **Modelo Cowork (Pré-preenchimento).** Descoberta de vagas (`solides-vagas`, LinkedIn, Gupy, Indeed), match score (`job-description-analyzer`), adaptação de CV (`resume-tailor`), pré-preenchimento assistido e log estruturado no Notion. |
+| 💼 **`job-copilot-agent`** (Copiloto de Carreira & Candidaturas) | [`job-copilot-agent.md`](job-copilot-agent.md) | **Modelo Auto-Apply Inteligente.** Descoberta de vagas (`solides-vagas`, LinkedIn, Gupy, Indeed), match score (`job-description-analyzer`), adaptação de CV (`resume-tailor`), preenchimento/envio automático e log estruturado no Notion. |
+| 📱 **`mobile-engineer-agent`** (Engenheiro Mobile) | [`mobile-engineer-agent.md`](mobile-engineer-agent.md) | Desenvolvimento nativo e cross-platform (React Native, Expo, Flutter/Dart, Kotlin/Android, SwiftUI) e ASO. |
+| 📊 **`data-analytics-agent`** (Analytics & BI) | [`data-analytics-agent.md`](data-analytics-agent.md) | SQL analítico, modelagem dimensional, ClickHouse, Postgres, BigQuery, Looker e dashboards de KPIs. |
 
 ---
 
@@ -57,6 +59,8 @@ flowchart TD
     ORCH <--> PROFILE["🐙 github-profile-agent"]
     ORCH <--> SOCIAL["📱 social-publisher-agent"]
     ORCH <--> JOB["💼 job-copilot-agent"]
+    ORCH <--> MOBILE["📱 mobile-engineer-agent"]
+    ORCH <--> DATA["📊 data-analytics-agent"]
 
     %% Camada 2: Execução Direta + Consulta ao Hub
     UI -.->|Consulta Transversal| ORCH
@@ -81,6 +85,8 @@ flowchart TD
     VIDEO ==>|Portão Obrigatório Final| GIT
     PROFILE ==>|Portão Obrigatório Final| GIT
     JOB ==>|Portão Obrigatório Final| GIT
+    MOBILE ==>|Portão Obrigatório Final| GIT
+    DATA ==>|Portão Obrigatório Final| GIT
     MEM ==>|Portão Obrigatório Final| GIT
     GMA <--> GIT
 ```

@@ -7,6 +7,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS_DIR = REPO_ROOT / "scripts"
@@ -18,6 +19,7 @@ import build_catalog
 import concat_mcp
 import eval_rag
 import graph_enrich
+import job_copilot_log
 import mcp_health
 import rag_index
 import rag_search
@@ -220,6 +222,30 @@ class TestBootstrapAndSyncAndMcp(unittest.TestCase):
             sem = graph_enrich.build_ecosystem_semantic(root)
             self.assertGreaterEqual(len(sem["nodes"]), 4)
             self.assertGreaterEqual(len(sem["edges"]), 3)
+
+    def test_job_copilot_log_roundtrip(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            fake_home = Path(tmp)
+            with mock.patch("pathlib.Path.home", return_value=fake_home):
+                args = mock.Mock(
+                    title="Full Stack Dev",
+                    company="Acme",
+                    platform="Solides",
+                    track="Full-Stack",
+                    lang="PT-BR",
+                    model="Remoto",
+                    score=88,
+                    step="auto_apply",
+                    status="Enviada",
+                    url="https://example.com/job/1",
+                    screenshot="",
+                    error="",
+                )
+                log_file = job_copilot_log.log_event(args)
+                self.assertTrue(log_file.exists())
+                content = log_file.read_text(encoding="utf-8")
+                self.assertIn("Full Stack Dev", content)
+                self.assertIn("Enviada", content)
 
 
 if __name__ == "__main__":

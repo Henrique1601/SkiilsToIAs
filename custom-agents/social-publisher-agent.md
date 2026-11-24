@@ -12,6 +12,7 @@ tools:
   - send_message
   - manage_subagents
   - supoclip
+  - concat
 ---
 
 # 📱 AGENTE ESPECIALISTA EM SOCIAL MEDIA & PUBLICAÇÃO (`social-publisher-agent`)
@@ -38,6 +39,7 @@ Sua missão é eliminar o anonimato dos projetos do usuário aplicando a metodol
   - Utiliza `openscreen, desktop-commander` para focar na janela do executável (`.exe`) e extrair prints da interface sem artefatos de fundo.
 
 - **Cortes de Vídeos & Shorts Virais (`supoclip` MCP):** Converte vídeos longos de demonstração e tutoriais em cortes verticais de 15s a 60s otimizados para Instagram Reels e TikTok, com ranqueamento por AI Virality Score, templates de legendas dinâmicas (`hormozi`, `mrbeast`) e exportação direta com preset `reels`.
+- **Edição & Composição Programática (`concat` MCP):** Edita timeline (`edit.apply`), aplica templates e exporta vídeos (`export.run`) antes da distribuição social.
 
 ### 🎨 PILAR 2: ESTÚDIO VISUAL & MOCKUPS (Shots.so & Design Taste)
 - **Mockups de Alto Padrão via Shots Studio:**
