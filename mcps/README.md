@@ -64,6 +64,7 @@ Esta pasta centraliza os **servidores MCP recomendados, configurados e mantidos*
 | 🔍 [**`vertex-ai-search`**](vertex-ai-search/README.md) | **Streamable HTTP** (Remoto) | `https://discoveryengine.googleapis.com/mcp` | Busca semântica empresarial e grounded search via Google Vertex AI Search. |
 | 🧠 [**`skiilstoias`**](skiilstoias/README.md) | **Stdio** (Local Python) | `scripts/skills_mcp.py` | Servidor MCP nativo deste repositório: `skills_rag_search`, `skills_catalog_lookup`, `skills_mcp_health`, `skills_bootstrap_project` e `skills_graph_query`. |
 | 💼 [**`solides-vagas`**](solides-vagas/README.md) | **Streamable HTTP** (Remoto) | `https://mcp.solides.com.br/ats/candidate` | Servidor MCP da **Sólides Vagas (ATS)** para busca e acompanhamento de vagas para candidatos. |
+| 🎞️ [**`concat`**](concat/README.md) | **Stdio Bridge** -> TCP (`127.0.0.1:7420`) | `scripts/concat_mcp.py` | Editor de vídeo **Concat**: projetos, timeline (`edit.apply`), mídia, templates, preview e exportação (`export.run`). |
 | 🤖 **`botprogracraft`** | **Stdio** (Local Node) | `C:/Users/Public/Downloads/BotPrograCraft/packages/mcp-server/dist/index.js` | Servidor MCP Stdio do **BotPrograCraft** (`@botprogracraft/mcp-server`) que expõe contexto ao vivo da IDE, frames de tela, prompts de tutor e progresso de aprendizado. |
 | 💼 **`solides-vagas`** | **Streamable HTTP** (Remoto) | `https://mcp.solides.com.br/ats/candidate` | Servidor MCP remoto da **Sólides Vagas** (ATS / portal de vagas para candidatos). |
 

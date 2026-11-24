@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-20T00:10:52Z",
+  "generated_at": "2026-11-24T00:20:14Z",
   "counts": {
-    "total": 697,
+    "total": 698,
     "skills": 640,
     "agents": 18,
-    "mcps": 39
+    "mcps": 40
   },
   "categories": [
     {
@@ -37,7 +37,7 @@
     },
     {
       "name": "mcps",
-      "count": 39
+      "count": 40
     },
     {
       "name": "utilities",
@@ -5388,6 +5388,14 @@
       "description": "Servidor oficial do Google Cloud Run MCP (@google-cloud/cloud-run-mcp) para listar projetos/serviços, inspecionar logs e publicar containers ou pastas locais no Cloud Run.",
       "path": "mcps/cloudrun/README.md",
       "install_hint": "mcps/cloudrun/README.md"
+    },
+    {
+      "name": "concat",
+      "category": "mcps",
+      "type": "mcp",
+      "description": "Bridge MCP Stdio zero-dependência (scripts/concat_mcp.py) para o daemon JSON-RPC local do editor de vídeo Concat (127.0.0.1:7420), com autenticação automática na primeira linha (auth + token).",
+      "path": "mcps/concat/README.md",
+      "install_hint": "mcps/concat/README.md"
     },
     {
       "name": "context7",

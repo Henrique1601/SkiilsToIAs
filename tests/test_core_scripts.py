@@ -15,6 +15,7 @@ if str(SCRIPTS_DIR) not in sys.path:
 
 import audit_repo
 import build_catalog
+import concat_mcp
 import eval_rag
 import graph_enrich
 import mcp_health
@@ -193,6 +194,16 @@ class TestBootstrapAndSyncAndMcp(unittest.TestCase):
             rag_index.index_sqlite(root, db_path)
             metrics = eval_rag.evaluate_rag(db_path, cases=[("graphify", "ai-agents/graphify/SKILL.md")], top_k=3)
             self.assertEqual(metrics["hits"], 1)
+
+    def test_concat_mcp_protocol(self) -> None:
+        init_resp = concat_mcp.handle_request({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}})
+        self.assertEqual(init_resp["result"]["serverInfo"]["name"], "concat-mcp")
+        list_resp = concat_mcp.handle_request({"jsonrpc": "2.0", "id": 2, "method": "tools/list", "params": {}})
+        names = {t["name"] for t in list_resp["result"]["tools"]}
+        self.assertIn("concat_call", names)
+        self.assertIn("concat_project_list", names)
+        with self.assertRaises(ValueError):
+            concat_mcp.call_concat_rpc("invalid.method", token="dummy")
 
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

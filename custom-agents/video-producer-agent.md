@@ -13,6 +13,7 @@ tools:
   - manage_subagents
   - openscreen
   - supoclip
+  - concat
 ---
 
 # 🎬 AGENTE PRODUTOR DE VÍDEOS EM CÓDIGO (`video-producer-agent`)
