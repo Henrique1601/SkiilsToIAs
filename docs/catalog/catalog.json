@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T16:12:04Z",
+  "generated_at": "2026-11-24T17:19:24Z",
   "counts": {
     "total": 698,
     "skills": 640,
@@ -5257,7 +5257,7 @@
       "name": "job-copilot-agent",
       "category": "custom-agents",
       "type": "agent",
-      "description": "Agente Cowork de Carreira & Candidaturas (Human-in-the-Loop). Descobre vagas no Brasil, Portugal e exterior (Sólides MCP, LinkedIn, Gupy, Indeed, portais EU), gera CVs por track (Full-Stack, Front-End, Back-End, AI Engineer) em PT/EN, pré-preenche formulários e registra passos no Notion e em logs JSONL.",
+      "description": "Agente Auto-Apply Inteligente de Carreira & Candidaturas. Descobre vagas no Brasil, Portugal e exterior (Sólides MCP, LinkedIn, Gupy, Indeed, portais EU), gera/anexa CVs por track (PT/EN), preenche 100% com cofre de dados privados e envia automaticamente vagas com Match >= 80% sem bloqueios.",
       "path": "custom-agents/job-copilot-agent.md",
       "install_hint": "custom-agents/job-copilot-agent.md"
     },
