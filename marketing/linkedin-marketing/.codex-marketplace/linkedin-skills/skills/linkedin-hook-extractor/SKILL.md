@@ -1,6 +1,9 @@
 ---
 name: linkedin-hook-extractor
 description: "Reverse-engineer the hook formula from a viral LinkedIn post URL. Returns which of the 20 canonical 2026 formulas it uses (anaphora, R.I.P., year-pivot, time-anchor, curiosity-gap, contrarian, comment-gate, emotional cold-open, named-gratitude, and 11 more), why it worked, and a blank template. Use to learn from a competitor's post, not to write your own (use linkedin-post-writer)."
+license: MIT
+metadata:
+  author: Sergey Bulaev
 ---
 
 # LinkedIn Hook Extractor
@@ -33,6 +36,8 @@ A LinkedIn post URL (any type: activity, share, ugcPost).
 
 1. **Parse URL.** `lib.url_parser.parse_linkedin_url` → `post_urn`.
 2. **Fetch post body.** If `APIFY_TOKEN` is set, call `lib.ApifyClient.fetch_post(url)`. Otherwise ask the user to paste the text.
+
+   **No token? Try the connector.** If the Apify MCP connector is available in this session, its tools read the same actors with no token on disk, which is the only way to read on claude.ai. Call the tool, then apply the mapping in `../../references/mcp-read-layer.md` so the record matches what the library would have returned. If neither a token nor the connector is there, ask the user to paste.
 3. **Classify.** Match against the 20 formulas using features:
    - First 2 lines: anaphoric? question? confession? number-led?
    - Body: numbered list? dated receipts? ledger? teardown?

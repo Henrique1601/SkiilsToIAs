@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T22:31:35Z",
+  "generated_at": "2026-11-26T13:49:30Z",
   "counts": {
     "total": 700,
     "skills": 640,
@@ -1241,7 +1241,7 @@
       "name": "mongodb-atlas-stream-processing",
       "category": "backend-database",
       "type": "skill",
-      "description": "Manages MongoDB Atlas Stream Processing (ASP) workflows. Handles workspace provisioning, data source/sink connections, processor lifecycle operations, debugging diagnostics, and tier sizing. Supports Kafka, Atlas clusters, S3, HTTPS, and Lambda integrations for streaming data workloads and event processing. NOT for general MongoDB queries or Atlas cluster management. Requires MongoDB MCP Server with Atlas API credentials.",
+      "description": "Manages MongoDB Atlas Stream Processing (ASP) workflows. Handles workspace provisioning, data source/sink connections, processor lifecycle operations, debugging diagnostics, and tier sizing. Supports Kafka, Atlas clusters, S3, Apache Iceberg (with Unity and Horizon catalogs), HTTPS, and Lambda integrations for streaming data workloads and event processing. NOT for general MongoDB queries or Atlas cluster management. Requires MongoDB MCP Server with Atlas API credentials.",
       "path": "backend-database/mongodb-atlas-stream-processing/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill mongodb-atlas-stream-processing"
     },
@@ -1257,7 +1257,7 @@
       "name": "mongodb-mcp-setup",
       "category": "backend-database",
       "type": "skill",
-      "description": "Guide users through configuring key MongoDB MCP server options. Use this skill when a user has the MongoDB MCP server installed but hasn't configured the required environment variables, or when they ask about connecting to MongoDB/Atlas and don't have the credentials set up.",
+      "description": "Guide users through installing and configuring the MongoDB MCP server. Use this skill when a user wants to connect their agent to MongoDB/Atlas through MCP, when the MongoDB MCP server is installed but its environment variables aren't configured, or when they don't have the server or credentials set up yet.",
       "path": "backend-database/mongodb-mcp-setup/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill mongodb-mcp-setup"
     },
@@ -1289,7 +1289,7 @@
       "name": "mongodb-search-and-ai",
       "category": "backend-database",
       "type": "skill",
-      "description": "Guides MongoDB users through implementing and optimizing Atlas Search (full-text), Vector Search (semantic), and Hybrid Search solutions. Use this skill when users need to build search functionality for text-based queries (autocomplete, fuzzy matching, faceted search), semantic similarity (embeddings, RAG applications), or combined approaches. Also use when users need text containment, substring matching ('contains', 'includes', 'appears in'), case-insensitive or multi-field text search, or filtering across many fields with variable combinations. Provides workflows for selecting the right search type, creating indexes, constructing queries, and optimizing performance using the MongoDB MCP server.",
+      "description": "Covers everything about search in MongoDB: Atlas Search (full-text), Vector Search (semantic), and Hybrid Search. Use this skill for ANY question about MongoDB search, including open-ended and explanatory ones asked before the user has any data or use case — 'how does search work in MongoDB?', 'I'm new to MongoDB search, where do I start?', 'what's the difference between Atlas Search and Vector Search?', 'which search type should I use?', 'what is vector search?', 'how does automated embedding work?', 'can you explain hybrid search?'. Do not answer these from general knowledge; use this skill. Also use to build search features: full-text queries, autocomplete, fuzzy matching, faceted search, semantic similarity, embeddings, RAG, text containment or substring matching ('contains', 'includes'), case-insensitive or multi-field text search, and filtering across many fields. Provides workflows for choosing a search type, creating indexes, writing queries, and optimizing performance via the MongoDB MCP server.",
       "path": "backend-database/mongodb-search-and-ai/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill mongodb-search-and-ai"
     },
@@ -2153,7 +2153,7 @@
       "name": "emil-design-eng",
       "category": "design",
       "type": "skill",
-      "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.",
+      "description": "Emil Kowalski's design-engineering philosophy for UI polish, component design, animation decisions, and the invisible details that make software feel great. Use when building or reviewing a UI component's interactions and polish (press and hover states, popover origin, tooltip timing, transitions vs keyframes, clip-path techniques, drag details) and no narrower skill fits.",
       "path": "design/emil-design-eng/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill emil-design-eng"
     },
@@ -2369,7 +2369,7 @@
       "name": "pick-ui-library",
       "category": "design",
       "type": "skill",
-      "description": "Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only runs when explicitly invoked; it does not trigger on its own.",
+      "description": "Pick the library for a frontend task from a curated list — primitives, toasts, drawers, command menus, OTP, numbers, charts, virtualization, drag and drop, state, styling.",
       "path": "design/pick-ui-library/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill pick-ui-library"
     },
@@ -2377,7 +2377,7 @@
       "name": "prototype",
       "category": "design",
       "type": "skill",
-      "description": "Build multiple genuinely different versions of a UI piece you describe, rendered behind a visual picker so you can flip through them live and promote the one that feels right. Only runs when explicitly invoked; it does not trigger on its own.",
+      "description": "Build multiple genuinely different versions of a UI piece you describe, rendered behind a visual picker so you can flip through them live and promote the one that feels right.",
       "path": "design/prototype/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill prototype"
     },
@@ -2769,7 +2769,7 @@
       "name": "context7-cli",
       "category": "development",
       "type": "skill",
-      "description": "Use the ctx7 CLI to fetch library documentation, manage AI coding skills, and configure Context7 MCP. Activate when the user mentions \"ctx7\" or \"context7\", needs current docs for any library, wants to install/search/generate skills, or needs to set up Context7 for their AI coding agent.",
+      "description": "Use the ctx7 CLI to fetch library documentation and configure Context7 MCP. Activate when the user mentions \"ctx7\" or \"context7\", needs current docs for any library, or needs to set up Context7 for their AI coding agent.",
       "path": "development/context7-cli/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill context7-cli"
     },
@@ -3505,7 +3505,7 @@
       "name": "azure-diagnostics",
       "category": "devops-cloud",
       "type": "skill",
-      "description": "Debug Azure production issues on Azure using AppLens, Azure Monitor, resource health, and safe triage. WHEN: debug production issues, troubleshoot app service, app service high CPU, app service deployment failure, troubleshoot container apps, troubleshoot functions, troubleshoot AKS, VM RDP, Linux SSH, VM black screen, can't connect to VM, reset VM password, NSG or firewall blocking, kubectl cannot connect, kube-system/CoreDNS failures, pod pending, crashloop, node not ready, upgrade failures, analyze logs, KQL, insights, image pull failures, cold start issues, health probe failures, resource health, root cause of errors, troubleshoot event hubs, troubleshoot service bus, messaging SDK error, AMQP connection failure, message lock lost, service bus dead letter.",
+      "description": "Debug Azure production issues using AppLens, Azure Monitor, resource health, and safe triage, including evidence-only diagnosis without live access. WHEN: debug production issues, troubleshoot app service, app service high CPU, app service deployment failure, troubleshoot container apps, container app 503 or target port mismatch, troubleshoot functions, function telemetry missing or stopped after a config/connection-string change, troubleshoot AKS, VM RDP, Linux SSH, VM black screen, can't connect to VM, reset VM password, NSG or firewall blocking, kubectl cannot connect, kube-system/CoreDNS failures, pod pending, crashloop, node not ready, upgrade failures, analyze logs, KQL, insights, image pull failures, cold start issues, health probe failures, resource health, root cause of errors, troubleshoot event hubs, troubleshoot service bus, messaging SDK error, AMQP connection failure, message lock lost, lock renewal during long-running processing, service bus dead letter.",
       "path": "devops-cloud/azure-diagnostics/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill azure-diagnostics"
     },
@@ -3945,7 +3945,7 @@
       "name": "humanizer",
       "category": "documents-productivity",
       "type": "skill",
-      "description": "Rewrite AI-sounding text so it reads like the writer without changing what it says. Use when editing or reviewing prose for AI tells: not-X-but-Y contrasts, one-line closers, staged openers, forced triads, dashes everywhere, inflated claims, sales language, stock AI words, bold labels, or filler. Based on Wikipedia's \"Signs of AI writing.\"",
+      "description": "Rewrite AI-sounding text so it reads like the writer without changing what it says. Use when editing or reviewing prose for AI tells: not-X-but-Y contrasts, one-line closers, staged openers, forced triads, dashes everywhere, inflated claims, sales language, stock AI words, bold labels, or filler.",
       "path": "documents-productivity/humanizer/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill humanizer"
     },
@@ -4305,7 +4305,7 @@
       "name": "data-manager-api-audience-ingestion",
       "category": "marketing",
       "type": "skill",
-      "description": "Guides developers through managing (adding, removing, and clearing) audience members for Google products using the Data Manager API and its associated client libraries. Use this skill when the user wants to upload audience members, remove specific users, or clear/replace an entire audience for Customer Match, mobile device ID audiences, or any other audience use case supported by the Data Manager API. Don't use for uploading events or conversions (use the data-manager-api-event-ingestion skill).",
+      "description": "Guides developers through managing (adding, removing, and clearing) audience members for Google products using the Data Manager API and its associated client libraries. Use this skill when the user wants to upload audience members, remove specific users, or clear/replace an entire audience for Customer Match, mobile device ID audiences, or any other audience use case supported by the Data Manager API. Don't use for uploading events or conversions (use the data-manager-api-event-ingestion skill), or for debugging errors, checking request status, or investigating low match rates (use the data-manager-api-troubleshooting skill).",
       "path": "marketing/data-manager-api-audience-ingestion/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill data-manager-api-audience-ingestion"
     },
@@ -4313,7 +4313,7 @@
       "name": "data-manager-api-event-ingestion",
       "category": "marketing",
       "type": "skill",
-      "description": "Guides developers through implementing event and conversion ingestion to Google products using the Data Manager API /v1/events/ingest endpoint and its associated client libraries. Use this skill when the user wants to upload offline conversions, enhanced conversions for leads, click conversions, Google Analytics web or app events, or any other event ingestion use case supported by the Data Manager API. Don't use for uploading audience members (use the data-manager-api-audience-ingestion skill).",
+      "description": "Guides developers through implementing event and conversion ingestion to Google products using the Data Manager API /v1/events:ingest endpoint and its associated client libraries. Use this skill when the user wants to upload offline conversions, enhanced conversions for leads, click conversions, call conversions, Google Analytics web or app events, or any other event ingestion use case supported by the Data Manager API. Don't use for uploading audience members (use the data-manager-api-audience-ingestion skill), or for debugging errors, checking request status, or investigating missing conversions (use the data-manager-api-troubleshooting skill).",
       "path": "marketing/data-manager-api-event-ingestion/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill data-manager-api-event-ingestion"
     },
@@ -4321,7 +4321,7 @@
       "name": "data-manager-api-setup",
       "category": "marketing",
       "type": "skill",
-      "description": "Guides developers through client library installation and authentication setup steps for the Data Manager API. Use this skill when a user is getting started with the Data Manager API and needs to setup their local environment, install the client library, or setup access to the API. Don't use for implementing audience or event ingestion logic (use the data-manager-api-audience-ingestion or data-manager-api-event-ingestion skills instead).",
+      "description": "Guides developers through client library installation and authentication setup steps for the Data Manager API. Use this skill when a user is getting started with the Data Manager API and needs to setup their local environment, install the client library, or setup access to the API. Don't use for implementing audience or event ingestion logic (use the data-manager-api-audience-ingestion or data-manager-api-event-ingestion skills instead), or for debugging UNAUTHENTICATED, PERMISSION_DENIED, or other errors from requests after setup (use the data-manager-api-troubleshooting skill).",
       "path": "marketing/data-manager-api-setup/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill data-manager-api-setup"
     },
@@ -4377,7 +4377,7 @@
       "name": "google-ads-api-quickstart",
       "category": "marketing",
       "type": "skill",
-      "description": "Guides developers through Google Ads API quickstart: credential setup, choosing from 6 client libraries/REST, configuring environments, and running a \"retrieve campaigns\" script. Troubleshoots common setup errors: USER_PERMISSION_DENIED, login_customer_id issues, and DEVELOPER_TOKEN_NOT_APPROVED. Use this skill when: - The user asks how to get started with the Google Ads API. - The user needs to set up Google Ads credentials or developer tokens. - The user wants to write a quickstart/example script for Google Ads. - The user encounters errors like USER_PERMISSION_DENIED or DEVELOPER_TOKEN_NOT_APPROVED.",
+      "description": "Guides developers through Google Ads API quickstart: credential setup, choosing from 6 client libraries/REST, configuring environments, and running a \"retrieve campaigns\" script. Troubleshoots common setup errors: USER_PERMISSION_DENIED, login_customer_id issues, and CLOUD_PROJECT_NOT_APPROVED_FOR_PRODUCTION (a Google Cloud project with Test access calling a production account). Use this skill when: - The user asks how to get started with the Google Ads API. - The user needs to set up Google Ads API access in a Google Cloud project or OAuth credentials. - The user wants to write a quickstart/example script for Google Ads. - The user encounters errors like USER_PERMISSION_DENIED, CLOUD_PROJECT_NOT_APPROVED_FOR_PRODUCTION, or the legacy DEVELOPER_TOKEN_NOT_APPROVED.",
       "path": "marketing/google-ads-api-quickstart/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill google-ads-api-quickstart"
     },
@@ -5009,7 +5009,7 @@
       "name": "google-maps-scraper",
       "category": "utilities",
       "type": "skill",
-      "description": "Find businesses, leads, emails, reviews, ratings, and contact details from Google Maps. Use for requests such as \"find dentists in Berlin\", \"scrape Google Maps\", \"get local business leads\", or \"collect Google Maps reviews\". Runs the open-source scraper locally with Docker and guides nontechnical users through setup, monitoring, and results.",
+      "description": "Find businesses, leads, emails, reviews, ratings, and contact details from Google Maps. Use for requests such as \"find dentists in Berlin\", \"scrape Google Maps\", \"get local business leads\", or \"collect Google Maps reviews\". Runs the open-source scraper locally with a native binary or Docker and guides nontechnical users through setup, monitoring, and results.",
       "path": "utilities/google-maps-scraper/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill google-maps-scraper"
     },

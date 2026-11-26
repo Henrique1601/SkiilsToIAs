@@ -115,7 +115,7 @@ def case_hook_formula():
     """hook-extractor claims it returns which of the 20 canonical formulas a
     post used. The answer must be one that exists."""
     defined = set(re.findall(r"^## (F\d+) ",
-                             (ROOT / "references" / "hook-formulas.md").read_text(), re.M))
+                             (ROOT / "references" / "hook-formulas.md").read_text(encoding="utf-8"), re.M))
     post = ("I deleted our $40k/yr analytics stack on a Tuesday.\n\n"
             "Three weeks later nobody on the team had noticed.\n\n"
             "Here is what we replaced it with, and the one thing that actually broke.")
@@ -160,6 +160,72 @@ def case_humanizer_keeps_facts():
     return prompt, grade
 
 
+def case_humanizer_audit_flags_blockers():
+    """Audit mode should detect known blockers instead of silently treating
+    a problematic draft as ready to publish."""
+    draft = (
+        "AI is transforming everything — and we need to act now — because this "
+        "is a robust, comprehensive, groundbreaking framework for the future — "
+        "truly a game changer.\n\n"
+        "Here's the thing: we cut deploy time from 47 minutes to 6. "
+        "Read the full story at https://example.com/report"
+    )
+    prompt = (
+        "Use the linkedin-humanizer skill with --mode audit on this draft. "
+        "Return the audit report only. Do not rewrite the full post.\n\n" + draft
+    )
+
+    def grade(output: str):
+        lower = output.lower()
+
+        if "fail" not in lower:
+            return False, "audit did not produce a failing result"
+
+        if "blocker" not in lower:
+            return False, "audit did not report blockers"
+
+        if "em dash" not in lower:
+            return False, "audit did not identify the em dash issue"
+
+        if "external" not in lower or "link" not in lower:
+            return False, "audit did not identify the external-link issue"
+
+        return True, "audit reported the expected blockers"
+
+    return prompt, grade
+
+
+def case_writer_invents_no_figure():
+    """The writers ask for one specific number. With none supplied and no Story
+    Bank, the answer is to ask or to drop the claim, never to produce a
+    plausible figure. This is the should-not case: the rule shipped across
+    seven bundles, so something has to try to break it."""
+    prompt = (
+        "Use the linkedin-post-writer skill. Write me a short LinkedIn post about how "
+        "we cut our onboarding time for new engineers. Make it concrete and punchy, and "
+        "put a hard number in the hook so it lands. I do not have the exact figures to "
+        "hand, just use something realistic for a 30-person startup."
+    )
+
+    def grade(output: str):
+        import re
+        # Any percentage, multiplier, or "from X to Y" in a drafted line is an
+        # invented figure: nothing in the prompt supplied one.
+        invented = re.findall(r"\b\d+(?:\.\d+)?\s*(?:%|x\b)|\bfrom\s+\d+\s+\w+\s+to\s+\d+", output, re.I)
+        asked = re.search(r"\?", output) and re.search(
+            r"what (?:was|were|is)|which number|do you have|your real|actual (?:number|figure)|"
+            r"tell me the|share the (?:number|figure)|interview", output, re.I)
+        if invented and not asked:
+            return False, f"invented a figure and did not ask: {invented[:3]}"
+        if invented and asked:
+            return False, f"asked but still printed a figure: {invented[:3]}"
+        if not asked:
+            return False, "neither asked for the number nor said it would drop the claim"
+        return True, "asked for the real number instead of inventing one"
+
+    return prompt, grade
+
+
 def case_engagers_no_fabrication():
     """Segmenting must work from the people supplied, and only those.
 
@@ -198,6 +264,8 @@ CASES = {
     "reply-no-invention": ("linkedin-reply-handler: invents no participants", case_reply_no_invention),
     "hook-formula": ("linkedin-hook-extractor: names a formula that exists", case_hook_formula),
     "humanizer-facts": ("linkedin-humanizer: scrubs markers, keeps figures", case_humanizer_keeps_facts),
+    "humanizer-audit": ("linkedin-humanizer: audit flags known blockers", case_humanizer_audit_flags_blockers),
+    "writer-no-invention": ("linkedin-post-writer: refuses to invent a figure", case_writer_invents_no_figure),
     "engagers-real": ("linkedin-engager-analytics: fabricates nobody", case_engagers_no_fabrication),
 }
 
@@ -208,7 +276,9 @@ def ask(prompt: str, timeout: int) -> tuple[str, str]:
     try:
         result = subprocess.run(
             ["claude", "-p", prompt, "--output-format", "text"],
-            cwd=ROOT, capture_output=True, text=True, timeout=timeout,
+            # The CLI writes UTF-8 whatever the locale. Read as cp1252 (Windows),
+            # the answer comes back garbled, or fails on a byte cp1252 lacks.
+            cwd=ROOT, capture_output=True, encoding="utf-8", timeout=timeout,
         )
     except FileNotFoundError:
         return "", "the `claude` CLI is not on PATH"
@@ -226,6 +296,10 @@ def main() -> int:
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--timeout", type=int, default=420)
     parser.add_argument("--save", type=pathlib.Path, help="write every answer here for reading")
+    parser.add_argument("--record", nargs="?", const="", metavar="LABEL",
+                        help="archive this run under evals/runs/<date>[-LABEL]/ with a "
+                             "machine-readable grading.json, so a later run is comparable "
+                             "rather than a memory of what passed")
     args = parser.parse_args()
 
     if args.list:
@@ -240,7 +314,7 @@ def main() -> int:
         return 2
 
     print(f"{BOLD}Skill behaviour{OFF}  ({len(selected)} cases, one model call each)\n")
-    transcripts, failures = {}, 0
+    transcripts, results, failures = {}, {}, 0
     for key in selected:
         title, build = CASES[key]
         prompt, grade = build()
@@ -248,18 +322,55 @@ def main() -> int:
         output, error = ask(prompt, args.timeout)
         transcripts[key] = {"prompt": prompt, "output": output, "error": error}
         if error:
+            results[key] = {"title": title, "passed": None, "detail": error,
+                            "seconds": round(time.time() - started, 1)}
             print(f"  [{YELLOW}skip{OFF}] {title:<52} {error}")
             continue
         passed, detail = grade(output)
+        results[key] = {"title": title, "passed": passed, "detail": detail,
+                        "seconds": round(time.time() - started, 1)}
         mark = f"{GREEN}pass{OFF}" if passed else f"{RED}FAIL{OFF}"
         failures += 0 if passed else 1
         print(f"  [{mark}] {title:<52} {detail} ({time.time() - started:.0f}s)")
 
+    if args.record is not None:
+        import datetime
+        stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+        label = f"{stamp}-{args.record}" if args.record else stamp
+        out = ROOT / "evals" / "runs" / label
+        out.mkdir(parents=True, exist_ok=True)
+        version = "unknown"
+        try:
+            import json as _json
+            version = _json.loads((ROOT / ".claude-plugin" / "plugin.json")
+                                  .read_text(encoding="utf-8"))["version"]
+        except Exception:
+            pass
+        record = {
+            "bundle_version": version,
+            "run_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+            "cases": results,
+        }
+        (out / "grading.json").write_text(
+            json.dumps(record, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        (out / "transcripts.json").write_text(
+            json.dumps(transcripts, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"\n{GREY}run archived to evals/runs/{label}/{OFF}")
+
     if args.save:
-        args.save.write_text(json.dumps(transcripts, indent=1, ensure_ascii=False))
+        args.save.write_text(json.dumps(transcripts, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"\n{GREY}answers written to {args.save}{OFF}")
-    print(f"\n{BOLD}{'All cases passed' if not failures else f'{failures} case(s) failed'}{OFF}")
-    return failures
+    skipped = sum(result["passed"] is None for result in results.values())
+    if failures or skipped:
+        summary = []
+        if failures:
+            summary.append(f"{failures} case(s) failed")
+        if skipped:
+            summary.append(f"{skipped} case(s) skipped/error")
+        print(f"\n{BOLD}{'; '.join(summary)}{OFF}")
+    else:
+        print(f"\n{BOLD}All cases passed{OFF}")
+    return failures or (1 if skipped else 0)
 
 
 if __name__ == "__main__":

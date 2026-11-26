@@ -2,7 +2,7 @@
 
 ## Docker is missing
 
-Explain that local execution requires Docker. Ask the user to install Docker Desktop or Docker Engine for their supported platform, then repeat validation.
+Docker is needed only for the Docker backend. Prefer native installation when compatible, or help the user install Docker if that is their preference.
 
 ## Docker daemon is stopped
 
@@ -10,11 +10,11 @@ Ask the user to start Docker. Re-run the validation only after `docker info` suc
 
 ## Image download fails
 
-The run helper retries once. If both attempts fail, show the concise network or registry error and suggest checking connectivity before retrying.
+For the Docker backend, explain the network or registry error. If a suitable image already exists, explicitly use `--skip-image-pull` to continue offline; otherwise resolve connectivity before retrying.
 
 ## Proxy setup fails
 
-Never display the proxy value. Explain whether the file is missing, empty, unreadable, or contains an unsupported protocol. Offer to run the masked configuration again, select a fresh sponsor set when explicitly requested, or validate without a proxy.
+Never display the proxy value. Explain whether the file is missing, empty, unreadable, or contains an unsupported protocol. Offer to run the masked configuration again, select a fresh sponsor when explicitly requested, or validate without a proxy.
 
 ## Crawl returns no results
 
@@ -28,4 +28,4 @@ Try these in order:
 
 ## Crawl is interrupted or fails
 
-Preserve the output directory and stopped container for inspection. Summarize the actionable error without dumping logs. Explain that Release 1 reruns the affected crawl; it does not provide checkpoint-level resume.
+Preserve the run directory and any Docker container for inspection. Summarize the actionable error without dumping logs. For an exited run, repeat the original `run-local.mjs` command with `--resume`. Keep the original options and query contents. See local execution for lock recovery when the supervisor itself was killed.

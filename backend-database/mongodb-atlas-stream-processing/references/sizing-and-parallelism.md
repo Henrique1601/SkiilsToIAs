@@ -81,7 +81,7 @@ Solution: Use `atlas-streams-manage` → `stop-processor`, then `start-processor
 
 When parallelism is all default (1), choose tier based on pipeline complexity:
 
-| Pipeline feature | Complexity weight | Minimum tier |
+| Pipeline feature | Complexity weight | Suggested tier (advisory) |
 |-----------------|-------------------|--------------|
 | Simple `$match` + `$project` only | Low | SP2-SP5 |
 | `$addFields` with expressions | Low-Medium | SP5-SP10 |
@@ -116,7 +116,7 @@ For automated tier recommendation, score the pipeline:
 - 41-60: SP30
 - 61+: SP50
 
-**Always take the higher of complexity-driven vs parallelism-driven tier recommendations.**
+**Tier selection:** the parallelism calculation sets the minimum tier. Use the complexity score only to decide whether to add headroom (usually one tier up); do not go below the parallelism-derived tier.
 
 ## Billing
 
@@ -136,7 +136,7 @@ Charges are **per-hour, calculated per-second**, only while the processor is run
 - VPC Peering (AWS and GCP)
 - Private Link connectivity
 
-For current pricing: https://www.mongodb.com/docs/atlas/billing/stream-processing-costs/
+For current pricing: https://www.mongodb.com/docs/atlas/billing/stream-processing-costs/?utm_source=agent-skills
 
 ## Sizing Workflow with MCP Tools
 

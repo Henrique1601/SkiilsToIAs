@@ -81,7 +81,9 @@ atlas-streams-discover → action: "inspect-connection",
 - [ ] Connection type matches intended usage:
   - Cluster: valid for `$source` (change streams), `$merge`, `$lookup`
   - Kafka: valid for `$source`, `$emit`
-  - S3: valid for `$emit` only
+  - S3: valid for `$emit` or `$iceberg`
+  - Azure Blob Storage: valid for `$emit` or `$iceberg`
+  - DataCatalog: only referenced by `$iceberg.catalog.connectionName`
   - Https: valid for `$https` enrichment or sink
   - Lambda: valid for `$externalFunction` only
 - [ ] Connection name matches actual target (avoid confusion):
@@ -204,7 +206,7 @@ Modify pipeline (`stop` → `modify-processor` → `start`). Verify filtered out
 2. If FAILED: read the error message in diagnostics
 3. Common causes:
    - Invalid pipeline syntax (missing `$source`, missing sink)
-   - `$$NOW`/`$$ROOT`/`$$CURRENT` used (not valid in streaming)
+   - `$$NOW`/`$$CURRENT` used (not valid in streaming)
    - Kafka `$source` missing `topic` field
    - **Referenced connection doesn't exist** — validate with `list-connections` first
    - **Connection name doesn't match expected target** — inspect connection to verify actual cluster/resource
@@ -284,8 +286,8 @@ Before creating a processor, verify:
 
 ### Pipeline Validation
 - [ ] `search-knowledge` was called to validate sink/source field names
-- [ ] Pipeline starts with `$source` and ends with `$merge`, `$emit`, `$https`, or `$externalFunction` (async)
-- [ ] No `$$NOW`, `$$ROOT`, or `$$CURRENT` in the pipeline
+- [ ] Pipeline starts with `$source` and ends with `$merge`, `$emit`, `$iceberg`, `$https`, or `$externalFunction` (async)
+- [ ] No `$$NOW` or `$$CURRENT` in the pipeline
 - [ ] Kafka `$source` includes a `topic` field
 - [ ] Kafka `$source` with windowed pipeline includes `partitionIdleTimeout` (prevents windows from stalling on idle partitions)
 - [ ] HTTPS connections are only used in `$https` enrichment or sink stages, not in `$source`

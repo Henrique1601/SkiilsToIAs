@@ -10,7 +10,8 @@ from __future__ import annotations
 
 import os
 import unittest
-from unittest.mock import patch
+import requests
+from unittest.mock import Mock, patch
 
 from lib.pixfaro_client import PixfaroClient, PixfaroError
 
@@ -85,6 +86,27 @@ class GenerateCache(unittest.TestCase):
 
         self.assertEqual(post.call_count, 2)
 
+    @patch.object(PixfaroClient, "_post")
+    def test_cached_generation_result_is_isolated_from_caller_mutation(self, post):
+        post.return_value = {
+            "id": "img_123",
+            "url": "https://media.example/image.png",
+            "metadata": {"prompt": "original"},
+        }
+
+        first = self.client.generate("A data engineer at work")
+        first["metadata"]["prompt"] = "mutation of cache-miss result"
+
+        second = self.client.generate("A data engineer at work")
+        self.assertEqual(second["metadata"]["prompt"], "original")
+
+        second["metadata"]["prompt"] = "mutation of cache-hit result"
+
+        third = self.client.generate("A data engineer at work")
+        self.assertEqual(third["metadata"]["prompt"], "original")
+
+        post.assert_called_once()
+
 
 class EditValidation(unittest.TestCase):
     """Edits must reference a real Pixfaro image id and instruction."""
@@ -109,6 +131,26 @@ class EditValidation(unittest.TestCase):
 
         post.assert_not_called()
 
+class EditCache(unittest.TestCase):
+    def setUp(self):
+        self.client = make_client()
+
+    @patch.object(PixfaroClient, "_post")
+    def test_cached_edit_result_is_isolated_from_caller_mutation(self, post):
+        post.return_value = {
+            "id": "img_456",
+            "url": "https://media.example/edited.png",
+            "metadata": {"instruction": "original"},
+        }
+
+        first = self.client.edit("img_123", "Make the sky darker")
+        first["metadata"]["instruction"] = "caller changed it"
+
+        second = self.client.edit("img_123", "Make the sky darker")
+
+        self.assertEqual(second["metadata"]["instruction"], "original")
+        post.assert_called_once()
+
 
 class RetryBehaviour(unittest.TestCase):
     """Transient HTTP failures should be retried; client errors should not."""
@@ -130,6 +172,28 @@ class RetryBehaviour(unittest.TestCase):
                 "url": "https://media.example/image.png",
             },
         ]
+
+        result = self.client.generate("A data engineer at work")
+
+        self.assertEqual(result["id"], "img_123")
+        self.assertEqual(post.call_count, 2)
+        sleep.assert_called_once()
+
+    @patch("lib.pixfaro_client.time.sleep")
+    def test_network_timeout_is_retried(self, sleep):
+        post = Mock(
+            side_effect=[
+                requests.Timeout("simulated timeout"),
+                Mock(
+                    status_code=200,
+                    json=Mock(return_value={
+                        "id": "img_123",
+                        "url": "https://media.example/image.png",
+                    }),
+                ),
+            ]
+        )
+        self.client._session.post = post
 
         result = self.client.generate("A data engineer at work")
 

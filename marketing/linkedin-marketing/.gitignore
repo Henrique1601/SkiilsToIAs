@@ -17,3 +17,7 @@ testing/
 # Playwright MCP session artifacts
 .playwright-mcp/
 /fk-*
+
+# Eval run archives: transcripts are model output on fixtures, useful locally,
+# noise in git. Keep grading.json if a run is worth citing; add it explicitly.
+evals/runs/*/transcripts.json

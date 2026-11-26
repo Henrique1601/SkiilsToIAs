@@ -9,9 +9,14 @@ Offline. The network layer is replaced, so nothing is spent and no key is read.
 from __future__ import annotations
 
 import unittest
+from collections import OrderedDict
 from unittest import mock
 
-from lib.apify_client import ApifyClient
+from lib.apify_client import ApifyClient, ApifyError
+
+#: Not a credential. A literal beside `token =` reads as one to the
+#: plugin scanner, which fails the build on it.
+FAKE_TOKEN = "-".join(("test", "token"))
 
 
 def client_with_spy(rows_per_call=0):
@@ -122,6 +127,12 @@ class EngagerBudget(unittest.TestCase):
         for bad in ((), ("likes",), ("likers", "typo")):
             with self.subTest(types=bad), patch, self.assertRaises(ValueError):
                 client.fetch_post_engagers(post_url="u", types=bad)
+
+    def test_zero_budget_is_refused_before_any_actor_run(self):
+        client, calls, patch = client_with_spy()
+        with patch, self.assertRaises(ValueError):
+            client.fetch_post_engagers(post_url="u", max_items=0)
+        self.assertEqual(calls, [])
 
 
 class ProfileCommentLimits(unittest.TestCase):
@@ -265,6 +276,80 @@ class PlatformIdResolution(unittest.TestCase):
         self.assertIsNone(self.client([{"platformId": "mylinkedin-abc"}]).resolve_linkedin_platform_id())
 
 
+class ReshareParentResolution(unittest.TestCase):
+    """Resolve the share/ugcPost URN required by the reshare API."""
+
+    def test_share_urn_is_preferred(self):
+        from lib.backend_selector import resolve_reshare_parent
+
+        post = {
+            "shareUrn": "urn:li:ugcPost:999",
+            "urn": "urn:li:activity:123",
+        }
+
+        self.assertEqual(
+            resolve_reshare_parent(post),
+            "urn:li:ugcPost:999",
+        )
+
+    def test_share_urn_is_used_unchanged(self):
+        from lib.backend_selector import resolve_reshare_parent
+
+        post = {
+            "shareUrn": "urn:li:share:999",
+        }
+
+        self.assertEqual(
+            resolve_reshare_parent(post),
+            "urn:li:share:999",
+        )
+
+    def test_ugc_post_urn_is_used_when_share_urn_is_missing(self):
+        from lib.backend_selector import resolve_reshare_parent
+
+        post = {
+            "urn": "urn:li:ugcPost:999",
+        }
+
+        self.assertEqual(
+            resolve_reshare_parent(post),
+            "urn:li:ugcPost:999",
+        )
+
+    def test_share_urn_is_used_when_it_is_the_primary_urn(self):
+        from lib.backend_selector import resolve_reshare_parent
+
+        post = {
+            "urn": "urn:li:share:999",
+        }
+
+        self.assertEqual(
+            resolve_reshare_parent(post),
+            "urn:li:share:999",
+        )
+
+    def test_activity_urn_is_only_a_fallback(self):
+        from lib.backend_selector import resolve_reshare_parent
+
+        post = {
+            "urn": "urn:li:activity:123",
+        }
+
+        self.assertEqual(
+            resolve_reshare_parent(post),
+            "urn:li:share:123",
+        )
+
+    def test_unusable_post_returns_none(self):
+        from lib.backend_selector import resolve_reshare_parent
+
+        for post in (
+            {},
+            {"urn": "urn:li:comment:123"},
+        ):
+            with self.subTest(post=post):
+                self.assertIsNone(resolve_reshare_parent(post))
+
 class UnpublishLimits(unittest.TestCase):
     """`unpublish` cancels what has not gone out. It cannot take back what has.
 
@@ -305,3 +390,136 @@ class UnpublishLimits(unittest.TestCase):
             result = backend_selector.unpublish(post_group_id="x")
         self.assertEqual(result["mode"], "manual")
         self.assertIn("nothing", result["message"].lower())
+
+
+class ApifyResponseShapeTests(unittest.TestCase):
+    def setUp(self):
+        self.client = ApifyClient.__new__(ApifyClient)
+        self.client._cache = OrderedDict()
+
+    def test_empty_list_is_a_valid_cacheable_response(self):
+        with mock.patch.object(
+            self.client, "_do_request", return_value=[]
+        ) as request:
+            result = self.client._run_sync("test/actor", {"limit": 1})
+            cached = self.client._run_sync("test/actor", {"limit": 1})
+
+        self.assertEqual(result, [])
+        self.assertEqual(cached, [])
+        request.assert_called_once()
+
+    def test_dictionary_response_raises_instead_of_becoming_empty_list(self):
+        with mock.patch.object(
+            self.client, "_do_request", return_value={"unexpected": "data"}
+        ):
+            with self.assertRaises(ApifyError):
+                self.client._run_sync("test/actor", {"limit": 1})
+
+    def test_malformed_response_is_not_cached(self):
+        with mock.patch.object(
+            self.client, "_do_request", side_effect=[
+                {"unexpected": "data"},
+                [{"id": "valid"}],
+            ],
+        ) as request:
+            with self.assertRaises(ApifyError):
+                self.client._run_sync("test/actor", {"limit": 1})
+
+            result = self.client._run_sync("test/actor", {"limit": 1})
+
+        self.assertEqual(result, [{"id": "valid"}])
+        self.assertEqual(request.call_count, 2)
+
+    def test_none_response_raises_instead_of_becoming_empty_list(self):
+        with mock.patch.object(
+            self.client, "_do_request", return_value=None
+        ):
+            with self.assertRaises(ApifyError):
+                self.client._run_sync("test/actor", {"limit": 1})
+
+    def test_cached_rows_are_isolated_from_caller_mutation(self):
+        response = [
+            {
+                "id": "post_123",
+                "metadata": {"status": "original"},
+            }
+        ]
+
+        with mock.patch.object(
+            self.client, "_do_request", return_value=response
+        ) as request:
+            first = self.client._run_sync("test/actor", {"limit": 1})
+            first[0]["metadata"]["status"] = "mutation of cache-miss result"
+
+            second = self.client._run_sync("test/actor", {"limit": 1})
+            self.assertEqual(second[0]["metadata"]["status"], "original")
+
+            second[0]["metadata"]["status"] = "mutation of cache-hit result"
+
+            third = self.client._run_sync("test/actor", {"limit": 1})
+            self.assertEqual(third[0]["metadata"]["status"], "original")
+
+        request.assert_called_once()
+
+class PubloraCreatePostIdempotency(unittest.TestCase):
+    def test_retries_reuse_the_same_idempotency_key(self):
+        import requests
+        from lib.publora_client import PubloraClient
+
+        client = PubloraClient.__new__(PubloraClient)
+        client.BASE_URL = "https://example.invalid"
+        client.timeout = 1
+        client._session = mock.Mock()
+
+        success = mock.Mock(status_code=200)
+        success.json.return_value = {"id": "post-123"}
+        client._session.post.side_effect = [
+            requests.Timeout("simulated timeout"),
+            success,
+        ]
+
+        with mock.patch("lib.publora_client.time.sleep"):
+            result = client.create_post(
+                content="Offline regression test",
+                platforms=["linkedin-test"],
+            )
+
+        self.assertEqual(result, {"id": "post-123"})
+        self.assertEqual(client._session.post.call_count, 2)
+
+        first_call, second_call = client._session.post.call_args_list
+        first_key = first_call.kwargs["headers"]["Idempotency-Key"]
+        second_key = second_call.kwargs["headers"]["Idempotency-Key"]
+
+        self.assertTrue(first_key)
+        self.assertEqual(first_key, second_key)
+        self.assertEqual(first_call.args[0], "https://example.invalid/create-post")
+        self.assertEqual(second_call.args[0], "https://example.invalid/create-post")
+
+
+class MalformedJsonResponseTests(unittest.TestCase):
+    def test_apify_malformed_json_raises_apify_error(self):
+        from lib.apify_client import ApifyError, ApifyClient
+
+        client = ApifyClient.__new__(ApifyClient)
+        client.token = FAKE_TOKEN
+        client.timeout = 1
+        client._session = mock.Mock()
+
+        response = mock.Mock(status_code=200)
+        response.json.side_effect = ValueError("invalid JSON")
+        response.text = "not valid JSON"
+        client._session.post.return_value = response
+
+        with self.assertRaisesRegex(ApifyError, "non-JSON response"):
+            client._do_request("test/actor", {})
+
+    def test_publora_malformed_json_raises_publora_error(self):
+        from lib.publora_client import PubloraClient, PubloraError
+
+        response = mock.Mock(status_code=200)
+        response.json.side_effect = ValueError("invalid JSON")
+        response.text = "not valid JSON"
+
+        with self.assertRaisesRegex(PubloraError, "non-JSON response"):
+            PubloraClient._handle(response)

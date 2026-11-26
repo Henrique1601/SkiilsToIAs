@@ -104,7 +104,7 @@ class PlatformLimits(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.limits = json.loads((FIXTURES / "publora_platform_limits.json").read_text())["linkedin"]
+        cls.limits = json.loads((FIXTURES / "publora_platform_limits.json").read_text(encoding="utf-8"))["linkedin"]
 
     def test_the_post_character_cap_matches(self):
         cap = self.limits["characters"]["standard"]
@@ -126,6 +126,81 @@ class PlatformLimits(unittest.TestCase):
                                  f"offers up to {high} images, LinkedIn accepts {ceiling}")
 
 
+class UserModelWiring(unittest.TestCase):
+    """The Story Bank is only worth filling if the skills that promise to use it do.
+
+    The interviewer's Related section told users a filled bank turns a week of
+    planning into picking from existing material, while the planner read neither
+    the bank nor the voice profile. A promise in one document and nothing in the
+    other is the same defect class as a skill asking for input it cannot read.
+    """
+
+    SPINE = ("Moment", "Number", "Correction", "Opposition", "Ask")
+
+    def consumers(self):
+        """Skills the interviewer names as drawing on the bank."""
+        related = (ROOT / "skills" / "linkedin-interviewer" / "SKILL.md").read_text(encoding="utf-8")
+        related = related.split("## Related skills", 1)[1]
+        return set(re.findall(r"`(linkedin-[a-z-]+)`", related))
+
+    def test_the_interviewer_names_consumers_that_exist(self):
+        names = {s.name for s in SKILLS}
+        unknown = sorted(self.consumers() - names)
+        self.assertEqual(unknown, [], f"interviewer points at skills that do not exist: {unknown}")
+
+    def test_every_skill_the_interviewer_sends_material_to_reads_the_bank(self):
+        deaf = []
+        for name in sorted(self.consumers()):
+            text = (ROOT / "skills" / name / "SKILL.md").read_text(encoding="utf-8")
+            # the humanizer is named for the other half of the model, the voice profile
+            if "--mode profile" in text and "story-bank" not in text:
+                continue
+            if "story-bank.md" not in text:
+                deaf.append(name)
+        self.assertEqual(deaf, [], "named as bank consumers but never read it:\n  " + "\n  ".join(deaf))
+
+    def test_the_spine_has_the_same_five_lines_on_both_sides(self):
+        interviewer = (ROOT / "skills" / "linkedin-interviewer" / "SKILL.md").read_text(encoding="utf-8")
+        writer = (ROOT / "skills" / "linkedin-post-writer" / "SKILL.md").read_text(encoding="utf-8")
+        for line in self.SPINE:
+            self.assertIn(f"**{line}**", interviewer,
+                          f"the interviewer no longer defines the {line} line")
+            self.assertIn(line, writer,
+                          f"the post writer does not know what to do with the {line} line")
+
+
+class ReadLayerPromises(unittest.TestCase):
+    """A skill may only promise a read the library can actually perform.
+
+    Issue #55 was this class of bug from the user's side: the profile
+    optimizer listed a profile URL as input, and nothing in the read layer
+    can fetch a profile. The agent then either asks for a paste anyway or
+    invents the profile it was told to score.
+    """
+
+    CALLS = re.compile(r"lib\.([a-z_][a-z0-9_]*)\(")
+
+    def test_every_lib_helper_a_document_calls_is_exported(self):
+        import lib
+
+        exported = set(lib.__all__)
+        missing = []
+        for path in [ROOT / "SKILL.md", *markdown(ROOT / "skills"), *markdown(ROOT / "references")]:
+            for name in set(self.CALLS.findall(path.read_text(encoding="utf-8"))):
+                if name not in exported:
+                    missing.append(f"{path.relative_to(ROOT)}: lib.{name}()")
+        self.assertEqual(missing, [], "documents calling helpers lib does not export:\n  " + "\n  ".join(missing))
+
+    def test_the_profile_optimizer_asks_for_a_paste_not_a_url(self):
+        text = (ROOT / "skills" / "linkedin-profile-optimizer" / "SKILL.md").read_text(encoding="utf-8")
+        intake = text.split("## Input", 1)[1].split("## Output", 1)[0]
+
+        self.assertIn("paste", intake.lower(),
+                      "the Input section must tell the user to paste the profile")
+        self.assertRegex(intake, r"cannot be fetched|no profile actor",
+                         "the Input section must say a profile URL cannot be read")
+
+
 class SkillConventions(unittest.TestCase):
     """The rules CLAUDE.md calls mandatory, checked rather than trusted."""
 
@@ -136,6 +211,15 @@ class SkillConventions(unittest.TestCase):
             if len(description) > 510:
                 too_long.append(f"{skill.name}: {len(description)} chars")
         self.assertEqual(too_long, [], "descriptions past the 510-char hard limit:\n  " + "\n  ".join(too_long))
+
+    def test_humanizer_description_makes_post_audit_discoverable(self):
+        description = frontmatter(
+            ROOT / "skills" / "linkedin-humanizer" / "SKILL.md"
+        ).get("description") or ""
+
+        self.assertIn("post audit", description.lower())
+        self.assertIn("post auditor", description.lower())
+        self.assertIn("--mode audit", description)
 
     def test_no_description_uses_an_em_dash(self):
         offenders = [s.name for s in SKILLS

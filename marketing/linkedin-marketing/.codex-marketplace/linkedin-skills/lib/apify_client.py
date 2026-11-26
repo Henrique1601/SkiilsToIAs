@@ -35,6 +35,7 @@ import os
 import random
 import time
 from collections import OrderedDict
+from copy import deepcopy
 from typing import Any, Optional, Sequence
 
 import requests
@@ -116,7 +117,9 @@ class ApifyClient:
             Dict with keys: text, authorName, authorProfileUrl, urn, shareUrn,
             canShare, url, numLikes, numComments, numShares, postedAtISO, plus
             extra metadata. `shareUrn` is the reshare parent URN
-            (`urn:li:share:*` / `urn:li:ugcPost:*`).
+            (`urn:li:share:*` / `urn:li:ugcPost:*`). `postedAtISO` carries the
+            actor's object (`{timestamp, date}`) rather than an ISO string, which
+            the name suggests and no caller currently relies on.
         """
         items = self._run_sync(
             self.POST_ACTOR, {"post_urls": [post_url]}, force_refresh=force_refresh
@@ -285,6 +288,8 @@ class ApifyClient:
             raise ValueError(
                 f"types must be a non-empty subset of {self.ENGAGER_TYPES}, got {types!r}"
             )
+        if max_items <= 0:
+            raise ValueError("max_items must be greater than 0")
 
         per_type = max(1, min(max_items // len(wanted), 3000))
         engagers: list[dict[str, Any]] = []
@@ -316,10 +321,10 @@ class ApifyClient:
             del self._cache[key]
             return None
         self._cache.move_to_end(key)
-        return value
+        return deepcopy(value)
 
     def _cache_put(self, key: str, value: Any) -> None:
-        self._cache[key] = (time.time(), value)
+        self._cache[key] = (time.time(), deepcopy(value))
         self._cache.move_to_end(key)
         while len(self._cache) > CACHE_MAX_ENTRIES:
             self._cache.popitem(last=False)
@@ -338,10 +343,16 @@ class ApifyClient:
             cached = self._cache_get(key)
             if cached is not None:
                 return cached
+
         data = self._do_request(actor_id, payload)
-        result = data if isinstance(data, list) else []
-        self._cache_put(key, result)
-        return result
+        if not isinstance(data, list):
+            raise ApifyError(
+                f"Unexpected response from Apify actor {actor_id}: "
+                f"expected a list, got {type(data).__name__}"
+            )
+
+        self._cache_put(key, data)
+        return data
 
     @_retry()
     def _do_request(
@@ -366,7 +377,13 @@ class ApifyClient:
             except Exception:
                 body = {"error": r.text[:500]}
             raise ApifyError(f"HTTP {r.status_code}: {body}")
-        data = r.json()
+        try:
+            data = r.json()
+        except ValueError as e:
+            raise ApifyError(
+                f"non-JSON response: {r.text[:300]}"
+            ) from e
+
         if isinstance(data, dict) and "error" in data:
             raise ApifyError(f"actor failed: {data['error']}")
         return data

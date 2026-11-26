@@ -2,9 +2,14 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
 
 _ENV_LOADED = False
 _LOADED_PATHS: list[str] = []
+_DOTENV_VARIABLES = (
+    "APIFY_TOKEN", "PUBLORA_API_KEY", "LINKEDIN_PLATFORM_ID",
+    "PIXFARO_TOKEN", "PIXFARO_API_KEY",
+)
 
 
 def env_candidates() -> list[Path]:
@@ -63,28 +68,49 @@ def load_env(force: bool = False) -> None:
 
     Safe no-op if python-dotenv is missing, preserving Tier 0 (manual)
     zero-dependency operation. Searches upwards from the current working
-    directory and checks the repository root. Existing environment variables
-    are preserved.
+    directory and checks the repository root. Only bundle API credentials and
+    the platform id are loaded. Executables and transport settings must come
+    from the launch environment. Existing environment variables are preserved.
     """
     global _ENV_LOADED
     if _ENV_LOADED and not force:
         return
 
     try:
-        from dotenv import find_dotenv, load_dotenv
+        from dotenv import dotenv_values
 
-        # 1. Search upwards from cwd (for plugin users working in project directories)
-        dotenv_path = find_dotenv(usecwd=True)
-        if dotenv_path:
-            load_dotenv(dotenv_path)
-            _LOADED_PATHS.append(dotenv_path)
-
-        # 2. Check repo root relative to this file
-        repo_env = Path(__file__).resolve().parents[1] / ".env"
-        if repo_env.is_file():
-            load_dotenv(repo_env)
-            _LOADED_PATHS.append(str(repo_env))
+        for path in env_candidates():
+            if not path.is_file():
+                continue
+            values = dotenv_values(path)
+            for name in _DOTENV_VARIABLES:
+                value = values.get(name)
+                if value is not None:
+                    os.environ.setdefault(name, value)
+            _LOADED_PATHS.append(str(path))
     except ImportError:
         pass
 
     _ENV_LOADED = True
+
+
+def utf8_stdio() -> None:
+    """Make stdout and stderr UTF-8 when they are not already.
+
+    On Windows a pipe or a redirected file defaults to the ANSI code page
+    (cp1252 on most installs), which cannot encode the emoji and arrows in this
+    bundle's messages. Printing a manual-mode approval message then raised
+    UnicodeEncodeError in the caller, and post_comment.py died on its check
+    mark after the reaction had gone out, so the comment never did. Agents
+    capture output through a pipe, so this was the normal case, not an edge.
+
+    A console, Linux and macOS are UTF-8 already and are left alone, as is any
+    stream without `reconfigure` (a test's StringIO, a notebook).
+    """
+    import codecs
+    import sys
+
+    for stream in (sys.stdout, sys.stderr):
+        encoding = getattr(stream, "encoding", None)
+        if encoding and hasattr(stream, "reconfigure") and codecs.lookup(encoding).name != "utf-8":
+            stream.reconfigure(encoding="utf-8")
