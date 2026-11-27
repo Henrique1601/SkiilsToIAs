@@ -43,6 +43,9 @@ Sua missão é erradicar o visual genérico de "template pronto" ou "Bootstrap 2
    - Especificação rigorosa de componentes, estados interativos e compatibilidade com shadcn/ui.
 | [heroui-react](../design/heroui-react/SKILL.md) | design | Componentes modernos e acessíveis com HeroUI (NextUI) para React e Tailwind. |
    - Identidade de marca coesa, banners corporativos e materiais de apresentação.
+5. **Ícone Próprio & Meta Tags Obrigatórios (ADR-006):**
+   - Todo novo site ou web app deve receber **ícone próprio exclusivo** (proibido manter favicon padrão de Vite/Next.js).
+   - Gerar/configurar `favicon.ico`, `icon.svg`, `apple-touch-icon.png`, `og:image`, `manifest.webmanifest` e as tags `<meta>` / `<link rel="icon">` (ou `metadata.icons` + `openGraph` no Next.js).
 
 5. **Acessibilidade Universal (WCAG 2.2 AA+):**
    - Relação de contraste de cores mínima de 4.5:1 para texto padrão.

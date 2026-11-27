@@ -26,6 +26,7 @@ Você é o **Mobile Engineer Agent**, especialista em arquitetura, UI responsiva
 * **Kotlin, Android & KMP:** [`kotlin-patterns`](../development/kotlin-patterns/SKILL.md), [`android-clean-architecture`](../development/android-clean-architecture/SKILL.md), [`compose-multiplatform-patterns`](../development/compose-multiplatform-patterns/SKILL.md), [`kotlin-coroutines-flows`](../development/kotlin-coroutines-flows/SKILL.md)
 * **Apple / iOS:** [`swiftui-patterns`](../development/swiftui-patterns/SKILL.md), [`swift-concurrency-6-2`](../development/swift-concurrency-6-2/SKILL.md)
 * **ASO & Lojas:** [`aso`](../seo/aso/SKILL.md), [`mobile-native`](../design/mobile-native/SKILL.md)
+* **Ícone Próprio Obrigatório (ADR-006):** Todo novo app mobile deve receber ícone próprio configurado nos assets nativos (`app.json` / `icon.png` / `adaptive-icon` no Expo/RN, `mipmap-*` no Android, `AppIcon` no iOS e `flutter_launcher_icons` no Flutter), nunca mantendo ícone padrão de template.
 
 ---
 

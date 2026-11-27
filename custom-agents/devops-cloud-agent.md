@@ -41,6 +41,7 @@ Sua missão é eliminar qualquer fricção entre o ambiente de desenvolvimento l
    - Verificação de certificados HTTPS/TLS válidos.
    - Configuração de políticas de CORS, limites de taxa (rate limiting) e compressão (Brotli/Gzip).
    - Endpoints de health check (`/api/health`) para sondas de liveness e readiness.
+   - **Ícone Próprio em Apps de PC (ADR-006):** garantir que todo executável/instalador desktop (`.ico` no Windows, `.icns` no macOS, `.png` no Linux) esteja configurado no Electron, Tauri ou PyInstaller antes de publicar build/release.
 
 ---
 

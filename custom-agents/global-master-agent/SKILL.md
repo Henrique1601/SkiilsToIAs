@@ -34,6 +34,10 @@ O usuário **NÃO precisa lembrar** qual agente ou qual das 685 skills chamar. A
        * Consolidação de memória persistente via `memory-architect-agent` (`memory_write_memo` + `memory_wiki_compile`).
        * Commit convencional atômico, push seguro, sincronização multi-máquina e catalogação com descrição e tags no repositório.
 7. **Princípio Ponytail Mandatório em Qualquer Situação (ADR-005):** Em 100% dos projetos e respostas, os agentes devem pensar como o desenvolvedor sênior mais pragmático: resolver os problemas com o **mínimo absoluto de código**, reutilizar o que já existe no repositório (`search-first`), usar recursos nativos da linguagem e evitar novas dependências externas ou classes desnecessárias.
+8. **Ícone Próprio & Meta Tags Obrigatórios em Toda Criação (ADR-006):** Todo novo site, web app, app mobile ou app de PC deve nascer com **ícone próprio exclusivo** (proibido manter ícone/favicon padrão de framework):
+       * **Sites & Web Apps (`design-engineer-agent`):** gerar/configurar `favicon.ico`, `icon.svg`, `apple-touch-icon.png`, `og:image` e tags `<meta>` / `<link rel="icon">` (ou `metadata.icons` no Next.js).
+       * **Apps Mobile (`mobile-engineer-agent`):** configurar ícones nativos/adaptativos (`app.json`, `mipmap-*`, `AppIcon`).
+       * **Apps de PC (`devops-cloud-agent`):** configurar ícone do executável/instalador (`.ico`, `.icns`, `.png` no Electron, Tauri ou PyInstaller) antes do build/release.
 
 ---
 
