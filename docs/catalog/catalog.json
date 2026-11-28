@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T12:09:14Z",
+  "generated_at": "2026-11-28T18:11:24Z",
   "counts": {
     "total": 701,
     "skills": 640,
@@ -2561,7 +2561,7 @@
       "name": "ui-ux-pro-max",
       "category": "design",
       "type": "skill",
-      "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 80 searchable styles (51 active), 192 product palettes and reasoning profiles, 74 font pairings, 120 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
+      "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 80 searchable styles (51 active), 194 product palettes and reasoning profiles, 74 font pairings, 141 UX guidelines, 105 icons, 20 GSAP presets, 25 chart types, and 23 stacks.",
       "path": "design/ui-ux-pro-max/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill ui-ux-pro-max"
     },
@@ -3033,7 +3033,7 @@
       "name": "hyperframes-cli",
       "category": "development",
       "type": "skill",
-      "description": "The HyperFrames CLI by job - scaffold, check, look at frames, edit the timeline, preview, render locally or in the cloud, publish, project history - plus reading its JSON and recovering from build or render failures.",
+      "description": "HyperFrames CLI - scaffold, check frames, edit timelines, preview, render, share and project history; read JSON and recover from failures.",
       "path": "development/hyperframes-cli/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill hyperframes-cli"
     },
@@ -3473,7 +3473,7 @@
       "name": "aws-observability",
       "category": "devops-cloud",
       "type": "skill",
-      "description": "Builds, configures, debugs, and optimizes AWS observability with CloudWatch (Log Insights, Metrics, Alarms, Dashboards, EMF), X-Ray, CloudTrail, and ADOT (AWS Distro for OpenTelemetry), AND enables/onboards services to Application Signals using ADOT auto-instrumentation SDKs. Covers Log Insights queries, alarms (metric, composite, anomaly), dashboards, custom metrics/EMF, X-Ray tracing and sampling, ADOT collector config, CloudTrail auditing, and end-to-end Application Signals enablement via ADOT SDKs (CloudWatch Observability EKS add-on, CloudWatch Agent IAM, OTLP endpoints, ServiceEvents, Dynamic Instrumentation), breakpoint and snapshot in Dynamic Instrumentation, live data capture in running service, debug without redeploying. Applies to CloudWatch, alarms, dashboards, EMF, X-Ray, traces, CloudTrail, ADOT, monitoring, synthetics/canaries, OR enabling/onboarding/instrumenting a service for Application Signals. Not for app logging or security threat detection.",
+      "description": "Investigates root causes on the Omni context graph (service dependencies); builds/configures/debugs AWS observability - operator-symptom questions, detecting Omni vs classic. CloudWatch on a reporting service: fleet health, Log Insights (cost), metric/composite/anomaly alarms, custom metrics/EMF, dashboards, X-Ray/ADOT tracing, canaries, CloudTrail (incl. OTLP/PromQL), CloudWatch Profiles (CPU/memory hotspots, flame graphs), Dynamic Instrumentation (live breakpoints), Application Signals service map. CloudWatch Omni on an existing Space: SQL over logs/traces, PromQL, LLM inference (vLLM) diagnosis, Omni dashboards, alerts, Slack notifications, programmatic/IaC access, driving Omni from coding agents/skills, AI agent quality from traces - on-demand/online evals incl. setup, readback, evaluators. First-time setup (Omni Space, access grants, ingestion, ADOT instrumentation for Application Signals/Omni): use setting-up-cloudwatch-observability. Not for app logging or threat detection.",
       "path": "devops-cloud/aws-observability/SKILL.md",
       "install_hint": "npx skills add Henrique1601/SkiilsToIAs --skill aws-observability"
     },
