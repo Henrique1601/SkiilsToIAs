@@ -92,8 +92,8 @@ def sync_agents() -> tuple[int, list[str]]:
         shutil.copy2(md, skill_md)
         shutil.copy2(md, GEM_AGENTS / md.name)
         shutil.copy2(md, AGENTS_CUSTOM / md.name)
-        if (GEM_AGENTS / stem).is_dir():
-            shutil.copy2(skill_md, GEM_AGENTS / stem / "SKILL.md")
+        (GEM_AGENTS / stem).mkdir(parents=True, exist_ok=True)
+        shutil.copy2(skill_md, GEM_AGENTS / stem / "SKILL.md")
         (GEM_SKILLS / stem).mkdir(parents=True, exist_ok=True)
         shutil.copy2(skill_md, GEM_SKILLS / stem / "SKILL.md")
 
@@ -101,6 +101,7 @@ def sync_agents() -> tuple[int, list[str]]:
             sha256(md)
             == sha256(skill_md)
             == sha256(GEM_AGENTS / md.name)
+            == sha256(GEM_AGENTS / stem / "SKILL.md")
             == sha256(AGENTS_CUSTOM / md.name)
             == sha256(GEM_SKILLS / stem / "SKILL.md")
         ):
