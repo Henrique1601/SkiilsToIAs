@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Sync all custom agents to SKILL.md and ~/.gemini/config/, rebuild catalog, and verify parity."""
+"""Sync all skills, custom agents, routes, and catalog to ~/.gemini/config/ and ~/.agents/custom-agents/."""
 
+from __future__ import annotations
+
+import argparse
 import hashlib
 import json
 import shutil
+import stat
 import subprocess
 import sys
 from pathlib import Path
@@ -14,9 +18,59 @@ GEM_SKILLS = Path.home() / ".gemini" / "config" / "skills"
 AGENTS_CUSTOM = Path.home() / ".agents" / "custom-agents"
 GEM_MCP = Path.home() / ".gemini" / "config" / "mcp_config.json"
 
+SKILL_CATEGORIES = (
+    "ai-agents",
+    "backend-database",
+    "business-management",
+    "career",
+    "design",
+    "development",
+    "devops-cloud",
+    "documents-productivity",
+    "marketing",
+    "seo",
+    "utilities",
+)
+
+PRE_COMMIT_HOOK = """#!/bin/sh
+set -e
+python scripts/audit_repo.py
+python scripts/build_catalog.py --check
+"""
+
+POST_MERGE_HOOK = """#!/bin/sh
+python scripts/sync_all.py || true
+"""
+
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def sync_skills() -> tuple[int, int, list[str]]:
+    """Mirror categorized skills (<cat>/<skill>/) to GEM_SKILLS/<skill>/ when missing or changed."""
+    GEM_SKILLS.mkdir(parents=True, exist_ok=True)
+    total = 0
+    updated = 0
+    errors: list[str] = []
+
+    for cat in SKILL_CATEGORIES:
+        cat_dir = REPO / cat
+        if not cat_dir.is_dir():
+            continue
+        for skill_md in sorted(cat_dir.glob("*/SKILL.md")):
+            src_dir = skill_md.parent
+            dst_dir = GEM_SKILLS / src_dir.name
+            dst_md = dst_dir / "SKILL.md"
+            total += 1
+            if dst_md.is_file() and sha256(skill_md) == sha256(dst_md):
+                continue
+            shutil.copytree(src_dir, dst_dir, dirs_exist_ok=True)
+            updated += 1
+            if not dst_md.is_file() or sha256(skill_md) != sha256(dst_md):
+                errors.append(src_dir.name)
+
+    return total, updated, errors
 
 
 def sync_agents() -> tuple[int, list[str]]:
@@ -79,7 +133,34 @@ def check_mcps() -> list[str]:
     return sorted(set(tpl) - set(gem))
 
 
+def install_git_hooks(repo_root: Path = REPO) -> list[Path]:
+    hooks_dir = repo_root / ".git" / "hooks"
+    if not hooks_dir.is_dir():
+        raise FileNotFoundError(f"Git hooks directory not found: {hooks_dir}")
+    installed = []
+    for name, body in (("pre-commit", PRE_COMMIT_HOOK), ("post-merge", POST_MERGE_HOOK)):
+        hook_path = hooks_dir / name
+        hook_path.write_text(body, encoding="utf-8", newline="\n")
+        try:
+            mode = hook_path.stat().st_mode
+            hook_path.chmod(mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+        except OSError:
+            pass
+        installed.append(hook_path)
+    return installed
+
+
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Sync skills, agents, routes, and catalog.")
+    parser.add_argument("--install-hooks", action="store_true", help="Install pre-commit and post-merge git hooks.")
+    parser.add_argument("--strict-mcps", action="store_true", help="Exit non-zero if template MCPs are missing.")
+    args = parser.parse_args()
+
+    if args.install_hooks:
+        hooks = install_git_hooks()
+        print(f"Installed git hooks: {[h.name for h in hooks]}")
+
+    total_skills, updated_skills, skill_errors = sync_skills()
     total_agents, agent_errors = sync_agents()
     unrouted = check_agent_routes()
     missing_mcps = check_mcps()
@@ -87,10 +168,13 @@ def main() -> int:
     res_build = subprocess.run([sys.executable, str(REPO / "scripts" / "build_catalog.py")], check=False)
     res_check = subprocess.run([sys.executable, str(REPO / "scripts" / "build_catalog.py"), "--check"], check=False)
 
+    print(f"Skills synced: {total_skills} (updated={updated_skills}), skill errors: {skill_errors}")
     print(f"Agents synced: {total_agents}, parity errors: {agent_errors}, unrouted: {unrouted}")
-    print(f"Template MCPs missing in Gemini config: {missing_mcps}")
+    print(f"Template MCPs missing/optional in Gemini config ({len(missing_mcps)}): {missing_mcps}")
 
-    if agent_errors or unrouted or missing_mcps or res_build.returncode != 0 or res_check.returncode != 0:
+    if skill_errors or agent_errors or unrouted or res_build.returncode != 0 or res_check.returncode != 0:
+        return 1
+    if args.strict_mcps and missing_mcps:
         return 1
     return 0
 

@@ -148,6 +148,8 @@ class TestBootstrapAndSyncAndMcp(unittest.TestCase):
             agents_src = root / "custom-agents"
             agents_src.mkdir(parents=True)
             (agents_src / "demo-agent.md").write_text("# Demo Agent\n", encoding="utf-8")
+            (root / "ai-agents" / "demo-skill").mkdir(parents=True)
+            (root / "ai-agents" / "demo-skill" / "SKILL.md").write_text("---\nname: demo-skill\ndescription: d\n---\n", encoding="utf-8")
             (root / "mcps").mkdir(parents=True)
             (root / "mcps" / "mcp_template.json").write_text('{"mcpServers":{"demo":{}}}', encoding="utf-8")
             gem_mcp = root / "gem" / "mcp_config.json"
@@ -162,6 +164,8 @@ class TestBootstrapAndSyncAndMcp(unittest.TestCase):
                 AGENTS_CUSTOM=root / "agents_custom",
                 GEM_MCP=gem_mcp,
             ):
+                s_total, s_upd, s_err = sync_all.sync_skills()
+                self.assertEqual((s_total, s_upd, s_err), (1, 1, []))
                 total, errors = sync_all.sync_agents()
                 self.assertEqual(total, 1)
                 self.assertEqual(errors, [])
